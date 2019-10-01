@@ -1,9 +1,13 @@
 ---
-title: "Blockchain Transactionmanager - Projektvereinbarung IP6 "
+title: "IP6: Blockchain Transactionmanager"
+subtitle: "Projektvereinbarung"
 author: "Faustina Bruno & Jurij Maïkoff"
 date: "2019-10-01"
 subject: "Machine Learning"
 lang: "de"
+
+bibliography: "biblio.bib"
+
 titlepage: true
 titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
@@ -49,44 +53,8 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 ## Risiken
 
 |  Risiko | Auftreten  | Impact  | Risk level  |  Gegenmassnahme |
-|:--------------------|-----|-----|-----|:--------------------------------------|
+|:--------------------|------|-----|-----|:--------------------------------------|
 | Teammitglied bricht Projekt ab  |  1 | 3  |  3 | Gute Kommunikation unter den Teammitgliedern   |
 | Unterschätzen des Projektumfanges  | 2  | 2  |  4 | Sorgfältige Planung und regelmässig Rücksprache mit den Betreuern  |
 | Ausfall von einem Teammitglied (mehr als 2 Wochen)  | 2  | 2  |  4 | Sofortiges Informieren von Betreuern. Planung überarbeiten und Ausfall berücksichtigen |
-
-
-
-# Entwicklungsumgebung
-
-In diesem Abschnitt wird die geplante Testumgebung und deren Verwendung beschrieben. 
-
-## Betriebssystem
-
-Beide Teammitglieder verwenden Windows 10 als Betriebssystem. 
-
-## Blockchain
-
-Um unser erworbenes Wissen auch testen zu können, wird eine Test-Blockchain aufgesetzt. Zu Beginn bietet die Testumgebung eine Möglichkeit, das Gelernte anzuwenden und so das Verständnis für das Thema zu vertiefen. Später im Projekt wird die Umgebung benötigt um ausgearbeitete Ansätze zu testen und analysieren. 
-
-Als Blockchain wird Ethereum verwendet. 
-
-## Wallet
-
-Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, ob vorhandene Wallets, wie zum Beispiel uPort, unseren Ansprüchen genügen oder ob diese im Rahmen von diesem Projekt entwickelt werden müssen. 
-
-## Smart Contracts
-
-Für die Entwicklung von Smart Contracts wird die Sprache Solidity verwendet. Auch hier wird die Testumgebung genutzt, um Gelerntes anweden zu können. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen. 
-
-
-Uport
-
-# Termine
-
-| Datum  |Event   |   
-|:---|:---|
-| 24.09.2019  | Kickoff  |
-| 28.11.2019  | Zwischenpräsentation  |
-| 20.03.2019  | Abgabe Bachelorthesis  |
-| 13. - 24.04.2019  | Verteidigung  |
 
