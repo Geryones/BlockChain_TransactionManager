@@ -86,7 +86,11 @@ Uport
 | Datum  |Event   |   
 |:---|:---|
 | 24.09.2019  | Kickoff  |
+| 22.10.2019  | Abgabe Projektvereinbarung  |
+| Nov         | MVP Netzwerk???  |
 | 28.11.2019  | Zwischenpräsentation  |
+| Dezember    | erstes Konzept???  |
 | 20.03.2019  | Abgabe Bachelorthesis  |
+| Februar     | Testnetzwerk umsetzung???  |
 | 13. - 24.04.2019  | Verteidigung  |
 
