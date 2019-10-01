@@ -28,7 +28,11 @@ titlepage-rule-height: 1
 
 # Entwicklungsumgebung
 
+## Blockchain
 
+Um unser erworbenes Wissen auch testen zu können, werden wir lokal eine Test-Blockchain aufsetzen. 
+
+## Smart Contracts
 
 # Termine
 
