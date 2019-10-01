@@ -12,4 +12,5 @@ titlepage-rule-height: 1
 ...
 \newpage
 
-#Projektvereinbarung
+# Projektvereinbarung
+

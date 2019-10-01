@@ -1,1 +1,1 @@
-.\Projektvereinbarung.md -o Projektvereinbarung.pdf --from markdown --template eisvogel --listings --number-sections -V lang=de --toc
+pandoc Projektvereinbarung.md -o Projektvereinbarung.pdf --from markdown --template eisvogel --listings --number-sections -V lang=de --toc
