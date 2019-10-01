@@ -36,10 +36,12 @@ und in einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes.
 
 ## Risiken
 
-|  Risiko | Likelihood  | Impact  | Risk level  |  Countermeasure |
-|:---|:---|:---|:---|:---|
-|   |   |   |   |   |
-|   |   |   |   |   |
+|  Risiko | Auftreten  | Impact  | Risk level  |  Gegenmassnahme |
+|:--------------------|-----|-----|-----|:--------------------------------------|
+| Teammitglied bricht Projekt ab  |  1 | 3  |  3 | Gute Kommunikation unter den Teammitgliedern   |
+| Unterschätzen des Projektumfanges  | 2  | 2  |  4 | Sorgfältige Planung und regelmässig Rücksprache mit den Betreuern  |
+| Ausfall von einem Teammitglied (mehr als 2 Wochen)  | 2  | 2  |  4 | Sofortiges Informieren von Betreuern. Planung überarbeiten und Ausfall berücksichtigen |
+
 
 
 # Entwicklungsumgebung
@@ -52,7 +54,7 @@ Als Blockchain wird Ethereum verwendet.
 
 ## Smart Contracts
 
-Solidity
+Für die Entwicklung von Smart Contracts wird die Sprache Solidity verwendet. 
 
 # Termine
 
