@@ -1,5 +1,5 @@
 
-\newpage|   |   |   
+|   |   |   
 |:--------|:---------|
 |**Betreuer:** |          Markus Knecht|
 |              |         Daniel Kröni |                   
