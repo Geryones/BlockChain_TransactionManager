@@ -11,14 +11,14 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 ...
 \newpage
-|:--------:|---------:|
-|**Betreuer:** |          Markus Knecht|
-|              |         Daniel Kröni |
-                   
-|**Auftraggeber:**|       Markus Knecht|
- |                 |      |Daniel Kröni|
 
-**Projektende:**        20.03.2020
+|   |   |   
+|:--------|:---------|
+|**Betreuer:** |          Markus Knecht|
+|              |         Daniel Kröni |                   
+|**Auftraggeber:**|       Markus Knecht|
+|                 |      Daniel Kröni|
+|**Projektende:**  |      20.03.2020|
 
 # Aufgabenstellung
 
