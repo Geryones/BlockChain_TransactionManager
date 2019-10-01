@@ -1,22 +1,5 @@
----
-title: "IP6: Blockchain Transactionmanager"
-subtitle: "Projektvereinbarung"
-author: "Faustina Bruno & Jurij Maïkoff"
-date: "2019-10-01"
-subject: "Machine Learning"
-lang: "de"
 
-bibliography: "biblio.bib"
-
-titlepage: true
-titlepage-color: "06386e"
-titlepage-text-color: "FFFFFF"
-titlepage-rule-color: "FFFFFF"
-titlepage-rule-height: 1
-...
-\newpage
-
-|   |   |   
+\newpage|   |   |   
 |:--------|:---------|
 |**Betreuer:** |          Markus Knecht|
 |              |         Daniel Kröni |                   

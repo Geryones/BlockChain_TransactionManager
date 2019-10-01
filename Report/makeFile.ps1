@@ -5,6 +5,7 @@ $input = Get-Item src\*.md | Resolve-Path -Relative
 
 
 pandoc $input -o out/Projektvereinbarung.pdf `
+    --metadata-file=metadata.yml `
     --from markdown `
     --template eisvogel `
     --listings `
