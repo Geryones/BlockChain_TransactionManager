@@ -22,6 +22,9 @@ titlepage-rule-height: 1
 
 # Aufgabenstellung
 
+Blockchains verfügen über verschiedene Mechanismen um sich gegen Attacken abzusichern. Eine davon ist eine Gebühr auf jeder Transaktion, die sogenannte Gas Fee. Dadruch können Denail of Service (DoS) Attacken, bei denen das Netzwerk mit unzähligen Transaktionen geflutet wird, effizient bekämpft werden. Dem Angreifer kann die Attacke nit aufrecht erhalten, da ihm die finanziellen Mittel ausgehen. 
+
+
 ## Ziele
 
 Das Ziel der Arbeit ist es zuerst eine Konzeptionelle Erarbeitung eines Testnetzwerkes welches:
@@ -52,6 +55,12 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
 # Entwicklungsumgebung
 
+In diesem Abschnitt wird die geplante Testumgebung und deren Verwendung beschrieben. 
+
+## Betriebssystem
+
+Beide Teammitglieder verwenden Windows 10 als Betriebssystem. 
+
 ## Blockchain
 
 Um unser erworbenes Wissen auch testen zu können, wird eine Test-Blockchain aufgesetzt. Zu Beginn bietet die Testumgebung eine Möglichkeit, das Gelernte anzuwenden und so das Verständnis für das Thema zu vertiefen. Später im Projekt wird die Umgebung benötigt um ausgearbeitete Ansätze zu testen und analysieren. 
@@ -60,7 +69,7 @@ Als Blockchain wird Ethereum verwendet.
 
 ## Smart Contracts
 
-Für die Entwicklung von Smart Contracts wird die Sprache Solidity verwendet. 
+Für die Entwicklung von Smart Contracts wird die Sprache Solidity verwendet. Auch hier wird die Testumgebung genutzt, um Gelerntes anweden zu können. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen. 
 
 # Termine
 
