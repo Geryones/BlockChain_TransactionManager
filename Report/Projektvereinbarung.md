@@ -24,7 +24,14 @@ titlepage-rule-height: 1
 
 ## Ziele
 
-Testtest
+Das Ziel der Arbeit ist es zuerst eine Konzeptionelle Erarbeitung eines Testnetzwerkes welches:
+
+- nicht permanent ist (Reboot möglich)
+- kostenlose Transaktionen gewährleistet
+- Anonymität gewährleistet
+- Sicherheit gewährleistet
+
+und in einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes.
 
 
 ## Risiken
