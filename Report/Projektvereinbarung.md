@@ -26,14 +26,14 @@ Blockchains verfügen über verschiedene Mechanismen um sich gegen Attacken abzu
 
 Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizient und elegant ist, eignet er sich nicht für eine Lernumgebung. Hier sollen Anwender die Möglichkeit haben, Transaktionen ohne anfallende Gebühren ausführen zu können. Dadurch wird die Blockchain anfällig für DoS Attacken. 
 
-Die Projektaufgabe besteht darin, eine Lösung zu finden, bei der die Sicherheit der Blockchain auch ohne eine Transaktionsgebühr gewährleistet ist. 
+Die Projektaufgabe besteht darin, eine Lösung zu finden, bei der die Sicherheit der Blockchain auch ohne eine Transaktionsgebühr gewährleistet werden kann. 
 
 ## Ziele
 
 Das Ziel der Arbeit ist es zuerst eine Konzeptionelle Erarbeitung eines Testnetzwerkes welches:
 
 - nicht permanent ist (Reboot möglich)
-- kostenlose Transaktionen gewährleistet 
+- kostenlose Transaktionen ermöglicht 
 - Anonymität gewährleistet
 - Sicherheit gewährleistet
 
@@ -42,7 +42,7 @@ und in einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes.
 Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
 - Der Zustand in der Blockchain soll synchornisiert werden können ohne von einem Teilnehmer manipulliert zu werden
-- wie kann die Fee einer Transaktion auf null gesetzt werden und gewährleistet werden, dass nicht zu viele Transaktionen (zB Ataken) getätigt werden
+- wie kann die Gebühr einer Transaktion auf null gesetzt werden und gewährleistet werden, dass nicht zu viele Transaktionen (zB Attacken) getätigt werden
 - Supportet Uport unsere gewünschten Anfroderungen einer SmartWallet oder müssen wir selber eine SmartWallet programmieren
 - Wie kann man Attacken vermeiden (zB algorithmisch: nur eine Anzahl Transaktionen pro Monat möglich)
 
@@ -73,6 +73,10 @@ Als Blockchain wird Ethereum verwendet.
 ## Smart Contracts
 
 Für die Entwicklung von Smart Contracts wird die Sprache Solidity verwendet. Auch hier wird die Testumgebung genutzt, um Gelerntes anweden zu können. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen. 
+
+## Wallet
+
+Uport
 
 # Termine
 
