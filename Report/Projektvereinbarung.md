@@ -27,12 +27,18 @@ titlepage-rule-height: 1
 Das Ziel der Arbeit ist es zuerst eine Konzeptionelle Erarbeitung eines Testnetzwerkes welches:
 
 - nicht permanent ist (Reboot möglich)
-- kostenlose Transaktionen gewährleistet
+- kostenlose Transaktionen gewährleistet 
 - Anonymität gewährleistet
 - Sicherheit gewährleistet
 
-und in einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes.
+und in einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes. 
 
+Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
+- Der Zustand in der Blockchain soll synchornisiert werden können ohne von einem Teilnehmer manipulliert zu werden
+- wie kann die Fea einer Transaktion auf null gesetzt werden und gewährleistet werden, dass nicht zu viele Transaktionen (zB Ataken) getätigt werden
+- Supportet Uport unsere gewünschten Anfroderungen einer SmartWallet oder müssen wir selber eine SmartWallet programmieren
+- Wie kann man Attacken vermeiden (zB algorithmisch: nur eine Anzahl Transaktionen pro Monat möglich)
+- 
 
 ## Risiken
 
