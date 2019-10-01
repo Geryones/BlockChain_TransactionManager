@@ -42,13 +42,23 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
 ## Risiken
 
+|  Risiko | Likelihood  | Impact  | Risk level  |  Countermeasure |
+|:---|:---|:---|:---|:---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+
 # Entwicklungsumgebung
 
 ## Blockchain
 
-Um unser erworbenes Wissen auch testen zu können, werden wir lokal eine Test-Blockchain aufsetzen. 
+Um unser erworbenes Wissen auch testen zu können, wird eine Test-Blockchain aufgesetzt. Zu Beginn bietet die Testumgebung eine Möglichkeit, das Gelernte anzuwenden und so das Verständnis für das Thema zu vertiefen. Später im Projekt wird die Umgebung benötigt um ausgearbeitete Ansätze zu testen und analysieren. 
+
+Als Blockchain wird Ethereum verwendet. 
 
 ## Smart Contracts
+
+Solidity
 
 # Termine
 
