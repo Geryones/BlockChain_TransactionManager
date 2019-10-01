@@ -62,5 +62,9 @@ Solidity
 
 # Termine
 
+- Kickoff: 24.9.2019
+- Zwischenpräsentation: 28./29. 11.2019
+- Abgabe Bachlorthesis: 20.3.2020
+- Verteidigug: 13.-24.4.2020
 
 
