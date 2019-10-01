@@ -1,5 +1,5 @@
 ---
-title: "Projektvereinbarung IP6 - Blockchain Transactionmanager"
+title: "Blockchain Transactionmanager - Projektvereinbarung IP6 "
 author: "Faustina Bruno & Jurij Maïkoff"
 date: "2019-10-01"
 subject: "Machine Learning"
@@ -11,6 +11,26 @@ titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
 ...
 \newpage
+|:--------:|---------:|
+|**Betreuer:** |          Markus Knecht|
+|              |         Daniel Kröni |
+                   
+|**Auftraggeber:**|       Markus Knecht|
+ |                 |      |Daniel Kröni|
 
-# Projektvereinbarung
+**Projektende:**        20.03.2020
+
+# Aufgabenstellung
+
+## Ziele
+
+## Risiken
+
+# Entwicklungsumgebung
+
+
+
+# Termine
+
+
 
