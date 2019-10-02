@@ -1,3 +1,4 @@
-# Zusammenfassung
+\section*{Zusammenfassung}
 
 meh blablba
+\newpage
