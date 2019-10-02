@@ -11,7 +11,7 @@ pandoc $input -o out/Report.pdf `
     --include-before-body=".\src\005-zusammenfassung.md" `
     --metadata-file=metadata.yml `
     --from markdown `
-    --template eisvogel `
+    --template="./templates/eisvogel.tex" `
     --listings `
     --number-sections `
     -V lang=de `
