@@ -12,6 +12,7 @@ pandoc $input -o out/Projektvereinbarung.pdf `
     --number-sections `
     -V lang=de `
     -V papersize:a4 `
+    -V book `
     --toc `
     --toc-depth=2 `
     --bibliography=biblio.bib  `
