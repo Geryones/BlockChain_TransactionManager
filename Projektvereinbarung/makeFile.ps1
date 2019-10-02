@@ -18,4 +18,5 @@ pandoc $input -o out/Projektvereinbarung.pdf `
     --toc-depth=2 `
     --bibliography=biblio.bib  `
     --csl=ieee.csl `
-    --highlight-style breezedark
+    --highlight-style breezedark `
+    --top-level-division=chapter
