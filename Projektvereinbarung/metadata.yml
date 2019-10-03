@@ -15,6 +15,7 @@ titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
+logo: "./images/fhnwlogotrans.png"
 toc-own-page: true
 addInfo: 
   \textbf{Studiengang:} \break
