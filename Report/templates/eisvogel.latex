@@ -854,6 +854,10 @@ $else$
   $endif$
   \vskip 2em
   \noindent {\Large \textsf{$for(author)$$author$$sep$, $endfor$}}
+  $if(addInfo)$
+  \vskip 1em
+  {\Large \textsf{$addInfo$}}
+  $endif$
   \vfill
 }
 $endif$

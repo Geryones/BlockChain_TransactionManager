@@ -15,9 +15,22 @@ titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
-logo: "./images/fhnwlogoweiss.jpg"
+logo: "./images/fhnwlogotrans.png"
 
 toc-own-page: true
+
+addInfo: 
+  \textbf{Studiengang:} \break
+  - iCompetence \break
+  - Informatik \break
+  \textbf{Betreuer:} \break
+  - Markus Knecht \break
+  - Daniel Kröni \break
+  \textbf{Auftraggeber:} \break
+  Fachhochschule Nordwestschweiz \break
+  FHNW Campus Brugg-Windisch \break
+  Bahnhofstrasse 6 \break
+  5210 Windisch
 
 
 ...
