@@ -13,4 +13,3 @@
 
 ![Zeitstrahl](images/timeline_v1.PNG "Zeitstrahl")
 
-

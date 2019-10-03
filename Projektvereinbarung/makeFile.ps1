@@ -19,4 +19,4 @@ pandoc $input -o out/Projektvereinbarung.pdf `
     --csl=ieee.csl `
     --highlight-style breezedark `
     --top-level-division=chapter `
-    --filter pandoc-citeproc 
+    --filter pandoc-citeproc
