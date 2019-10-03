@@ -841,6 +841,10 @@ $if(titlepage-background)$
   $endif$
   \vskip 2em
   \noindent {\Large \textsf{$for(author)$$author$$sep$, $endfor$} \vskip 0.6em \textsf{$date$}}
+  $if(addInfo)$
+  \vskip 1em
+  {\Large \textsf{$addInfo$}}
+  $endif$
   \vfill
 }
 $else$
