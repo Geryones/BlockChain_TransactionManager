@@ -23,4 +23,6 @@ pandoc $input -o out/Report.pdf `
     --bibliography=biblio.bib  `
     --csl=ieee.csl `
     --highlight-style breezedark `
-    --top-level-division=chapter
+    --top-level-division=chapter `
+    -f markdown-implicit_figures `
+    --filter pandoc-citeproc
