@@ -1,12 +1,3 @@
-
-|   |   |   
-|:--------|:---------|
-|**Betreuer:** |          Markus Knecht|
-|              |         Daniel Kröni |                   
-|**Auftraggeber:**|       Markus Knecht|
-|                 |      Daniel Kröni|
-|**Projektende:**  |      20.03.2020|
-
 # Aufgabenstellung
 
 Blockchains verfügen über verschiedene Mechanismen um sich gegen Attacken abzusichern. Eine davon ist eine Gebühr auf jeder Transaktion, die sogenannte Gas Fee. Dadruch können Denail of Service (DoS) Attacken, bei denen das Netzwerk mit unzähligen Transaktionen geflutet wird, effizient bekämpft werden. Der Angreifer kann die Attacke nicht aufrecht erhalten, da ihm die finanziellen Mittel ausgehen. 
@@ -34,9 +25,15 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
 ## Risiken
 
+
+
 |  Risiko | Auftreten  | Auswirkung  | Kategorie  |  Gegenmassnahme |
 |:------------------|-------|--------|-------|:--------------------------------------|
 | Teammitglied bricht Projekt ab  |  1 | 3  |  3 | Gute Kommunikation unter den Teammitgliedern   |
 | Unterschätzen des Projektumfanges  | 2  | 2  |  4 | Sorgfältige Planung und regelmässig Rücksprache mit den Betreuern  |
 | Ausfall von einem Teammitglied (mehr als 2 Wochen)  | 2  | 2  |  4 | Sofortiges Informieren von Betreuern. Planung überarbeiten und Ausfall berücksichtigen |
 
+Table: Risiken \label{tab_risiken}
+
+In der Tabelle \ref{tab_risiken} sind die wichtigsten Risken aufgelistet. In der Spalte Auftreten wird die gschätzte Wahrscheinlich eines Eintreffen des Risikos beschrieben. Die Spalte Auswirkung beschreibt die Schwere beim Eintreffen des Risikos. Bei beiden Spalten ist der Wert 1 das Minimum und der Wert 3 das Maximum. 
+Der Wert in der Spalte Kategorie wird aus der Multiplikation von Auftreten und Auswirkung gebildet. Ein Risiko kann also von 1 bis 9 gewertet werden. Je höher die Kategorie, umso gefährlicher ist ein Risiko. 

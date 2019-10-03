@@ -10,6 +10,10 @@
 | 20.03.2019  | Abgabe Bachelorthesis  |
 | 13. - 24.04.2019  | Verteidigung  |
 
+Table: Grober Zeitplan \label{tab_zeitplan}
 
 ![Zeitstrahl](images/timeline_v1.PNG "Zeitstrahl")
+
+In der Graphik 
+
 

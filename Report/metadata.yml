@@ -18,6 +18,8 @@ titlepage-rule-height: 1
 logo: "./images/fhnwlogotrans.png"
 
 toc-own-page: true
+lof: true
+lot: true
 
 addInfo: 
   \textbf{Studiengang:} \break
