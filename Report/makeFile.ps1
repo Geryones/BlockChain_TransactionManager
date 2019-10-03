@@ -25,4 +25,4 @@ pandoc $input -o out/Report.pdf `
     --highlight-style breezedark `
     --top-level-division=chapter `
     -f markdown-implicit_figures `
-    --filter pandoc-citeproc
+    --filter pandoc-citeproc 

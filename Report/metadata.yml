@@ -1,7 +1,9 @@
 ---
 title: "IP6: Blockchain Transactionmanager"
-subtitle: "Projektbericht"
-author: "Faustina Bruno & Jurij Maïkoff"
+subtitle: "Bachelorthesis"
+author:
+    - Faustina Bruno 
+    - Jurij Maïkoff
 date: "2019-10-01"
 subject: "Blockchain"
 lang: "de"
@@ -13,6 +15,9 @@ titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
+logo: "./images/fhnwlogoweiss.jpg"
+
 toc-own-page: true
+
 
 ...
