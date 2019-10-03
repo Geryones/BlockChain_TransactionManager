@@ -12,8 +12,8 @@
 
 Table: Grober Zeitplan \label{tab_zeitplan}
 
-![Zeitstrahl](images/timeline_v1.PNG "Zeitstrahl")
+![Zeitstrahl\label{img_timeline}](images/timeline_v1.PNG "Zeitstrahl") 
 
-In der Graphik 
+In der Grafik \ref{img_timeline} sind die bereits bekannten Meilensteine eingetragen. Im Laufe des Projekts wird die Grafik aktualisiert.
 
 
