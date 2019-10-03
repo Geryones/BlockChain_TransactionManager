@@ -324,7 +324,7 @@ $highlighting-macros$
 
 $endif$
 $if(tables)$
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs}\setlength{\LTleft}{2em}
 $if(beamer)$
 \usepackage{caption}
 % Make caption package work with longtable
