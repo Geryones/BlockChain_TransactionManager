@@ -24,5 +24,4 @@ pandoc $input -o out/Report.pdf `
     --csl=ieee.csl `
     --highlight-style breezedark `
     --top-level-division=chapter `
-    -f markdown-implicit_figures `
     --filter pandoc-citeproc 

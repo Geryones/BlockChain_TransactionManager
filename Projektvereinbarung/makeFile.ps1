@@ -6,7 +6,7 @@ $input = Get-Item src\*.md | Resolve-Path -Relative
 pandoc $input -o out/Projektvereinbarung.pdf `
     --metadata-file=metadata.yml `
     --from markdown `
-    --template eisvogel `
+    --template="./templates/eisvogel.latex" `
     --listings `
     --number-sections `
     -V lang=de `
@@ -18,4 +18,5 @@ pandoc $input -o out/Projektvereinbarung.pdf `
     --bibliography=biblio.bib  `
     --csl=ieee.csl `
     --highlight-style breezedark `
-    --top-level-division=chapter
+    --top-level-division=chapter `
+    --filter pandoc-citeproc 

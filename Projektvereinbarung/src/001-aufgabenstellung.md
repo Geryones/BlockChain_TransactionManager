@@ -35,7 +35,7 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 ## Risiken
 
 |  Risiko | Auftreten  | Auswirkung  | Kategorie  |  Gegenmassnahme |
-|:------------------|-------|-------|-------|:--------------------------------------|
+|:------------------|-------|--------|-------|:--------------------------------------|
 | Teammitglied bricht Projekt ab  |  1 | 3  |  3 | Gute Kommunikation unter den Teammitgliedern   |
 | Unterschätzen des Projektumfanges  | 2  | 2  |  4 | Sorgfältige Planung und regelmässig Rücksprache mit den Betreuern  |
 | Ausfall von einem Teammitglied (mehr als 2 Wochen)  | 2  | 2  |  4 | Sofortiges Informieren von Betreuern. Planung überarbeiten und Ausfall berücksichtigen |
