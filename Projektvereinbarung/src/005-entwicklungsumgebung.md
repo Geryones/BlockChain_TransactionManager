@@ -18,7 +18,7 @@ In den nachfolgenden Absätzen werden mögliche Tools besprochen, die für den A
 Geth[@geth] ist der meist verwendete Client für die Etherum Blockchain. Es wurde in der Sprache GO[@go] implementiert und ist Open Source[@opensource]. Geth ermöglicht dem Benutzer die Kontrolle über einen Ethereumknoten mittels einer Kommandozeile. 
 Einige der Kernaufgaben von Geth sind:
 
-- Mining[@mining] von Ehterumblöcke
+- Mining[@mining] von Ehtereumblöcke
 - Erstellen und verwalten von Benutzerkonten
 - Transaktionen zwischen Benutzerkonten
 - Erstellen von [Smart Contracts]
