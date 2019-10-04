@@ -1,5 +1,8 @@
 # Termine
 
+In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meilensteine aufgeführt. Diese Liste ist noch nicht abschliessend und kann in Absprache mit den Betreuern noch angepasst werden.
+
+
 | Datum  |Event   |   
 |:---|:---|
 | 24.09.2019  | Kickoff  |
@@ -12,8 +15,9 @@
 
 Table: Grober Zeitplan \label{tab_zeitplan}
 
+In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_zeitplan} dargestellt. 
+
 ![Zeitstrahl\label{img_timeline}](images/timeline_v1.PNG "Zeitstrahl") 
 
-In der Grafik \ref{img_timeline} sind die bereits bekannten Meilensteine eingetragen. Im Laufe des Projekts wird die Grafik aktualisiert.
 
 
