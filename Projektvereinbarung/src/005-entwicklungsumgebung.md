@@ -29,10 +29,6 @@ Da Geth ein Open Source und das am verbreitetste Programm für ein Interaktion m
 
 Ganache[@ganache] wird verwendet um eine Test-Blockchain aufzusetzen. So können [Smart Contracts] und verteilte Applikationen vor dem eigentlichen Deployment testen zu können. 
 
-### Atom
-
-
-
 ## Wallet
 
 Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, ob vorhandene Wallets, wie zum Beispiel uPort[@uport], unseren Ansprüchen genügen oder ob diese im Rahmen von diesem Projekt entwickelt werden müssen. 
