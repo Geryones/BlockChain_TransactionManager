@@ -20,7 +20,7 @@ Table: Grober Zeitplan \label{tab_zeitplan}
 
 In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_zeitplan} dargestellt. 
 
-![Zeitstrahl\label{img_timeline}](images/timeline_v1.PNG "Zeitstrahl") 
+![Zeitstrahl\label{img_timeline}](images/timeline_v1_1.PNG "Zeitstrahl") 
 
 
 
