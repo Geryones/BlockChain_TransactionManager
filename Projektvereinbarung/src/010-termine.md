@@ -6,10 +6,13 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 | Datum  |Event   |   
 |:---|:---|
 | 24.09.2019  | Kickoff  |
-| NOV         | Erster Konzept Entwurf und Testnetzwerk  |
+| 08.10.2019  | Entwurf Projektvereinbarung |
+| 15.10.2019  | Projektvereinbarung abgeschlossen|
+| 05.11.2019  | Erster Konzept Entwurf |
+| 12.11.2019  | Testumgebung| 
 | 28.11.2019  | Zwischenpräsentation  |
-| DEZ         | erste Konzept Version  |
-| FEB         | Testen von MVP|
+| 17.12.2019  | erste Konzept Version  |
+| 04.02.2019  | Testen von MVP|
 | 20.03.2019  | Abgabe Bachelorthesis  |
 | 13. - 24.04.2019  | Verteidigung  |
 

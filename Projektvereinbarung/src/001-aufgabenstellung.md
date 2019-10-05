@@ -6,8 +6,6 @@ Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizien
 
 Die Projektaufgabe besteht darin, eine Lösung zu finden, bei der die Sicherheit der Blockchain auch ohne eine Transaktionsgebühr gewährleistet werden kann. 
 
-## Ziele
-
 Das Ziel der Arbeit ist es zuerst eine Konzeptionelle Erarbeitung eines Testnetzwerkes welches:
 
 - nicht permanent ist (Reboot möglich)
