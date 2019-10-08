@@ -17,7 +17,7 @@ In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügt o
 
 #### Ganache und Truffle
 
-Ganache[@ganache] wird verwendet, um eine Test-Blockchain aufzusetzen. So können [Smart Contracts] und verteilte Applikationen vor dem eigentlichen Deployment testen zu können. 
+Ganache[@ganache] wird verwendet, um eine simulierte Blockchain aufzusetzen. Anhand dieser Simulation kann ins Thema eingearbeitet werden.
 
 ## Wallet
 
