@@ -22,7 +22,7 @@ Einige der Kernaufgaben von Geth sind:
 
 Da Geth ein Open Source und das am verbreitetste Programm für eine Interaktion mit Ethereum ist, ist es ein idealer Kandidat für dieses Projekt. 
 
-#### Ganache und Truffle
+### Ganache und Truffle
 
 Ganache[@ganache] wird verwendet, um eine Test-Blockchain aufzusetzen. So können [Smart Contracts] und verteilte Applikationen vor dem eigentlichen Deployment testen zu können. 
 
@@ -32,7 +32,4 @@ Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werd
 
 ## Smart Contracts
 
-### Sprache
-
 Für die Entwicklung von Smart Contracts wird die Sprache Solidity[@solidity] verwendet. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen.
-
