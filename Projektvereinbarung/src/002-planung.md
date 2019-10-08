@@ -1,4 +1,6 @@
-# Termine
+# Planung
+
+In diesem Kapitel wird beschrieben wie die Planung 
 
 In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meilensteine aufgeführt. Diese Liste ist noch nicht abschliessend und kann in Absprache mit den Betreuern noch angepasst werden.
 

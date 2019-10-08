@@ -10,7 +10,6 @@ Das Ziel der Arbeit ist es zuerst eine konzeptionelle Erarbeitung eines Testnetz
 
 - nicht permanent ist (Reboot möglich)
 - kostenlose Transaktionen ermöglicht 
-- Anonymität gewährleistet
 - Sicherheit gewährleistet
 
 In einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes. 
