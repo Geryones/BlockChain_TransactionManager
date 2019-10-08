@@ -32,4 +32,6 @@ Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werd
 
 ## Smart Contracts
 
+Ein Smart Contract ist ein Stück Code auf der Blockchain. Es ist ein Vertrag zwischen zwei oder mehr Parteien. Die Vertragsbedingungen sind im Code definiert. Sobald diese  erfüllt sind, wird der Vertrag automatisch ausgeführt. Es werden keine zentralen Authoritäten mehr benötigt[@smartContractDef]. 
+
 Für die Entwicklung von Smart Contracts wird die Sprache Solidity[@solidity] verwendet. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen.
