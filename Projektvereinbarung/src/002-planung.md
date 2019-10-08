@@ -3,6 +3,11 @@
 In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören Meilensteine und die Benennung der wichtigsten Teilaufgaben. 
 
 ## Meilensteine
+Alles  ausser
+- Entwurf Projektvereinbarung
+- Inhaltsverzeichnis
+- Definieren Zwischenpräsentation
+- Feedback in Bericht
 
 ## Termine
 
@@ -31,7 +36,7 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 | 18.02.2020 | zweite Bericht Version |
 | 25.02.2020 | Analyse von Algorithmen für automatische Gruppenverwaltung|
 | 03.03.2020 | Implementierung Algorithmen in Smart Contracts| 
-| 20.03.2020 | Testen und Überarbeiten von Netzwerk |
+| 19.03.2020 | Testen und Überarbeiten von Netzwerk |
 | 20.03.2020 | Abgabe Bachelorthesis  |
 | 13. - 24.04.2020 | Verteidigung  |
 
