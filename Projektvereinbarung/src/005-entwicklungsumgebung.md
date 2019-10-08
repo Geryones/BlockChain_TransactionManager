@@ -12,7 +12,7 @@ In den nachfolgenden Absätzen werden mögliche Tools besprochen, die für den A
 
 ### Client
 
-In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügzt oder ein anderer Client (z.B. Parity, Aleth, Ethereum J, etc.) zum Einsatz kommt.
+In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügt oder ein anderer Client (z.B. Parity, Aleth, Ethereum J, etc.) zum Einsatz kommt.
 
 
 #### Ganache und Truffle
@@ -21,7 +21,14 @@ Ganache[@ganache] wird verwendet, um eine Test-Blockchain aufzusetzen. So könne
 
 ## Wallet
 
-Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, ob vorhandene Wallets, wie zum Beispiel uPort[@uport], unseren Ansprüchen genügen oder ob diese im Rahmen von diesem Projekt entwickelt werden müssen. 
+Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, welche Wallets den Ansprüchen genügen, diese so weiterentwickeln zu können, dass die Aufgabenskriterien erfüllt werden können. 
+Zu den möglichen Wallets gehören z.B.:
+- uPort[@uport]
+- Nano X [@nanoX]
+- Nano S [@nanoS]
+- Trezor ["trezor]
+- Atomic Wallet [@atomicWallet]
+- unt weitere
 
 ## Smart Contracts
  //TODO
@@ -32,8 +39,8 @@ Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt w
 
 Für die Entwicklung von Smart Contracts werden folgende Sprachen evaluiert: 
 - Solidity[@solidity]
-- Vyper
-- LLL
-- Bamboo
-- eWASM
+- Vyper[@vyper]
+- LLL[@lll]
+- Bamboo[@bamboo]
+- eWASM[@ewasm]
 
