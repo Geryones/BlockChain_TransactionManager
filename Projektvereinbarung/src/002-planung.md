@@ -4,6 +4,8 @@ In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören 
 
 ## Meilensteine
 
+## Termine
+
 In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meilensteine aufgeführt. Diese Liste ist noch nicht abschliessend und kann in Absprache mit den Betreuern noch angepasst werden.
 
 
@@ -26,8 +28,6 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 | 13. - 24.04.2019  | Verteidigung  |
 
 Table: Grober Zeitplan \label{tab_zeitplan}
-
-## Teilaufgaben
 
 
 In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_zeitplan} dargestellt. 
