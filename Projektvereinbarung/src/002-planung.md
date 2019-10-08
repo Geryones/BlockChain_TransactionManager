@@ -10,11 +10,16 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 | 24.09.2019  | Kickoff  |
 | 08.10.2019  | Entwurf Projektvereinbarung |
 | 15.10.2019  | Projektvereinbarung abgeschlossen|
-| 05.11.2019  | Erster Konzept Entwurf |
+| | Aufbau Bericht  |
+| | Analyse Phase 7 |
+| 05.11.2019  | Erster Bericht Entwurf |
+| | Wallet analysieren |
+| | Gratis Transaktionen |
 | 12.11.2019  | Testumgebung| 
 | 28.11.2019  | Zwischenpräsentation  |
-| 17.12.2019  | erste Konzept Version  |
+| 17.12.2019  | erste Bericht Version  |
 | 04.02.2019  | Testen von MVP|
+| | zweite Bericht Version |
 | 20.03.2019  | Abgabe Bachelorthesis  |
 | 13. - 24.04.2019  | Verteidigung  |
 
