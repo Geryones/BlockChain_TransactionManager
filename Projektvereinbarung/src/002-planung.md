@@ -12,7 +12,7 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 ## Aufgaben
 
 | Datum  |Event   |   
-|:---|:---|
+|---:|:---|
 | 24.09.2019 | Kickoff  |
 | 08.10.2019 | Entwurf Projektvereinbarung |
 | 08.10.2019 | Testumgebung|
