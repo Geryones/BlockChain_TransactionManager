@@ -26,13 +26,14 @@ In der untenstehenden Tabelle \ref{tab_zeitplan} sind die bereits bekannten Meil
 | 28.11.2019 | Zwischenpräsentation  |
 | 03.12.2019 | Feedback des Berichtes einbauen |
 | 10.12.2019 | Analyse Smart Contracts  | 
-| 14.01.2019 | Erweiterung der Wallet |
-| .02.2019 | Steuerung für gratis Transaktionen über Gruppen  | 
-|           |Analyse von Algorithmen für automatische Gruppenverwaltung|
-| .02.2019 | Implementierung Algorithmen in Smart Contracts| 
-| .02.2019 | zweite Bericht Version |
-| 20.03.2019  | Abgabe Bachelorthesis  |
-| 13. - 24.04.2019  | Verteidigung  |
+| 14.01.2020 | Erweiterung der Wallet |
+| 11.02.2020 | Steuerung für gratis Transaktionen über Gruppen  | 
+| 18.02.2020 | zweite Bericht Version |
+| 25.02.2020 |Analyse von Algorithmen für automatische Gruppenverwaltung|
+| 03.03.2020 | Implementierung Algorithmen in Smart Contracts| 
+| 20.03.2020 |  Testen und Überarbeiten von Netzwerk |
+| 20.03.2020  | Abgabe Bachelorthesis  |
+| 13. - 24.04.2020  | Verteidigung  |
 
 Table: Grober Zeitplan \label{tab_zeitplan}
 
