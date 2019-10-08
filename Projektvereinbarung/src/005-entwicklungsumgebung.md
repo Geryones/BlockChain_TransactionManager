@@ -12,15 +12,8 @@ In den nachfolgenden Absätzen werden mögliche Tools besprochen, die für den A
 
 ### Client
 
-Geth[@geth] ist der meist verwendete Client für die Etherum Blockchain. Es wurde in der Sprache GO[@go] implementiert und ist Open Source[@opensource]. Geth ermöglicht dem Benutzer die Kontrolle über einen Ethereumknoten mittels einer Kommandozeile. 
-Einige der Kernaufgaben von Geth sind:
+In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügzt oder ein anderer Client (z.B. Parity, Aleth, Ethereum J, etc.) zum Einsatz kommt.
 
-- Mining[@mining] von Ehtereumblöcke
-- Erstellen und verwalten von Benutzerkonten
-- Transaktionen zwischen Benutzerkonten
-- Erstellen von [Smart Contracts]
-
-Da Geth ein Open Source und das am verbreitetste Programm für eine Interaktion mit Ethereum ist, ist es ein idealer Kandidat für dieses Projekt. 
 
 #### Ganache und Truffle
 
@@ -31,10 +24,11 @@ Ganache[@ganache] wird verwendet, um eine Test-Blockchain aufzusetzen. So könne
 Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, ob vorhandene Wallets, wie zum Beispiel uPort[@uport], unseren Ansprüchen genügen oder ob diese im Rahmen von diesem Projekt entwickelt werden müssen. 
 
 ## Smart Contracts
-Für die Entwicklung von Smart Contracts wird die Sprache Solidity[@solidity] verwendet. Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen.
+ //TODO
+Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen.
 
 
-### Sprache
+### Programmiersprache
 
 Für die Entwicklung von Smart Contracts werden folgende Sprachen evaluiert: 
 - Solidity[@solidity]
