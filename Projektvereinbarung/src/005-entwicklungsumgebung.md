@@ -21,7 +21,7 @@ Ganache[@ganache] wird verwendet, um eine simulierte Blockchain aufzusetzen. Anh
 
 ## Wallet
 
-Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, welche Wallets den Ansprüchen genügen, diese so weiterentwickeln zu können, dass die Aufgabenskriterien erfüllt werden können. 
+Für die Verwaltung von Identitäten und Transaktionen auf einer Blockchain werden sogenannte Wallets verwendet. Diese Verwaltung ist auch auf einer Lernumgebung nötig, daher muss geprüft werden, welche Wallets den Ansprüchen genügen, diese so weiterentwickeln zu können, dass die Aufgabenskriterien erfüllt werden können (z.B. die gratis Transaktionen). 
 Zu den möglichen Wallets gehören z.B.:
 - uPort[@uport]
 - Nano X [@nanoX]
