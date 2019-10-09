@@ -32,8 +32,6 @@ In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_meilensteine} dargest
 
 ![Zeitstrahl\label{img_timeline}](images/timeline_v1_2.PNG "Zeitstrahl") 
  
-H
-
 ## Bericht
 
 Wir haben uns dazu entschlossen, den Bericht während des Projekts zu schreiben und nicht nach der praktischen Arbeit. Dadurch können Erkennktnisse und Entscheidungen zeitnahe dokumentiert werden. 
