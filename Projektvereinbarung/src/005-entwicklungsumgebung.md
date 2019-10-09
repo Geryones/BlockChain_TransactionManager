@@ -21,14 +21,15 @@ Trufflesuite[@trufflesuite] wird verwendet, um eine simulierte Blockchain aufzus
 
 ## Wallet
 
-Es werden verschiedene Wallets auf ihre Funktionalität untersucht. Es wird davon ausgegangen, dass keine Wallet alle Bedürfnisse abdecken kann, daher wird die gewählte Wallet im Zuge dieses Projekts erweitert. 
+Es werden verschiedene Wallets auf ihre Funktionalität untersucht. Es werden nur 
 Zu den möglichen Wallets gehören z.B.:
 
 - uPort[@uport]
-- Nano X [@nanoX]
-- Nano S [@nanoS]
-- Trezor [@trezor]
+- Metamask[@metamask]
 - Atomic Wallet [@atomicWallet]
+- Exodus[@exodus]
+
+Es wird davon ausgegangen, dass keine Wallet alle Bedürfnisse abdecken kann, daher wird die gewählte Wallet im Zuge dieses Projekts erweitert. Für Ethereum existiert ein offizieller Service um eine eigene Wallet zu ertellen: MyEtherWallet[@myEtherWallet]
 
 ## Smart Contracts
 
