@@ -4,7 +4,7 @@ In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören 
 
 ## Meilensteine
 
-In der Tabelle \ref{tab_meilenteine} sind die Meilensteine für dieses Projekt aufgeführt. 
+In der Tabelle \ref{tab_meilensteine} sind die Meilensteine für dieses Projekt aufgeführt. 
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|

@@ -23,6 +23,7 @@ Trufflesuite[@trufflesuite] wird verwendet, um eine simulierte Blockchain aufzus
 
 Es werden verschiedene Wallets auf ihre Funktionalität untersucht. Es wird davon ausgegangen, dass keine Wallet alle Bedürfnisse abdecken kann, daher wird die gewählte Wallet im Zuge dieses Projekts erweitert. 
 Zu den möglichen Wallets gehören z.B.:
+
 - uPort[@uport]
 - Nano X [@nanoX]
 - Nano S [@nanoS]
