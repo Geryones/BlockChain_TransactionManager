@@ -39,10 +39,9 @@ Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt w
 
 ### Programmiersprache
 
-Für die Entwicklung von Smart Contracts werden folgende Sprachen evaluiert: 
+Für die Entwicklung von Smart Contracts werden folgende zwei Sprachen evaluiert: 
+
 - Solidity[@solidity]
 - Vyper[@vyper]
-- LLL[@lll]
-- Bamboo[@bamboo]
-- eWASM[@ewasm]
+
 
