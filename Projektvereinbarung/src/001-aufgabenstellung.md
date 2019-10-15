@@ -18,7 +18,10 @@ Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
 - wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden.
 - Gibt es eine Wallet die unsere gewünschten Anfroderungen unterstützt und nur erweitert werden muss, oder müssen wir selber eine SmartWallet programmieren.
-- Wie kann man Attacken vermeiden (zB algorithmisch: nur eine beschränkte Anzahl Transaktionen pro Monat pro Benutzer möglich)
+- Wie kann man algorithmisch Attacken vermeiden
+-- Anomaly detection
+-- Beschränkung von Transaktionen pro Benutzer und Zeitintervall
+-- etc
 
 
  
