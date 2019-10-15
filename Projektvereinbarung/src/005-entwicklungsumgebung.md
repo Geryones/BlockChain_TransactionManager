@@ -21,7 +21,7 @@ Trufflesuite[@trufflesuite] wird verwendet, um eine simulierte Blockchain aufzus
 
 ## Wallet
 
-Es werden verschiedene Wallets auf ihre Funktionalität untersucht. Es werden nur 
+Es werden verschiedene Wallets auf ihre Funktionalität untersucht.
 Zu den möglichen Wallets gehören z.B.:
 
 - uPort[@uport]

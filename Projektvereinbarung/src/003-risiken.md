@@ -1,6 +1,6 @@
 # Risiken
 
-In der Tabelle \ref{tab_risiken} sind die wichtigsten Risken aufgelistet. In der Spalte Auftreten wird die gschätzte Wahrscheinlichkeit eines Eintreffen des Risikos beschrieben. Die Spalte Auswirkung beschreibt die Schwere beim Eintreffen des Risikos. Bei beiden Spalten ist der Wert 1 das Minimum und der Wert 3 das Maximum. 
+In der Tabelle \ref{tab_risiken} sind die wichtigsten Risken aufgelistet. In der Spalte Auftreten wird die geschätzte Wahrscheinlichkeit eines Eintreffens des Risikos beschrieben. Die Spalte Auswirkung beschreibt die Schwere beim Eintreffen des Risikos. Bei beiden Spalten ist der Wert 1 das Minimum und der Wert 3 das Maximum. 
 Der Wert in der Spalte Kategorie wird aus der Multiplikation von Auftreten und Auswirkung gebildet. Ein Risiko kann also von 1 bis 9 gewertet werden. Je höher die Kategorie, umso gefährlicher ist ein Risiko.
 
 |  Risiko | Auftreten  | Auswirkung  | Kategorie  |  Gegenmassnahme |

@@ -30,7 +30,7 @@ Table: Meilensteine \label{tab_meilensteine}
 
 In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_meilensteine} dargestellt. Für Januar 2020 sind bewusst keine Meilensteine definiert, da dort die Modulschlussprüfungen geschrieben werden müssen. 
 
-![Zeitstrahl\label{img_timeline}](images/timeline_v1_3.PNG "Zeitstrahl") 
+![Zeitstrahl\label{img_timeline}](images/timeline_v1_4.PNG "Zeitstrahl") 
  
 ## Bericht
 
