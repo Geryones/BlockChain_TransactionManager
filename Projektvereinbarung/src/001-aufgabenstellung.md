@@ -16,8 +16,8 @@ In einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes.
 
 Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
-- wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden
-- Unterstützt uPort[@uport] unsere gewünschten Anfroderungen einer SmartWallet oder müssen wir selber eine SmartWallet programmieren
+- wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden.
+- Gibt es eine Wallet die unsere gewünschten Anfroderungen unterstützt und nur erweitert werden muss, oder müssen wir selber eine SmartWallet programmieren.
 - Wie kann man Attacken vermeiden (zB algorithmisch: nur eine beschränkte Anzahl Transaktionen pro Monat pro Benutzer möglich)
 
 
