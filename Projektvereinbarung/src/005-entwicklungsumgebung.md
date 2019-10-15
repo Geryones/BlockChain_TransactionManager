@@ -12,7 +12,7 @@ In den nachfolgenden Absätzen werden mögliche Tools besprochen, die für den A
 
 ### Client
 
-In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügt oder ob ein anderer Client (z.B. Parity, Aleth, Ethereum J, etc.) zum Einsatz kommt.
+In der Arbeit wird evaluiert ob Geth[@geth] als Client den Ansprüchen genügt oder ob ein anderer Client (z.B. Parity[@parity], Aleth[@aleth], etc.) zum Einsatz kommt.
 
 
 #### Trufflesuite

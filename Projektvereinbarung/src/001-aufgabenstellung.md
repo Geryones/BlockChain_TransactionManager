@@ -8,15 +8,15 @@ Die Projektaufgabe besteht darin, eine Lösung zu finden, bei der die Sicherheit
 
 Das Ziel der Arbeit ist es zuerst eine konzeptionelle Erarbeitung eines Testnetzwerkes welches:
 
-- nicht permanent ist (Reboot möglich)
-- kostenlose Transaktionen ermöglicht 
+- Nicht permanent ist (Reboot möglich)
+- Kostenlose Transaktionen ermöglicht 
 - Sicherheit gewährleistet
 
 In einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes. 
 
 Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
 
-- wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden.
+- Wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden.
 - Gibt es eine Wallet die unsere gewünschten Anfroderungen unterstützt und nur erweitert werden muss, oder müssen wir selber eine SmartWallet programmieren.
 - Wie kann man algorithmisch Attacken vermeiden
   - Anomaly detection
