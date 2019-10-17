@@ -1,16 +1,27 @@
 # Planung
 
-In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören Meilensteine und die Benennung der wichtigsten Teilaufgaben. 
+In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören Meilensteine und die Benennung der wichtigsten Arbeitspakete. 
 
 ## Meilensteine
 
-In der Tabelle \ref{tab_meilensteine} sind die Meilensteine für dieses Projekt aufgeführt. 
+Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meilensteine} aufgelistet. 
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
+|11.02.2019|MS 1. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
+|03.03.2019|MS 2. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
+
+Table: Meilensteine \label{tab_meilensteine}
+
+## Arbeitspakete \label{sec_arbeitspakete}
+
+In der Tabelle \ref{tab_arbeitspakete} sind die Arbeitspakete für dieses Projekt aufgeführt. 
+
+| Erledigt bis  | Arbeitspaket   |   Beschreibung |
+|---:|:---|:------|
 | 24.09.2019 | Kickoff                                                      |Besprechung der Rahmenbedingungen|
 | 08.10.2019 | Testumgebung                                                 |Zur Einarbeitung in die Materie, testen und analysieren von Code|
-| 15.10.2019 | Projektvereinbarung abgeschlossen                            |Vereinbarung über Rahmenbedingungen, Planung und Ziele des Projekts|
+| 20.10.2019 | Projektvereinbarung abgeschlossen                            |Vereinbarung über Rahmenbedingungen, Planung und Ziele des Projekts|
 | 22.10.2019 | Analyse Phase                                                |Einarbeitung in das Thema Blockchain und Analyse von möglichen Tools|
 | 05.11.2019 | Gratis Transaktionen in der Blockchain                       |Eine Blockchain in der jeder gratis Transaktionen ausführen kann|
 | 05.11.2019 | Wallets analysieren                                          |Einarbeitung in das Thema und Analyse von möglichen Tools|
@@ -26,13 +37,13 @@ In der Tabelle \ref{tab_meilensteine} sind die Meilensteine für dieses Projekt 
 | 20.03.2020 | Abgabe Bachelorthesis                                        |Übergabe von Thesis an Betreuer |
 | 13. - 24.04.2020 | Verteidigung                                           |Verteidigung der Thesis vor Betreuer und Experten|
 
-Table: Meilensteine \label{tab_meilensteine}
+Table: Arbeitspakete \label{tab_arbeitspakete}
 
-In der Grafik \ref{img_timeline} wird die Tabelle \ref{tab_meilensteine} dargestellt. Für Januar 2020 ist bewusst nur ein Meilenstein definiert, da dort die Modulschlussprüfungen geschrieben werden müssen. 
+In der Grafik \ref{img_timeline} sind die Arbeitspakete \ref{sec_arbeitspakete} und Meilensteine dargestellt. Für Januar 2020 ist bewusst nur ein Arbeitspaket definiert, da dort die Modulschlussprüfungen geschrieben werden müssen. 
 
-![Zeitstrahl\label{img_timeline}](images/timeline_v1_4.PNG "Zeitstrahl") 
+![Zeitstrahl \label{img_timeline}](images/timeline_v1_5.PNG "Zeitstrahl") 
 
-Im Vorraus werden nur Meilensteine bestimmt, kleinere Aufgaben werden agil definiert und wenn nötig iterativ bearbeitet. Für diese Vorgehensweise haben wir uns entschieden, da der Wissensstand noch nicht ausreichend ist, um alle Teilaufgaben im Vorraus bestimmen zu können. 
+Im Vorraus werden nebst den Meilensteinen nur die wichtigsten Arbeitspakte bestimmt, kleinere Aufgaben werden agil definiert und wenn nötig iterativ bearbeitet. Für diese Vorgehensweise haben wir uns entschieden, da der Wissensstand noch nicht ausreichend ist, um alle Teilaufgaben im Vorraus bestimmen zu können. 
  
 ## Bericht
 
