@@ -4,24 +4,23 @@ Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken abz
 
 Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizient und elegant ist, eignet er sich nicht für eine Lernumgebung. Hier sollen Anwender die Möglichkeit haben, Transaktionen ohne anfallende Gebühren ausführen zu können. Dadurch wird jedoch die Blockchain anfällig für DoS Attacken. 
 
-Die Projektaufgabe besteht darin, eine Lösung zu finden, bei der die Sicherheit der Blockchain auch ohne eine Transaktionsgebühr gewährleistet werden kann. 
+Die Projektaufgabe besteht darin, den Benutzern gratis Transaktionen zur Verfügung zu stellen. Um die Blockchain zu schützen, können bei Anzeichen von einer DOS Attacke, Schutzmechanismen eingeleitet werden. Damit im Falle einer Attacke nicht alle Benutzer der Blockchain betroffen sind, wird mit Benutzergruppen gearbeitet. Sobald der oder die Angreifer identifiziert ist, wird er einer Gruppe mit weniger Privilegien zugeteilt. 
 
-Das Ziel der Arbeit ist es zuerst eine konzeptionelle Erarbeitung eines Testnetzwerkes welches:
+Das Ziel der Arbeit ist die Realisierung einer Blockchain welche: 
 
-- Nicht permanent ist (Reboot möglich)
 - Kostenlose Transaktionen ermöglicht 
-- Sicherheit gewährleistet
+- Schutz vor DOS Attacken gewährleistet
 
-In einem zweiten Schritt die Umsetzung/Realisierung dieses Netzwerkes. 
+Um diese Ziele zu erreichen sind folgende Fragestellungen von Bedeutung:
 
-Um diese Ziele zu erriechen sind folgende Fragestellungen von Bedeutung:
-
-- Wie kann die Gebühr für Transaktionen auf null gesetzt und die Sicherheit der Blockchain trotzdem gewährleistet werden.
-- Gibt es eine Wallet die unsere gewünschten Anfroderungen unterstützt und nur erweitert werden muss, oder müssen wir selber eine SmartWallet programmieren.
-- Wie kann man algorithmisch Attacken vermeiden
-  - Anomaly detection
+- Wie können DOS Attacken erkennt werden
+  - Anomaly Detection
+  - Anzahl Transaktionen pro Benutzer auswerten
+- Wie identifizieren wir verantwortliche Benutzer bei einer DOS Attacke
+- Welche Schutzmechanismen stehen uns zur Verfügung
+  - Transaktionskosten für verdächtige Benutzer
+  - Beschränkung der Transaktionen pro Zeitintervall
   - Beschränkung von Transaktionen pro Benutzer und Zeitintervall
-  - etc
 
 
  
