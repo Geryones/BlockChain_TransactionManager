@@ -8,10 +8,10 @@ Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meile
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
-|24.9.2019|MS 1. Kickoff|Der Projektrahmen wurde mit den Betreuern besprochen|
-|28.11.2019|MS 2. Zwischenpräsentation|Dem Experten und den Betreuern wird der Zwischenstand präsentiert|
-|11.02.2019|MS 3. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
-|03.03.2019|MS 4. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
+|24.9.2019|MS 1. Kickoff| Der Projektrahmen wurde mit den Betreuern besprochen|
+|11.02.2019|MS 2. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
+|03.03.2019|MS 3. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
+|20.03.2019| MS 4. Abgabe der Bachelorthesis| Die Bachelorthesis und der entwickelte Code wird den Betreuern übergeben.|
 
 Table: Meilensteine \label{tab_meilensteine}
 
@@ -43,9 +43,9 @@ Table: Arbeitspakete \label{tab_arbeitspakete}
 
 In der Grafik \ref{img_timeline} sind die Arbeitspakete \ref{sec_arbeitspakete} und Meilensteine dargestellt. Für Januar 2020 ist bewusst nur ein Arbeitspaket definiert, da dort die Modulschlussprüfungen geschrieben werden müssen. 
 
-![Zeitstrahl \label{img_timeline}](images/timeline_v1_5.PNG "Zeitstrahl") 
+![Zeitstrahl \label{img_timeline}](images/timeline_v2.PNG "Zeitstrahl") 
 
-Im Vorraus werden nebst den Meilensteinen nur die wichtigsten Arbeitspakte bestimmt, kleinere Aufgaben werden agil definiert und wenn nötig iterativ bearbeitet. Für diese Vorgehensweise haben wir uns entschieden, da der Wissensstand noch nicht ausreichend ist, um alle Teilaufgaben im Vorraus bestimmen zu können. 
+Im Voraus werden nebst den Meilensteinen nur die wichtigsten Arbeitspakte bestimmt, kleinere Aufgaben werden agil definiert und wenn nötig iterativ bearbeitet. Für diese Vorgehensweise haben wir uns entschieden, da der Wissensstand noch nicht ausreichend ist, um alle Teilaufgaben im Voraus bestimmen zu können. 
  
 ## Bericht
 
