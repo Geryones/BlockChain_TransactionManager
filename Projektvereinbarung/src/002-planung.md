@@ -8,8 +8,10 @@ Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meile
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
-|11.02.2019|MS 1. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
-|03.03.2019|MS 2. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
+|24.9.2019|MS 1. Kickoff|Der Projektrahmen wurde mit den Betreuern besprochen|
+|28.11.2019|MS 2. Zwischenpräsentation|Dem Experten und den Betreuern wird der Zwischenstand präsentiert|
+|11.02.2019|MS 3. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
+|03.03.2019|MS 4. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
 
 Table: Meilensteine \label{tab_meilensteine}
 
