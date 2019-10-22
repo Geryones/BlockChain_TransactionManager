@@ -33,7 +33,7 @@ In der Tabelle \ref{tab_arbeitspakete} sind die Arbeitspakete für dieses Projek
 | 14.01.2020 | Steuerung für gratis Transaktionen über Gruppen              |Einschränkung von gratis Transaktionen auf Gruppen|
 | 11.02.2020 | Erweiterung der Wallet                                       |Gewählte Wallet für unsere Bedürfnisse erweitern|
 | 18.02.2020 | zweite Berichts Version                                      |Bericht geht nochmals an die Betreuer für ein finales Feedback vor der Einreichung der Thesis|
-| 18.02.2020 | Analyse von Algorithmen für Gruppenverwaltung                |Analyse von Algorithmen, um schadhaftes Verhalten in der Blockchain zu identifizieren / unterbinden|
+| 25.02.2020 | Analyse von Algorithmen für Gruppenverwaltung                |Analyse von Algorithmen, um schadhaftes Verhalten in der Blockchain zu identifizieren / unterbinden|
 | 03.03.2020 | Implementierung Algorithmen in Smart Contracts               |Gewählter Algorithmus mit einem Smart Contract implementieren|
 | 19.03.2020 | Testen und Überarbeiten von Blockchain                       |Testen und analysieren der implementieren Lösung, allfällige Korrekturen vornehmen|
 | 20.03.2020 | Abgabe Bachelorthesis                                        |Übergabe von Thesis an Betreuer |
@@ -43,7 +43,7 @@ Table: Arbeitspakete \label{tab_arbeitspakete}
 
 In der Grafik \ref{img_timeline} sind die Arbeitspakete \ref{sec_arbeitspakete} und Meilensteine dargestellt. Für Januar 2020 ist bewusst nur ein Arbeitspaket definiert, da dort die Modulschlussprüfungen geschrieben werden müssen. 
 
-![Zeitstrahl \label{img_timeline}](images/timeline_v2.PNG "Zeitstrahl") 
+![Zeitstrahl \label{img_timeline}](images/timeline_v2_1.PNG "Zeitstrahl") 
 
 Im Voraus werden nebst den Meilensteinen nur die wichtigsten Arbeitspakte bestimmt, kleinere Aufgaben werden agil definiert und wenn nötig iterativ bearbeitet. Für diese Vorgehensweise haben wir uns entschieden, da der Wissensstand noch nicht ausreichend ist, um alle Teilaufgaben im Voraus bestimmen zu können. 
  
