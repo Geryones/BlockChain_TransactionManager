@@ -8,7 +8,7 @@ Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meile
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
-|24.9.2019|MS 1. Kickoff| Der Projektrahmen wurde mit den Betreuern besprochen|
+|24.9.2019|MS 1. | |
 |11.02.2019|MS 2. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
 |03.03.2019|MS 3. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
 |20.03.2019| MS 4. Abgabe der Bachelorthesis| Die Bachelorthesis und der entwickelte Code wird den Betreuern übergeben.|
@@ -27,7 +27,7 @@ In der Tabelle \ref{tab_arbeitspakete} sind die Arbeitspakete für dieses Projek
 | 22.10.2019 | Analyse Phase                                                |Einarbeitung in das Thema Blockchain und Analyse von möglichen Tools|
 | 05.11.2019 | Gratis Transaktionen in der Blockchain                       |Eine Blockchain in der jeder gratis Transaktionen ausführen kann|
 | 05.11.2019 | Wallets analysieren                                          |Einarbeitung in das Thema und Analyse von möglichen Tools|
-| 19.11.2019 | Erster Berichts Entwurf für Feedback                         |Eine frühe Version des Berichtes für die Betreuer, damit sich die Studierenden nach den Bedürfnissen der Betreuer richten können|
+| 19.11.2019 | Erster Berichts Entwurf für Feedback                         |Eine frühe Version des Berichtes für die Betreuer, damit die Studierenden früh ein Feedback zur Struktur erhalten|
 | 28.11.2019 | Zwischenpräsentation                                         |Präsentation des aktuellen Standes für Experte und Betreuer|
 | 10.12.2019 | Analyse Smart Contracts                                      |Einarbeitung in das Thema und Analyse von möglichen Tools|
 | 14.01.2020 | Erweiterung der Wallet                                       |Gewählte Wallet für unsere Bedürfnisse erweitern|
