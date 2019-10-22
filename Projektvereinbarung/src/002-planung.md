@@ -8,8 +8,8 @@ Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meile
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
-|24.9.2019|MS 1. | |
-|11.02.2019|MS 2. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
+|14.01.2019|MS 1. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
+|11.2.2019|MS 2.  ||
 |03.03.2019|MS 3. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
 |20.03.2019| MS 4. Abgabe der Bachelorthesis| Die Bachelorthesis und der entwickelte Code wird den Betreuern übergeben.|
 
@@ -27,13 +27,13 @@ In der Tabelle \ref{tab_arbeitspakete} sind die Arbeitspakete für dieses Projek
 | 22.10.2019 | Analyse Phase                                                |Einarbeitung in das Thema Blockchain und Analyse von möglichen Tools|
 | 05.11.2019 | Gratis Transaktionen in der Blockchain                       |Eine Blockchain in der jeder gratis Transaktionen ausführen kann|
 | 05.11.2019 | Wallets analysieren                                          |Einarbeitung in das Thema und Analyse von möglichen Tools|
-| 19.11.2019 | Erster Berichts Entwurf für Feedback                         |Eine frühe Version des Berichtes für die Betreuer, damit die Studierenden früh ein Feedback zur Struktur erhalten|
+| 19.11.2019 | Erster Berichts Entwurf für Feedback                         |Eine frühe Version des Berichtes für die Betreuer, damit die Studierenden ein Feedback zur Struktur erhalten|
 | 28.11.2019 | Zwischenpräsentation                                         |Präsentation des aktuellen Standes für Experte und Betreuer|
 | 10.12.2019 | Analyse Smart Contracts                                      |Einarbeitung in das Thema und Analyse von möglichen Tools|
-| 14.01.2020 | Erweiterung der Wallet                                       |Gewählte Wallet für unsere Bedürfnisse erweitern|
-| 11.02.2020 | Steuerung für gratis Transaktionen über Gruppen              |Einschränkung von gratis Transaktionen auf Gruppen|
+| 14.01.2020 | Steuerung für gratis Transaktionen über Gruppen              |Einschränkung von gratis Transaktionen auf Gruppen|
+| 11.02.2020 | Erweiterung der Wallet                                       |Gewählte Wallet für unsere Bedürfnisse erweitern|
 | 18.02.2020 | zweite Berichts Version                                      |Bericht geht nochmals an die Betreuer für ein finales Feedback vor der Einreichung der Thesis|
-| 25.02.2020 | Analyse von Algorithmen für Gruppenverwaltung                |Analyse von Algorithmen, um schadhaftes Verhalten in der Blockchain zu identifizieren / unterbinden|
+| 18.02.2020 | Analyse von Algorithmen für Gruppenverwaltung                |Analyse von Algorithmen, um schadhaftes Verhalten in der Blockchain zu identifizieren / unterbinden|
 | 03.03.2020 | Implementierung Algorithmen in Smart Contracts               |Gewählter Algorithmus mit einem Smart Contract implementieren|
 | 19.03.2020 | Testen und Überarbeiten von Blockchain                       |Testen und analysieren der implementieren Lösung, allfällige Korrekturen vornehmen|
 | 20.03.2020 | Abgabe Bachelorthesis                                        |Übergabe von Thesis an Betreuer |
