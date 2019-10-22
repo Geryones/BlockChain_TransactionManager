@@ -9,7 +9,7 @@ Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meile
 | Erledigt bis  | Meilenstein   |   Beschreibung |
 |---:|:---|:------|
 |14.01.2019| MS 1. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
-|11.02.2019| MS 2. Erweiterung der Smart Wallet| Die Ausgewählte Smart Wallet ist an unsere Bedürfnisse angepasst|
+|11.02.2019| MS 2. Identitätsmanagement auf der Blockchain| Die Identitätsverwaltung ist mit einer bestehenden Lösung, die wenn nötig angepasst wird, oder mit einer eigenen Implementation, auf der Blockchain implementiert|
 |03.03.2019| MS 3. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
 |20.03.2019| MS 4. Abgabe der Bachelorthesis| Die Bachelorthesis und der entwickelte Code wird den Betreuern übergeben.|
 
