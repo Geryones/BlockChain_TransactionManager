@@ -4,9 +4,9 @@ Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken abz
 
 Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizient und elegant ist, eignet er sich nicht für eine Lernumgebung. Hier sollen Anwender die Möglichkeit haben, Transaktionen ohne anfallende Gebühren ausführen zu können. Dadurch wird jedoch die Blockchain anfällig für DoS Attacken. 
 
-Die Projektaufgabe besteht darin, einer definiereten Gruppe von Benutzern gratis Transaktionen zur Verfügung zu stellen. Um die Blockchain zu schützen, können bei Anzeichen von einer DOS Attacke, Schutzmechanismen eingeleitet werden.  
+Die Projektaufgabe besteht darin, einer definierten Gruppe von Benutzern gratis Transaktionen zur Verfügung zu stellen. Um die Blockchain zu schützen, können bei Anzeichen von einer DOS Attacke, Schutzmechanismen eingeleitet werden.  
 
-Das Ziel der Arbeit ist die Realisierung einer Blockchain welche für eine definierete Gruppe von Benutzern: 
+Das Ziel der Arbeit ist die Realisierung einer Blockchain welche für eine definierte Gruppe von Benutzern: 
 
 - Kostenlose Transaktionen ermöglicht 
 - Schutz vor DOS Attacken gewährleistet

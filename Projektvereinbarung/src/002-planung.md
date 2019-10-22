@@ -7,7 +7,7 @@ In diesem Kapitel wird beschrieben, wie das Projekt geplant wird. Dazu gehören 
 Die für das Projekt definierten Meilensteine sind in der Tabelle \ref{tab_meilensteine} aufgelistet. 
 
 | Erledigt bis  | Meilenstein   |   Beschreibung |
-|---:|:---|:------|
+|---:|:------|:--------|
 |14.01.2019| MS 1. Kostenlose Transaktionen für eine definierte Benutzergruppe| Die Testblockchain ist in Betrieb und erlaubt die Definition einer Benutzergruppe, die kostenlose Transaktionen ausführen können. Für alle anderen Benutzer sind die Transaktionen mit Kosten verbunden|
 |11.02.2019| MS 2. Identitätsmanagement auf der Blockchain| Die Identitätsverwaltung ist mit einer bestehenden Lösung, die wenn nötig angepasst wird, oder mit einer eigenen Implementation, auf der Blockchain implementiert|
 |03.03.2019| MS 3. System zur Verhinderung von DOS Attacken| Das Testnetzwerk verhindert automatisch DOS Attacken von Benutzern, die kostenlose Transaktionen ausführen dürfen.|
@@ -20,7 +20,7 @@ Table: Meilensteine \label{tab_meilensteine}
 In der Tabelle \ref{tab_arbeitspakete} sind die Arbeitspakete für dieses Projekt aufgeführt. 
 
 | Erledigt bis  | Arbeitspaket   |   Beschreibung |
-|---:|:---|:------|
+|---:|:------|:--------|
 | 24.09.2019 | Kickoff                                                      |Besprechung der Rahmenbedingungen|
 | 08.10.2019 | Testumgebung                                                 |Zur Einarbeitung in die Materie, testen und analysieren von Code|
 | 20.10.2019 | Projektvereinbarung abgeschlossen                            |Vereinbarung über Rahmenbedingungen, Planung und Ziele des Projekts|
