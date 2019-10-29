@@ -17,6 +17,9 @@ Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für
  
  Hier wird beschrieben wie und was gemacht wurde
 
+!!muss besprochen überarbeitet werden
+ Wir haben zu Beginn Meilensteine und grössere Arbeitspakete definiert. Die kleineren Arbeitspakete wurden nach neugewonnen Wissen und Arbeitsstand definiert. 
+
  ## Strukturierung des Berichts
 
  Der Bericht ist in einen theoretischen und praktischen Teil gegliedert. Gemachte Literaturstudiuen, geprüfte Tools und der aktuelle Stand der Ethereum Blockchain werden im theoretischen Teil behandelt. 
