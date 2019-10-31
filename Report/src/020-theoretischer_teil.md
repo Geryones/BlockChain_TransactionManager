@@ -4,6 +4,8 @@ Dieses Kapitel befasst sich nebst dem Kontext der Arbeit, mit den gemachteten Li
 
 ## Anwendungsbereich
 
-
+Hier kommt der Anwendungsbereich unserer Lösung .. also Ausbildungszwecke 
 
 ## Aktueller Stand
+
+Vielleicht überflüssig? da es noch gar nix dazu gibt an der fhnw? 
