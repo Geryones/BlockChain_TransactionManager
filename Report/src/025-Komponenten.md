@@ -1,4 +1,4 @@
-## Recherche
+## Komponenten
 
 Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem grundsätzlichen Verständnis für die Materie immer der Schutz vor einer Denial of Servie Attacke im Fokus.  
 
