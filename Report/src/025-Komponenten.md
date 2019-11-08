@@ -21,4 +21,6 @@ Eine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „
 
 ### Denial of Service (DOS) Attacken \label{sec_dos}
 
+### Algorithmen \label{sec_algo}
+
 
