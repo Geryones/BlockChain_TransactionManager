@@ -4,8 +4,7 @@ Dieses Kapitel befasst sich nebst dem Kontext der Arbeit, mit den gemachteten Li
 
 ## Anwendungsbereich
 
-Hier kommt der Anwendungsbereich unserer Lösung .. also Ausbildungszwecke 
+Die Fachhhochschule Nordwestschweiz (FHNW) möchte zu Ausbildungszwecken eine eigene Ethereum Blockchain betreiben. Im Gegensatz zu einer öffentlichen Blockchain, sind Transaktionsgebühren nicht praktikabel. Die Studenten sollen gratis auf der Blockchain agieren können. 
+Das macht die Blockchain verwundbar für DOS Attacken. Dieses Problem soll mit Smart Contracts gelöst werden. Nebst der Verwaltung der Benutzergruppen, muss ein Schutzmechanis gegen DOS Attacken implementiert sein. 
+So kann eine sichere Lernumgebung für die FHNW gewährleistet werden. 
 
-## Aktueller Stand
-
-Vielleicht überflüssig? da es noch gar nix dazu gibt an der fhnw? 
