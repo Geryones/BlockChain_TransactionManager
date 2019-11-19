@@ -1,5 +1,5 @@
 ## Lösungsansätze 
-
+//TODO Spellcheck über ganze Seite
 ### Lösungsansatz 1: Super Smart Wallet
 
 //TODO Bild
@@ -83,6 +83,14 @@ Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Tr
 
 
 
-### Evaluation der Lösungsansätze
+## Evaluation der Lösungsansätze
+### Lösungsansatz 1: Super Smart Wallet
+//TODO Evaluation
+### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
+//TODO Evaluation
+### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
+//TODO Evaluation
+### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
+//TODO Evaluation
 
 
