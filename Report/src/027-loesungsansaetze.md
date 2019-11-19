@@ -8,8 +8,16 @@ Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
 Auf der Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
 
 #### Pro
-
+- Alles auf der Blockchain
+- Dezentral
+- Elegant
+- Komplett eigene Lösung
+- Ein System
 #### Contra
+- Machbarkeit unsicher
+- Komplex
+- Schutz Algorithmus kann nicht angepasst werden ohne Blockchain zu rebooten
+
 
 #### Prozessworkflow
 
