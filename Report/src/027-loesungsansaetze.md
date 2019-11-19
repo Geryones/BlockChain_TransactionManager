@@ -2,6 +2,8 @@
 
 ### Lösungsansatz 1: Super Smart Wallet
 
+//TODO Bild
+
 #### Hauptlösungsansätze
 Es wird eine komplett eigene Smart Wallet erstellt, die sowohl die Whitelist wie auch den Schutzalgorithmus verwaltet.
 Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
@@ -21,7 +23,10 @@ Auf der Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Tran
 
 #### Prozessworkflow
 
+//TODO Bild
+
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
+//TODO Bild
 #### Hauptlösungsansätze
 Es wird eine komplett eigenen Smart Wallet erstellt, die die Whitelist verwaltet. Zusätzlich wird ein Java Programm entwickelt, der den Schutzalgorithmus beinhaltet. 
 Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
@@ -33,8 +38,10 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 #### Contra
 
 #### Prozessworkflow
+//TODO Bild
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
+//TODO Bild
 #### Hauptlösungsansätze
 Es wird eine komplett eigenen Smart Wallet erstellt, die die Whitelist verwaltet. Zusätzlich wird ein Java Programm entwickelt, der den Schutzalgorithmus beinhaltet. 
 Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
@@ -46,12 +53,15 @@ Der externe Sicherheitsalgorithmus prüft vor dem Whitelist-Check ob der Benutze
 #### Contra
 
 #### Prozessworkflow
+//TODO Bild
 
 ### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
+//TODO Bild
 #### Hauptlösungsansätze
 #### Pro
 #### Contra
 #### Prozessworkflow
+//TODO Bild
 
 blub
 
