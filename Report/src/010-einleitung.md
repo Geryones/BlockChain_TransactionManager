@@ -3,7 +3,7 @@
 Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. 
 
 ## Problemstellung
-Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für ein Modul zur verfügung zu stellen, welches von den Studierenden zu test Zwecken genutzt werden kann.
+Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur verfügung zu stellen, welches von den Studierenden zu test Zwecken genutzt werden kann.
 Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken abzusichern. Eine
 davon ist eine Gebühr auf jeder Transaktion, der sogenannte Gas Price \ref{sec_gas} [@gasprice]. Dadurch können Denial of
 Service (DoS) Attacken \ref{sec_dos} [@dos], bei denen das Netzwerk mit unzähligen Transaktionen geflutet wird, effizient bekämpft werden. Der Angreifer kann die Attacke nicht aufrecht erhalten, da ihm die finanziellen Mittel zwangsläufig ausgehen.
