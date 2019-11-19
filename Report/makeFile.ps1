@@ -19,7 +19,7 @@ pandoc $input -o out/Report.pdf `
     -V book `
     -V classoption=oneside `
     --toc `
-    --toc-depth=2 `
+    --toc-depth=3 `
     --bibliography=biblio.bib  `
     --csl=ieee.csl `
     --highlight-style breezedark `

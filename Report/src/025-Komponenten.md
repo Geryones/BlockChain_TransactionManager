@@ -29,6 +29,8 @@ Um mit Ethereum interagieren zu können, wird eine Identität benötigt. Diese b
 
 ### Transaktionen \label{sec_transaktionen}
 
+### Mining
+
 ### Gas \label{sec_gas}
 
 ### Denial of Service (DOS) Attacken \label{sec_dos}
