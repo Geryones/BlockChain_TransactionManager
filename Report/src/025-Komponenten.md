@@ -5,21 +5,27 @@ Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
 ### Ethereum Blockchain \label{sec_blockchain}
 
 Eine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.[@wiki_blockchain] 
+
+//Todo Peer-to-peer 
+//Todo Nodes
+
 Im Gegensatz zur Bitcoin[@wiki_bitcoin] kann bei Ethereum[@ethereum] auch Code in der Chain gespeichert werden, sogenannte Smart Contracts, siehe \ref{sec_smartContracts}. 
 Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH). 
 
 ### Smart Contracts \label{sec_smartContracts}
 
 Der Begriff Smart Contract, wurde von Nick Szabo[@wiki_nick_szabo] in den frühen 1990 Jahren zum erten Mal verwendet. Es handelt sich um ein Stück Code, das auf der Blockchain liegt. Es können Vertragsbedingungen als Code geschrieben werden. Sobald die Bedingungen erfüllt sind, führt sich der Smart Contract selbst aus.
-Der Code kann von allen beteiligten Parteien inspiziert werden. Da er dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
+Der Code kann von allen Teilnehmern der Blockchain inspiziert werden. Da er dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 
-![traditional Contract \label{img_tradContract}](images/traditional_contract.PNG "Ein traditioneller Vertag") 
+![Ein traditioneller Vertag[@smart_contracts_alpiq] \label{img_tradContract}](images/traditional_contract.PNG "Traditional smart contract") 
 
-![Smart Contract \label{img_smartContract}](images/smart_contract.PNG "Ein Smart Contract")
+![Ein Smart Contract[@smart_contracts_alpiq] \label{img_smartContract}](images/smart_contract.PNG "smart contract")
 
-Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt werden, das ist auf den Bildern \ref{img_tradContract} und \ref{img_smartContract} ersichtlich. Der Code kontrolliert die Transaktionen, welche Nachverfolgbar und irreversibel sind. 
+Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt werden, das ist auf den Bildern \ref{img_tradContract} und \ref{img_smartContract} dargestellt. Der Code kontrolliert die Transaktionen, welche Nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag werden diese durch third parties kontrolliert und meistens auch ausgeführt. 
 
+#### Decentralized application (DApp) \label{sec_dapp}
 
+Im Gegensatz zu einer Applikation (App), welche das Backend zentral auf einem Server hat, ist es bei der DApp dezentral, zum Beispiel in einer Blockchain. 
 
 #### Gas \label{sec_gas}
 
