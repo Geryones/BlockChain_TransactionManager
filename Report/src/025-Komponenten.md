@@ -13,7 +13,9 @@ Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH).
 Der Begriff Smart Contract, wurde von Nick Szabo[@wiki_nick_szabo] in den frühen 1990 Jahren zum erten Mal verwendet. Es handelt sich um ein Stück Code, das auf der Blockchain liegt. Es können Vertragsbedingungen als Code geschrieben werden. Sobald die Bedingungen erfüllt sind, führt sich der Smart Contract selbst aus.
 Der Code kann von allen beteiligten Parteien inspiziert werden. Da er dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 
-![traditional Contract \label{img_tradContract}](images/traditional_contract.PNG "Ein traditioneller Vertag") ![Smart Contract \label{img_smartContract}](images/smart_contract.PNG "Ein Smart Contract")
+![traditional Contract \label{img_tradContract}](images/traditional_contract.PNG "Ein traditioneller Vertag") 
+
+![Smart Contract \label{img_smartContract}](images/smart_contract.PNG "Ein Smart Contract")
 
 Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt werden, das ist auf den Bildern \ref{img_tradContract} und \ref{img_smartContract} ersichtlich. Der Code kontrolliert die Transaktionen, welche Nachverfolgbar und irreversibel sind. 
 
