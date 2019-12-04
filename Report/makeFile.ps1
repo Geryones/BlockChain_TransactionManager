@@ -1,6 +1,6 @@
 $dir = Get-Location 
 set-Location $dir
-$exclude = @("001-abstract.md", "005-zusammenfassung.md")
+$exclude = @("001-abstract.md")
 $input = Get-Item "src\*.md" -Exclude $exclude | Resolve-Path -Relative
 
 
@@ -8,7 +8,6 @@ $input = Get-Item "src\*.md" -Exclude $exclude | Resolve-Path -Relative
 
 pandoc $input -o out/Report.pdf `
     --include-before-body=".\src\001-abstract.md" `
-    --include-before-body=".\src\005-zusammenfassung.md" `
     --metadata-file=metadata.yml `
     --from markdown `
     --template="./templates/eisvogel.latex" `
