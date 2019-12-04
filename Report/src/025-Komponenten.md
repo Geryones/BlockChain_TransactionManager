@@ -5,7 +5,7 @@ Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
 ### Ethereum Blockchain \label{sec_blockchain}
 
 Eine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.[@wiki_blockchain] 
-Im Gegensatz zur Bitcoin[@wiki_bitcoin] kann bei Ethereum auch Code in der Chain gespeichert werden, sogenannte Smart Contracts /ref{sec_smartContracts}
+Im Gegensatz zur Bitcoin[@wiki_bitcoin] kann bei Ethereum auch Code in der Chain gespeichert werden, sogenannte \ref{sec_smartContracts}. 
 Die Ethereum Blockchain[@ethereum] hat eine eigene Kryptowährung, den Ether (ETH). 
 
 ### Smart Contracts \label{sec_smartContracts}
