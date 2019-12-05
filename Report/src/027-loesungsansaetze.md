@@ -6,6 +6,8 @@
 
 //TODO Bild
 
+![Lösungsansatz1 \label{img_Lösungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
+
 #### Hauptlösungsansätze
 
 Es wird eine komplett eigene Smart Wallet erstellt, die sowohl die Whitelist wie auch den Schutzalgorithmus verwaltet.
@@ -31,9 +33,12 @@ Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Tr
 
 //TODO Bild
 
+
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
 //TODO Bild
+![Lösungsansatz2 \label{img_Lösungsansatz2}](images/Lösungsansatz2.png "Lösungsansatz2") 
+
 
 #### Hauptlösungsansätze
 
@@ -60,6 +65,7 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
 //TODO Bild
+![Lösungsansatz3 \label{img_Lösungsansatz3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
 
 #### Hauptlösungsansätze
 
@@ -86,6 +92,7 @@ Der externe Sicherheitsalgorithmus prüft vor dem Whitelist-Check ob der Benutze
 ### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
 
 //TODO Bild
+![Lösungsansatz4 \label{img_Lösungsansatz4}](images/Lösungsansatz4.png "Lösungsansatz4") 
 
 #### Hauptlösungsansätze
 
