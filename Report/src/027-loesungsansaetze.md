@@ -131,12 +131,15 @@ Folgende Evaluationskriterien wurden bestummen
 //TODO Prioritäten besprechen
 
 | Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security |
-|---:|:------|:--------| | | | | | |
+|---:|:------|:--------|----|---|---|---|---|---|
 |Prio|||||||||
 | Lösungsansatz 1 |||||||||
 | Lösungsansatz 2 |||||||||
 | Lösungsansatz 3 |||||||||
 | Lösungsansatz 4 |||||||||
+
+
+Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 ### Lösungsansatz 1:  Smart Wallet 
 
