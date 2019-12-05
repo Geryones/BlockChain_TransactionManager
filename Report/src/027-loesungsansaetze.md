@@ -130,13 +130,13 @@ Folgende Evaluationskriterien wurden bestummen
 - Security ( ?? Prio )
 //TODO Prioritäten besprechen
 
-| Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security |
-|---:|:------|:--------|----|---|---|---|---|---|
-|Prio|||||||||
-| Lösungsansatz 1 |||||||||
-| Lösungsansatz 2 |||||||||
-| Lösungsansatz 3 |||||||||
-| Lösungsansatz 4 |||||||||
+| Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security | Total |
+|---:|:------|:--------|----|---|---|---|---|---|---|
+|Prio|3|3|2|2|1|1|?|?| |
+| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | 2 |?|
+| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | 2 |?|
+| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | 0 |?|
+| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | 0 |?|
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
