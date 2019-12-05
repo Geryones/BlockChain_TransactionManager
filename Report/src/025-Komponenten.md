@@ -6,8 +6,8 @@ Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
 
 Eine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.[@wiki_blockchain] 
 
-//Todo Peer-to-peer 
-//Todo Nodes
+Blockchains sind auf einem peer-to-peer (P2P) Netzwerk[@wiki_p2p] aufgebaut. Ein Computer der Teil von diesem Netzwerk ist, wird Node genannt. Jeder Node hat eine identische Kopie der Historie aller Transaktionen. Es gibt keinen zentralen Server der angegriffen werden kann. Das erhöht die Sicherheit der Blockchain. 
+Es muss davon ausgegangen werden, dass es Nodes gibt, die Versuchen die Daten der Blockchain zu verfälschen. Dem wird mit der Verwendung von diversen Consenus Algorithmen[@consensus_alg] entgegen gewirkt. Die Consensus Algorithemen stellen sicher, dass die Transaktionen auf der Blockchain valide und authentisch sind.
 
 Im Gegensatz zur Bitcoin[@wiki_bitcoin] kann bei Ethereum[@ethereum] auch Code in der Chain gespeichert werden, sogenannte Smart Contracts, siehe \ref{sec_smartContracts}. 
 Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH). 
@@ -25,7 +25,7 @@ Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt w
 
 #### Decentralized application (DApp) \label{sec_dapp}
 
-Im Gegensatz zu einer Applikation (App), welche das Backend zentral auf einem Server hat, ist es bei der DApp dezentral, zum Beispiel in einer Blockchain. 
+Eine DApp ist ist eine Applikation (App), deren backend Code dezentral auf einem peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das Backend möglich sind.  
 
 #### Gas \label{sec_gas}
 
