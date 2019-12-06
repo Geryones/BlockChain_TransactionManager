@@ -143,7 +143,7 @@ Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 ### Lösungsansatz 1:  Smart Wallet 
  //TODO nach Prio nochmals umschreiben
-Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste. Weil dieser  Dieser Lösungsansatz wird falls die Kapazitäten ausreichen, auch implementiert. 
+Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Java Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
@@ -154,7 +154,7 @@ Ergebnis der Evaluation zeigt, dass diese Lösung die beste nach den Kriterien i
 Laut Evaluation ist dieser Lösungsansatz auf dem dritten Platz. Deswegen wird
 
 ### Lösungsansatz 4: Super Smart Wallet
+Dieser Lösungsansatz ist laut Evaluation auf dem letzten Platz. Dies war von Anfang an klar, er wurde aufgezeigt, da es die erste Idee war, für die Lösung.
 
-//TODO Evaluation
 
 
