@@ -17,6 +17,8 @@ Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Tr
 
 Die bezahlten Transaktionen laufen auch über die SmartWallet, um mit der gleichen Sender Identität Transaktionen an das eigentliche Ziel zu verschicken.
 
+Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden können, ohne über die Smart Wallet zu gehen. Somit kann der Benutzer den DoS Schutzalgorithmus umgehen. Deswegen muss ein Weg gefunden werden, den den Benutzer zwingt über die Smart Wallet Transaktionen zu schicken (z.B. Whitelist wo Sender und Empfänger geführt wird).
+
 #### Pro
 
 - Alles auf der Blockchain
@@ -69,16 +71,17 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 
 #### Hauptlösungsansätze
 
-Es wird eine komplett eigenen Smart Wallet erstellt, die die Whitelist verwaltet. Zusätzlich wird ein Java Programm entwickelt, der den Schutzalgorithmus beinhaltet. 
-Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft.
-Der externe Sicherheitsalgorithmus prüft vor dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+Es wird ein Java Programm entwickelt, welches eine eigene Whitelist führt und den DoS Schutzalgorithmus beinhaltet. Dieser prüft ob der Benutzer auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien nicht verletzt. Ist die Prüfung in Ordnung packt er die Transaktion in eine neue Transaktion ein, um die Transaktionsinformationen (wie z.B. Sender Identität) nicht zu verlieren und schickt die Transaktion an die Smart Wallet. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht.
+Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten. Die Smart Wallet packt die Transaktion aus und schickt eine neue Transaktion mit den relevanten Informationen an das eigentliche Ziel.
+Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass nur die Transaktionen die vom Java Programm weitergeleitet wurden, kostenfrei durchgeführt werden können. Die kostenpflichtigen Transaktionen werden vom Benutzer auch an die Smart Wallet geschickt.
+
 
 #### Pro
 
 - Komplett eigene Lösung
-- Algorithmus kann angepasst werden ohne Blockchain zu rebooten
+- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden.
 - DOS Algorithmus blockt bevor Transaktion auf SmartWallet trifft
+- Problem dass gratis Transaktionen nicht über die Smart Wallet geschickt werden, ist hier gelöst
 
 #### Contra
 
