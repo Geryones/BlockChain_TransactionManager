@@ -10,23 +10,25 @@
 
 #### Hauptlösungsansätze
 
-Es wird eine komplett eigene Smart Wallet erstellt, die sowohl die Whitelist wie auch den Schutzalgorithmus verwaltet.
+Es wird eine komplett eigene Smart Wallet erstellt, die den Schutzalgorithmus verwaltet. 
 Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
+Die Whitelist wird von der Blockchain verwaltet.
 Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+
+Die bezahlten Transaktionen laufen auch über die SmartWallet, um mit der gleichen Sender Identität Transaktionen an das eigentliche Ziel zu verschicken.
 
 #### Pro
 
 - Alles auf der Blockchain
 - Dezentral
 - Elegant
-- Komplett eigene Lösung
 - Ein System
 
 #### Contra
 
 - Machbarkeit unsicher
 - Komplex
-- Schutz Algorithmus kann nicht angepasst werden ohne Blockchain zu rebooten
+- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss eine neue Smart Wallet deployed werden. Die alte bleibt bestehen sofern die Blocchain nicht resetted wird
 
 
 #### Prozessworkflow
