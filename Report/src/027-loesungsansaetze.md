@@ -4,8 +4,6 @@
 
 ### Lösungsansatz 1: Super Smart Wallet
 
-//TODO Bild
-
 ![Lösungsansatz1 \label{img_Lösungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
 #### Hauptlösungsansätze
@@ -35,12 +33,10 @@ Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden könne
 
 #### Prozessworkflow
 
-//TODO Bild
-
+![FlowchartLösungsansatz1 \label{img_FlowchartLösungsansatz1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
-//TODO Bild
 ![Lösungsansatz2 \label{img_Lösungsansatz2}](images/Lösungsansatz2.png "Lösungsansatz2") 
 
 
@@ -62,11 +58,10 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 
 #### Prozessworkflow
 
-//TODO Bild
+![FlowchartLösungsansatz2 \label{img_FlowchartLösungsansatz2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
-//TODO Bild
 ![Lösungsansatz3 \label{img_Lösungsansatz3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
 
 #### Hauptlösungsansätze
@@ -90,7 +85,7 @@ Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass 
 
 #### Prozessworkflow
 
-//TODO Bild
+![FlowchartLösungsansatz3 \label{img_FlowchartLösungsansatz3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
 
 ### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
 
