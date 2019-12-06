@@ -25,9 +25,23 @@ Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt w
 
 #### Decentralized application (DApp) \label{sec_dapp}
 
-Eine DApp ist ist eine Applikation (App), deren backend Code dezentral auf einem peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das Backend möglich sind.  
+Eine DApp ist ist eine Applikation (App), deren backend Code dezentral auf einem peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das Backend möglich sind. 
+Das prominenteste Beispiel einer DApp ist CryptoKitties[@cryptokitties], beider die Benutzer digitale Katzen handeln und züchten können. 
 
-#### Gas \label{sec_gas}
+### Transaktionen \label{sec_transaktionen}
+
+
+### Gas \label{sec_gas}
+
+Mit Gas[@gasprice] ist in der Ethereum Blockchain eine spezielle Währung gemeint. Mit ihr werden Transaktionskosten gezahlt. Jede Aktion in der Blockchain kostet eine bestimmte Menge an Gas (Gas Cost). Somit ist die benötigte Menge an Gas proportional zur benötigten Rechenleistung. So wird sichergestellt, dass die anfallenden Kosten einer Interaktion gerecht verrechnet werden. 
+Die anfallenden Gas Kosten werden in Ether gezahlt. Für die Berchnung der Transaktionskosten wird der Preis pro Einheit Gas (Gas Price) verwendet. 
+
+$TX = gas cost * gas price$
+
+Die Transaktionskosten werden nicht direkt in Ether berechnet, da dieser starken Kursschwankungen unterworfen sein kann. Die Kosten für Rechenleistung, also Elektrizität, sind hingegen stabiler Natur. Daher sind Gas und Ether separiert.
+Der verwendete Gas Price einer Transaktion bestimmt, wie schnell sie in die Chain aufgenommen wird. Je höher, desto schneller, da es für Miner\ref{sec_mining} lukrativ ist. 
+
+Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was die maximale Gas Cost ist, die man für eine Transaktion bereitstellen möchte. Es wird aber nur so viel verrechnet, wie auch wirklich benötigt wird, der Rest wird einem wieder gutgeschrieben. Falls die Transaktionskosten höher als das gesetzte Gas Limit ausfallen, wird die Ausführung der Transaktion abgebrochen. Alle gemachten Änderungen auf der Chain werden rückgängig gemacht. Die Transaktion wird als "fehlgeschlagene Transaktion" in die Blockchain aufgenommen. Das Gas wird nicht zurück erstattet, da die Miner bereits Rechenleistung erbracht haben. 
 
 ### Identitäten \label{sec_identitaet}
 
@@ -48,9 +62,9 @@ Um mit Ethereum interagieren zu können, wird eine Identität benötigt. Diese b
 
 
 
-### Transaktionen \label{sec_transaktionen}
 
-### Mining
+
+### Mining \label{sec_mining}
 
 
 ### Denial of Service (DOS) Attacken \label{sec_dos}
