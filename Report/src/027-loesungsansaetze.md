@@ -10,7 +10,7 @@
 
 #### Hauptlösungsansätze
 
-Es wird eine komplett eigene Smart Wallet erstellt, die den Schutzalgorithmus verwaltet. 
+Es wird eine komplett eigene Smart Wallet erstellt, die den DoS Schutzalgorithmus verwaltet. 
 Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
 Die Whitelist wird von der Blockchain verwaltet.
 Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
@@ -44,16 +44,14 @@ Die bezahlten Transaktionen laufen auch über die SmartWallet, um mit der gleich
 
 #### Hauptlösungsansätze
 
-Es wird eine komplett eigenen Smart Wallet erstellt, die die Whitelist verwaltet. Zusätzlich wird ein Java Programm entwickelt, der den Schutzalgorithmus beinhaltet. 
-Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
+Dies ist ein Lösungsansatz ohne Smart Wallet. Die Whitelist wird von der Blockchain selber verwaltet. Der DoS Schutzalgorithmus wird in einem externen Java Programm durchgeführt. 
 Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft.
-Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird der Benutzer vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
 
 #### Pro
 
 - Sicher machbar
-- Komplett eigene Lösung
-- Algorithmus kann angepasst werden ohne Blockchain zu rebooten
+- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden.
 
 #### Contra
 
