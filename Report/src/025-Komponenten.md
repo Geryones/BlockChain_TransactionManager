@@ -36,22 +36,22 @@ Das prominenteste Beispiel einer DApp ist CryptoKitties[@cryptokitties], beider 
 Um mit der Blockchain zu interagieren, werden Transaktionen benötigt. Sie erlauben es Daten in der Blockchain zu erstellen oder anzupassen. Eine Transaktion verfügt über folgende Felder:
 
 From
-:   Der Sender der Transaktion. Wird mit einer 20 Byte langen Adresse, siehe Abschnitt \ref{sec_address}, dargestellt. 
+:     Der Sender der Transaktion. Wird mit einer 20 Byte langen Adresse, siehe Abschnitt \ref{sec_address}, dargestellt. 
 
 To
-:   Der Empfänger der Transaktion. Wird ebenfalls mit einer 20 Byte langen Adresse dargestellt. Falls es sich um ein Deployment von einem Smart Contract handelt, wird dieses Feld leer gelassen. 
+:     Der Empfänger der Transaktion. Wird ebenfalls mit einer 20 Byte langen Adresse dargestellt. Falls es sich um ein Deployment von einem Smart Contract handelt, wird dieses Feld leer gelassen. 
 
 Value
-:   Mit diesem Feld wird angegeben, wieviel Wei[@wei] übertragen werden soll. Der Betrag wird von "From" nach "To" übertragen. 
+:     Mit diesem Feld wird angegeben, wieviel Wei[@wei] übertragen werden soll. Der Betrag wird von "From" nach "To" übertragen. 
 
 Data/Input
-:   Dieses Feld wird hauptsächlich für die Interaktion mit Smart Contracts, siehe Abschnitt \ref{sec_smartContracts}, verwendet. Wenn ein Smart Contract deployed werden soll, wir in diesem Feld der dessen Bytecode[@bytecode] übertragen. Bei Funktionsaufrufen auf einen Smart Contract wird die Funktionssignatur und die codierten Parameter mitgegeben. Bei reinen Kontoübertragungen wird das Feld leer gelassen.
+:     Dieses Feld wird hauptsächlich für die Interaktion mit Smart Contracts, siehe Abschnitt \ref{sec_smartContracts}, verwendet. Wenn ein Smart Contract deployed werden soll, wir in diesem Feld der dessen Bytecode[@bytecode] übertragen. Bei Funktionsaufrufen auf einen Smart Contract wird die Funktionssignatur und die codierten Parameter mitgegeben. Bei reinen Kontoübertragungen wird das Feld leer gelassen.
 
 Gas Price
-:   Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen. Mehr dazu im Abschnitt \ref{sec_gas}
+:     Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen. Mehr dazu im Abschnitt \ref{sec_gas}
 
 Gas Limit
-:   Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas}
+:     Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas}
 
 
 
@@ -60,7 +60,7 @@ Gas Limit
 Mit Gas[@gasprice] ist in der Ethereum Blockchain eine spezielle Währung gemeint. Mit ihr werden Transaktionskosten gezahlt. Jede Aktion in der Blockchain kostet eine bestimmte Menge an Gas (Gas Cost). Somit ist die benötigte Menge an Gas proportional zur benötigten Rechenleistung. So wird sichergestellt, dass die anfallenden Kosten einer Interaktion gerecht verrechnet werden. 
 Die anfallenden Gas Kosten werden in Ether gezahlt. Für die Berchnung der Transaktionskosten wird der Preis pro Einheit Gas (Gas Price) verwendet. Dieser kann vom Sender selbst bestimmt werden. Ein zu tief gewählter Gas Price hat zur Folge, dass die Transaktion nicht in die Blockchain aufgenommen wird, da es sich für einen Miner, siehe Abschnitt \ref{sec_mining}, nicht lohnt, diese zu verarbeiten. Ein hoher Gas Price stellt zwar sicher, dass die Transaktion schnell verarbeitet wird, kann aber hohe Gebühren generieren. 
 
-$TX = gas cost * gas price$
+$TX = gasCost * gasPrice$
 
 Die Transaktionskosten werden nicht direkt in Ether berechnet, da dieser starken Kursschwankungen unterworfen sein kann. Die Kosten für Rechenleistung, also Elektrizität, sind hingegen stabiler Natur. Daher sind Gas und Ether separiert.
 

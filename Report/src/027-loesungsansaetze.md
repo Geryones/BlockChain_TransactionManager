@@ -33,11 +33,11 @@ Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden könne
 
 #### Prozessworkflow
 
-![FlowchartLösungsansatz1 \label{img_FlowchartLösungsansatz1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
+![Flowchart Lösungsansatz 1 \label{img_FlowchartLösungsansatz1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
-![Lösungsansatz2 \label{img_Lösungsansatz2}](images/Lösungsansatz2.png "Lösungsansatz2") 
+![Lösungsansatz 2 \label{img_Lösungsansatz2}](images/Lösungsansatz2.png "Lösungsansatz2") 
 
 
 #### Hauptlösungsansätze
@@ -58,11 +58,11 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 
 #### Prozessworkflow
 
-![FlowchartLösungsansatz2 \label{img_FlowchartLösungsansatz2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
+![Flowchart Lösungsansatz 2 \label{img_FlowchartLösungsansatz2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
-![Lösungsansatz3 \label{img_Lösungsansatz3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
+![Lösungsansatz 3 \label{img_Lösungsansatz3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
 
 #### Hauptlösungsansätze
 
@@ -85,12 +85,12 @@ Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass 
 
 #### Prozessworkflow
 
-![FlowchartLösungsansatz3 \label{img_FlowchartLösungsansatz3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
+![Flowchart Lösungsansatz 3 \label{img_FlowchartLösungsansatz3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
 
 ### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
 
 //TODO Bild
-![Lösungsansatz4 \label{img_Lösungsansatz4}](images/Lösungsansatz4.png "Lösungsansatz4") 
+![Lösungsansatz 4 \label{img_Lösungsansatz4}](images/Lösungsansatz4.png "Lösungsansatz4") 
 
 #### Hauptlösungsansätze
 
