@@ -88,9 +88,16 @@ Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki
 
 ### Blockchain Wallet \label{sec_wallet}
 
-Eine Blockchain Wallet, kurz Wallet, ist ein Stück Software, das mit einem Portmonaie verglichen werden kann. Der Benutzer hinterlegt in der Wallet seinen geheimen Schlüssel, siehe \ref{sec_private_key}, und erhält eine grafische Darstellung seines Accounts. Nebst dem aktuellen Kontostand, wird meistens auch noch die Transaktionshistorie angezeigt. 
-In der Wallet können mehrere Accounts verwaltet werden. So muss sich der Benutzer nicht selbst um die sichere Aufbewahrung der geheimen Schlüssel kümmern. 
-Wallets sind je nach Anbieter sehr unterschiedliche implementiert. 
+Eine Blockchain Wallet, kurz Wallet, ist ein digitales Portmonaie. Der Benutzer hinterlegt in der Wallet seinen geheimen Schlüssel, siehe \ref{sec_private_key}. Dadurch erhält er eine grafische Oberfläche für die Verwaltung seines Accounts. Nebst dem aktuellen Kontostand, wird meistens noch die Transaktionshistorie angezeigt. 
+In der Wallet können mehrere Accounts verwaltet werden. So muss sich der Benutzer nicht selbst um die sichere Aufbewahrung der geheimen Schlüssel kümmern. Bei den meisten Wallets ist es möglich verschiedene Währungen zu verwalten. 
+Es existieren zwei unterschiedliche Arten von Wallets, Hot und Cold Wallets: 
+
+Hot Wallet
+:     Ein Stück Software, welches die geheimen Schlüssel verwaltet. 
+:     Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
+
+Cold Wallet
+:     Der geheime Schlüssel wird in einem Stück Hardware gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen werden können. 
 
 
 #### Smart Wallet
