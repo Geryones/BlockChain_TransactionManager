@@ -51,9 +51,9 @@ Gas Price
 :     Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen. Mehr dazu im Abschnitt \ref{sec_gas}
 
 Gas Limit
-:     Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas}
+:     Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas} [@transactions]
 
-
+Damit eine Transaktion in die Blockchain aufgenommen werden kann, muss sie signiert[@signing_transaction] sein. Dies kann offline beim Benutzer gemacht werden. Die signierte Transaktion wird dann an die Blockchain übermittelt. 
 
 ### Gas \label{sec_gas}
 
@@ -66,25 +66,25 @@ Die Transaktionskosten werden nicht direkt in Ether berechnet, da dieser starken
 
 Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was die maximale Gas Cost ist, die man für eine Transaktion bereitstellen möchte. Es wird aber nur so viel verrechnet, wie auch wirklich benötigt wird, der Rest wird einem wieder gutgeschrieben. Falls die Transaktionskosten höher als das gesetzte Gas Limit ausfallen, wird die Ausführung der Transaktion abgebrochen. Alle gemachten Änderungen auf der Chain werden rückgängig gemacht. Die Transaktion wird als "fehlgeschlagene Transaktion" in die Blockchain aufgenommen. Das Gas wird nicht zurück erstattet, da die Miner bereits Rechenleistung erbracht haben. 
 
-### Identitäten \label{sec_identitaet}
+### Account \label{sec_account}
 
-Um mit Ethereum interagieren zu können, wird eine Identität benötigt. Diese besteht aus einem öffentlichen und einem geheimen Schlüssel. 
+Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Ein Account ermöglicht es einem Benutzer, Ether zu empfangen und zu senden. Da ein Smart Contract ebenfalls Ether empfangen und senden kann, verfügen sie ebenfalls über einen Account. 
 
-#### Geheimer Schlüssel
+#### Geheimer Schlüssel \label{sec_private_key}
+
+Der geheime Schlüssel ist ein 256 Bit lange zufällig generierte Zahl. Er definiert einen Account und wird verwendet um Transaktionen zu signieren. Daher ist es von grösster Wichtigkeit, dass ein geheimer Schlüssel sicher gelagert wird. Wenn er verloren geht, gibt es keine Möglichkeit mehr auf diesen Account zuzugreifen. 
 
 
+#### Öffentlicher Schlüssel \label{sec_public_key}
 
-#### Öffentlicher Schlüssel
+Der öffentliche Schlüssel wird aus dem geheimen Schlüssel abgeleitet. Für die Generierung wird Keccak[@keccak] verwendet, ein "Elliptical Curve Digital Signature Algorithm"[@wiki_ecdsa]. Der öffentliche Schlüssel wird verwendet um die Signatur einer Transaktion zu verifizieren. 
 
 
 #### Adresse \label{sec_address}
 
-
+Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. 
 
 ### Wallets und Smart Wallets \label{sec_wallets}
-
-
-
 
 
 ### Mining \label{sec_mining}
