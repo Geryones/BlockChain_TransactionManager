@@ -1,5 +1,7 @@
 ## Komponenten
 
+//TODO Spellcheck
+
 Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem grundsätzlichen Verständnis für die Materie immer der Schutz vor einer Denial of Servie (DOS) Attacke im Fokus.  
 
 ### Ethereum Blockchain \label{sec_blockchain}
@@ -84,7 +86,16 @@ Der öffentliche Schlüssel wird aus dem geheimen Schlüssel abgeleitet. Für di
 
 Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. 
 
-### Wallets und Smart Wallets \label{sec_wallets}
+### Blockchain Wallet \label{sec_wallet}
+
+Eine Blockchain Wallet, kurz Wallet, ist ein Stück Software, das mit einem Portmonaie verglichen werden kann. Der Benutzer hinterlegt in der Wallet seinen geheimen Schlüssel, siehe \ref{sec_private_key}, und erhält eine grafische Darstellung seines Accounts. Nebst dem aktuellen Kontostand, wird meistens auch noch die Transaktionshistorie angezeigt. 
+In der Wallet können mehrere Accounts verwaltet werden. So muss sich der Benutzer nicht selbst um die sichere Aufbewahrung der geheimen Schlüssel kümmern. 
+Wallets sind je nach Anbieter sehr unterschiedliche implementiert. 
+
+
+#### Smart Wallet
+
+
 
 
 ### Mining \label{sec_mining}

@@ -28,7 +28,7 @@ Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden könne
 
 - Machbarkeit unsicher
 - Komplex
-- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss eine neue Smart Wallet deployed werden. Die alte bleibt bestehen sofern die Blocchain nicht resetted wird
+- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss eine neue Smart Wallet deployed werden. Die alte bleibt bestehen sofern die Blockchain nicht resetted wird
 
 
 #### Prozessworkflow
