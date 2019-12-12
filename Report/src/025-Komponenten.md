@@ -70,7 +70,8 @@ Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was di
 
 ### Account \label{sec_account}
 
-Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Ein Account ermöglicht es einem Benutzer, Ether zu empfangen und zu senden. Da ein Smart Contract ebenfalls Ether empfangen und senden kann, verfügen sie ebenfalls über einen Account. 
+Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Ether zu empfangen und zu senden. 
+
 
 #### Geheimer Schlüssel \label{sec_private_key}
 
@@ -85,6 +86,7 @@ Der öffentliche Schlüssel wird aus dem geheimen Schlüssel abgeleitet. Für di
 #### Adresse \label{sec_address}
 
 Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. 
+Die Adresse wird bei Transaktionen oder Interaktionen mit einem Smart Contract verwendet. 
 
 ### Blockchain Wallet \label{sec_wallet}
 
@@ -97,18 +99,16 @@ Hot Wallet
 :     Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
 
 Cold Wallet
-:     Der geheime Schlüssel wird in einem Stück Hardware gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen werden können. 
-
+:     Der geheime Schlüssel wird in einem Stück Hardware gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
 #### Smart Wallet
 
+Smart Wallets basieren auf Smart Contracts. Der Benutzer ist der Besitzer der Smart Contracts und somit der Wallet. Die Verwendung von Smart Contract bei der implementierung der Wallet ermöglicht mehr Benutzerfreundlichkeit ohne die Sicherheit zu kompromittieren. [@smart_wallet_argent], [@smart_wallet_gnosis], [@smart_wallet_dapper]
+//TODO .. 
+
+### Denial of Service (DoS) Attacken \label{sec_dos}
 
 
-
-### Mining \label{sec_mining}
-
-
-### Denial of Service (DOS) Attacken \label{sec_dos}
 
 ### Algorithmen \label{sec_algo}
 
