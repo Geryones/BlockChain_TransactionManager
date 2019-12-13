@@ -2,7 +2,7 @@
 
 //TODO Spellcheck über ganze Seite
 
-### Lösungsansatz 1: Super Smart Wallet
+### Lösungsansatz 1: Smart Wallet
 
 ![Lösungsansatz1 \label{img_Lösungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
@@ -87,9 +87,8 @@ Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass 
 
 ![Flowchart Lösungsansatz 3 \label{img_FlowchartLösungsansatz3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
 
-### Lösungsansatz 4: Zentrale Smart Wallet für jeden Benutzer
+### Lösungsansatz 4: Super Smart Wallet
 
-//TODO Bild
 ![Lösungsansatz 4 \label{img_Lösungsansatz4}](images/Lösungsansatz4.png "Lösungsansatz4") 
 
 #### Hauptlösungsansätze
@@ -108,12 +107,6 @@ Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Tr
 
 -Schwierig Sender ID für Transaktion zu setzten (überhaupt möglich?)
 
-#### Prozessworkflow
-
-//TODO Bild
-
-
-
 ## Evaluation der Lösungsansätze
 Folgende Evaluationskriterien wurden bestummen
 
@@ -128,13 +121,13 @@ Folgende Evaluationskriterien wurden bestummen
 - Security ( ?? Prio )
 //TODO Prioritäten besprechen
 
-| Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security | Total |
-|---:|:------|:--------|----|---|---|---|---|---|---|
-|Prio|3|3|2|2|1|1|?|?| |
-| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | 2 |?|
-| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | 2 |?|
-| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | 0 |?|
-| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | 0 |?|
+| |Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security | Total |
+|------------:|:------|:--------|:------------|:----------|:----------|:------------|:------------|:-----------|:----------|-----:|
+|Prio|3|3|2|2|1|1|?|?| | |
+| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | 2 |?| |
+| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | 2 |?| |
+| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | 0 |?| |
+| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | 0 |?| |
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
