@@ -9,9 +9,10 @@
 #### Hauptlösungsansätze
 
 Es wird eine komplett eigene Smart Wallet erstellt, die den DoS Schutzalgorithmus verwaltet. 
-Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird.
-Die Whitelist wird von der Blockchain verwaltet.
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+Jeder Benutzer erhält eine eigene Smart Wallet die von den Admins deployt wird, um für den Benutzer keine Anfangskosten für die Transaktion zu generieren.
+Die Whitelist wird von der Blockchain (Parity) verwaltet.
+Auf der Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Benutzer können in diese Liste von den Admins hinzugefügt werden. Gelöscht werden Sie nur von der Smart Wallet. 
+Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt. Es muss geprüft werden ob die Benutzer automatisiert wieder in die Liste hinzugefügt werden können.
 
 Die bezahlten Transaktionen laufen auch über die SmartWallet, um mit der gleichen Sender Identität Transaktionen an das eigentliche Ziel zu verschicken.
 
@@ -42,14 +43,14 @@ Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden könne
 
 #### Hauptlösungsansätze
 
-Dies ist ein Lösungsansatz ohne Smart Wallet. Die Whitelist wird von der Blockchain selber verwaltet. Der DoS Schutzalgorithmus wird in einem externen Java Programm durchgeführt. 
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft.
-Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird der Benutzer vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+Dies ist ein Lösungsansatz ohne Smart Wallet. Die Whitelist wird von der Blockchain (Parity) selber verwaltet. Der DoS Schutzalgorithmus wird in einem externen Java Programm durchgeführt. 
+Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Die Benutzer werden zu Beginn von den Admins in die Liste hinzugefügt. Gelöscht werden sie nur durch den Schutzalgorithmus.
+Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird der Benutzer vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt. Es muss geprüft werden ob die Benutzer automatisiert wieder in die Liste hinzugefügt werden können.
 
 #### Pro
 
 - Sicher machbar
-- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden.
+- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden, oder die Blockchain resetted werden.
 
 #### Contra
 
@@ -66,14 +67,12 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 
 #### Hauptlösungsansätze
 
-Es wird ein Java Programm entwickelt, welches eine eigene Whitelist führt und den DoS Schutzalgorithmus beinhaltet. Dieser prüft ob der Benutzer auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien nicht verletzt. Ist die Prüfung in Ordnung packt er die Transaktion in eine neue Transaktion ein, um die Transaktionsinformationen (wie z.B. Sender Identität) nicht zu verlieren und schickt die Transaktion an die Smart Wallet. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht.
+Es wird ein Java Programm entwickelt, welches eine eigene Whitelist führt und den DoS Schutzalgorithmus beinhaltet. Dieser prüft ob der Benutzer auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien nicht verletzt. Ist die Prüfung in Ordnung packt er die Transaktion in eine neue Transaktion ein, um die Transaktionsinformationen (wie z.B. Sender Identität) nicht zu verlieren und schickt die Transaktion an die Smart Wallet. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. 
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten. Die Smart Wallet packt die Transaktion aus und schickt eine neue Transaktion mit den relevanten Informationen an das eigentliche Ziel.
 Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass nur die Transaktionen die vom Java Programm weitergeleitet wurden, kostenfrei durchgeführt werden können. Die kostenpflichtigen Transaktionen werden vom Benutzer auch an die Smart Wallet geschickt.
 
 
 #### Pro
-
-- Komplett eigene Lösung
 - Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden.
 - DOS Algorithmus blockt bevor Transaktion auf SmartWallet trifft
 - Problem dass gratis Transaktionen nicht über die Smart Wallet geschickt werden, ist hier gelöst
@@ -93,10 +92,10 @@ Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass 
 
 #### Hauptlösungsansätze
 
-Dieser Lösungsansatz war der
+Dieser Lösungsansatz war der erste konzipierte Lösungsansatz.
 Es wird eine komplett eigene Smart Wallet erstellt, die sowohl die Whitelist wie auch den Schutzalgorithmus verwaltet.
 Alle Benutzer erhalten eine zentrale Smart Wallet die von den Admins deployt wird.
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Diese Liste wird von den Admins gepfleft. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt.
+Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Der Benutzer wirdvon den Admins zu Beginn in diese Liste  hinzugefügt. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt. Es muss geprüft werden ob die Benutzer automatisiert wieder in die Liste hinzugefügt werden können.
 
 #### Pro
 
@@ -123,18 +122,18 @@ Folgende Evaluationskriterien wurden bestummen
 
 | |Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security | Total |
 |------------:|:------|:--------|:------------|:----------|:----------|:------------|:------------|:-----------|:----------|-----:|
-|Prio|3|3|2|2|1|1|?|?| | |
-| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | 2 |?| |
-| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | 2 |?| |
-| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | 0 |?| |
-| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | 0 |?| |
+|Prio|3|3|2|2|1|1|1|?|2| |
+| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | ? | ? | ? |
+| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | ? | ? | ? |
+| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | ? | ? | ? |
+| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | ? | ? | ? |
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 ### Lösungsansatz 1:  Smart Wallet 
  //TODO nach Prio nochmals umschreiben
-Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Java Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
+Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Java Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär zu Lösungsansatz 3. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
@@ -142,10 +141,11 @@ Ergebnis der Evaluation zeigt, dass diese Lösung die beste nach den Kriterien i
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
-Laut Evaluation ist dieser Lösungsansatz auf dem dritten Platz. Deswegen wird
+Laut Evaluation ist dieser Lösungsansatz auf dem zweiten Platz, zusammen mit Lösungsansatz 1. Da diese Lösung auch ein Javaprogramm wie Lösung 2 vorsieht, wird sie weniger prioritär wie Lösungsansatz 1 betrachtet.
 
 ### Lösungsansatz 4: Super Smart Wallet
-Dieser Lösungsansatz ist laut Evaluation auf dem letzten Platz. Dies war von Anfang an klar, er wurde aufgezeigt, da es die erste Idee war, für die Lösung.
+
+Dieser Lösungsansatz ist laut Evaluation auf dem letzten Platz. Dies war von Anfang an klar. Dieser Ansatz wurde jedoch aufgezeigt, da er das erste Lösungskonzept war.
 
 
 
