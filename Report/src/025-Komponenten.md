@@ -116,7 +116,14 @@ Das bedeutet, dass bei einer DoS Attacke die Transaktionsgebühren tedentiell st
 Ein DoS Angriff auf eine Blockchain wird dadurch zu einem sehr kostspieligen Unterfagen. Die hohen Kosten schrecken die meisten Angreifer ab und sind somit ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
 
 
+#### DoS Attacke identifizieren \label{sec_identify_dos_attack}
 
-### Algorithmen \label{sec_algo}
+Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese dürfen gratis Transaktionen ausführen. Diese Gruppe von Benutzer ist eine potentielle Bedrohung. Ohne Transaktionskosten hat die Blockchain keinen Schutzmechanismus gegen eine DoS Attacke. 
+Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werden. Falls einer dieser Benutzer eine DoS Attacke einleitet, muss das frühst möglich erkannt und unterbunden werden können. 
 
+//TODO Möglich Vorgehensweisen
+
+##### Transaktionslimite pro Benutzer
+
+Jeder Benutzer darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
 
