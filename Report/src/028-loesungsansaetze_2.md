@@ -1,25 +1,27 @@
 ## Lösungsansätze 
 
 //TODO Spellcheck über ganze Seite
+//Benutzer != Account --> Auf der Whitelist sind Accounts !
 
 In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stärken und Schwächen von jedem Lösungsansatz werden analysiert und dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.   
 
 ### Lösungsansatz 1: Smart Wallet
 
 Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Wie in Grafik \ref{img_loesungsansatz1} ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
-Für die Betreibung der Blockchain wird Parity mit einer Withelist verwendet. Die Liste wird initial von der FHNW befüllt. Accounts, welche sich auf der Whitelist befinden, dürfen gratis Transaktionen tätigen. Die Transaktionen dieser Accounts werden in ihrer Smart Wallet überwacht. Falls der Schutzmechanis eine Bedrohung im Verhalten findet, wird der betroffene Account von der Whitelist gelöscht.  
-Es muss geprüft werden ob ein Account automatisiert wieder in die Wihtelist aufgenommen werden kann. Falls nicht, muss die FHNW dies manuell erledigen.  
+Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockchain der Client Parity mit einer Withelist verwendet. 
 
-![Lösungsansatz1 \label{img_loesungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
+![Lösungsansatz1 \label{img_solution1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
 //TODO klären: Bezahlte Transaktionen dürfen überall hin, müssen nicht über wallet (Behauptung Jurij)
 
-Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Grafik \ref{img_loesungsansatz1} dargestellt. 
+Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Grafik \ref{img_solution1} dargestellt. 
 
-Die Whitelist Funktionalität von Parity bietet 
-Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden können, ohne über die Smart Wallet zu gehen. Somit kann der Benutzer den DoS Schutzalgorithmus umgehen. Deswegen muss ein Weg gefunden werden, den den Benutzer zwingt über die Smart Wallet Transaktionen zu schicken (z.B. Whitelist wo Sender und Empfänger geführt wird).
+Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted, dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln. 
+Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accounts, muss eine Liste von Verbindungen geführt werden. So kann definiert werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
 
 #### Pro
+
+//vlt als text ausformulieren? --> Bei allen PRO und CONTRAS
 
 - Alles auf der Blockchain
 - Dezentral
@@ -30,23 +32,24 @@ Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden könne
 
 - Machbarkeit unsicher
 - Komplex
+- Parity muss angepasst werden
 - Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss eine neue Smart Wallet deployed werden. Die alte bleibt bestehen sofern die Blockchain nicht resetted wird
 
 
 #### Prozessworkflow
 
-![Flowchart Lösungsansatz 1 \label{img_FlowchartLösungsansatz1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
+![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
+
+In der Grafik \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
-![Lösungsansatz 2 \label{img_Lösungsansatz2}](images/Lösungsansatz2.png "Lösungsansatz2") 
+Bei diesem Lösungsansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken mit einem Javaprogramm implementiert. 
 
+![Lösungsansatz 2 \label{img_solution2}](images/Lösungsansatz2.png "Lösungsansatz2") 
 
-#### Hauptlösungsansätze
-
-Dies ist ein Lösungsansatz ohne Smart Wallet. Die Whitelist wird von der Blockchain (Parity) selber verwaltet. Der DoS Schutzalgorithmus wird in einem externen Java Programm durchgeführt. 
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Die Benutzer werden zu Beginn von den Admins in die Liste hinzugefügt. Gelöscht werden sie nur durch den Schutzalgorithmus.
-Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutzer die Gratistransaktion Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird der Benutzer vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt. Es muss geprüft werden ob die Benutzer automatisiert wieder in die Liste hinzugefügt werden können.
+Wie in Grafik \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
+Der externe Sicherheitsalgorithmus überwacht getätigte gratis Transaktionen. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der Whitelist gelöscht. 
 
 #### Pro
 
@@ -60,17 +63,23 @@ Der externe Sicherheitsalgorithmus prüft nach dem Whitelist-Check ob der Benutz
 
 #### Prozessworkflow
 
-![Flowchart Lösungsansatz 2 \label{img_FlowchartLösungsansatz2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
+//TODO Flowchart falsch.. gibt keine Smart wallet, Transaktion kommt immer durch Java wenn auf white list, da java nur passiv mithört
+
+
+![Flowchart Lösungsansatz 2 \label{img_flow_solution2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
+
+Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
-![Lösungsansatz 3 \label{img_Lösungsansatz3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
+Wie in Grafik \rev{img_solution3} ilustriert, ist der Blockchain ein Javaprogramm vorgelagert. Das Programm verwaltet eine Liste von Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der Whitelist gelöscht.
+Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Javaprogramm an die Smart Wallet gesendet.  
 
-#### Hauptlösungsansätze
+![Lösungsansatz 3 \label{img_solution3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
 
-Es wird ein Java Programm entwickelt, welches eine eigene Whitelist führt und den DoS Schutzalgorithmus beinhaltet. Dieser prüft ob der Benutzer auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien nicht verletzt. Ist die Prüfung in Ordnung packt er die Transaktion in eine neue Transaktion ein, um die Transaktionsinformationen (wie z.B. Sender Identität) nicht zu verlieren und schickt die Transaktion an die Smart Wallet. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. 
-Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten. Die Smart Wallet packt die Transaktion aus und schickt eine neue Transaktion mit den relevanten Informationen an das eigentliche Ziel.
-Auf einer Whitelist der Blockchain ist nur das Javaprogram aufgelistet, so dass nur die Transaktionen die vom Java Programm weitergeleitet wurden, kostenfrei durchgeführt werden können. Die kostenpflichtigen Transaktionen werden vom Benutzer auch an die Smart Wallet geschickt.
+Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Javaprogramms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
+Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
+Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des Javaprogrammes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Java Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen.
 
 
 #### Pro

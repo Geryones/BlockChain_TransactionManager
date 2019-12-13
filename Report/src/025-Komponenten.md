@@ -127,8 +127,8 @@ Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werde
 
 Jeder Benutzer darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
 
-### Whitelist von Parity
+### Whitelist von Parity \label{sec_whitelist}
 
-Der Client Parity hat eine Whitelist Funktionalität. Die Liste ist als Smart Contract geschrieben. Im Genesisblock[@wiki_genesis_block] wird der Bytecode des Smart Contracts an der gewünschten Adresse hinterlegt. In der Liste können Accounts hinterlegt werden. Diese geniessen das Privileg, gratis Transaktionen tätigen zu dürfen. 
-Die Liste kann von einem berechtigtem Account jederzeit angepasst werden. 
+Der Client Parity hat eine Whitelist Funktionalität. Die Liste ist als Smart Contract geschrieben. Im Genesisblock[@wiki_genesis_block] wird der Bytecode des Smart Contracts an der gewünschten Adresse hinterlegt. In der Liste können Accounts hinterlegt werden. Diese geniessen das Privileg, gratis Transaktionen tätigen zu dürfen. Dabei wird nur geprüft, ob der Sender einer Transaktion mit einem Gas Price von Null, sich in der Whitelist befindet. Ist er das, wird die Transaktion vom Node akzeptiert. Befindet sich der Account nicht in der List, wird die Transaktion vom Node abgelehnt. 
+Die List wird initial von der FHNW mit Accounts befüllt. Die FHNW verfügt über einen Account, der berechtigt ist die Liste notfalls anzupassen. Ein weiterer Account, der die Liste anpassen kann, wird vom entwickelten Schutzmechanismus kontrolliert. So kann bei einer Bedrohung, der bösartige Account von der Liste entfernt werden. 
 
