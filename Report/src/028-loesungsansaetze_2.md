@@ -5,16 +5,16 @@
 
 In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stärken und Schwächen von jedem Lösungsansatz werden analysiert und dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.   
 
-### Lösungsansatz 1: Smart Wallet
+### Lösungsansatz 1: Smart Wallet \label{sec_solution1}
 
-Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Wie in Grafik \ref{img_loesungsansatz1} ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
+Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Wie in Abbildung \ref{img_loesungsansatz1} ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
 Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockchain der Client Parity mit einer Withelist verwendet. 
 
 ![Lösungsansatz1 \label{img_solution1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
 //TODO klären: Bezahlte Transaktionen dürfen überall hin, müssen nicht über wallet (Behauptung Jurij)
 
-Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Grafik \ref{img_solution1} dargestellt. 
+Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Abbildung \ref{img_solution1} dargestellt. 
 
 Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted, dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln. 
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accounts, muss eine Liste von Verbindungen geführt werden. So kann definiert werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
@@ -40,7 +40,7 @@ Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accou
 
 ![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
 
-In der Grafik \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
+In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
 
@@ -48,7 +48,7 @@ Bei diesem Lösungsansatz wird auf die Entwicklung einer Smart Wallet verzichtet
 
 ![Lösungsansatz 2 \label{img_solution2}](images/Lösungsansatz2.png "Lösungsansatz2") 
 
-Wie in Grafik \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
+Wie in Abbildung \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
 Der externe Sicherheitsalgorithmus überwacht getätigte gratis Transaktionen. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der Whitelist gelöscht. 
 
 #### Pro
@@ -72,7 +72,7 @@ Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mi
 
 ### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
 
-Wie in Grafik \rev{img_solution3} ilustriert, ist der Blockchain ein Javaprogramm vorgelagert. Das Programm verwaltet eine Liste von Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der Whitelist gelöscht.
+Wie in Abbildung \rev{img_solution3} ilustriert, ist der Blockchain ein Javaprogramm vorgelagert. Das Programm verwaltet eine Liste von Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der Whitelist gelöscht.
 Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Javaprogramm an die Smart Wallet gesendet.  
 
 ![Lösungsansatz 3 \label{img_solution3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
@@ -94,30 +94,35 @@ Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Acc
 
 #### Prozessworkflow
 
-![Flowchart Lösungsansatz 3 \label{img_FlowchartLösungsansatz3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
+//Todo flowchart falsch, zuerst java dann richtige smart wallet
+
+![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
+
+Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Javaprogramm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
 ### Lösungsansatz 4: Super Smart Wallet
 
-![Lösungsansatz 4 \label{img_Lösungsansatz4}](images/Lösungsansatz4.png "Lösungsansatz4") 
+Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu Lösungsansatz 1, \ref{sec_solution1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
+Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen Whitelist gearbeitet.
 
-#### Hauptlösungsansätze
+![Lösungsansatz 4 \label{img_solution4}](images/Lösungsansatz4.png "Lösungsansatz4") 
 
-Dieser Lösungsansatz war der erste konzipierte Lösungsansatz.
-Es wird eine komplett eigene Smart Wallet erstellt, die sowohl die Whitelist wie auch den Schutzalgorithmus verwaltet.
-Alle Benutzer erhalten eine zentrale Smart Wallet die von den Admins deployt wird.
-Auf einer Whitelist sind alle Benutzer aufgelistet die berechtigt sind gratis Transaktionen durchzuführen. Der Benutzer wirdvon den Admins zu Beginn in diese Liste  hinzugefügt. Der Sicherheitsalgorithmus prüft ob der Benutzer die Gratistransaktions Richtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird er vom Algorithmus aus der Whitelist gelöscht. Der Benutzer gelangt nur wieder in die Whitelist, wenn ein Admin ihn hinzufügt. Es muss geprüft werden ob die Benutzer automatisiert wieder in die Liste hinzugefügt werden können.
+Die Smart Wallet verwaltet die Whitelist und den Schutzmechanismus gegen DoS Attacken. Das ist auf Abbildung \ref{img_solution4} ersichtlich.
 
 #### Pro
 
 - Nur eine Smart Wallet muss deployed und betrieben werden 
-- Weniger administrativer Aufwand für Admins
+- Weniger administrativer Aufwand für Administratoren
 
 #### Contra
 
 -Schwierig Sender ID für Transaktion zu setzten (überhaupt möglich?)
 
 ## Evaluation der Lösungsansätze
-Folgende Evaluationskriterien wurden bestummen
+
+//TODO muss ausgeschrieben werden, das ist ein zentraler Punkt in unserer Arbeit. 
+
+Die Lösungsansätze wurden anhand folgender Evaluationskriterien bewertet: 
 
 - Sichere Machbarkeit (hohe Priorität)
 - Tiefe Komplexität (hohe Priorität)
