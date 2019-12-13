@@ -127,3 +127,8 @@ Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werde
 
 Jeder Benutzer darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
 
+### Whitelist von Parity
+
+Der Client Parity hat eine Whitelist Funktionalität. Die Liste ist als Smart Contract geschrieben. Im Genesisblock[@wiki_genesis_block] wird der Bytecode des Smart Contracts an der gewünschten Adresse hinterlegt. In der Liste können Accounts hinterlegt werden. Diese geniessen das Privileg, gratis Transaktionen tätigen zu dürfen. 
+Die Liste kann von einem berechtigtem Account jederzeit angepasst werden. 
+

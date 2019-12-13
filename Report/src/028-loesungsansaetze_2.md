@@ -6,14 +6,17 @@ In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stä
 
 ### Lösungsansatz 1: Smart Wallet
 
-Es wird eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Für jeden Benutzer wird eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
+Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Wie in Grafik \ref{img_loesungsansatz1} ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
 Für die Betreibung der Blockchain wird Parity mit einer Withelist verwendet. Die Liste wird initial von der FHNW befüllt. Accounts, welche sich auf der Whitelist befinden, dürfen gratis Transaktionen tätigen. Die Transaktionen dieser Accounts werden in ihrer Smart Wallet überwacht. Falls der Schutzmechanis eine Bedrohung im Verhalten findet, wird der betroffene Account von der Whitelist gelöscht.  
 Es muss geprüft werden ob ein Account automatisiert wieder in die Wihtelist aufgenommen werden kann. Falls nicht, muss die FHNW dies manuell erledigen.  
 
-![Lösungsansatz1 \label{img_Loesungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
+![Lösungsansatz1 \label{img_loesungsansatz1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
-Die bezahlten Transaktionen laufen auch über die Smart Wallet, um mit der gleichen Sender Identität Transaktionen an das eigentliche Ziel zu verschicken.
+//TODO klären: Bezahlte Transaktionen dürfen überall hin, müssen nicht über wallet (Behauptung Jurij)
 
+Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Grafik \ref{img_loesungsansatz1} dargestellt. 
+
+Die Whitelist Funktionalität von Parity bietet 
 Hier besteht das Problem, dass auch gratis Transaktionen geschickt werden können, ohne über die Smart Wallet zu gehen. Somit kann der Benutzer den DoS Schutzalgorithmus umgehen. Deswegen muss ein Weg gefunden werden, den den Benutzer zwingt über die Smart Wallet Transaktionen zu schicken (z.B. Whitelist wo Sender und Empfänger geführt wird).
 
 #### Pro
