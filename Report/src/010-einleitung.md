@@ -3,7 +3,7 @@
 Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. 
 
 ## Problemstellung
-Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur verfügung zu stellen, welches von den Studierenden zu test Zwecken genutzt werden kann.
+Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur Verfügung zu stellen, welches von den Studierenden zu Testzwecken genutzt werden kann.
 Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken abzusichern. Eine
 davon ist eine Gebühr auf jeder Transaktion, der sogenannte Gas Price \ref{sec_gas} [@gasprice]. Dadurch können Denial of
 Service (DoS) Attacken \ref{sec_dos} [@wiki_dos], bei denen das Netzwerk mit unzähligen Transaktionen geflutet wird, effizient bekämpft werden. Der Angreifer kann die Attacke nicht aufrecht erhalten, da ihm die finanziellen Mittel zwangsläufig ausgehen.
@@ -13,14 +13,19 @@ ohne anfallende Gebühren ausführen zu können. Dadurch wird jedoch die Blockch
 Attacken.
 
 ## Ziel
-Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für eine definierte Gruppe von Benutzern gratis Transaktionen erlaubt und trotzdem ein Schutzmechanismus gegen Dos Attacken hat.
+Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für eine definierte Gruppe von Benutzern gratis Transaktionen erlaubt und trotzdem ein Schutzmechanismus gegen DoS Attacken hat.
 
 ## Methodik
  
+ //TODO Kapitel besprechen und beschreiben
  Hier wird beschrieben wie und was gemacht wurde
 
 !!muss besprochen überarbeitet werden
  Wir haben zu Beginn Meilensteine und grössere Arbeitspakete definiert. Die kleineren Arbeitspakete wurden nach neugewonnen Wissen und Arbeitsstand definiert. 
+ 
+ Durch die erarbeiteten Lösungsansaätze, der Evaluation und die Besprechung nach der Zwischenpräsentation, wurden die Meilensteine geändert und die Planung anderst gestaltet.
+ 
+ Agiles Vorgehen, --> mit neuem Wissen weiter geplant
 
 ## Strukturierung des Berichts
 
