@@ -13,6 +13,7 @@ Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockcha
 ![Lösungsansatz1 \label{img_solution1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
 //TODO klären: Bezahlte Transaktionen dürfen überall hin, müssen nicht über wallet (Behauptung Jurij)
+//müssen nicht über die Wallet, aber nur so, haben bezahlte und gratis Transaktionen die gleiche Sender ID
 
 Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Abbildung \ref{img_solution1} dargestellt. 
 
