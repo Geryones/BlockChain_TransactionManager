@@ -2,7 +2,7 @@
 
 //TODO Spellcheck
 
-Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem grundsätzlichen Verständnis für die Materie immer der Schutz vor einer Denial of Servie (DOS) Attacke im Fokus.  
+Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem grundsätzlichen Verständnis für die Materie immer der Schutz vor einer Denial of Servie (DoS) Attacke im Fokus.  
 
 ### Ethereum Blockchain \label{sec_blockchain}
 
@@ -16,6 +16,8 @@ Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH).
 
 ### Smart Contracts \label{sec_smartContracts}
 
+//TODO Kommentar/Besprechen--> Nicht nur Vertargsbedingungen (Dies ist nur ein Anwendungsfall), sondern auch anderes Programm
+
 Der Begriff Smart Contract, wurde von Nick Szabo[@wiki_nick_szabo] in den frühen 1990 Jahren zum erten Mal verwendet. Es handelt sich um ein Stück Code, das auf der Blockchain liegt. Es können Vertragsbedingungen als Code geschrieben werden. Sobald die Bedingungen erfüllt sind, führt sich der Smart Contract selbst aus.
 Der Code kann von allen Teilnehmern der Blockchain inspiziert werden. Da er dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 
@@ -26,6 +28,8 @@ Der Code kann von allen Teilnehmern der Blockchain inspiziert werden. Da er deze
 Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt werden, das ist auf den Bildern \ref{img_tradContract} und \ref{img_smartContract} dargestellt. Der Code kontrolliert die Transaktionen, welche Nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag werden diese durch third parties kontrolliert und meistens auch ausgeführt. 
 
 Sobald ein Smart Contract auf Ethereum deployed ist, verfügt er über eine Adresse, siehe Abschnitt \ref{sec_address}. Mit dieser, kann auf die Funktionen des Smart Contracts zugegriffen werden. 
+
+//TODO evtl hier erwähnen, dass falls der Smart Contarct einen anderen aufruft, wird eine neue Transaktion geschickt, mit der Sender ID der Smart Contract Adresse und nicht der ursprünglichen ID.
 
 
 #### Decentralized application (DApp) \label{sec_dapp}
@@ -72,6 +76,8 @@ Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was di
 
 Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Ether zu empfangen und zu senden. 
 
+//TODO Kommentar kann auch was anderes gesendet werden (Transaktionen für Interaktion mit Programm und nicht für Währung)
+
 
 #### Geheimer Schlüssel \label{sec_private_key}
 
@@ -98,6 +104,8 @@ Hot Wallet
 :     Ein Stück Software, welches die geheimen Schlüssel verwaltet. 
 :     Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
 
+//TODO diese Typen kurz erklären oder nicht, weil nicht wichtig für unserer Arbeit?
+
 Cold Wallet
 :     Der geheime Schlüssel wird in einem Stück Hardware gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
@@ -113,7 +121,7 @@ Bei einer DoS Attacke versucht der Angreifer einen Service mit Anfragen zu über
 Zurzeit sind Blockchains noch relativ langsam bei der Verarbeitung von Transaktionen. Ethereum kann ungefähr 15 Transaktionen pro Sekunde abarbeiten.[@interview_vitalik_buterin] Dadurch ist ein möglicher Angriffsvektor, die Blockchain mit Transaktionen zu fluten. Das würde dazu führen, dass Benutzer sehr lange auf auf die Ausführung ihrer Transaktionen warten müssen. 
 Blockchains schützen sich vor diesem Angriff mit einer Transaktionsgebühr. Diese werden durch Angebot und Nachfrage bestimmt. Das heisst, wenn es viele Transaktionen gibt, steigt der Bedarf an deren Verarbeitung und es kann davon ausgegangen werden, dass auch die Transaktionsgebühren steigen. 
 Das bedeutet, dass bei einer DoS Attacke die Transaktionsgebühren tedentiell steigen. Um sicherzustellen, dass seine Transaktionen weiterhin zuverlässig in die Blockchain aufgenommen werden, muss der Angfreifer seinen Gas Price kontinuierlich erhöhen. 
-Ein DoS Angriff auf eine Blockchain wird dadurch zu einem sehr kostspieligen Unterfagen. Die hohen Kosten schrecken die meisten Angreifer ab und sind somit ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
+Ein DoS Angriff auf eine Blockchain wird dadurch zu einem sehr kostspieligen Unterfangen. Die hohen Kosten schrecken die meisten Angreifer ab und sind somit ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
 
 
 #### DoS Attacke identifizieren \label{sec_identify_dos_attack}
@@ -122,13 +130,19 @@ Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese d
 Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werden. Falls einer dieser Benutzer eine DoS Attacke einleitet, muss das frühst möglich erkannt und unterbunden werden können. 
 
 //TODO Möglich Vorgehensweisen
+// 
 
 ##### Transaktionslimite pro Benutzer
 
+//TODO Benutzer oder Account?
 Jeder Benutzer darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
+
+// TODO Muss wieder von der FHNW oder dem Algorithmus nach einem Tag ? hinzugefügt werden.
 
 ### Whitelist von Parity \label{sec_whitelist}
 
-Der Client Parity hat eine Whitelist Funktionalität. Die Liste ist als Smart Contract geschrieben. Im Genesisblock[@wiki_genesis_block] wird der Bytecode des Smart Contracts an der gewünschten Adresse hinterlegt. In der Liste können Accounts hinterlegt werden. Diese geniessen das Privileg, gratis Transaktionen tätigen zu dürfen. Dabei wird nur geprüft, ob der Sender einer Transaktion mit einem Gas Price von Null, sich in der Whitelist befindet. Ist er das, wird die Transaktion vom Node akzeptiert. Befindet sich der Account nicht in der List, wird die Transaktion vom Node abgelehnt. 
-Die List wird initial von der FHNW mit Accounts befüllt. Die FHNW verfügt über einen Account, der berechtigt ist die Liste notfalls anzupassen. Ein weiterer Account, der die Liste anpassen kann, wird vom entwickelten Schutzmechanismus kontrolliert. So kann bei einer Bedrohung, der bösartige Account von der Liste entfernt werden. 
+Der Client Parity hat eine Whitelist Funktionalität. Die Liste ist als Smart Contract geschrieben. Im Genesisblock[@wiki_genesis_block] wird der Bytecode des Smart Contracts an der gewünschten Adresse hinterlegt. In der Liste können Accounts hinterlegt werden. Diese geniessen das Privileg, gratis Transaktionen tätigen zu dürfen. Dabei wird nur geprüft, ob der Sender einer Transaktion mit einem Gas Price von Null, sich in der Whitelist befindet. Ist er das, wird die Transaktion vom Node akzeptiert. Befindet sich der Account nicht in der Whitelist, wird die Transaktion vom Node abgelehnt. 
+Die Whitelist wird initial von der FHNW mit Accounts befüllt. Die FHNW verfügt über einen Account, der berechtigt ist die Liste notfalls anzupassen.
+//TODO FHNW kann nur hinzufügen, jedoch nicht entfernen
+Ein weiterer Account, der die Liste anpassen kann, wird vom entwickelten Schutzmechanismus kontrolliert. So kann bei einer Bedrohung, der bösartige Account von der Liste entfernt werden. 
 
