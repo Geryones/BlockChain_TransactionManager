@@ -26,6 +26,10 @@ Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für
  Durch die erarbeiteten Lösungsansaätze, der Evaluation und die Besprechung nach der Zwischenpräsentation, wurden die Meilensteine geändert und die Planung anderst gestaltet.
  
  Agiles Vorgehen, --> mit neuem Wissen weiter geplant
+ 
+ 
+ //TODO möglicher Text besprechen und überarbeiten
+ Zu Beginn wurde ein provisorischer Projekt Plan mit möglichen Arbeitspaketen und Meilensteine definiert. Da die Thematik komplett unbekannt war, wurde auf ein agiles Vorgehen gesetzt, um neue Erkentnisse in die Planung einfliessen zu lassen. Nach der Einlese- und Probierphase, wurden Lösungskonzepte konzipiert, evaluiert und an der Zwischenpräsentation dem Experten und den Betreuern präsentiert. Hier wurde das weitere Vorgehen besprochen und die neuen Meilensteine definiert. Die Arbeitspakete werden alle zwei Wochen definiert.
 
 ## Strukturierung des Berichts
 
