@@ -16,8 +16,6 @@ Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH).
 
 ### Smart Contracts \label{sec_smartContracts}
 
-//TODO Kommentar/Besprechen--> Nicht nur Vertargsbedingungen (Dies ist nur ein Anwendungsfall), sondern auch anderes Programm
-
 Der Begriff Smart Contract, wurde von Nick Szabo[@wiki_nick_szabo] in den frühen 1990 Jahren zum erten Mal verwendet. Es handelt sich um ein Stück Code, das auf der Blockchain liegt. Es können Vertragsbedingungen als Code geschrieben werden. Sobald die Bedingungen erfüllt sind, führt sich der Smart Contract selbst aus.
 Der Code kann von allen Teilnehmern der Blockchain inspiziert werden. Da er dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 
@@ -29,13 +27,10 @@ Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt w
 
 Sobald ein Smart Contract auf Ethereum deployed ist, verfügt er über eine Adresse, siehe Abschnitt \ref{sec_address}. Mit dieser, kann auf die Funktionen des Smart Contracts zugegriffen werden. 
 
-//TODO evtl hier erwähnen, dass falls der Smart Contarct einen anderen aufruft, wird eine neue Transaktion geschickt, mit der Sender ID der Smart Contract Adresse und nicht der ursprünglichen ID.
-
-
 #### Decentralized application (DApp) \label{sec_dapp}
 
 Eine DApp ist ist eine Applikation (App), deren backend Code dezentral auf einem peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das Backend möglich sind. 
-Das prominenteste Beispiel einer DApp ist CryptoKitties[@cryptokitties], beider die Benutzer digitale Katzen handeln und züchten können. 
+DApp's für die Ethereum Blockchain werden mit Smart Contracts realisiert. Das prominenteste Beispiel einer DApp ist CryptoKitties[@cryptokitties]. Die Benutzer können mit digitale Katzen handeln und züchten. 
 
 ### Transaktionen \label{sec_transaktionen}
 
@@ -59,7 +54,7 @@ Gas Price
 Gas Limit
 :     Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas} [@transactions]
 
-Damit eine Transaktion in die Blockchain aufgenommen werden kann, muss sie signiert[@signing_transaction] sein. Dies kann offline beim Benutzer gemacht werden. Die signierte Transaktion wird dann an die Blockchain übermittelt. 
+Damit eine Transaktion in die Blockchain aufgenommen werden kann, muss sie signiert[@signing_transaction] sein. Dies kann beim Benutzer offline gemacht werden. Die signierte Transaktion wird dann an die Blockchain übermittelt. 
 
 ### Gas \label{sec_gas}
 
@@ -74,10 +69,7 @@ Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was di
 
 ### Account \label{sec_account}
 
-Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Ether zu empfangen und zu senden. 
-
-//TODO Kommentar kann auch was anderes gesendet werden (Transaktionen für Interaktion mit Programm und nicht für Währung)
-
+Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Transaktionen zu empfangen und zu senden. 
 
 #### Geheimer Schlüssel \label{sec_private_key}
 
@@ -102,9 +94,7 @@ Es existieren zwei unterschiedliche Arten von Wallets, Hot und Cold Wallets:
 
 Hot Wallet
 :     Ein Stück Software, welches die geheimen Schlüssel verwaltet. 
-:     Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
-
-//TODO diese Typen kurz erklären oder nicht, weil nicht wichtig für unserer Arbeit?
+:     Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.  [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
 Cold Wallet
 :     Der geheime Schlüssel wird in einem Stück Hardware gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
@@ -127,17 +117,16 @@ Ein DoS Angriff auf eine Blockchain wird dadurch zu einem sehr kostspieligen Unt
 #### DoS Attacke identifizieren \label{sec_identify_dos_attack}
 
 Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese dürfen gratis Transaktionen ausführen. Diese Gruppe von Benutzer ist eine potentielle Bedrohung. Ohne Transaktionskosten hat die Blockchain keinen Schutzmechanismus gegen eine DoS Attacke. 
-Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werden. Falls einer dieser Benutzer eine DoS Attacke einleitet, muss das frühst möglich erkannt und unterbunden werden können. 
+Aus diesem Grund muss das Verhalten der priviligierten Accounts überwacht werden. Falls einer dieser Accounts eine DoS Attacke einleitet, muss das frühst möglich erkannt und unterbunden werden können. 
 
-//TODO Möglich Vorgehensweisen
+//TODO Möglich Vorgehensweisen nebst TX limite pro ACC
 
 
 ##### Transaktionslimite pro Account
 
-//TODO Benutzer oder Account?
 Jeder Account darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
+Der Account kann nach einer bestimmten Zeit automatisch wieder in die Whitelist eingefügt werden. 
 
-// TODO Muss wieder von der FHNW oder dem Algorithmus nach einem Tag ? hinzugefügt werden.
 
 ### Whitelist von Parity \label{sec_whitelist}
 
