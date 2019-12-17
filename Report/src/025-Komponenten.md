@@ -130,12 +130,12 @@ Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese d
 Aus diesem Grund muss das Verhalten der priviligierten Benutzer überwacht werden. Falls einer dieser Benutzer eine DoS Attacke einleitet, muss das frühst möglich erkannt und unterbunden werden können. 
 
 //TODO Möglich Vorgehensweisen
-// 
 
-##### Transaktionslimite pro Benutzer
+
+##### Transaktionslimite pro Account
 
 //TODO Benutzer oder Account?
-Jeder Benutzer darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
+Jeder Account darf nur eine gewisse Anzahl von gratis Transaktionen pro Zeiteinheit tätigen. Beim Überschreiten des Limits, wird er von der Whitelist gelöscht und muss die Transaktionsgebühr zahlen. 
 
 // TODO Muss wieder von der FHNW oder dem Algorithmus nach einem Tag ? hinzugefügt werden.
 

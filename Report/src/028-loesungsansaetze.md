@@ -168,33 +168,48 @@ Bei diesem Lösungsansatz ist nicht klar, ob er umsetzbar ist. Die Blockchain mu
 
 ## Evaluation der Lösungsansätze
 
-//TODO muss ausgeschrieben werden, das ist ein zentraler Punkt in unserer Arbeit. 
+Um einen Lösungsansatz auszuwählen, haben wir folgende Kriterien definiert:
 
-Die Lösungsansätze wurden anhand folgender Evaluationskriterien bewertet: 
+Komplexität (KP)
+:     Dieses Kriterium gibt an, wie Komplex die Umsetzung des Lösungsansatzes ist. 
+:     Gewichtung 3
+// TODO weiter ausführen
 
-- Sichere Machbarkeit (hohe Priorität)
-- Tiefe Komplexität (hohe Priorität)
-- Komplexität bei Anpassungen (mittlere Priorität)
-- Tiefer Waste bei Anpassungen (mittlere Priorität)
-- Alles On Chain (tiefe Priorität)
-- Wenig administrativer Aufwand (tiefe Priorität)
-- Elegantheit der Lösung (tiefe Priorität)
-- Normale Transaktion ( ?? Prio)
-- Security ( ?? Prio )
-//TODO Prioritäten besprechen
 
-| |Sichere Machbarkeit | Tiefe Komplexität | Komplexität bei Anpassungen | Tiefer Waste bei Anpassungen | Alles On Chain | Wenig administrativer Aufwand | Elegantheit der Lösung | Normale Transaktion | Security | Total |
-|------------:|:------|:--------|:------------|:----------|:----------|:------------|:------------|:-----------|:----------|-----:|
-|Prio|3|3|2|2|1|1|1|?|2| |
-| Lösungsansatz 1 | 2 | 1 | 0 | 0 | 2 | 1 | 2 | ? | ? | ? |
-| Lösungsansatz 2 | 2 | 2 | 2 | 2 | 0 | 1 | 1 | ? | ? | ? |
-| Lösungsansatz 3 | 2 | 1 | 2 | 2 | 0 | 1 | 0 | ? | ? | ? |
-| Lösungsansatz 4 | 0 | 0 | 0 | 2 | 0 | 2 | 1 | ? | ? | ? |
+Blockchainprinzipien (BCP)
+:     Hier wird bewertet, ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, alles "on-Chain" etc 
+:     Gewichtung 1
+// TODO weiter ausführen
+
+
+Administrativer Aufwand (AA)
+:     Mit diesem Punkt wird der administrative Aufwand für die Betreibung des Lösungsansatzes bewertet. (Deployment Smart Contracts, Anpassung Whitelist, Server Betrieb)
+:     Gewichtung 2
+//TODO weiter ausführen
+
+
+Security (SEC)
+:     Wie sicher ist der Lösungsansatz? Welche Bedenken bestehen
+:     Gewichtung 3
+//TODO Weiter ausführen / definieren
+
+//TODO TEXT Erklären, dass Gewichtung 1-3 ist. 3 ist höchste
+//TODO bei allen Kriterien noch die Gewichtung + Erklärung 
+
+
+| |KP | BCP | AA | SEC | Total |
+|:------------|:------:|:--------:|:------------:|:----------:|-----:|
+| Gewichtung |3|1|2|1| |
+| Lösungsansatz 1 | 1 | 3 | 1 | | 8 |
+| Lösungsansatz 2 | 3 | 2 | 2 | | 15 |
+| Lösungsansatz 3 | 2 | 1 | 3 | | 13 |
+| Lösungsansatz 4 | 1 | 3 | 2 | | 7 |
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 ### Lösungsansatz 1:  Smart Wallet 
+
  //TODO nach Prio nochmals umschreiben
 Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Java Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär zu Lösungsansatz 3. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
 
