@@ -199,11 +199,11 @@ Security (SEC)
 
 | |KP | BCP | AA | SEC | Total |
 |:------------|:------:|:--------:|:------------:|:----------:|-----:|
-| Gewichtung |3|1|2|1| |
-| Lösungsansatz 1 | 1 | 3 | 1 | | 8 |
-| Lösungsansatz 2 | 3 | 2 | 2 | | 15 |
-| Lösungsansatz 3 | 2 | 1 | 3 | | 13 |
-| Lösungsansatz 4 | 1 | 3 | 2 | | 7 |
+| Gewichtung | 3 | 2 | 2 | 1 | |
+| Lösungsansatz 1 | 1 | 3 | 1 | | 11 |
+| Lösungsansatz 2 | 3 | 2 | 2 | | 17 |
+| Lösungsansatz 3 | 2 | 1 | 3 | | 12 |
+| Lösungsansatz 4 | 0 | 2 | 2 | | 8 |
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
