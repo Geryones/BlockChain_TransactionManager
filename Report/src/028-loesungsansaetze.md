@@ -138,7 +138,7 @@ Komplexität (KP)
 
 Blockchainprinzipien (BCP)
 :     Hier wird bewertet, ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, alles "on-Chain" etc 
-:     Gewichtung 1
+:     Gewichtung 2
 // TODO weiter ausführen
 
 
@@ -150,7 +150,7 @@ Administrativer Aufwand (AA)
 
 Security (SEC)
 :     Wie sicher ist der Lösungsansatz? Welche Bedenken bestehen
-:     Gewichtung 3
+:     Gewichtung 1
 //TODO Weiter ausführen / definieren
 
 //TODO TEXT Erklären, dass Gewichtung 1-3 ist. 3 ist höchste
@@ -184,6 +184,10 @@ Laut Evaluation ist dieser Lösungsansatz auf dem zweiten Platz, zusammen mit L�
 ### Lösungsansatz 4: Super Smart Wallet
 
 Dieser Lösungsansatz ist laut Evaluation auf dem letzten Platz. Dies war von Anfang an klar. Dieser Ansatz wurde jedoch aufgezeigt, da er das erste Lösungskonzept war.
+
+### Resultat Evaluation
+
+//Text
 
 
 
