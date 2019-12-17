@@ -146,40 +146,35 @@ Bei diesem Lösungsansatz ist nicht klar, ob er umsetzbar ist. Die Blockchain mu
 
 Um einen Lösungsansatz auszuwählen, haben wir folgende Kriterien definiert:
 
-Komplexität (KP)
+Machbarkeit (MK)
 :     Dieses Kriterium gibt an, wie Komplex die Umsetzung des Lösungsansatzes ist. 
 :     Gewichtung 3
 // TODO weiter ausführen
 
 
 Blockchainprinzipien (BCP)
-:     Hier wird bewertet, ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, alles "on-Chain" etc 
-:     Gewichtung 1
+:     Hier wird bewertet, ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, alles "on-Chain", Security  
+:     Gewichtung 2
 // TODO weiter ausführen
 
 
-Administrativer Aufwand (AA)
+Betrieb (BT)
 :     Mit diesem Punkt wird der administrative Aufwand für die Betreibung des Lösungsansatzes bewertet. (Deployment Smart Contracts, Anpassung Whitelist, Server Betrieb)
 :     Gewichtung 2
 //TODO weiter ausführen
 
 
-Security (SEC)
-:     Wie sicher ist der Lösungsansatz? Welche Bedenken bestehen
-:     Gewichtung 3
-//TODO Weiter ausführen / definieren
-
 //TODO TEXT Erklären, dass Gewichtung 1-3 ist. 3 ist höchste
 //TODO bei allen Kriterien noch die Gewichtung + Erklärung 
 
 
-| |KP | BCP | AA | SEC | Total |
-|:------------|:------:|:--------:|:------------:|:----------:|-----:|
-| Gewichtung | 3 | 2 | 2 | 1 | |
-| Lösungsansatz 1 | 1 | 3 | 1 | | 11 |
-| Lösungsansatz 2 | 3 | 2 | 2 | | 17 |
-| Lösungsansatz 3 | 2 | 1 | 3 | | 12 |
-| Lösungsansatz 4 | 0 | 2 | 2 | | 8 |
+| |MK | BCP | BT | Total |
+|:------------|:------:|:------:|:------:|-----:|
+| Gewichtung | 3 | 2 | 2 | |
+| Lösungsansatz 1 | 1 | 3 | 1 | 11 |
+| Lösungsansatz 2 | 3 | 2 | 2 | 17 |
+| Lösungsansatz 3 | 2 | 1 | 3 | 12 |
+| Lösungsansatz 4 | 0 | 2 | 2 | 8 |
 
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
