@@ -25,20 +25,10 @@ Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accou
 
 Der Vorteil des Lösungsansatzes 1 ist, dass die ganze Lösung auf der Blockchain läuft und somit dezentral ist. Diese Lösung ist die eleganteste Lösung, da sie die Prinzipien einer Blockchain einhält.
 
-//TODO Text oder Auflistung
-
-//vlt als text ausformulieren? --> Bei allen PRO und CONTRAS
-
-- Alles auf der Blockchain
-- Dezentral
-- Elegant
-- Ein System
-
 #### Contra
 
 Ein grosses Nachteil des Lösungsansatzes 1 ist, dass es unklar ist, ob er machbar ist. Um diesen Lösungsansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden, um die Accounts zu zwingen über die Smart Wallet Transaktionen zu verschicken. Diese Erweiterungen müssen in einer weiteren Sprache entwickelt werden. Diese Änderungen macht den Lösungsansatz sehr komplex. Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Des weiteren bleibt die alte Smart Wallet bestehen, ausser die Blockchain wird resetted.
 
-//TODO Verb Zeiten kontrollieren.
 //Punkt: Sender IDs auf Whiteliszt muss für jeden Account in Whitelist angepasst werden nach neuem Smart Contract Deployement
 
 #### Prozessworkflow
@@ -82,8 +72,6 @@ Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein Javapro
 
 Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Javaprogramm an die Smart Wallet gesendet.  
 
-//TODO wer verwaltet die Whitelist des Javaprogramms?
-
 ![Lösungsansatz 3 \label{img_solution3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
 
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Javaprogramms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
@@ -100,11 +88,7 @@ Ein grosser Vorteil dieses Lösungsansatzes ist, dass alle gratis Transaktionen 
 #### Contra
 
 Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil sind die weitere Komponente die durch das Java Programm und dessen zusätzlichen Server anfallen.
-
-//TODO Text oder Auflistung
-
-- Mehrere Systeme
-- Zentrale Autorität
+ //TODO mehr Text
 
 #### Prozessworkflow
 
