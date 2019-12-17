@@ -1,7 +1,8 @@
 ## Lösungsansätze 
 
 //TODO Spellcheck über ganze Seite
-//Benutzer != Account --> Auf der Whitelist sind Accounts !
+
+//TODO Erläuterungen zu Flow Charts
 
 In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stärken und Schwächen von jedem Lösungsansatz werden analysiert und dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.   
 
@@ -12,21 +13,17 @@ Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockcha
 
 ![Lösungsansatz1 \label{img_solution1}](images/Lösungsansatz1.png "Lösungsansatz1") 
 
-//TODO klären: Bezahlte Transaktionen dürfen überall hin, müssen nicht über wallet (Behauptung Jurij)
-//müssen nicht über die Wallet, aber nur so, haben bezahlte und gratis Transaktionen die gleiche Sender ID
 
 Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Abbildung \ref{img_solution1} dargestellt. 
 
 Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted, dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln. 
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accounts, muss eine Liste von Verbindungen geführt werden. So kann definiert werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
 
-//TODO die verwaltung der Whitelist wird hier nicht erwähnt. Dass die FHNW Account iin die Liste aufnehmen kann, aber keine Löschen und was mit den gelöschten Accounts passiert. Muss nochmals in sektion sec_whitelist kontrolliert werden, ob alles drin steht.
-
-
-
 #### Pro
 
-Als Vorteile des Lösungsansatzes 1 ist, dass die ganze Lösung auf der Blockchain läuft und somit dezentral ist. Diese Lösung ist die eleganteste Lösung, da sie die Prinzipien einer Blockchain einhält.
+//TODO mehr Text
+
+Der Vorteil des Lösungsansatzes 1 ist, dass die ganze Lösung auf der Blockchain läuft und somit dezentral ist. Diese Lösung ist die eleganteste Lösung, da sie die Prinzipien einer Blockchain einhält.
 
 //TODO Text oder Auflistung
 
@@ -39,15 +36,10 @@ Als Vorteile des Lösungsansatzes 1 ist, dass die ganze Lösung auf der Blockcha
 
 #### Contra
 
-Ein grosses Nachteil des Lösungsansatzes 1 ist, dass es unklar ist, ob er machbar ist. Um diesen Lösungsansatz umzusetzten, müsste der Blockchain Client Parity erweitert werden, um die Accounts zu zwingen über die Smart Wallet Transaktionen zu verschicken. Diese Erweiterungen müssten in einer weiteren Sprache entwickelt werden. Diese Änderungen macht den Lösungsansatz sehr komplex.t. Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden müsste. Des weiteren würde die alte Smart Wallet bestehen bleiben, ausser die Blockchain wird resetted.
+Ein grosses Nachteil des Lösungsansatzes 1 ist, dass es unklar ist, ob er machbar ist. Um diesen Lösungsansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden, um die Accounts zu zwingen über die Smart Wallet Transaktionen zu verschicken. Diese Erweiterungen müssen in einer weiteren Sprache entwickelt werden. Diese Änderungen macht den Lösungsansatz sehr komplex. Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Des weiteren bleibt die alte Smart Wallet bestehen, ausser die Blockchain wird resetted.
 
-//TODO Text oder Auflistung
-
-- Machbarkeit unsicher
-- Komplex
-- Parity muss angepasst werden
-- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss eine neue Smart Wallet deployed werden. Die alte bleibt bestehen sofern die Blockchain nicht resetted wird
-
+//TODO Verb Zeiten kontrollieren.
+//Punkt: Sender IDs auf Whiteliszt muss für jeden Account in Whitelist angepasst werden nach neuem Smart Contract Deployement
 
 #### Prozessworkflow
 
@@ -66,25 +58,13 @@ Bei diesem Lösungsansatz wird auf die Entwicklung einer Smart Wallet verzichtet
 Wie in Abbildung \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
 Der externe Sicherheitsalgorithmus überwacht getätigte gratis Transaktionen. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der Whitelist gelöscht. 
 
-//TODO wer verwaltet Whitelist? in Sec_whitelist kontrollieren
-
 #### Pro
 
-//TODO Text oder Auflistung
-
-Ein klarer Vorteil des Lösungsansatzes 2 ist, dass er sicher umsetzbar ist. Die Elegantheit dieser Lösung besteht darin, dass bei einer Änderung des DoS Schutzalgorithmus nur das Java Programm neu deployed werden muss. Dies ist ein einmaliges Deployement und die Blockchain muss nicht resetted werden, um den alten Code zu entfernen.
-
-- Sicher machbar
-- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden, oder die Blockchain resetted werden.
+Ein klarer Vorteil des Lösungsansatzes 2 ist, dass er sicher umsetzbar ist. Die Eleganz dieser Lösung besteht darin, dass bei einer Änderung des DoS Schutzalgorithmus nur das Java Programm neu deployed werden muss. Dies ist ein einmaliges Deployement und die Blockchain muss nicht resetted werden, um den alten Code zu entfernen.
 
 #### Contra
 
 Ein grosser Nachteil dieses Lösungsansatzes ist, dass durch die zentrale Autorität die Prinzipen der Blockchain verletzt werden. Somit wäre die Lösung nicht sehr elegant. Ein weiterer Nachteil ist, dass durch das Java Programm ein Server als Komponente hinzukommen würde und somit nicht alles auf einer Komponente läuft. Dies bringt weiteren administrativen Aufwand.
-
-//TODO Auflistung oder Text
-
-- Mehrere Komponenten
-- Zentrale Autorität
 
 #### Prozessworkflow
 
@@ -113,17 +93,13 @@ Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Acc
 
 #### Pro
 
+//TODO kürzere Sätze
+
 Ein grosser Vorteil dieses Lösungsansatzes ist, dass alle gratis Transaktionen vom DoS Schutzalgorithmus geprüft werden, da sie alle über das Javaprogramm laufen müssen, weil dort die Whitelist der Accounts geführt wird. Ein weiterer grosser Vorteil ist, dass der DoS Schutzalgorithmus im Javaprogramm geändert werden kann und nur einmalig deployed werden muss und der alte nicht auf der Blockchain bestehen bleibt. Somit muss bei Änderungen die Blockchain nicht resetted werden. Das Besondere bei dieser Lösung ist, dass der DoS Schutzalgorithmus die unerwünschten Transaktionen blockt bevor sie auf die Blockchain treffen.
-
-//TODO Text oder Auflistung
-
-- Nach dem Anpassen vom Schutz Algorithmus in der Smart Wallet, muss keine neue Smart Wallet deployed werden.
-- DoS Algorithmus blockt bevor Transaktion auf SmartWallet trifft
-- Problem dass gratis Transaktionen nicht über die Smart Wallet geschickt werden, ist hier gelöst
 
 #### Contra
 
-Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil wäre die weitere Komponente die durch das Java Programm und dessen zusätzlichen Server anfallen.
+Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil sind die weitere Komponente die durch das Java Programm und dessen zusätzlichen Server anfallen.
 
 //TODO Text oder Auflistung
 
