@@ -1,7 +1,3 @@
-## Tools
-
-In diesem Abschnitt wird näher auf die verwendeten Tools eingegangen. Ebenfalls werden geprüfte Alternativen aufgelistet. 
-
 ### Ethereum Client
 
 Für die Betreibung von einem Ethereum Node ist ein Client nötig. Dieser muss das Ethereum Protokoll[@github_ethereum_protcol] implementieren. Das Protokoll definiert die minimal Anforderungen an den Clienten. Das erlaubt, dass der Client in verschiedenen Sprachen, von verschiedenen Teams, realisiert werden kann. 
