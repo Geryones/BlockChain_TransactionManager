@@ -43,7 +43,9 @@ Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattd
 ![Lösungsansatz 2 \label{img_solution2}](images/solution2.png "Lösungsansatz2") 
 
 Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
-Im externen Programm werden alle gratis Transaktionen analysiert, die das Blockchain Netzwerk erreichen. Das Programm verfügt über einen eigenen Benutzer Account, siehe \ref{sec_account}. Dieser ist berechtigt, die Whitelist zu manipulieren. Dadurch kann bei einer identifizierten Attacke, der angreifende Account automatisch von der Whitelist gelöscht werden.    
+Im externen Programm werden alle gratis Transaktionen analysiert, die das Blockchain Netzwerk erreichen. Das Programm verfügt über einen eigenen Benutzer Account, siehe \ref{sec_account}. Dieser ist berechtigt, die Whitelist zu manipulieren. Dadurch kann bei einer identifizierten Attacke, der angreifende Account automatisch von der Whitelist gelöscht werden. 
+
+Transaktionen für die ein Transaktionsgebühren gezahlt werden sind immer möglich. Diese werden vom externen Programm auch nicht überwacht. Die anfallenden Gebühren sind Schutz genug. 
 
 #### Pro
 
@@ -52,8 +54,8 @@ Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe 
 
 #### Contra
 
-Ein grosser Nachteil dieses Ansatz ist, dass durch die zentrale Autorität die Prinzipen der Blockchain verletzt werden. Somit ist die Lösung nicht sehr elegant. 
-Ein weiterer Nachteil ist, dass durch das externe Programm ein Server als Komponente hinzukommt und somit nicht alles auf einer Komponente läuft. Dies bringt weiteren administrativen Aufwand.
+Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. 
+Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls administriert werden.  
 
 #### Prozessworkflow
 
@@ -66,8 +68,7 @@ Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mi
 
 ### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
 
-Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein externe Programm vorgelagert. Das Programm verwaltet eine eigene Whitelist mit Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der eigenen Whitelist gelöscht.
-//TODO Benutzer oder Transaktion verletzt die Schutzrichtlinien?
+Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein externes Programm vorgelagert. Das Programm verwaltet eine eigene Whitelist mit Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der eigenen Whitelist gelöscht.
 
 Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Programm an die Smart Wallet gesendet.  
 
@@ -75,19 +76,19 @@ Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, si
 
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
-Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesindere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
+Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des externen Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesindere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
 
 #### Pro
 
-//TODO kürzere Sätze
-
-Ein grosser Vorteil dieses Lösungsansatzes ist, dass alle gratis Transaktionen vom DoS Schutzalgorithmus geprüft werden, da sie alle über das Programm laufen müssen, weil dort die Whitelist der Accounts geführt wird. Ein weiterer grosser Vorteil ist, dass der DoS Schutzalgorithmus im Programm geändert werden kann und nur einmalig deployed werden muss und der alte nicht auf der Blockchain bestehen bleibt. Somit muss bei Änderungen die Blockchain nicht resetted werden. Das Besondere bei dieser Lösung ist, dass der DoS Schutzalgorithmus die unerwünschten Transaktionen blockt bevor sie auf die Blockchain treffen.
+Dieser Ansatz ist in der gegeben Zeit umsetzbar.
+Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe Programm neu deployed werden. Eine aktualisierung der Whitelist ist nicht nötig.  
 
 #### Contra
 
-    Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil sind die weitere Komponente die durch das Programm und dessen zusätzlichen Server anfallen.
- //TODO mehr Text
+Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. 
+Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls administriert werden. 
+Dieser Ansatz bietet keine Vorteile im Vergleich zum Lösungsansatz 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
 
 #### Prozessworkflow
 
