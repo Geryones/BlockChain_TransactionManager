@@ -25,10 +25,8 @@ Dieser Ansatz besticht durch die Tatsache, dass alles auf der Blockchain läuft.
 
 #### Contra
 
-Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden. Es genügt nicht, nur zu prüfen, ob sich ein Account auf der Whitelist befindet. Stattdessen muss die Transaktion, also Sender und Empfänger kontrolliert werden. Nur so kann sichergestellt werden, dass ein für gratis Transaktionen berechtiger Account, seine Transaktionen immer seine Smart Wallet abwickelt. Ohne diese Funktionalität, kann ein Benutzer den DoS Schutzalgorithmus umgehen. 
-Es ist unklar, wie weitreichend die Anpassungen an Parity sind um diese Funktionalität zu implementieren. Zusätzlich wird eine zusätzliche Programmiersprache, Rust[@rust], benötigt. 
+Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache, Rust[@rust], benötigt. 
 Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Das bedingt, dass die Whitelist ebenfalls mit den neuen Accounts aktualisiert wird. 
-
 
 #### Prozessworkflow
 
@@ -38,22 +36,24 @@ In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis
 
 //TODO weitere Erläuterung?
 
-### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
+### Lösungsansatz 2: Smart Wallet mit externen Programm nach Whitelist-Check
 
-Bei diesem Lösungsansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken mit einem Javaprogramm implementiert. 
+Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken mit einem externen Programm implementiert, dargestellt in Abbildung \ref{img_solution2}. 
 
 ![Lösungsansatz 2 \label{img_solution2}](images/solution2.png "Lösungsansatz2") 
 
-Wie in Abbildung \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
-Der externe Sicherheitsalgorithmus überwacht getätigte gratis Transaktionen. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der Whitelist gelöscht. 
+Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
+Im externen Programm werden alle gratis Transaktionen analysiert, die das Blockchain Netzwerk erreichen. Das Programm verfügt über einen eigenen Benutzer Account, siehe \ref{sec_account}. Dieser ist berechtigt, die Whitelist zu manipulieren. Dadurch kann bei einer identifizierten Attacke, der angreifende Account automatisch von der Whitelist gelöscht werden.    
 
 #### Pro
 
-Ein klarer Vorteil des Lösungsansatzes 2 ist, dass er sicher umsetzbar ist. Die Eleganz dieser Lösung besteht darin, dass bei einer Änderung des DoS Schutzalgorithmus nur das Java Programm neu deployed werden muss. Dies ist ein einmaliges Deployement und die Blockchain muss nicht resetted werden, um den alten Code zu entfernen.
+Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit. 
+Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe Programm neu deployed werden. Eine aktualisierung der Whitelist ist nicht nötig. 
 
 #### Contra
 
-Ein grosser Nachteil dieses Lösungsansatzes ist, dass durch die zentrale Autorität die Prinzipen der Blockchain verletzt werden. Somit wäre die Lösung nicht sehr elegant. Ein weiterer Nachteil ist, dass durch das Java Programm ein Server als Komponente hinzukommen würde und somit nicht alles auf einer Komponente läuft. Dies bringt weiteren administrativen Aufwand.
+Ein grosser Nachteil dieses Ansatz ist, dass durch die zentrale Autorität die Prinzipen der Blockchain verletzt werden. Somit ist die Lösung nicht sehr elegant. 
+Ein weiterer Nachteil ist, dass durch das externe Programm ein Server als Komponente hinzukommt und somit nicht alles auf einer Komponente läuft. Dies bringt weiteren administrativen Aufwand.
 
 #### Prozessworkflow
 
@@ -64,29 +64,29 @@ Ein grosser Nachteil dieses Lösungsansatzes ist, dass durch die zentrale Autori
 
 Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
 
-### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
+### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
 
-Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein Javaprogramm vorgelagert. Das Programm verwaltet eine eigene Whitelist mit Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der eigenen Whitelist gelöscht.
+Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein externe Programm vorgelagert. Das Programm verwaltet eine eigene Whitelist mit Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist und ob die Transaktion die Schutzrichtlinien verletzt. Falls der Benutzer die Sicherheitsrichtlinien verletzt, wird sein Account vom Algorithmus aus der eigenen Whitelist gelöscht.
 //TODO Benutzer oder Transaktion verletzt die Schutzrichtlinien?
 
-Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Javaprogramm an die Smart Wallet gesendet.  
+Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Programm an die Smart Wallet gesendet.  
 
 ![Lösungsansatz 3 \label{img_solution3}](images/solution3_v2.png "Lösungsansatz3") 
 
-Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Javaprogramms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
+Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
-Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des Javaprogrammes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Java Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesindere wichtig, falls das Java Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
+Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesindere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
 
 #### Pro
 
 //TODO kürzere Sätze
 
-Ein grosser Vorteil dieses Lösungsansatzes ist, dass alle gratis Transaktionen vom DoS Schutzalgorithmus geprüft werden, da sie alle über das Javaprogramm laufen müssen, weil dort die Whitelist der Accounts geführt wird. Ein weiterer grosser Vorteil ist, dass der DoS Schutzalgorithmus im Javaprogramm geändert werden kann und nur einmalig deployed werden muss und der alte nicht auf der Blockchain bestehen bleibt. Somit muss bei Änderungen die Blockchain nicht resetted werden. Das Besondere bei dieser Lösung ist, dass der DoS Schutzalgorithmus die unerwünschten Transaktionen blockt bevor sie auf die Blockchain treffen.
+Ein grosser Vorteil dieses Lösungsansatzes ist, dass alle gratis Transaktionen vom DoS Schutzalgorithmus geprüft werden, da sie alle über das Programm laufen müssen, weil dort die Whitelist der Accounts geführt wird. Ein weiterer grosser Vorteil ist, dass der DoS Schutzalgorithmus im Programm geändert werden kann und nur einmalig deployed werden muss und der alte nicht auf der Blockchain bestehen bleibt. Somit muss bei Änderungen die Blockchain nicht resetted werden. Das Besondere bei dieser Lösung ist, dass der DoS Schutzalgorithmus die unerwünschten Transaktionen blockt bevor sie auf die Blockchain treffen.
 
 #### Contra
 
-Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil sind die weitere Komponente die durch das Java Programm und dessen zusätzlichen Server anfallen.
+    Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien der Blockchain verletzt. Ein weiterer Nachteil sind die weitere Komponente die durch das Programm und dessen zusätzlichen Server anfallen.
  //TODO mehr Text
 
 #### Prozessworkflow
@@ -95,7 +95,7 @@ Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien de
 
 ![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/flow_solution3.png "Flowchart Lösungsansatz 3") 
 
-Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Javaprogramm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
+Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Programm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
 ### Lösungsansatz 4: Super Smart Wallet
 
@@ -165,15 +165,15 @@ Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 ### Lösungsansatz 1:  Smart Wallet 
 
  //TODO nach Prio nochmals umschreiben
-Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Java Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär zu Lösungsansatz 3. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
+Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär zu Lösungsansatz 3. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
 
-### Lösungsansatz 2: Smart Wallet mit externen JavaProgramm nach Whitelist-Check
+### Lösungsansatz 2: Smart Wallet mit externen Programm nach Whitelist-Check
 
 Ergebnis der Evaluation zeigt, dass diese Lösung die beste nach den Kriterien ist. Deswegen wird diese Lösung als erstes implementiert.
 
-### Lösungsansatz 3: Smart Wallet mit externen JavaProgramm vor Whitelist-Check
+### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
 
-Laut Evaluation ist dieser Lösungsansatz auf dem zweiten Platz, zusammen mit Lösungsansatz 1. Da diese Lösung auch ein Javaprogramm wie Lösung 2 vorsieht, wird sie weniger prioritär wie Lösungsansatz 1 betrachtet.
+Laut Evaluation ist dieser Lösungsansatz auf dem zweiten Platz, zusammen mit Lösungsansatz 1. Da diese Lösung auch ein externe Programm wie Lösung 2 vorsieht, wird sie weniger prioritär wie Lösungsansatz 1 betrachtet.
 
 ### Lösungsansatz 4: Super Smart Wallet
 
