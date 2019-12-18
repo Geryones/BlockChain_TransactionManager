@@ -11,7 +11,7 @@ In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stä
 Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus gegen DoS Attacken implementiert. Wie in Abbildung \ref{img_loesungsansatz1} ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
 Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockchain der Client Parity mit einer Withelist verwendet. 
 
-![Lösungsansatz1 \label{img_solution1}](images/Lösungsansatz1.png "Lösungsansatz1") 
+![Lösungsansatz1 \label{img_solution1}](images/solution1.png "Lösungsansatz1") 
 
 
 Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Abbildung \ref{img_solution1} dargestellt. 
@@ -33,7 +33,7 @@ Ein grosses Nachteil des Lösungsansatzes 1 ist, dass es unklar ist, ob er machb
 
 #### Prozessworkflow
 
-![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/FlowchartLösungsansatz1.png "Flowchart Lösungsansatz 1") 
+![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/flow_solution1.png "Flowchart Lösungsansatz 1") 
 
 In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
 
@@ -43,7 +43,7 @@ In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis
 
 Bei diesem Lösungsansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken mit einem Javaprogramm implementiert. 
 
-![Lösungsansatz 2 \label{img_solution2}](images/Lösungsansatz2.png "Lösungsansatz2") 
+![Lösungsansatz 2 \label{img_solution2}](images/solution2.png "Lösungsansatz2") 
 
 Wie in Abbildung \ref{img_solution2} ersichtlich ist, wird für diesen Lösungsansatz der DoS Schutzalgorithmus in einem externen Java Programm implementiert. Es wird auch für diesen Lösungsansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
 Der externe Sicherheitsalgorithmus überwacht getätigte gratis Transaktionen. Falls ein Account die Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der Whitelist gelöscht. 
@@ -61,7 +61,7 @@ Ein grosser Nachteil dieses Lösungsansatzes ist, dass durch die zentrale Autori
 //TODO Flowchart falsch.. gibt keine Smart wallet, Transaktion kommt immer durch Java wenn auf white list, da java nur passiv mithört
 
 
-![Flowchart Lösungsansatz 2 \label{img_flow_solution2}](images/FlowchartLösungsansatz2.png "Flowchart Lösungsansatz 2") 
+![Flowchart Lösungsansatz 2 \label{img_flow_solution2}](images/flow_solution2.png "Flowchart Lösungsansatz 2") 
 
 Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
 
@@ -72,7 +72,7 @@ Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein Javapro
 
 Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Javaprogramm an die Smart Wallet gesendet.  
 
-![Lösungsansatz 3 \label{img_solution3}](images/Lösungsansatz3_V2.png "Lösungsansatz3") 
+![Lösungsansatz 3 \label{img_solution3}](images/solution3_v2.png "Lösungsansatz3") 
 
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Javaprogramms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
@@ -94,7 +94,7 @@ Durch die zentrale Autorität werden bei diesem Lösungsansatz die Prinzipien de
 
 //Todo flowchart falsch, zuerst Java dann richtige smart wallet
 
-![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/FlowchartLösungsansatz3.png "Flowchart Lösungsansatz 3") 
+![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/flow_solution3.png "Flowchart Lösungsansatz 3") 
 
 Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Javaprogramm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
@@ -103,7 +103,7 @@ Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in 
 Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu Lösungsansatz 1, \ref{sec_solution1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
 Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen Whitelist gearbeitet.
 
-![Lösungsansatz 4 \label{img_solution4}](images/Lösungsansatz4.png "Lösungsansatz4") 
+![Lösungsansatz 4 \label{img_solution4}](images/solution4.png "Lösungsansatz4") 
 
 Die Smart Wallet verwaltet die Whitelist und den Schutzmechanismus gegen DoS Attacken. Das ist auf Abbildung \ref{img_solution4} ersichtlich.
 
