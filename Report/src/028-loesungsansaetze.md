@@ -21,15 +21,14 @@ Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accou
 
 #### Pro
 
-//TODO mehr Text
-
-Der Vorteil des Lösungsansatzes 1 ist, dass die ganze Lösung auf der Blockchain läuft und somit dezentral ist. Diese Lösung ist die eleganteste Lösung, da sie die Prinzipien einer Blockchain einhält.
+Dieser Ansatz besticht durch die Tatsache, dass alles auf der Blockchain läuft. Somit werden grundlegende Prinzipien, wie Dezentralität und Integrität, einer Blockchain bewahrt. 
 
 #### Contra
 
-Ein grosses Nachteil des Lösungsansatzes 1 ist, dass es unklar ist, ob er machbar ist. Um diesen Lösungsansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden, um die Accounts zu zwingen über die Smart Wallet Transaktionen zu verschicken. Diese Erweiterungen müssen in einer weiteren Sprache entwickelt werden. Diese Änderungen macht den Lösungsansatz sehr komplex. Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Des weiteren bleibt die alte Smart Wallet bestehen, ausser die Blockchain wird resetted.
+Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden. Es genügt nicht, nur zu prüfen, ob sich ein Account auf der Whitelist befindet. Stattdessen muss die Transaktion, also Sender und Empfänger kontrolliert werden. Nur so kann sichergestellt werden, dass ein für gratis Transaktionen berechtiger Account, seine Transaktionen immer seine Smart Wallet abwickelt. Ohne diese Funktionalität, kann ein Benutzer den DoS Schutzalgorithmus umgehen. 
+Es ist unklar, wie weitreichend die Anpassungen an Parity sind um diese Funktionalität zu implementieren. Zusätzlich wird eine zusätzliche Programmiersprache, Rust[@rust], benötigt. 
+Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Das bedingt, dass die Whitelist ebenfalls mit den neuen Accounts aktualisiert wird. 
 
-//Punkt: Sender IDs auf Whiteliszt muss für jeden Account in Whitelist angepasst werden nach neuem Smart Contract Deployement
 
 #### Prozessworkflow
 
