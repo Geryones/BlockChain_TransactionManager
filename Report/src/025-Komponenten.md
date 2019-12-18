@@ -69,22 +69,33 @@ Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was di
 
 ### Account \label{sec_account}
 
-Um mit Ethereum interagieren zu können, wird ein Account benötigt. Dieser besteht aus einer Adresse, einem öffentlichen und einem geheimen Schlüssel. Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Transaktionen zu empfangen und zu senden. 
+Um mit Ethereum interagieren zu können, wird ein Account benötigt.  Es gibt zwei Arten von Accounts, solche von Benutzern und jene von Smart Contracts. Ein Account ermöglicht es einem Benutzer oder Smart Contract, Transaktionen zu empfangen und zu senden. 
 
-#### Geheimer Schlüssel \label{sec_private_key}
+#### Benutzer Account
+
+Der Account eines Benutzers besteht aus Adresse, öffentlichen und geheimen Schlüssel. Diese Art von Accounts haben keine Assoziation mit Code. Sie werden von Benutzer verwendet um mit der Blockchain zu interagieren. 
+
+##### Geheimer Schlüssel \label{sec_private_key}
 
 Der geheime Schlüssel ist ein 256 Bit lange zufällig generierte Zahl. Er definiert einen Account und wird verwendet um Transaktionen zu signieren. Daher ist es von grösster Wichtigkeit, dass ein geheimer Schlüssel sicher gelagert wird. Wenn er verloren geht, gibt es keine Möglichkeit mehr auf diesen Account zuzugreifen. 
 
-
-#### Öffentlicher Schlüssel \label{sec_public_key}
+##### Öffentlicher Schlüssel \label{sec_public_key}
 
 Der öffentliche Schlüssel wird aus dem geheimen Schlüssel abgeleitet. Für die Generierung wird Keccak[@keccak] verwendet, ein "Elliptical Curve Digital Signature Algorithm"[@wiki_ecdsa]. Der öffentliche Schlüssel wird verwendet um die Signatur einer Transaktion zu verifizieren. 
 
-
-#### Adresse \label{sec_address}
+##### Adresse \label{sec_address}
 
 Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. 
 Die Adresse wird bei Transaktionen oder Interaktionen mit einem Smart Contract verwendet. 
+
+#### Contract Accounts
+
+Contract Accounts sind durch ihren Code definiert. Sie können keine Transaktionen initieren, sondern reagieren nur auf zuvor eingegangene. Das wird auf der Abbildung \ref{img_tx_accounts} dargestellt. Ein Benutzer Accounts wird als "Externally owned account" bezeichnet.
+
+![TX zwischen Accounts \label{img_tx_accounts}](images/tx.png "Transaktionen zwischen verschiedenen Accounts[@how_does_ethereum_work]") 
+
+Im Gegensatz zu einem Benutzer Account hat ein Contract Account keine Verwendung für einen geheimen oder öffentlichen Schlüssel. Es wird nur eine Adresse benötigt. Analog zu einem Benutzer Account, wird diese benötigt, um Transaktionen an diesen Smart Contract zu senden. 
+Sobald ein Smart Contract deployed wird, wird eine Adresse generiert. Verwendet wird die Adresse und Anzahl getätigte Transaktionen (nonce[@nonce]) des Benutzer Accounts, der das Deployment vornimmt.[@contract_address]
 
 ### Blockchain Wallet \label{sec_wallet}
 
