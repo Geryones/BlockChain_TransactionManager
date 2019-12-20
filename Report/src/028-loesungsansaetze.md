@@ -137,44 +137,42 @@ Betrieb (BT)
 :     Bewertet den administrativen Aufwand im Betrieb und die Möglichkeit zur Automatisierung. Das umfasst Deployment Smart Contracts, Anpassungen der Whitelist und Betreibung von zusätzlichen Servern. 
 :     Wird mit einer mittleren Gewichtung versehen. Ein zu hoher administrativer Aufwand ist nicht praktikabel.
 :     Gewichtung 2
-//TODO weiter ausführen
 
-
-//TODO TEXT Erklären, dass Gewichtung 1-3 ist. 3 ist höchste
-//TODO bei allen Kriterien noch die Gewichtung + Erklärung 
-
+Jeder Lösungsansatz wird auf diese drei Kriterien untersucht. Pro Kriterium können zwischen 3 und 1 Punkt erreicht werden, wobei 3 das Maximum ist. Die erreichten Punkte werden mit der entsprechenden Gewichtung multipliziert. Für die Evaluation, werden alle Punkte zusammengezählt. Der Ansatz mit den meisten Punkten wird weiterverfolgt.  
 
 | |MK | BCP | BT | Total |
 |:------------|:------:|:------:|:------:|-----:|
-| Gewichtung | 3 | 2 | 2 | |
-| Lösungsansatz 1 | 1 | 3 | 1 | 11 |
+| Gewichtung      | 3 | 2 | 2 |    |
+| Lösungsansatz 1 | 1 | 3 | 2 | 13 |
 | Lösungsansatz 2 | 3 | 2 | 2 | 17 |
 | Lösungsansatz 3 | 2 | 1 | 3 | 12 |
-| Lösungsansatz 4 | 0 | 2 | 2 | 8 |
-
+| Lösungsansatz 4 | 0 | 2 | 2 |  8 |
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 ### Lösungsansatz 1:  Smart Wallet 
 
- //TODO nach Prio nochmals umschreiben
-Der Lösungsansatz 1 ist die eleganteste Lösung, jedoch laut Evaluation die zweit beste, zusammen mit dem Lösungsansatz 3. Da diese Lösung kein Programm wie Lösungsansatz 2 und 3 vorsieht ist sie prioritär zu Lösungsansatz 3. Falls die Kapazitäten ausreichen, wird sie somit auch implementiert. 
+Wir haben diesen Ansatz als sehr komplex eingestuft. Für die Anpassung von Parity muss eine zusätzliche Programmiersprache verwendet werden. Es ist nicht klar, wie weitreichend die nötigen Anpassungen sind. Zusätzlich muss eine Smart Wallet entwickelt werden. 
+
+Dieser Ansatz ist völlig dezentral und in der Blockchain integriert. Daher maximale Punktzahl bei Blockchain Prinzipien. 
+
+Falls ein Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu deployed werden. Das bedingt, dass die Whitelist ebenfalls aktualisiert werden muss. Die Adressen aller bestehenden Smart Wallets müssen ersetzt werden. Alle Studierenden müssen informiert werden, dass sie für ihre Smart Wallet eine neue Adresse verwenden müssen. Die Automatisierung dieser Prozesse wird als komplex aber machbar eingeschätzt. Daher sind bei Betrieb 2 Punkte gesetzt. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen Programm nach Whitelist-Check
 
-Ergebnis der Evaluation zeigt, dass diese Lösung die beste nach den Kriterien ist. Deswegen wird diese Lösung als erstes implementiert.
+
 
 ### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
 
-Laut Evaluation ist dieser Lösungsansatz auf dem zweiten Platz, zusammen mit Lösungsansatz 1. Da diese Lösung auch ein externe Programm wie Lösung 2 vorsieht, wird sie weniger prioritär wie Lösungsansatz 1 betrachtet.
+
 
 ### Lösungsansatz 4: Super Smart Wallet
 
-Dieser Lösungsansatz ist laut Evaluation auf dem letzten Platz. Dies war von Anfang an klar. Dieser Ansatz wurde jedoch aufgezeigt, da er das erste Lösungskonzept war.
+
 
 ### Resultat Evaluation
 
-//Text
+
 
 
 
