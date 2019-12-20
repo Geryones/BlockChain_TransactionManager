@@ -105,45 +105,37 @@ Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen White
 
 ![Lösungsansatz 4 \label{img_solution4}](images/solution4.png "Lösungsansatz4") 
 
-Die Smart Wallet verwaltet die Whitelist und den Schutzmechanismus gegen DoS Attacken. Das ist auf Abbildung \ref{img_solution4} ersichtlich.
-
-//TODO nicht die Smart Wallet, sondern die Blockchain verwaltet die Whitelist?
+Die Smart Wallet verwaltet die Whitelist und den Schutzmechanismus gegen DoS Attacken. Das ist auf Abbildung \ref{img_solution4} ersichtlich. Wird eine DoS Attacke identifiziert, wir der entsprechende Account aus der Whitelist gelöscht.  
 
 #### Pro
 
-Vorteil dieses Lösungsansatzes ist, dass nur eine Smart Wallet deployed werden muss und nicht für jeden Benutzer einzeln eine zur Verfügung gestellt werden muss. Dies bringt weniger administrativer Aufwand.
-
-//TODO Text oder Auflistung
-
-- Nur eine Smart Wallet muss deployed und betrieben werden 
-- Weniger administrativer Aufwand für Administratoren
+Es existiert nur eine einzige Smart Wallet. Das Deployment ist somit weniger aufwändig. 
+Falls eine Änderung am Code gemacht nötig ist, muss nur eine Smart Wallet neu deployed werden. 
 
 #### Contra
 
-Bei diesem Lösungsansatz ist nicht klar, ob er umsetzbar ist. Die Blockchain muss umgeschrieben werden, da nicht die Senderidentität der Smart Wallet genutzt würde, sondern die des Accounts. Des weiteren ist es bei dieser Lösung möglich, gratis Transaktionen nicht über die Smart Wallet zu schicken und somit den DoS Schutzalgorithmus zu umgehen.
-
-//TODO auflistung oder Text
-
--Schwierig Sender ID für Transaktion zu setzten (überhaupt möglich?)
+Bei diesem Ansatz ist die Machbarkeit unklar. 
+Parity muss umgeschrieben werden, da nicht die Senderidentität der Smart Wallet genutzt werden muss, sondern die des Benutzeraccounts. 
+Ebenfalls muss die Whitelist-Funktionalität von Parity angepasst werden, analog zu Lösungsansatz 1. 
+ 
 
 ## Evaluation der Lösungsansätze
 
-Um einen Lösungsansatz auszuwählen, haben wir folgende Kriterien definiert:
+Die erarbeiteten Lösungsansätze werden gegeneinander verglichen. Um zu bestimmen, welcher Ansatz weiter verfolgt wird, wurden folgende Kriterien definiert:
 
 Machbarkeit (MK)
-:     Dieses Kriterium gibt an, wie Komplex die Umsetzung des Lösungsansatzes ist. 
+:     Bewertet die Machbarkeit des Ansatzes. Das berücksichtigt den gegeben Zeitrahmen und die Komplexität des Ansatzes. 
+:     Da dieses Projekt im gegebenen Zeitrahmen abgeschlossen werden muss, ist es das wichtigste Kriterium. Daher wird es auch mit der höchsten Gewichtung versehen.  
 :     Gewichtung 3
-// TODO weiter ausführen
-
 
 Blockchainprinzipien (BCP)
-:     Hier wird bewertet, ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, alles "on-Chain", Security  
+:     Gibt an ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, Trust und Security  
+:     Die Einhaltung der Prinzipien ist wichtig, aber für die FHNW nicht zwingend. Daher eine mittelere Gewichtung.     
 :     Gewichtung 2
-// TODO weiter ausführen
-
 
 Betrieb (BT)
-:     Mit diesem Punkt wird der administrative Aufwand für die Betreibung des Lösungsansatzes bewertet. (Deployment Smart Contracts, Anpassung Whitelist, Server Betrieb)
+:     Bewertet den administrativen Aufwand im Betrieb und die Möglichkeit zur Automatisierung. Das umfasst Deployment Smart Contracts, Anpassungen der Whitelist und Betreibung von zusätzlichen Servern. 
+:     Wird mit einer mittleren Gewichtung versehen. Ein zu hoher administrativer Aufwand ist nicht praktikabel.
 :     Gewichtung 2
 //TODO weiter ausführen
 
