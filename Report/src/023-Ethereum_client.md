@@ -17,4 +17,4 @@ Ein weiterer Account, der die Liste anpassen kann, wird vom entwickelten Schutzm
 
 ### Geprüfte Alternativen
 
-Die Clients Geth, Aleth und Trinity sind ebenfalls evaluiert worden. Bei diesen Clients wurde keine Möglichkeit gefunden, bestimmte Accounts für gratis Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die FHNW geeignet.
+Die Clients Geth, Aleth und Trinity sind ebenfalls evaluiert worden. Bei diesen Clients ist keine Möglichkeit gefunden worden, bestimmte Accounts für gratis Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die FHNW geeignet.

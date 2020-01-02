@@ -146,7 +146,7 @@ Jeder Lösungsansatz wird auf diese drei Kriterien untersucht. Pro Kriterium kö
 | Lösungsansatz 1 | 1 | 3 | 2 | 13 |
 | Lösungsansatz 2 | 3 | 2 | 2 | 17 |
 | Lösungsansatz 3 | 2 | 1 | 3 | 12 |
-| Lösungsansatz 4 | 0 | 2 | 2 |  8 |
+| Lösungsansatz 4 | 1 | 2 | 2 | 11 |
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
@@ -154,13 +154,20 @@ Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
 Wir haben diesen Ansatz als sehr komplex eingestuft. Für die Anpassung von Parity muss eine zusätzliche Programmiersprache verwendet werden. Es ist nicht klar, wie weitreichend die nötigen Anpassungen sind. Zusätzlich muss eine Smart Wallet entwickelt werden. 
 
-Dieser Ansatz ist völlig dezentral und in der Blockchain integriert. Daher maximale Punktzahl bei Blockchain Prinzipien. 
+Dieser Ansatz ist komplett dezentral und in die Blockchain integriert. Daher maximale Punktzahl bei Blockchain Prinzipien. 
 
-Falls ein Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu deployed werden. Das bedingt, dass die Whitelist ebenfalls aktualisiert werden muss. Die Adressen aller bestehenden Smart Wallets müssen ersetzt werden. Alle Studierenden müssen informiert werden, dass sie für ihre Smart Wallet eine neue Adresse verwenden müssen. Die Automatisierung dieser Prozesse wird als komplex aber machbar eingeschätzt. Daher sind bei Betrieb 2 Punkte gesetzt. 
+Falls ein Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu deployed werden. Das bedingt, dass die Whitelist ebenfalls aktualisiert wird. Die Adressen aller bestehenden Smart Wallets müssen ersetzt werden. Alle Studierenden müssen informiert werden, dass sie für ihre Smart Wallet eine neue Adresse verwenden müssen. Die Automatisierung dieser Prozesse wird als komplex aber machbar eingeschätzt. Daher sind bei Betrieb 2 Punkte gesetzt. 
 
 ### Lösungsansatz 2: Smart Wallet mit externen Programm nach Whitelist-Check
 
+Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält der Lösungsansatz für Machbarkeit die volle Punktzahl. 
 
+Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Daher erhält der Lösungsansatz 2 Punkte für Blockchainprinzipien. 
+
+Falls eine Anpassung am DoS Algorithus nötig ist, muss das externe Programm neu deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. 
+Für die Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von neuen Accounts für eine Klasse einfach automatisierbar. 
+Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt. Das bedeuted einen Mehraufwand für die FHNW. 
+Da der Lösungsansatz einfach zu Automatisieren ist, sind für Betrieb 2 Punkte gesetzt worden. 
 
 ### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
 
