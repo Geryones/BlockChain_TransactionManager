@@ -4,7 +4,7 @@
 
 //TODO Erläuterungen zu Flow Charts
 
-In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stärken und Schwächen von jedem Lösungsansatz werden analysiert und dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.   
+In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die Stärken und Schwächen von jedem Lösungsansatz (LA) werden analysiert und dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.   
 
 ### Lösungsansatz 1: Smart Wallet \label{sec_solution1}
 
@@ -30,7 +30,7 @@ Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus ein
 
 #### Prozessworkflow
 
-![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/flow_solution1.png "Flowchart Lösungsansatz 1") 
+![Flowchart Lösungsansatz 1 \label{img_flow_solution1}](images/flow_solution1.png "Flowchart Lösungsansatz 1"){ width=50% height=50% }
 
 In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
 
@@ -62,7 +62,7 @@ Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenf
 //TODO Flowchart falsch.. gibt keine Smart wallet, Transaktion kommt immer durch Java wenn auf white list, da java nur passiv mithört
 
 
-![Flowchart Lösungsansatz 2 \label{img_flow_solution2}](images/flow_solution2.png "Flowchart Lösungsansatz 2") 
+![Flowchart Lösungsansatz 2 \label{img_flow_solution2}](images/flow_solution2.png "Flowchart Lösungsansatz 2"){ width=50% height=50% } 
 
 Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
 
@@ -76,7 +76,7 @@ Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, si
 
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
-Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des externen Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesindere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
+Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des externen Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesondere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
 
 #### Pro
@@ -88,19 +88,19 @@ Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe 
 
 Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. 
 Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls administriert werden. 
-Dieser Ansatz bietet keine Vorteile im Vergleich zum Lösungsansatz 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
+Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
 
 #### Prozessworkflow
 
 //Todo flowchart falsch, zuerst Java dann richtige smart wallet
 
-![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/flow_solution3.png "Flowchart Lösungsansatz 3") 
+![Flowchart Lösungsansatz 3 \label{img_flow_solution3}](images/flow_solution3.png "Flowchart Lösungsansatz 3"){ width=50% height=50% } 
 
 Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Programm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
 ### Lösungsansatz 4: Super Smart Wallet
 
-Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu Lösungsansatz 1, \ref{sec_solution1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
+Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu LA 1, \ref{sec_solution1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
 Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen Whitelist gearbeitet.
 
 ![Lösungsansatz 4 \label{img_solution4}](images/solution4.png "Lösungsansatz4") 
@@ -116,7 +116,7 @@ Falls eine Änderung am Code gemacht nötig ist, muss nur eine Smart Wallet neu 
 
 Bei diesem Ansatz ist die Machbarkeit unklar. 
 Parity muss umgeschrieben werden, da nicht die Senderidentität der Smart Wallet genutzt werden muss, sondern die des Benutzeraccounts. 
-Ebenfalls muss die Whitelist-Funktionalität von Parity angepasst werden, analog zu Lösungsansatz 1. 
+Ebenfalls muss die Whitelist-Funktionalität von Parity angepasst werden, analog zu LA 1. 
  
 
 ## Evaluation der Lösungsansätze
@@ -138,15 +138,15 @@ Betrieb (BT)
 :     Wird mit einer mittleren Gewichtung versehen. Ein zu hoher administrativer Aufwand ist nicht praktikabel.
 :     Gewichtung 2
 
-Jeder Lösungsansatz wird auf diese drei Kriterien untersucht. Pro Kriterium können zwischen 3 und 1 Punkt erreicht werden, wobei 3 das Maximum ist. Die erreichten Punkte werden mit der entsprechenden Gewichtung multipliziert. Für die Evaluation, werden alle Punkte zusammengezählt. Der Ansatz mit den meisten Punkten wird weiterverfolgt.  
+Jeder LA wird auf diese drei Kriterien untersucht. Pro Kriterium können zwischen 3 und 1 Punkt erreicht werden, wobei 3 das Maximum ist. Die erreichten Punkte werden mit der entsprechenden Gewichtung multipliziert. Für die Evaluation, werden alle Punkte zusammengezählt. Der Ansatz mit den meisten Punkten wird weiterverfolgt.  
 
 | |MK | BCP | BT | Total |
 |:------------|:------:|:------:|:------:|-----:|
 | Gewichtung      | 3 | 2 | 2 |    |
-| Lösungsansatz 1 | 1 | 3 | 2 | 13 |
-| Lösungsansatz 2 | 3 | 2 | 2 | 17 |
-| Lösungsansatz 3 | 2 | 1 | 3 | 12 |
-| Lösungsansatz 4 | 1 | 2 | 2 | 11 |
+| LA 1 | 1 | 3 | 2 | 13 |
+| LA 2 | 3 | 2 | 2 | 17 |
+| LA 3 | 2 | 1 | 3 | 12 |
+| LA 4 | 1 | 2 | 2 | 11 |
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
@@ -160,26 +160,34 @@ Falls ein Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu de
 
 ### Lösungsansatz 2: Smart Wallet mit externen Programm nach Whitelist-Check
 
-Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält der Lösungsansatz für Machbarkeit die volle Punktzahl. 
+Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält der LA für Machbarkeit die volle Punktzahl. 
 
-Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Daher erhält der Lösungsansatz 2 Punkte für Blockchainprinzipien. 
+Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Da das Programm die Transaktionshistorie der Blockchain überwacht und nur bei einer DoS Attacke aktiv ist, wird 2 Punkte für Blockchainprinzipien gegeben. 
 
 Falls eine Anpassung am DoS Algorithus nötig ist, muss das externe Programm neu deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. 
 Für die Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von neuen Accounts für eine Klasse einfach automatisierbar. 
 Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt. Das bedeuted einen Mehraufwand für die FHNW. 
-Da der Lösungsansatz einfach zu Automatisieren ist, sind für Betrieb 2 Punkte gesetzt worden. 
+Da der LA einfach zu Automatisieren ist, sind für Betrieb 2 Punkte gesetzt worden. 
 
-### Lösungsansatz 3: Smart Wallet mit externen Programm vor Whitelist-Check
+### Lösungsansatz 3: Smart Wallet mit externem Programm vor Whitelist-Check
 
+Bei diesem LA muss eine Smart Wallet und ein externes Programm entwickelt werden. Transaktionen werden im externen Programm verpackt und müssen von der Smart Wallet wieder entpackt werden. Somit ist liegt die Machbarkeit zwischen dem von LA 1 und LA 2. Daher werden 2 Punkte für Machbarkeit vergeben. 
 
+Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Im Gegensatz zu LA 2, hat dieses Programm eine sehr viel zentralere Rolle. Das Programm interagiert nicht nur bei einer DoS Attacke mit der Blockchain, sondern ständig. Jede Transaktion wird an das Programm übermittelt und dort verarbeitet. Da die zentrale Authorität im Vergleich zu LA 2 viel aktiver ist, ist für Blockchainprinzipien 1 Punkt vergeben worden.
+
+Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig. 
+Änderungen an der Smart Wallet bedingen ein erneutes Deployment. 
+In der Whitelist der Blockchain ist nur der Account des externen Programmes hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis Transaktionen berechtigt sind. 
+Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den DoS Schutzalgorithmus enthält. Die Automatisierung wird daher als einfach eingestuft, da das externe Programm mit Java geschrieben wird und somit sehr viel zugänglicher ist. Daher sind bei Betrieb 3 Punkte vergeben worden. 
 
 ### Lösungsansatz 4: Super Smart Wallet
 
-
+//TODO or not TODO ? XD
 
 ### Resultat Evaluation
 
-
+Durch die hohe Gewichtung von Machbarkeit, erzielt LA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher LA 2 weiter verfolgt. 
+//TODO ausfleischen? 
 
 
 
