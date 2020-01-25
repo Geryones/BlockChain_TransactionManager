@@ -56,6 +56,8 @@ Gas Limit
 
 Damit eine Transaktion in die Blockchain aufgenommen werden kann, muss sie signiert[@signing_transaction] sein. Dies kann beim Benutzer offline gemacht werden. Die signierte Transaktion wird dann an die Blockchain übermittelt. 
 
+Die Übermittlung der Transaktionen wird mittels Remote procedure call(RPC)[@wiki_rpc] gemacht. 
+
 ### Gas \label{sec_gas}
 
 Mit Gas[@gasprice] ist in der Ethereum Blockchain eine spezielle Währung gemeint. Mit ihr werden Transaktionskosten gezahlt. Jede Aktion in der Blockchain kostet eine bestimmte Menge an Gas (Gas Cost). Somit ist die benötigte Menge an Gas proportional zur benötigten Rechenleistung. So wird sichergestellt, dass die anfallenden Kosten einer Interaktion gerecht verrechnet werden. 

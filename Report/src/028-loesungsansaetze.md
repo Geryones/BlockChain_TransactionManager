@@ -186,7 +186,7 @@ Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den D
 
 ### Resultat Evaluation
 
-Durch die hohe Gewichtung von Machbarkeit, erzielt LA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher LA 2 weiter verfolgt. 
+Durch die hohe Gewichtung von Machbarkeit, erzielt LA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher LA 2 umgesetzt. 
 //TODO ausfleischen? 
 
 
