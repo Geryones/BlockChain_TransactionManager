@@ -42,14 +42,14 @@ Der oben aufgeführte Codeblock ist in Sektionen gegliedert. Diese sind durch ei
 In dieser Sektion sind die grundlegenden Eigenschaften der Blockchain definiert. Dazu gehören Genesisblock und der Speicherort. 
 
 Zeile 2
-:     Hier wird der zu verwendende Genesisblock definiert. Es wird der Pfad zu der entsprechenden JSON Datei[@wiki_json] angegeben. 
+:     Der zu verwendende Genesisblock. Es wird der Pfad zu der entsprechenden JSON Datei[@wiki_json] angegeben. 
 
 Zeile 3
 :    Mit "base_path" wird angegeben, wo die Blockchain abgespeichert werden soll. Hier wird das gewünschte Verzeichnis angegeben.
 
 ##### RPC
 
-Hier wird definiert, wie und von die Blockchain erreichbar ist.
+Diese Sektion definiert, wie die Blockchain erreichbar ist.
 
 Zeile 6
 :    "cors" steht für Cross-Origin Requests. Dieser Parameter wird benötigt, um die Interaktion von Remix[@remix] oder Metamask[@metamask] mit der Blochchain zu ermöglichen. 
@@ -88,6 +88,8 @@ Zeile 18
 
 #### Genesis Block
 
+Der Genesis Block ist der erste Block in einer Blockchain. Er enthält alle nötigen Konfigurationen um ein Netzwerk aufzubauen.
+
 ```{#genesisBlock .json .numberLines}
 {
 	"name": "BachelorBlockChain",
@@ -97,28 +99,12 @@ Zeile 18
 		}
 	},
 	"params": {
-		"gasLimitBoundDivisor": "0x0400",
-		"accountStartNonce": "0x0",
-		"maximumExtraDataSize": "0x20",
-		"minGasLimit": "0x1388",
 		"networkID" : "0x11",
 		"registrar" : "0x0000000000000000000000000000000000001337",
-		"eip150Transition": "0x0",
-		"eip160Transition": "0x0",
-		"eip161abcTransition": "0x0",
-		"eip161dTransition": "0x0",
-		"eip155Transition": "0x0",
-		"eip98Transition": "0x7fffffffffffff",
 		"maxCodeSize": 24576,
-		"maxCodeSizeTransition": "0x0",
-		"eip140Transition": "0x0",
-		"eip211Transition": "0x0",
-		"eip214Transition": "0x0",
-		"eip658Transition": "0x0",
-		"eip145Transition": "0x0",
-		"eip1014Transition": "0x0",
-		"eip1052Transition": "0x0",
-		"wasmActivationTransition": "0x0"
+		"maximumExtraDataSize": "0x20",
+		"minGasLimit": "0x1388",
+		"gasLimitBoundDivisor": "0x0400"
 	},
 	"genesis": {
 		"seal": {
@@ -132,62 +118,50 @@ Zeile 18
 		"gasLimit": "0x7A1200"
 	},
 	"accounts": {
-		"0000000000000000000000000000000000000001": { "balance": "1", "builtin": { "name": "ecrecover", "pricing": { "linear": { "base": 3000, "word": 0 } } } },
-		"0000000000000000000000000000000000000002": { "balance": "1", "builtin": { "name": "sha256", "pricing": { "linear": { "base": 60, "word": 12 } } } },
-		"0000000000000000000000000000000000000003": { "balance": "1", "builtin": { "name": "ripemd160", "pricing": { "linear": { "base": 600, "word": 120 } } } },
-		"0000000000000000000000000000000000000004": { "balance": "1", "builtin": { "name": "identity", "pricing": { "linear": { "base": 15, "word": 3 } } } },
-		"0000000000000000000000000000000000000005": { "balance": "1", "builtin": { "name": "modexp", "activate_at": 0, "pricing": { "modexp": { "divisor": 20 } } } },
-		"0000000000000000000000000000000000000006": {
-			"balance": "1",
-			"builtin": {
-				"name": "alt_bn128_add",
-				"pricing": {
-					"0": {
-						"price": { "alt_bn128_const_operations": { "price": 500 }}
-					},
-					"0x7fffffffffffff": {
-						"info": "EIP 1108 transition",
-						"price": { "alt_bn128_const_operations": { "price": 150 }}
-					}
-				}
-			}
-		},
-		"0000000000000000000000000000000000000007": {
-			"balance": "1",
-			"builtin": {
-				"name": "alt_bn128_mul",
-				"pricing": {
-					"0": {
-						"price": { "alt_bn128_const_operations": { "price": 40000 }}
-					},
-					"0x7fffffffffffff": {
-						"info": "EIP 1108 transition",
-						"price": { "alt_bn128_const_operations": { "price": 6000 }}
-					}
-				}
-			}
-		},
-		"0000000000000000000000000000000000000008": {
-			"balance": "1",
-			"builtin": {
-				"name": "alt_bn128_pairing",
-				"pricing": {
-					"0": {
-						"price": { "alt_bn128_pairing": { "base": 100000, "pair": 80000 }}
-					},
-					"0x7fffffffffffff": {
-						"info": "EIP 1108 transition",
-						"price": { "alt_bn128_pairing": { "base": 45000, "pair": 34000 }}
-					}
-				}
-			}
-		},
-		"0000000000000000000000000000000000001337": { "balance": "1", "constructor": "Platzhalter für Bytecode": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }
+		"0000000000000000000000000000000000001337": { "balance": "1", "constructor": "Platzhalter für Bytecode von SimpleRegistry" },
+		"00a329c0648769a73afac7f9381e08fb43dbea72": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }
 	}
 }
 
 
+
+
 ```
+
+Oben aufgeführt ist der Genesisblock. Im folgenden Abschnitt ist dieser Zeilenweise erläutert. 
+
+Zeile 2
+:     Name der Blockchain
+
+Zeile 3 - 7
+:     Der Abschnitt ```engine``` definiert, wie die Blöcke verarbeitet werden. Mit ```instantSeal``` wird angegeben, dass kein Minigalgorithmus verwendet wird. Die Blöcke, sofern valide, werden sofort in die Blockchain aufgenommen. 
+
+Zeile 8
+:     Im Abschnitt ```params``` sind die generellen Parameter für die Blockchain aufgeführt.
+
+Zeile 9
+:     Die verwendete Netzwerk ID. Die grossen Netzwerke haben eine definierte ID. Falls einem bestehenden Netzwerk beigetreten werden soll, muss diese korrekt gewählt werden. Der Wert ```11``` ist keinem Netzwerk zugeordnet, daher kann dieser für ein privates Netzwerk genutzt werden.
+
+Zeile 10
+:     Der ```registrar``` hat als Wert die Adresse der ```SimpleRegistry```. Dieser Parameter und der dazugehörende Smart Contract halten und verwalten die Whitelist in Parity. Sobald eine Transaktion ohne Gas Preis auf dem Node eintrifft, wird der Smart Contract an dieser Adresse verwendet, um zu prüfen ob eine gratis Transaktion erlaubt ist oder nicht.
+
+Zeile 11
+:     Die maximale Grösse eines Smart Contracts welcher in mit einer Transaktion deployed wird. 
+
+Zeile 12
+:     Spezifiziert die maximale Anzahl Bytes, welche im Feld ```extra_data``` des Headers eines Blockes mitgegeben werden kann. 
+
+Zeile 13
+:      Definiert den minimalen Gasbetrag, der bei einer Transaktion mitgegeben werden muss.
+
+Zeile 14
+:      Schränkt die Schwankungen der Gas Limite zwischen Blöcken ein. 
+
+
+
+
+
+
 
 #### Docker
 
