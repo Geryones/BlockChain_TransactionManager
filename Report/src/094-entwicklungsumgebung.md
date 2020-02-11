@@ -37,7 +37,7 @@ Smart Contracts werden benötigt, um zu bestimmen, wer auf einer Blockchain grat
 Sobald eigene Smart Contracts entwickelt werden, kann die Testumgebung genutzt werden, um diese zu testen.
 
 
-#### Programmiersprache
+##### Programmiersprache
 
 Für die Entwicklung von Smart Contracts werden folgende zwei Sprachen evaluiert: 
 

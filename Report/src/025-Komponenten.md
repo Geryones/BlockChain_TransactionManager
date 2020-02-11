@@ -92,7 +92,7 @@ Der öffentliche Schlüssel wird aus dem geheimen Schlüssel abgeleitet. Für di
 Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. 
 Die Adresse wird bei Transaktionen oder Interaktionen mit einem Smart Contract verwendet. 
 
-#### Contract Accounts
+##### Contract Accounts
 
 Contract Accounts sind durch ihren Code definiert. Sie können keine Transaktionen initieren, sondern reagieren nur auf zuvor eingegangene. Das wird auf der Abbildung \ref{img_tx_accounts} dargestellt. Ein Benutzer Accounts wird als "Externally owned account" bezeichnet.
 
