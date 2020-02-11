@@ -2,15 +2,15 @@
 
 Dieses Kapitel beschreibt, wie die gewonnen theoretischen Grundlagen umgesetzt sind. Die realisierte Lösung wird kritisch hinterfragt und anderen Lösungsansätzen gegenübergestellt. 
 
-## Parity
+## Parity \label{sec_prac_parity}
 
 In diesem Abschnitt ist beschrieben, wie die Blockchain konfiguriert ist. Als Client wird die stable Version[@parity_releases] von Parity verwendet. 
 
-### Konfiguration der Blockchain
+### Konfiguration der Blockchain \label{sec_prac_bc_config}
 
 Parity wird mit der Konsole gestartet. Der Benutzer hat hier die Möglichkeit, gewisse Parameter an Parity zu übergeben. Eine einfache Konfiguration ist somit möglich. Für kompliziertere Konfigurationen, wird die Verwendung von einer Konfigurationsdatei empfohlen. 
 
-#### Config.toml
+#### Config.toml \label{sec_prac_config_toml}
 
 Für die Konfiguration der Blockchain wird eine Konfigurationsdatei verwendet. Diese hat das Dateiformat .toml[@wiki_toml]. 
 
@@ -86,7 +86,7 @@ In dieser Sektion sind Parameter, die sonst nirgends reinpassen.
 Zeile 18
 :    Wird für die Interaktion mit Remix und Metamask benötigt.
 
-#### Genesis Block
+#### Genesis Block 
 
 Der Genesis Block ist der erste Block in einer Blockchain. Er enthält alle nötigen Konfigurationen um ein Netzwerk aufzubauen.
 
@@ -111,10 +111,6 @@ Der Genesis Block ist der erste Block in einer Blockchain. Er enthält alle nöt
 			"generic": "0x0"
 		},
 		"difficulty": "0x20000",
-		"author": "00a329c0648769a73afac7f9381e08fb43dbea72",
-		"timestamp": "0x00",
-		"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-		"extraData": "0x",
 		"gasLimit": "0x7A1200"
 	},
 	"accounts": {
@@ -134,9 +130,15 @@ Zeile 2
 :     Name der Blockchain
 
 Zeile 3 - 7
-:     Der Abschnitt ```engine``` definiert, wie die Blöcke verarbeitet werden. Mit ```instantSeal``` wird angegeben, dass kein Minigalgorithmus verwendet wird. Die Blöcke, sofern valide, werden sofort in die Blockchain aufgenommen. 
+:     Der Abschnitt ```engine``` definiert, wie die Blöcke verarbeitet werden. 
 
-Zeile 8
+Zeile: 4
+:     Mit ```instantSeal``` wird angegeben, dass kein Miningalgorithmus verwendet wird. Die Blöcke, sofern valide, werden sofort in die Blockchain aufgenommen. 
+
+Zeile 5
+:     Die Engine InstantSeal braucht keine weiteren Parameter. Falls ein anderer Algorithmus verwendet wird, kann dieser hier konfiguriert werden. 
+
+Zeile 8 - 15
 :     Im Abschnitt ```params``` sind die generellen Parameter für die Blockchain aufgeführt.
 
 Zeile 9
@@ -157,23 +159,38 @@ Zeile 13
 Zeile 14
 :      Schränkt die Schwankungen der Gas Limite zwischen Blöcken ein. 
 
-Zeile 16
+Zeile 16 - 22
 :      Mit dem Abschnitt ```genesis``` ist der Genesis Block, also der erste Block, der Blockchain definiert. 
 
-Zeile 17
-:      
+Zeile 17 - 19
+:      Hier kann weiter definiert werden, wie Blöcke verarbeitet werden sollen. Da für dieses Projekt valide Blöcke sofort in die Blockchain eingefügt werden, sind keine weiteren Einstellungen nötig. 
+
+Zeile 20
+:      Gibt die Schwierigkeit des Genesis Blocks an. Da als Engine InstantSeal verwendet wird, hat dieser Parameter keinen Einfluss. 
+
+Zeile 21
+:      Gibt an, was die Gaslimite des Genesis Blockes ist. Da die Gaslimite für Blöcke dynamisch berechnet wird, hat dieser Wert einen Einfluss auf zukünftige Gaslimiten. 
+
+Zeile 23 - 26    
+:      Dieser Abschnitt erlaubt es, Accounts zu definieren. Diese können für Benutzer oder Smart Contracts sein. Jeder Account wird mit einer Adresse und einem Guthaben initialisiert. Bei einem Account für einen Smart Contract, wird zusätzlich dessen Bytecode angegeben.
+
+Zeile 24
+:      Hier ist die SimpleRegistry, siehe Abschnitt \ref{sec_prac_simpleRegistry}, definiert. Der erste Parameter ist die Adresse, unter welcher der Smart Contract erreichbar sein soll. Das Guthaben wir mit einem Ether initalisiert. Der Wert für ```constructor``` ist der Bytecode des Smart Contracts. Dieser ist hier durch einen Platzhalter ersetzt worden.  
+
+Zeile 25
+:      Definition von einem Benutzeraccount. Der erste Parameter ist die Adresse. Dem Account kann ein beliebiges Guthaben zugewiesen werden. 
+
+#### Docker \label{sec_prac_docker}
+
+//todo hier oder im Anhang
+
+### Whitelist \label{sec_prac_whitelist}
 
 
 
+#### SimpleRegistry \label{sec_prac_simpleRegistry}
 
+#### SimpleCertifier \label{sec_prac_simpleCertifier}
 
-#### Docker
-
-### Whitelist
-
-#### SimpleRegistry
-
-#### SimpleCertifier
-
-## Schutz vor DoS Attacken
+## Schutz vor DoS Attacken \label{sec_prac_dos_protection}
 
