@@ -5,7 +5,7 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 //TODO Text
 
 | Nr.       | Titel  | Beschreibung |
-| :------------- |:------------| :-----| :-----|
+| :------------- |:------------| :-----|
 | 1.     |  Bezahlte Transaktionen für alle  | |
 | 2.     |  Gratis Transaktionen für Whitelist | |
 | 3.     |  Benutzer aus Liste für Whitelist certifizieren  | |
