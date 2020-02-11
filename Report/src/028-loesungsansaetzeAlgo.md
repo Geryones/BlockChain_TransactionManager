@@ -5,11 +5,13 @@ In diesem Abschnitt sind die erarbeiteten DoS-Algorithmus-Lösungsansätze (DLA)
 // TODO Faustina
 
 #### DLA 1: Blockierung eines Accounts anhand Transaktionen
+Ein Account wird anhand der Anzahl Transaktionen blockiert.
 
 ##### Pro
+- Alle Accounts können gleichviel Transaktionen betätigen. 
 
 #### Contra
-
+- Die Grösse der Transaktionen wird nicht berücksichtigt bei der Blockierung.
 
 #### DLA 2: Blockierung eines Account anhand grösse der Transaktionen (Gas Used)
 
@@ -48,6 +50,8 @@ In diesem Abschnitt sind die erarbeiteten DoS-Algorithmus-Lösungsansätze (DLA)
 #### Contra
 
 ### Evaluation DoS Algorithmus
+
+Es werden mehrer LA implementiert da sie kombinierbar sind.
 
 //TODO Kriterien
 //Gewichtung Kriterien
