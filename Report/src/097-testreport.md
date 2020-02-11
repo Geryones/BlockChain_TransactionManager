@@ -1,11 +1,11 @@
 # Abnahme Tests Report
 
-| **AK Nr.:  **              |   |** Titel:** |   | **Testart: **|   |
+| **AK Nr.:**              |   |**Titel:** |   | **Testart:**|   |
 |:------------------------|---|:--------|---|:----------|---|
-| **Tester:   **             |   |** Datum:** |   | **Status  ** |   |
-| **Vorbedingung:  **        |   |        |   |          |   |
-| **Ablauf:   **             |   |        |   |          |   |
-| **Erwünschtes Resultat: ** |   |        |   |          |   |
-| **Tatsächliches Resuktat **|   |        |   |          |   |
+| **Tester:**             |   | **Datum:** |   | **Status** |   |
+| **Vorbedingung:**        |   |        |   |          |   |
+| **Ablauf:**             |   |        |   |          |   |
+| **Erwünschtes Resultat:** |   |        |   |          |   |
+| **Tatsächliches Resuktat** |   |        |   |          |   |
 
 
