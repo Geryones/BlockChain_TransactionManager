@@ -157,7 +157,11 @@ Zeile 13
 Zeile 14
 :      Schränkt die Schwankungen der Gas Limite zwischen Blöcken ein. 
 
+Zeile 16
+:      Mit dem Abschnitt ```genesis``` ist der Genesis Block, also der erste Block, der Blockchain definiert. 
 
+Zeile 17
+:      
 
 
 
