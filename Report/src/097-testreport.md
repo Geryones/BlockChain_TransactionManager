@@ -1,8 +1,8 @@
 # Abnahme Tests Report
 
-|AK Nr.: | |Testart: |  | Status: | |
+| AK Nr.: | |Testart: |  | Status: | |
 |:---||:---||:---||
-|Tester: | |Datum: |||
+| Tester: | |Datum: |||
 |:---||:---||:---||
 | Vorbedingung: |   |
 |:---||
