@@ -86,11 +86,11 @@ In dieser Sektion sind Parameter, die sonst nirgends reinpassen.
 Zeile 18
 :    Wird für die Interaktion mit Remix und Metamask benötigt.
 
-#### Genesis Block 
+#### Blockchainspezifikation 
 
-Der Genesis Block ist der erste Block in einer Blockchain. Er enthält alle nötigen Konfigurationen um ein Netzwerk aufzubauen.
+Mit dieser Datei wird die Blockchain definiert. Sie enthält nebst der Spezifikation den Genesis Block. Der Genesis Block ist der erste Block in einer Blockchain. 
 
-```{#genesisBlock .json .numberLines}
+```{#Blockchainspezifikation .json .numberLines}
 {
 	"name": "BachelorBlockChain",
 	"engine": {
@@ -119,12 +119,9 @@ Der Genesis Block ist der erste Block in einer Blockchain. Er enthält alle nöt
 	}
 }
 
-
-
-
 ```
 
-Oben aufgeführt ist der Genesisblock. Im folgenden Abschnitt ist dieser Zeilenweise erläutert. 
+Oben aufgeführt ist die Blockchainspezifikation. Im folgenden Abschnitt ist diese Zeilenweise erläutert. 
 
 Zeile 2
 :     Name der Blockchain
@@ -182,15 +179,13 @@ Zeile 25
 
 #### Docker \label{sec_prac_docker}
 
-//todo hier oder im Anhang
+Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird Docker[@docker] für die Betreibung der Blockchain verwendet. Mehr Details zur Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
 
 ### Whitelist \label{sec_prac_whitelist}
-
-
 
 #### SimpleRegistry \label{sec_prac_simpleRegistry}
 
 #### SimpleCertifier \label{sec_prac_simpleCertifier}
 
-## Schutz vor DoS Attacken \label{sec_prac_dos_protection}
+
 
