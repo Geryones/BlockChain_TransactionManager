@@ -13,6 +13,6 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 | 5.     |  Account nach 20 Transaktionen sperren  | Ein Account der 20 Transaktionen betätigt hat, wird für eine Zeitspanne gesperrt |
 | 6. | Gesperrte Account entsperren |  Ein gesperrter Account wird nach einer gesetzten Zeitspanne wirder entsperrt |
 | 7.     |  Account manuell sperren  | Ein Account kann manuell gesperrt werden |
-| 8.     | Cunter resetten | Der Counter aller Accounts wird nach einer Woche wieder auf 0 gesetzt |
+| 8.     | Counter resetten | Der Counter aller Accounts wird nach einer Woche wieder auf 0 gesetzt |
 
 
