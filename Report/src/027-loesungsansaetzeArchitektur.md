@@ -36,7 +36,7 @@ Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus ein
 
 In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
 
-![Flowchart für Smart Wallet \label{img_flow_solution1}](images/flow_solution1.png "Flowchart für Smart Wallet"){ width=50% height=50% }
+![Flowchart für Smart Wallet \label{img_flow_solution1}](images/FCLA1.png "Flowchart für Smart Wallet"){ width=50% height=50% }
 
 //TODO weitere Erläuterung?
 
@@ -68,7 +68,7 @@ Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenf
 Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
 
 
-![Flowchart externes Programm für die Verwaltung der Whitelist \label{img_flow_solution2}](images/flow_solution2.png "Flowchart Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
+![Flowchart externes Programm für die Verwaltung der Whitelist \label{img_flow_solution2}](images/FCLA2.png "Flowchart Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
 
 #### ALA 3: Externes Programm mit Whitelist
 
@@ -98,7 +98,7 @@ Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Vers
 
 //Todo flowchart falsch, zuerst Java dann richtige smart wallet
 
-![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/flow_solution3.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
+![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/FCLA3.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
 
 Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Programm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
