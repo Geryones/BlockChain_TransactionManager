@@ -20,130 +20,58 @@ Jeder Account verfügt über ein Kontingent von gratis Transaktionen pro Zeitint
 
 ##### Komputationskosten
 
-Jeder Account verfügt über ein Kontingent von Gas pro Zeitintervall. Dieser Ansatz berücksichtig die Komputationskosten, die von einer Transaktionen auf der Blockchain verursacht werden.  
+Jeder Account verfügt über ein Kontingent von gratis Gas pro Zeitintervall. Dieser Ansatz berücksichtig die Komputationskosten, die von einer Transaktionen auf der Blockchain verursacht werden.  
 
 #### Benutzermanagement
 
+Für die Verwaltung der Accounts sind drei grundlegende Ansätze identifiziert worden. 
 
+##### Kein Benutzermanagement
 
-Die Grösse der Blockierungsparameter ist bei jedem Account gleich. Das heisst jeder kann gleich viele Transaktionen, oder gleich viel "Gas Used" gebrauchen.
+Die Parameter werden global definiert und gelten für alle Accounts. Das bedeuted, dass das Kontingent an gratis Transaktionen und gratis Gas für alle Accounts gleich hoch ist.
 
-##### Pro
+Dieser Ansatz ist sehr einfach zu implementieren, erlaubt aber keine Differenzierung bei den Accounts. Falls Bedarf besteht, die Parameter auch nur für einen Account zu ändern, müssen diese für alle angepasst werden.
 
-- Jeder Benutzer ist gleich
-- Weniger kompliziert
+##### Parameter über Gruppen konfigurierbar
 
-##### Contra
+Die Parameter sind über Gruppen konfiguriert. Jedem Account wird eine Gruppe zugewiesen, dieser erbt die Parameter der Gruppe. So lassen sich Strukturen der Schule, wie Klassen und Dozenten einfach abbilden. Die Konfiguration wird daruch intuitiv und effizient. 
 
-- Verschiedene Benutzer, wie zB Dozenten werden gleich wie Studenten behandelt
+Falls zu viele Gruppen definiert werden, verliert das System an Effizienz. Die Implementation von einem gruppenbasierten Benutzermanagement ist sehr komplex. 
 
-#### DLA 4: Blockierungsparameter bei jedem Account einzeln konfigurierbar
+##### Parameter pro Account konfigurierbar
 
-Die Grösse der Blockierungsparameter ist bei jedem Account konfigurierbar. Das heisst jeder kann verschieden viele Transaktionen, oder verschieden viel "Gas Used" gebrauchen.
-
-##### Pro
-
-- Jeder Benutzer wird einzeln beurteilt
-
-##### Contra
-
-- kompliziert
-
-#### DLA 5: Blockierungsparameter über Gruppen konfigurierbar
-
-Die Grösse der Blockierungsparameter ist über verschieden definierte Gruppen konigurierbar. Je nach Gruppe wird die maximale Anzahl Transaktionen oder "Gas Used" definiert.
-
-Mögliche Gruppen:
-- Student  --> für Module
-- Power Student --> für spezielle Projekte (IP1-IP6)
-- Dozent --> Mehr Rechte wie Studenten
-- Power User --> Mehr rechte als Dozent
-- Admin --> Wird nie geblockt
-
-##### Pro
-
-- Weniger kompliziert als alle einzeln
-- Durch Gruppendefinition klar welche Rolle Account hat 
-- Alle Gruppenmitglieder gleich (Ein Dozent mehr als der andere)
-
-##### Contra
-
-- Nicht komplett Anonym
-
-
-
-#### DLA 8: Blockierungsperiode bei jedem Account einzeln konfigurierbar
-
-Dieser Lösungsansatz ist nur mit DLA7 kombinierbar. In der Konfiguration wird ein Parameter mitgegeben, der definiert für wieviel Perioden der Account gesperrt ist.
-Periodenintervalle könnten sein:
-//TODO Faustina ist für 4h oder 1Tag
-
-- 1h
-- 4h 
-- 6h
-- 1Tag 
-- 1 Woche
-
-##### Pro
-
-- Länge der Blockierung je nach Benutzer definierbar (zB Dozent weniger lang)
-
-##### Contra
-
-- kompliziert
-
-
+Die Parameter sind bei jedem Account individuell konfigurierbar. Die Konfiguration auf Accountebene, bietet die höchste Granularität von allen Ansätzen. Das zur Folge, dass bei Änderungen alle Accounts einzeln angepasst werden müssen. Auch ist die Umsetzung von individuellen Parametern komplex. 
 
 #### Konsequenzen
 
-Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen verdächtigen Account nach der Sperrung, wieder zur Whitelist hinzuzufügen.
+Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen verdächtigen Account nach der Löschung, wieder zur Whitelist hinzuzufügen.
 
-#### DLA 6: Blockierungsperiode immer am gleichen Moment für alle aufgehoben
+##### Fixer Zeitpunkt 
 
-Ein bestimmter Intervalls moment wird definiert. In diesem Moment werden alle Benutzer aus der Liste wieder für die Whitelist certifiziert.
+Es wird ein fixer Zeitpunkt definiert, bei dem alle Accounts zurückgesetzt werden. Das heisst das Kontingent wird bei allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist gelöschte Accounts werden dieser wieder hinzugefügt. Zum Beispiel könnte als Zeitpunkt Montag 8:00 UTC definiert werden.
 
-##### Pro
+Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. Wenn der gesetzte Zeitpunkt von den Benutzer identifiziert ist, kann das System missbraucht werden. Wenn man einen DoS Angriff kurz vor dem Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem Zeitmanagement gleich wieder resettet. 
 
-- Einfach
+##### Nach definiertem Zeitintervall
 
-##### Contra
+Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen. Da bei diesem Ansatz, der Zeitpunkt des Vergehens für jeden Account individuell verfolgt werden muss, ist er komplexer in der Umsetzung als ein fixer Zeitpunkt für einen Reset.  
 
-- Accounts werden nicht gleichlang geblockt
-- Wer weiss wann der Entblockungsmoment ist, kann dies missbrauchen
+##### Inkrementierendes Zeitintervall
 
-#### DLA 7: Blockierungsperiode für alle Accounts gleich ab Blockierung
+Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der Anzahl bereits begangener Verstösse. Wiederholungstäter und somit eine potentiell grosse Gefahr für die Blockchain, werden mit diesem System sehr viel härter als Einzeltäter bestraft.  
 
-Die Blockierungsperiode fängt ab dem Punkt an zu zählen, wenn der Account blockiert wird.
-
-##### Pro
-
-- Alle Benutzer/Account werden gleichlang geblockt
-
-##### Contra
-
-- Komplizierter als DLA7
-
-#### DLA 9: Blockierungslänge erhöht sich, nach Vergehenszahl
-
-Bei diesem DLA wird ein Account je nach Vergehenszahl länger blockiert. Zuerst wird er nur kurz blockiert, wird er ein weiteres mal gesperrt, wird er länger gesperrt.
 Beispiel:
 
-- Bei 20 Transaktionen --> 15' gesperrt
-- Bei 40 Transaktionen -->30' gesperrt
-- Bei 20 Transaktionen --> 60' gesperrt
-- Bei 20 Transaktionen --> 4h gesperrt
-- Bei 20 Transaktionen --> 1 Tag gesperrt
-- Bei 20 Transaktionen --> 1 Woche gesperrt
+| # Verstösse | Dauer Sperrung  |
+|:-----------:|-------------------:|
+| 1 | 0.25  |
+| 2 | 0.50|
+| 3 | 2.00 |
+| 4 | 6.00|
+| 3 | 24.00|
+| 4 | 168.00 |
 
-#### Pro
-
-- Bei mehr Vergehen, wird man mehr bestraft
-- Jeder Benutzer gleich (Kann als positiv oder negativ gewertet werden)
-
-##### Contra 
-
-- Kompliziert
-- Jeder Benutzer gleich (Kann als positiv oder negativ gewertet werden)
+Die Implemantation von diesem Ansatz ist sehr komplex. Für jeden Account muss die Dauer des Ausschlusses von gratis Transaktionen einzeln berechnet und überwacht werden. 
 
 ### Evaluation DoS Algorithmus
 
