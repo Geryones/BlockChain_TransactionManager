@@ -5,11 +5,14 @@
 UML Diagramme und so scheiss
 
 
-## Ausgewählter DoS Algo
+### Ausgewählter DoS Algo
 
 //TODO
 
 Spezifikation und so scheiss
 
+### Konfigurationsdatei
 
-## 
+//todo input File beschreiben
+
+
