@@ -119,16 +119,19 @@ In diesem Abschnitt werden die Aspekte des Algorithmus evaluiert.
 
 #### Parameter
 
-alsödfkjöalsdkjföaljdsfö lasdkfjöl asdjföla jdsfölaj dfölakjsd fölakjdsf ölaj
+Die aufgeführten Parameter werden auf ihre Relevanz geprüft. 
 
 ##### Sender
 
+ist zwingend nötig um eine Transaktion einem Account zuweisen zu können. 
+
 ##### Empfänger
 
-Der Emfänger kann vom Sender frei bestimmt werden und hat somit keine Aussagekraft. Daher wird er nicht verwendet. 
-
+Der Emfänger kann vom Sender frei bestimmt werden und hat somit keine Aussagekraft. Er wird vom Algorithmus nicht berücksichtigt. 
 
 ##### Zeitintervall 
+
+
 
 ##### Anzahl gratis Transaktionen
 
