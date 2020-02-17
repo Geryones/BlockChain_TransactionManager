@@ -2,31 +2,47 @@
 
 //TODO Spellcheck 
 
-In diesem Abschnitt ist der erarbeitete DoS-Algorithmus-Lösungsansatz (DLA) aufgeführt. Der Algorithmus wird verwendet um getätigte gratis Transaktionen zu überwachen und falls nötig einzuschränken. Wird ein Account als Bedrohung für die Blockchain eingestuft, wird dieser Account von der Whitelist gelöscht. 
+In diesem Abschnitt ist der erarbeitete DoS-Algorithmus-Lösungsansatz aufgeführt. Der Algorithmus wird verwendet um getätigte gratis Transaktionen zu überwachen und falls nötig einzuschränken. Wird ein Account als Bedrohung für die Blockchain eingestuft, wird dieser Account von der Whitelist gelöscht. 
 
-#### Parameter 
+#### Parameter \label{sec_dla_params}
 
-Die ausgewählten Parameter werden beim Start des externen Programmes aus einer Konfigurationsdatei gelesen. Das erlaubt dem Betreiber, die Überwachung der Blockchain an seine Bedürfnisse anzupassen.
+Um zu bewerten, ob ein Account eine Gefahr für die Blockchain darstellt, braucht ein Algorithmus Parameter. Diese werden durch die Überwachung von getätigten gratis Transaktionen gesammelt. Dabei muss jeweils pro Account entschieden werden, ob ein Verhalten eine Gefahr darstellt. Nachfolgend sind mögliche Parameter für die Berurteilung von Accounts aufgeführt. 
 
-##### Zeitinterval
+##### Sender 
 
-Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitinterval bewertet werden. Absolute Werte über die gesammte Lebensdauer einer Blockchain sind nicht aussagekräftig. 
+Dieser Parameter ist zwingend nötig um eine gratis Transaktionen mit einem Account zu verknüpfen. 
 
-Das Zeitinterval wird in Minuten angegeben. Das erlaubt dem Betreiber eine granulare Überwachung der Blockchain. Es muss jedoch beachtet werden, dass ein zu kleines Zeitintervall sehr Resourcen intensiv sein kann. 
+##### Empfänger
 
-##### Anzahl Transaktionen
+Eine Transaktion wird immer an eine Adresse gesendet. Hierbei kann es sich sowohl um einen Benutzeraccount oder einen Smart Contract handeln. 
 
-Jeder Account verfügt über ein Kontingent von gratis Transaktionen pro Zeitintervall. Der Typ der Transaktion ist dabei nicht relevant. 
+Der Empfänger kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des Empfängers für eine Transaktion benötigt. Jeder Benutzer ist in der Lage, selbst neue Accounts zu erstellen und diese als Empfänger zu verwenden. 
 
-##### Komputationskosten
+Aufgrund der aufgeführten Gründe, wurde entschlossen, dass der Empfänger bei der Bewertung von einer Gefahr nicht berücksichtigt wird. 
 
-Jeder Account verfügt über ein Kontingent von gratis Gas pro Zeitintervall. Dieser Ansatz berücksichtig die Komputationskosten, die von einer Transaktionen auf der Blockchain verursacht werden.  
+##### Zeitintervall
+
+Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall bewertet werden. Absolute Werte über die gesammte Lebensdauer einer Blockchain sind nicht aussagekräftig. 
+
+Mit diesem Parameter wird bestimmt, wie lange getätigte gratis Transaktionen von einem Account relevant sind für den Algorithmus. 
+
+##### Anzahl getätigte Transaktionen
+
+Pro Account wird verfolgt, wie viele gratis Transaktionen pro Zeitintervall gemacht werden. Hier werden die Transaktionen unabhängig von Typ oder verursachten Komputationskosten auf der Blockchain gezählt. 
+
+Dieser Parameter ist für die Beurteilung einer Gefahr von zentraler Bedeutung und wird daher pro Account überwacht und gespeichert. Der gespeicherte Zähler wird abhängig vom definierten Zeitintervall bewertet und zurückgesetzt. 
+
+##### Anzahl verbrauchtes Gas
+
+Pro Account wird verfolgt, wie viel Gas pro Zeitintervall auf der Blockchain durch dessen gratis Transaktionen verbraucht wird. Im Gegensatz zum oben genannten Parameter, werden hier die verursachten Komputationskosten auf der Blockchain berücksichtigt. 
+
+Da wiederholtes ausführen von gratis Transaktionen mit einem sehr hohen Gas-Bedarf für eine DoS-Attacke verwendet werden können, wird dieser Parameter für die Beurteilung von Bedrohungen verwendet. 
 
 #### Benutzermanagement
 
 Für die Verwaltung der Accounts sind drei grundlegende Ansätze identifiziert worden. 
 
-##### Kein Benutzermanagement
+##### Kein Benutzermanagement \label{sec_dla_usermngmt_none}
 
 Die Parameter werden global definiert und gelten für alle Accounts. Das bedeuted, dass das Kontingent an gratis Transaktionen und gratis Gas für alle Accounts gleich hoch ist.
 
@@ -44,7 +60,7 @@ Die Parameter sind bei jedem Account individuell konfigurierbar. Die Konfigurati
 
 #### Konsequenzen
 
-Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen verdächtigen Account nach der Löschung, wieder zur Whitelist hinzuzufügen.
+Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen verdächtigen Account nach der Löschung wieder zur Whitelist hinzuzufügen.
 
 ##### Fixer Zeitpunkt 
 
@@ -73,9 +89,29 @@ Beispiel:
 
 Die Implemantation von diesem Ansatz ist sehr komplex. Für jeden Account muss die Dauer des Ausschlusses von gratis Transaktionen einzeln berechnet und überwacht werden. 
 
-### Evaluation DoS Algorithmus
+#### Evaluation DoS-Algorithmus
 
-Es werden mehrer LA implementiert da sie kombinierbar sind.
+Wie unter \ref{sec_dla_params} erläutert, werden folgende Parameter für die Beurteilung des Verhaltens von Accounts verwendet: 
+
+- Sender
+- Zeitintervall
+- Anzahl getätigte gratis Transaktionen pro Zeitintervall
+- Anzahl verbrauchtes gratis Gas pro Zeitintervall
+
+Das Benutzermanagement wird für jeden Account individuell definiert. Dieser Ansatz wurde über einem gruppenbasierten Benutzermanagement gewählt, da die Umsetzung einfacher ist und somit in der verbleibenden Zeit realisiert werden kann. 
+
+Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Ausnahmen könnten zum Beispiel Dozenten sein. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese sind konfigurierbar und gelten für Accounts bei denen keine Parameter angegeben werden. So kann die Mehrheit der Accounts über die Standardparameter und Ausnahmen individuell konfiguriert werden.  
+
+
+
+
+
+
+
+
+
+
+
 
 //TODO Kriterien
 //Gewichtung Kriterien

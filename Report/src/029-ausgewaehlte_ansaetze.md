@@ -13,6 +13,8 @@ Spezifikation und so scheiss
 
 ### Konfigurationsdatei
 
-//todo input File beschreiben
+//TODO
+
+Die unten aufgeführten Parameter werden beim Start des externen Programmes aus einer Konfigurationsdatei gelesen. Das erlaubt dem Betreiber, die Überwachung der Blockchain an seine Bedürfnisse anzupassen.
 
 
