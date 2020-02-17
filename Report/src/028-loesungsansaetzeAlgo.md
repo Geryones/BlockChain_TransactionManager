@@ -18,25 +18,71 @@ Eine Transaktion wird immer an eine Adresse gesendet. Hierbei kann es sich sowoh
 
 Der Empfänger kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des Empfängers für eine Transaktion benötigt. Jeder Benutzer ist in der Lage, selbst neue Accounts zu erstellen und diese als Empfänger zu verwenden. 
 
-Aufgrund der aufgeführten Gründe, wurde entschlossen, dass der Empfänger bei der Bewertung von einer Gefahr nicht berücksichtigt wird. 
-
-##### Zeitintervall
+##### Relevantes Zeitintervall
 
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall bewertet werden. Absolute Werte über die gesammte Lebensdauer einer Blockchain sind nicht aussagekräftig. 
 
-Mit diesem Parameter wird bestimmt, wie lange getätigte gratis Transaktionen von einem Account relevant sind für den Algorithmus. 
+Hier werden zwei unterschiedliche Ansätze untersucht: 
+
+Intervall für alle Accounts
+:      Gratis Transaktionen werden für alle Accounts im selben Zeitintervall betrachtet. Zum beispiel werden die Zähler für getätigte gratis Transaktionen für alle Accounts im 10 Minuten Takt zurückgesetzt. Der Zeitpunkt ist relativ zum Programmstart.
+
+Individuelles Intervall
+:      Das Intervall ist relativ zum Zeitpunkt getätigter gratis Transaktionen. Bei einer Prüfung wird untersucht, wie viele gratis Transaktionen ein Account im vergangenen Zeitintervall, gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat.  
 
 ##### Anzahl getätigte Transaktionen
 
 Pro Account wird verfolgt, wie viele gratis Transaktionen pro Zeitintervall gemacht werden. Hier werden die Transaktionen unabhängig von Typ oder verursachten Komputationskosten auf der Blockchain gezählt. 
 
-Dieser Parameter ist für die Beurteilung einer Gefahr von zentraler Bedeutung und wird daher pro Account überwacht und gespeichert. Der gespeicherte Zähler wird abhängig vom definierten Zeitintervall bewertet und zurückgesetzt. 
-
 ##### Anzahl verbrauchtes Gas
 
 Pro Account wird verfolgt, wie viel Gas pro Zeitintervall auf der Blockchain durch dessen gratis Transaktionen verbraucht wird. Im Gegensatz zum oben genannten Parameter, werden hier die verursachten Komputationskosten auf der Blockchain berücksichtigt. 
+Transaktionen mit einem sehr hohen Gas-Bedarf können für eine DoS-Attacke verwendet werden. Da beim Angreifer mit gratis Transaktionen keine Mehrkosten anfallen, ist dieser Angriff der wahrscheinlichste. 
 
-Da wiederholtes ausführen von gratis Transaktionen mit einem sehr hohen Gas-Bedarf für eine DoS-Attacke verwendet werden können, wird dieser Parameter für die Beurteilung von Bedrohungen verwendet. 
+
+
+
+
+
+
+
+
+#### Wiederaufnahme auf die Whitelist
+
+Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen Account nach der Löschung automatisch wieder zur Whitelist hinzuzufügen.
+
+##### Fixer Zeitpunkt 
+
+Es wird ein fixer Zeitpunkt definiert, bei dem alle Accounts zurückgesetzt werden. Das heisst das Kontingent wird bei allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist gelöschte Accounts werden dieser wieder hinzugefügt. Zum Beispiel könnte als Zeitpunkt Montag 8:00 UTC definiert werden.
+
+Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. Wenn der gesetzte Zeitpunkt von den Benutzer identifiziert ist, kann das System missbraucht werden. Wenn man einen DoS Angriff kurz vor dem Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem Zeitmanagement gleich wieder resettet. 
+
+##### Nach Zeitintervall
+
+Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen. Da bei diesem Ansatz, der Zeitpunkt des Vergehens für jeden Account individuell verfolgt werden muss, ist er komplexer in der Umsetzung als ein fixer Zeitpunkt für einen Reset.  
+
+##### Inkrementierendes Zeitintervall
+
+Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der Anzahl bereits begangener Verstösse. Wiederholungstäter und somit eine potentiell grosse Gefahr für die Blockchain, werden mit diesem System sehr viel härter als Einzeltäter bestraft.  
+
+Beispiel:
+
+| # Verstösse | Dauer Sperrung  |
+|:-----------:|-------------------:|
+| 1 | 0.25  |
+| 2 | 0.50|
+| 3 | 2.00 |
+| 4 | 6.00|
+| 3 | 24.00|
+| 4 | 168.00 |
+
+Die Implemantation von diesem Ansatz ist sehr komplex. Für jeden Account muss die Dauer des Ausschlusses von gratis Transaktionen einzeln berechnet und überwacht werden. 
+
+
+
+
+
+
 
 #### Benutzermanagement
 
@@ -58,49 +104,6 @@ Falls zu viele Gruppen definiert werden, verliert das System an Effizienz. Die I
 
 Die Parameter sind bei jedem Account individuell konfigurierbar. Die Konfiguration auf Accountebene, bietet die höchste Granularität von allen Ansätzen. Das zur Folge, dass bei Änderungen alle Accounts einzeln angepasst werden müssen. Auch ist die Umsetzung von individuellen Parametern komplex. 
 
-#### Konsequenzen
-
-Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende Account von der Whitelist gelöscht. In diesem Abschnitt sind mögliche Vorgehensweisen aufgeführt, um einen verdächtigen Account nach der Löschung wieder zur Whitelist hinzuzufügen.
-
-##### Fixer Zeitpunkt 
-
-Es wird ein fixer Zeitpunkt definiert, bei dem alle Accounts zurückgesetzt werden. Das heisst das Kontingent wird bei allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist gelöschte Accounts werden dieser wieder hinzugefügt. Zum Beispiel könnte als Zeitpunkt Montag 8:00 UTC definiert werden.
-
-Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. Wenn der gesetzte Zeitpunkt von den Benutzer identifiziert ist, kann das System missbraucht werden. Wenn man einen DoS Angriff kurz vor dem Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem Zeitmanagement gleich wieder resettet. 
-
-##### Nach definiertem Zeitintervall
-
-Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen. Da bei diesem Ansatz, der Zeitpunkt des Vergehens für jeden Account individuell verfolgt werden muss, ist er komplexer in der Umsetzung als ein fixer Zeitpunkt für einen Reset.  
-
-##### Inkrementierendes Zeitintervall
-
-Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der Anzahl bereits begangener Verstösse. Wiederholungstäter und somit eine potentiell grosse Gefahr für die Blockchain, werden mit diesem System sehr viel härter als Einzeltäter bestraft.  
-
-Beispiel:
-
-| # Verstösse | Dauer Sperrung  |
-|:-----------:|-------------------:|
-| 1 | 0.25  |
-| 2 | 0.50|
-| 3 | 2.00 |
-| 4 | 6.00|
-| 3 | 24.00|
-| 4 | 168.00 |
-
-Die Implemantation von diesem Ansatz ist sehr komplex. Für jeden Account muss die Dauer des Ausschlusses von gratis Transaktionen einzeln berechnet und überwacht werden. 
-
-#### Evaluation DoS-Algorithmus
-
-Wie unter \ref{sec_dla_params} erläutert, werden folgende Parameter für die Beurteilung des Verhaltens von Accounts verwendet: 
-
-- Sender
-- Zeitintervall
-- Anzahl getätigte gratis Transaktionen pro Zeitintervall
-- Anzahl verbrauchtes gratis Gas pro Zeitintervall
-
-Das Benutzermanagement wird für jeden Account individuell definiert. Dieser Ansatz wurde über einem gruppenbasierten Benutzermanagement gewählt, da die Umsetzung einfacher ist und somit in der verbleibenden Zeit realisiert werden kann. 
-
-Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Ausnahmen könnten zum Beispiel Dozenten sein. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese sind konfigurierbar und gelten für Accounts bei denen keine Parameter angegeben werden. So kann die Mehrheit der Accounts über die Standardparameter und Ausnahmen individuell konfiguriert werden.  
 
 
 
@@ -109,11 +112,38 @@ Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuell
 
 
 
+### Evaluation DoS-Algorithmus
+// TODO
+
+In diesem Abschnitt werden die Aspekte des Algorithmus evaluiert. 
+
+#### Parameter
+
+alsödfkjöalsdkjföaljdsfö lasdkfjöl asdjföla jdsfölaj dfölakjsd fölakjdsf ölaj
+
+##### Sender
+
+##### Empfänger
+
+Der Emfänger kann vom Sender frei bestimmt werden und hat somit keine Aussagekraft. Daher wird er nicht verwendet. 
 
 
+##### Zeitintervall 
 
+##### Anzahl gratis Transaktionen
 
-//TODO Kriterien
-//Gewichtung Kriterien
-//Tabellarische Evaluation
-//Erläuterung Evaluation
+Dieser Parameter ist für die Beurteilung einer Gefahr von zentraler Bedeutung und wird daher pro Account überwacht und gespeichert. Der gespeicherte Zähler wird abhängig vom definierten Zeitintervall bewertet und zurückgesetzt.
+
+##### Anzahl verbrauchtes Gas
+
+Da wiederholtes ausführen von gratis Transaktionen mit einem sehr hohen Gas-Bedarf für eine DoS-Attacke verwendet werden können, wird dieser Parameter für die Beurteilung von Bedrohungen verwendet. 
+
+#### Wiederaufnahme auf die Whitelist
+
+wird eine Hybridlösung zwischen fixem Zeitpunkt und einen Zeitintervall verfolgt.  
+
+#### Benutzermanagement
+
+ wird für jeden Account individuell definiert. Dieser Ansatz wurde über einem gruppenbasierten Benutzermanagement gewählt, da die Umsetzung einfacher ist und somit in der verbleibenden Zeit realisiert werden kann. Kein Benutzermanagent wird nicht als praktikabel bewertet. Die Betreiber brauchen eine Möglichkeit um einzelne Accounts speziell zu parametrisieren. Zum Beispiel ist es sinnvoll, wenn Dozenten einen höheren Schwellenwert haben. Um einen Unterricht vorzubereiten ist es wahrscheinlich, dass viele Transaktionen getätigt oder grosse Smart Contracts deployed werden müssen. 
+
+Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese sind konfigurierbar und gelten für Accounts bei denen keine Parameter angegeben werden. So kann die Mehrheit der Accounts über die Standardparameter und Ausnahmen individuell konfiguriert werden.  
