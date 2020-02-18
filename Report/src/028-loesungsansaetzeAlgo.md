@@ -82,22 +82,18 @@ In der oben aufgeführten Tabelle ist ersichtlich, dass die Dauer der Sperrung p
 
 #### Benutzermanagement
 
-Für die Verwaltung der Accounts sind drei grundlegende Ansätze identifiziert worden. 
+
+Bei der Verwaltung von Accounts geht es darum, wie die vorhergehenden Parameter und Intervalle auf die Accounts angewendet werden. Es werden drei Mögliche Ansätze betrachtet. 
 
 ##### Kein Benutzermanagement \label{sec_dla_usermngmt_none}
 
-Die Parameter werden global definiert und gelten für alle Accounts. Das bedeuted, dass das Kontingent an gratis Transaktionen und gratis Gas für alle Accounts gleich hoch ist.
-
-Dieser Ansatz ist sehr einfach zu implementieren, erlaubt aber keine Differenzierung bei den Accounts. Falls Bedarf besteht, die Parameter nur für einen Account zu ändern, ist diese Anpassung für alle Accounts gültig.
+Die Parameter werden global konfiguriert und gelten für alle Accounts. Eine Differenzierung von Accounts ist somit nicht möglich. 
 
 ##### Parameter über Gruppen konfigurierbar
 
-Die Parameter sind über Gruppen konfiguriert. Jedem Account wird eine Gruppe zugewiesen, dieser erbt die Parameter der Gruppe. So lassen sich Strukturen der Schule, wie Studenten, Dozenten und Klassen einfach abbilden. Die Konfiguration wird daruch intuitiv und effizient. 
-
-Falls zu viele Gruppen definiert werden, verliert das System an Effizienz. Die Implementation von einem gruppenbasierten Benutzermanagement ist sehr komplex. 
+Die Parameter sind über Gruppen konfiguriert. Jedem Account wird eine Gruppe zugewiesen, dieser erbt die Parameter der Gruppe. So lassen sich Strukturen der Schule, wie Studenten, Dozenten und Klassen einfach abbilden. 
 
 ##### Parameter pro Account konfigurierbar
 
-Die Parameter sind bei jedem Account individuell konfigurierbar. Die Konfiguration auf Accountebene, bietet die höchste Granularität von allen Ansätzen. Das hat zur Folge, dass bei Änderungen alle Accounts einzeln angepasst werden müssen. Auch ist die Umsetzung von individuellen Parametern komplex. 
-
+Die Parameter sind bei jedem Account individuell konfigurierbar. 
 

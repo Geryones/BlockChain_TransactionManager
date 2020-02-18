@@ -40,16 +40,32 @@ Je öfter mit einem Account gegen die Regeln verstossen wird, desto kleiner ist 
 Einmalige Verstösse die versehentlich auftreten werden in einer Lernumgebung als wahrschneinlich eingeschätzt. Mit diesem System werden solche Versehn sehr milde bestraft. 
 
 Wir haben uns entschieden, eine Kombination aus einem fixen Zeitpunkt und einem inkrementierenden Intervall zu verwenden. Dieser Ansatz ist in der gegebenen Zeit realisierbar und bietet nebst einem effizienten Schutz auch eine Toleranz für einmalige Verstösse.
-Die Dauer einer Suspendierung von der Whitelist kann mit dem Parameter "Revoke-Faktor" konfiguriert werden. Als Basis wird das Reset-Intervall verwendet. Ein Account kann für ein Vielfaches dieses Intervalls von der Whitelist ausgeschlossen werden. 
+Die Dauer einer Suspendierung von der Whitelist kann mit dem Parameter "Revoke-Faktor" konfiguriert werden. Als Basis wird das Reset-Intervall verwendet.
 
 $t = resInter * revFak * v$
 
-Wobei $t$ die Dauer der Suspendierung, $resInter$ das Reset-Intervall, $revFak$ ist der Revoke-Faktor und $v$ ist die Anzahl bereits begangener Verstösse. 
+Wobei $t$ die Dauer der Suspendierung, $resInter$ das Reset-Intervall, $revFak$ der Revoke-Faktor und $v$ die Anzahl bereits begangener Verstösse abbilden. 
+
+Anbei Beispiel mit einem Reset-Intervall von fünf Minuten, einem Revoke-Faktor von 3 und der daraus resultierenden Suspendierung von der Whitelist in Minuten:
+
+| resInter | revFak  | Verstösse | Suspendierung (min) |
+|:----------:|--------:|----------:|--------------------:|
+| 5 | 3 | 1 | 15 | 
+| 5 | 3 | 2 | 30 | 
+| 5 | 3 | 3 | 45 | 
+| 5 | 3 | 4 | 60 | 
+| 5 | 3 | 5 | 75 | 
+| 5 | 3 | 6 | 90 |
 
 
 
 #### Benutzermanagement
 
- wird für jeden Account individuell definiert. Dieser Ansatz wurde über einem gruppenbasierten Benutzermanagement gewählt, da die Umsetzung einfacher ist und somit in der verbleibenden Zeit realisiert werden kann. Kein Benutzermanagent wird nicht als praktikabel bewertet. Die Betreiber brauchen eine Möglichkeit um einzelne Accounts speziell zu parametrisieren. Zum Beispiel ist es sinnvoll, wenn Dozenten einen höheren Schwellenwert haben. Um einen Unterricht vorzubereiten ist es wahrscheinlich, dass viele Transaktionen getätigt oder grosse Smart Contracts deployed werden müssen. 
+Es besteht der Bedarf, dass Accounts von Dozenten toleranter behandelt werden als solche von Studenten. Daher muss ein Benutzermanagement implementiert werden. 
 
-Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese sind konfigurierbar und gelten für Accounts bei denen keine Parameter angegeben werden. So kann die Mehrheit der Accounts über die Standardparameter und Ausnahmen individuell konfiguriert werden.  
+Ein gruppenbasiertes Benutzermanagement ist intuitiv und effizient, da vorhandene Strukturen der FHWN, wie Klassen oder Dozenten, abgebildet werden können. Die Implementation wird jedoch als sehr komplex eingeschätzt. Daher ist die Realisierbarkeit in der gegebenen Zeit fraglich. 
+
+Das lässt nur die Möglichkeit, jeden Account einzeln zu konfigurieren. Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese werden verwendet, für die Parameter nicht explizit definiert werden. So kann die Mehrheit der Accounts über Standardparameter und Ausnahmen individuell konfiguriert werden.  
+
+Um zu verhindern, dass das externe Programm angreifbar wird, kann das Reset-Intervall nur global definiert werden. Bei einem individuellen Reset-Intervall müsste für jeden Verstoss einer neuer Thread im Programm gestartet werden. Dadurch würde das Programm selbst anfällig für eine DoS Attacke.
+
