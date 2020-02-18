@@ -121,6 +121,8 @@ Smart Wallets basieren auf Smart Contracts. Der Benutzer ist der Besitzer der Sm
 
 ### Denial of Service (DoS) Attacken \label{sec_dos}
 
+//TODO ergänzen
+
 Bei einer DoS Attacke versucht der Angreifer einen Service mit Anfragen zu überlasten. Die Überlastung schränkt die Verfügbarkeit stark ein oder macht den Service sogar gänzlich unverfügbar für legitime Anfragen.
 
 Zurzeit sind Blockchains noch relativ langsam bei der Verarbeitung von Transaktionen. Ethereum kann ungefähr 15 Transaktionen pro Sekunde abarbeiten.[@interview_vitalik_buterin] Dadurch ist ein möglicher Angriffsvektor, die Blockchain mit Transaktionen zu fluten. Das würde dazu führen, dass Benutzer sehr lange auf auf die Ausführung ihrer Transaktionen warten müssen. 

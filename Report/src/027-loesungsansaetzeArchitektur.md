@@ -191,5 +191,6 @@ Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den D
 #### Resultat Evaluation
 
 Durch die hohe Gewichtung von Machbarkeit, erzielt ALA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher ALA 2 umgesetzt. 
+
 //TODO ausfleischen? 
 
