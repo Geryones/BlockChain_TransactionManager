@@ -16,15 +16,13 @@ Dieser Parameter ist zwingend nötig um eine gratis Transaktionen mit einem Acco
 
 Eine Transaktion wird immer an eine Adresse gesendet. Hierbei kann es sich sowohl um einen Benutzeraccount oder einen Smart Contract handeln. 
 
-Der Empfänger kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des Empfängers für eine Transaktion benötigt. Jeder Benutzer ist in der Lage, selbst neue Accounts zu erstellen und diese als Empfänger zu verwenden. 
-
-##### Relevantes Zeitintervall für die Beurteilung einer Gefahr
+##### Reset-Intervall 
 
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall bewertet werden. 
 Hier werden zwei unterschiedliche Ansätze untersucht: 
 
 Allgemeines Intervall
-:      Gratis Transaktionen werden für alle Accounts im selben Zeitintervall betrachtet. Der Zeitpunkt ist relativ zum Programmstart. Beispielsweise ist als Intervall eine Stunde gesetzt und der Progammstart erfolgt um 8:00 UCT. Dadurch sind gratis Transaktionen die um 08:59 UTC gemacht werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge, dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf eines Intervalls ausführen können. 
+:      Gratis Transaktionen werden für alle Accounts im selben Zeitintervall betrachtet. Der Zeitpunkt ist relativ zum Programmstart. Beispielsweise ist als Intervall eine Stunde gesetzt und der Progammstart erfolgt um 8:00 UCT. Dadurch sind gratis Transaktionen die um 08:59 UTC gemacht werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge, dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf eines Intervalls ausführen können.  
 
 Individuelles Intervall
 :      Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis Transaktionen. Bei einer Prüfung wird untersucht, wie viele gratis Transaktionen der betroffene Account im vergangenen Zeitintervall, gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat. Mit den selben Startparametern wie im oben aufgeführten Beispiel, ist eine um 08:59 UTC getätigte gratis Transaktion bis 09:59 relevant. 
@@ -36,7 +34,7 @@ Pro Account wird verfolgt, wie viele gratis Transaktionen pro Zeitintervall gema
 ##### Anzahl verbrauchtes Gas
 
 Pro Account wird verfolgt, wie viel Gas pro Zeitintervall auf der Blockchain durch dessen gratis Transaktionen verbraucht wird. Im Gegensatz zum oben genannten Parameter, werden hier die verursachten Komputationskosten auf der Blockchain berücksichtigt. 
- 
+
 
 
 
@@ -54,28 +52,27 @@ Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende
 
 Es wird ein fixer Zeitpunkt definiert, bei dem alle Accounts zurückgesetzt werden. Das heisst das Kontingent wird bei allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist gelöschte Accounts werden dieser wieder hinzugefügt. Zum Beispiel könnte als Zeitpunkt Montag 8:00 UTC definiert werden.
 
-Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. Wenn der gesetzte Zeitpunkt dem Benutzer bekannt ist, kann das System missbraucht werden. Wird ein DoS Angriff kurz vor dem Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem Zeitmanagement gleich wieder entsperrt. 
-
 ##### Nach Zeitintervall
 
-Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen. Da bei diesem Ansatz, der Zeitpunkt des Vergehens für jeden Account individuell verfolgt werden muss, ist er komplexer in der Umsetzung als ein fixer Zeitpunkt für einen Reset.  
+Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen.  
 
 ##### Inkrementierendes Zeitintervall
 
-Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der Anzahl bereits begangener Verstösse. Wiederholungstäter und somit eine potentiell grosse Gefahr für die Blockchain, werden mit diesem System sehr viel härter als Einzeltäter bestraft.  
+Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der Anzahl bereits begangener Verstösse. 
 
 Beispiel:
 
 | # Verstösse | Dauer Sperrung  |
 |:-----------:|-------------------:|
-| 1 | 0.25  |
-| 2 | 0.50|
-| 3 | 2.00 |
-| 4 | 6.00|
-| 3 | 24.00|
-| 4 | 168.00 |
+| 1 | 0.50  |
+| 2 | 1.00|
+| 3 | 3.00 |
+| 4 | 12.00|
+| 5 | 60.00|
+| 6 | 360.00 |
 
-Die Implemantation von diesem Ansatz ist komplex. Für jeden Account muss die Dauer des Ausschlusses von gratis Transaktionen einzeln berechnet und überwacht werden. 
+In der oben aufgeführten Tabelle ist ersichtlich, dass die Dauer der Sperrung proportional zu den Verstössen ist. 
+
 
 
 
