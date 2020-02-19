@@ -42,7 +42,7 @@ In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis
 
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist \label{sec_ala_2}
 
-Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken mit einem externen Programm implementiert, dargestellt in Abbildung \ref{img_solution2}. 
+Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattdessen wird der Schutzmechnismus gegen DoS Attacken in einem externen Programm implementiert, dargestellt in Abbildung \ref{img_solution2}. 
 
 ![Externes Programm für die Verwaltung der Whitelist \label{img_solution2}](images/solution2.png "Externes Programm für die Verwaltung der Whitelist") 
 

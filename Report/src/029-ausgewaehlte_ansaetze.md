@@ -12,10 +12,6 @@ UML Diagramme und so scheiss
 
 Spezifikation und so scheiss
 
-### Konfigurationsdatei
 
-//TODO
-
-Die unten aufgeführten Parameter werden beim Start des externen Programmes aus einer Konfigurationsdatei gelesen. Das erlaubt dem Betreiber, die Überwachung der Blockchain an seine Bedürfnisse anzupassen.
 
 

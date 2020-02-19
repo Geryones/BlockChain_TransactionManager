@@ -1,12 +1,11 @@
 
-### Evaluation DoS-Algorithmus
-// TODO
+### Evaluation DoS-Algorithmus \label{sec_evalAlgo}
 
 In diesem Abschnitt werden die Komponenten des Algorithmus evaluiert. 
 
 #### Parameter
 
-Die aufgeführten Parameter werden auf ihre Relevanz geprüft. 
+Die aufgeführten Parameter werden auf ihre Relevanz für die Erkennung einer DoS Attacke geprüft. 
 
 ##### Sender
 
@@ -63,9 +62,36 @@ Anbei Beispiel mit einem Reset-Intervall von fünf Minuten, einem Revoke-Faktor 
 
 Es besteht der Bedarf, dass Accounts von Dozenten toleranter behandelt werden als solche von Studenten. Daher muss ein Benutzermanagement implementiert werden. 
 
-Ein gruppenbasiertes Benutzermanagement ist intuitiv und effizient, da vorhandene Strukturen der FHWN, wie Klassen oder Dozenten, abgebildet werden können. Die Implementation wird jedoch als sehr komplex eingeschätzt. Daher ist die Realisierbarkeit in der gegebenen Zeit fraglich. 
+Ein gruppenbasiertes Benutzermanagement ist intuitiv und effizient, da vorhandene Strukturen der FHWN, wie Klassen oder Dozenten, abgebildet werden können. Die Implementation wird jedoch als sehr komplex eingeschätzt. Die Realisierbarkeit in der gegebenen Zeit ist fraglich. Der Ansatz wird daher nicht implementiert.
 
 Das lässt nur die Möglichkeit, jeden Account einzeln zu konfigurieren. Es wird erwartet, dass für die Mehrheit der Accounts kein Bedarf an individuellen Parametern besteht. Um diesen Umstand gerecht zu werden, werden Standardparameter angeboten. Diese werden verwendet, für die Parameter nicht explizit definiert werden. So kann die Mehrheit der Accounts über Standardparameter und Ausnahmen individuell konfiguriert werden.  
 
 Um zu verhindern, dass das externe Programm angreifbar wird, kann das Reset-Intervall nur global definiert werden. Bei einem individuellen Reset-Intervall müsste für jeden Verstoss einer neuer Thread im Programm gestartet werden. Dadurch würde das Programm selbst anfällig für eine DoS Attacke.
+
+### Konfiguration des Algorithmus
+
+Um dem Betreiber die Möglichkeit zu geben, den Algorithmus an seine Bedürfnisse anzupassen, können die Parameter und Zeitintervalle, siehe \ref{sec_evalAlgo}, konfiguriert werden. 
+Die Konfiguration wird mit einer Textdatei vorgenommen. Für alle Parameter müssen natürliche Zahlen verwendet werden. Folgende Parameter können pro Account gesetzt werden: 
+
+Gratis Transaktionen
+:       Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+
+Gratis Gas
+:       Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht werden können.
+
+Wenn für einen Account individuelle Schwellenwerte für Transaktionen und Gas definiert werden, müssen immer beide Parameter gesetzt werden. 
+
+Folgende Parameter gelten für alle Accounts:
+
+Reset-Intervall
+:     Einheit sind Minuten, definiert die Länge des Reset-Intervalls
+
+Revoke-Intervall
+:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung von der Whitelist gelöscht wird. 
+
+Standardwert gratis Transaktionen
+:      Giltet für Accounts die ohne Parameter erfasst werden. Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+
+Standardwert gratis Gas
+:     Giltet für Accounts die ohne Parameter erfasst werden.  Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht werden können.
 
