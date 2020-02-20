@@ -102,26 +102,6 @@ Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Vers
 
 Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in erster Instanz von einem Programm geprüft werden. Falls keine Richtlinien verletzt werden, wird die Transaktion im Data-Feld einer neu generierten Transaktion an die Smart Wallet übermittelt. 
 
-#### ALA 4: Super Smart Wallet
-
-Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu LA 1, \ref{sec_ala_1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
-Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen Whitelist gearbeitet.
-
-![Super Smart Wallet \label{img_solution4}](images/solution4.png "Super Smart Wallet") 
-
-Die Smart Wallet verwaltet die Whitelist und den Schutzmechanismus gegen DoS Attacken. Das ist auf Abbildung \ref{img_solution4} ersichtlich. Wird eine DoS Attacke identifiziert, wir der entsprechende Account aus der Whitelist gelöscht.  
-
-##### Pro
-
-Es existiert nur eine einzige Smart Wallet. Das Deployment ist somit weniger aufwändig. 
-Falls eine Änderung am Code gemacht nötig ist, muss nur eine Smart Wallet neu deployed werden. 
-
-##### Contra
-
-Bei diesem Ansatz ist die Machbarkeit unklar. 
-Parity muss umgeschrieben werden, da nicht die Senderidentität der Smart Wallet genutzt werden muss, sondern die des Benutzeraccounts. 
-Ebenfalls muss die Whitelist-Funktionalität von Parity angepasst werden, analog zu LA 1. 
- 
 
 ### Evaluation der Architektur
 
@@ -150,7 +130,7 @@ Jeder ALA wird auf diese drei Kriterien untersucht. Pro Kriterium können zwisch
 | ALA 1 | 1 | 3 | 2 | 13 |
 | ALA 2 | 3 | 2 | 2 | 17 |
 | ALA 3 | 2 | 1 | 3 | 12 |
-| ALA 4 | 1 | 2 | 2 | 11 |
+
 
 Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
 
@@ -184,13 +164,12 @@ Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig.
 In der Whitelist der Blockchain ist nur der Account des externen Programmes hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis Transaktionen berechtigt sind. 
 Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den DoS Schutzalgorithmus enthält. Die Automatisierung wird daher als einfach eingestuft, da das externe Programm mit Java geschrieben wird und somit sehr viel zugänglicher ist. Daher sind bei Betrieb 3 Punkte vergeben worden. 
 
-#### ALA 4: Super Smart Wallet
-
-//TODO or not TODO ? XD
 
 #### Resultat Evaluation
 
 Durch die hohe Gewichtung von Machbarkeit, erzielt ALA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher ALA 2 umgesetzt. 
+
+Im Anhang ist unter \ref{app_weitereLoesungen} ein weiterer Lösungsanatz aufgelistet. Dieser ist sehr früh in der Evaluierung als nicht realisierbar eingestuft worden und ist hier deshalb nicht aufgeführt.
 
 //TODO ausfleischen? 
 

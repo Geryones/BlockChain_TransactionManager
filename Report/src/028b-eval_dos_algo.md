@@ -84,10 +84,10 @@ Wenn für einen Account individuelle Schwellenwerte für Transaktionen und Gas d
 Folgende Parameter gelten für alle Accounts:
 
 Reset-Intervall
-:     Einheit sind Minuten, definiert die Länge des Reset-Intervalls
+:     Einheit ist Minuten, definiert die Länge des Reset-Intervalls.
 
 Revoke-Intervall
-:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung von der Whitelist gelöscht wird. 
+:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung durch den Algorithmus von der Whitelist gelöscht wird. 
 
 Standardwert gratis Transaktionen
 :      Giltet für Accounts die ohne Parameter erfasst werden. Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
