@@ -8,7 +8,9 @@ In diesem Abschnitt ist beschrieben, wie die Blockchain konfiguriert ist. Als Cl
 
 ### Konfiguration der Blockchain \label{sec_prac_bc_config}
 
-Parity wird mit der Konsole gestartet. Der Benutzer hat hier die Möglichkeit, gewisse Parameter an Parity zu übergeben. Eine einfache Konfiguration ist somit möglich. Für kompliziertere Konfigurationen, wird die Verwendung von einer Konfigurationsdatei empfohlen. 
+Parity wird mit der Konsole gestartet. Der Benutzer hat hier die Möglichkeit, gewisse Parameter an Parity zu übergeben. Eine einfache Konfiguration ist somit möglich. Für kompliziertere Konfigurationen, wird die Verwendung von einer Konfigurationsdatei empfohlen, diese ist im nächsten Abschnitt \ref{sec_prac_config_toml} beschrieben.
+
+Die hier gezeigte Konfiguration ist für die Entwicklung verwendet worden. Hierbei ist es wichtig, dass Aktionen möglichst schnell auf der Blockchain sichtbar sind. Aus diesem Grund wurde auf einen Mining-Algorithmus verzichtet. Für einen produktiven Betrieb sollte die Konfiguration auf die eigenen Bedürfnisse geprüft und gegebenenfalls angepasst werden. 
 
 #### Config.toml \label{sec_prac_config_toml}
 
@@ -86,9 +88,9 @@ In dieser Sektion sind Parameter, die sonst nirgends reinpassen.
 Zeile 18
 :    Wird für die Interaktion mit Remix und Metamask benötigt.
 
-#### Blockchainspezifikation 
+#### Blockchainspezifikation \label{sec_prac_spec}
 
-Mit dieser Datei wird die Blockchain definiert. Sie enthält nebst der Spezifikation den Genesis Block. Der Genesis Block ist der erste Block in einer Blockchain. 
+Mit dieser Datei wird die Blockchain definiert. Sie enthält nebst der Spezifikation den Genesis Block. Weiter können Benutzeraccounts und Smart Contracts definiert werden. Diese können verwendet werden, sobald die Blockchain gestartet ist. 
 
 ```{#Blockchainspezifikation .json .numberLines}
 {
@@ -172,20 +174,17 @@ Zeile 23 - 26
 :      Dieser Abschnitt erlaubt es, Accounts zu definieren. Diese können für Benutzer oder Smart Contracts sein. Jeder Account wird mit einer Adresse und einem Guthaben initialisiert. Bei einem Account für einen Smart Contract, wird zusätzlich dessen Bytecode angegeben.
 
 Zeile 24
-:      Hier ist die SimpleRegistry, siehe Abschnitt \ref{sec_prac_simpleRegistry}, definiert. Der erste Parameter ist die Adresse, unter welcher der Smart Contract erreichbar sein soll. Das Guthaben wir mit einem Ether initalisiert. Der Wert für ```constructor``` ist der Bytecode des Smart Contracts. Dieser ist hier durch einen Platzhalter ersetzt worden.  
+:      Hier ist die SimpleRegistry, siehe Abschnitt \ref{sec_whitelist} und \ref{sec_simpleRegistry}, definiert. Der erste Parameter ist die Adresse, unter welcher der Smart Contract erreichbar sein soll. Das Guthaben wir mit einem Ether initalisiert. Der Wert für ```constructor``` ist der Bytecode des kompilierten Smart Contracts. Dieser ist aufgrund seiner Grösse durch einen Platzhalter ersetzt worden.  
 
 Zeile 25
 :      Definition von einem Benutzeraccount. Der erste Parameter ist die Adresse. Dem Account kann ein beliebiges Guthaben zugewiesen werden. 
 
-#### Docker \label{sec_prac_docker}
+### Docker \label{sec_prac_docker}
 
 Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird Docker[@docker] für die Betreibung der Blockchain verwendet. Mehr Details zur Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
 
-### Whitelist \label{sec_prac_whitelist}
+### Account für gratis Transaktionen zertifizieren
 
-#### SimpleRegistry \label{sec_prac_simpleRegistry}
-
-#### SimpleCertifier \label{sec_prac_simpleCertifier}
 
 
 

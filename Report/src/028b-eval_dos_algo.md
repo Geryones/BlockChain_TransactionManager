@@ -95,3 +95,4 @@ Standardwert gratis Transaktionen
 Standardwert gratis Gas
 :     Giltet für Accounts die ohne Parameter erfasst werden.  Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht werden können.
 
+Bei der Konfiguration sollten die Abhängigkeiten zwischen den Parametern geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Reset-Intervall sollten immer zusammen konfiguriert werden. 
