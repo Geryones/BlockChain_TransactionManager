@@ -76,7 +76,7 @@ Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein externe
 
 Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig, um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren. Die neue erstellte Transaktion wird vom Programm an die Smart Wallet gesendet.  
 
-![Externes Programm mit Whitelist \label{img_solution3}](images/solution3_v2.png "Externes Programm mit Whitelist") 
+![Externes Programm mit Whitelist \label{img_solution3}](images/solution3.png "Externes Programm mit Whitelist") 
 
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
 Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
