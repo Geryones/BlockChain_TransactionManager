@@ -16,17 +16,99 @@ Für die Verwendung der Whitelist sind zwei Smart Contracts nötig, die Name Reg
 
 #### Name Registry \label{sec_simpleRegistry}
 
-In diesem Abschnitt sind besonders wichtige Codeausschnitte der Name Registry aufgeführt und erklärt. Der gesammte Code ist im Anhang unter \ref{app_registry} zu finden. 
-
-In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine lesbare Form zu übersetzen. Smart Contracts können gegen eine Gebühr von einem Ether registriert werden. Dabei wird die Adresse des Smart Contracts zusammen mit dem gewählten Namen registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart kodierte Adressen verwendet werden müssen. 
+In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine lesbare Form zu übersetzen. 
+Smart Contracts können für eine Gebühr von einem Ether registriert werden. Dabei wird die Adresse des Smart Contracts zusammen mit dem gewählten Namen registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart kodierte Adressen verwendet werden müssen. 
 Dieses System ist analog zu einem DNS Lookup[@wiki_dns].
 
 Die Name Registry ist in Parity standardmässig unter der Addresse ```0x0000000000000000000000000000000000001337``` zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert werden. 
-Nachfolgenden sind die involvierten Methoden der Name Registry für diese Registrierung aufgeführt und erklärt.
+Nachfolgenden sind die involvierten Methoden und Modifier[@wiki_modifier] der Name Registry aufgeführt und erklärt. Der vollständige Code ist im Anhang unter \ref{app_registry} zu finden. 
 
 ```{ .sol .numberLines}
+	struct Entry {
+		address owner;
+		address reverse;
+		bool deleted;
+		mapping (string => bytes32) data;
+	}
 
+    mapping (bytes32 => Entry) entries;
 ```
+In der Map ```entries``` sind alle registrierten Accounts festgehalten. Pro Eintrag wird der Besitzer (```owner```), die Adresse (```address```), ein Flag ob der Eintrag gelöscht ist (```deleted```) und dessen Daten (```data```) gespeichert. 
+Die Map ```entries``` ist die zentrale Datenstruktur der Name Registry. Änderungn daran sind daher durch Modifiers eingeschränkt.
+
+```{ .sol .numberLines}
+		modifier whenUnreserved(bytes32 _name) {
+		require(!entries[_name].deleted && entries[_name].owner == 0);
+		_;
+	}
+```
+Stellt sicher, dass ein Eintrag zu einem Namen (```_name```) nicht bereits existiert oder zu einem früheren Zeitpunkt gelöscht worden ist. Es wird also geprüft, ob die gewünschte Position in der Map ```entries``` noch frei ist und somit reserviert werden kann.
+
+
+```{ .sol .numberLines}
+	modifier onlyOwnerOf(bytes32 _name) {
+		require(entries[_name].owner == msg.sender);
+		_;
+	}
+```
+Der Besitzer einer Nachricht wird mit dem Besitzer eines Eintrags unter dem Namen ```_name``` in ```entries``` verglichen. Nur wenn dieser identisch ist, dürfen Änderungen an einem existierenden Eintrag vorgenommen werden. 
+
+
+```{ .sol .numberLines}
+	modifier whenEntryRaw(bytes32 _name) {
+		require(
+			!entries[_name].deleted &&
+			entries[_name].owner != address(0)
+		);
+		_;
+	}
+```
+Prüft ob der Eintrag für Namen ```_name``` nicht gelöscht ist und über einen gültigen Besitzer verfügt. Mit ```!= address(0)``` wird der geprüft ob sich um mehr als einen uninitialisierten Account handelt. 
+
+
+```{ .sol .numberLines}
+    uint public fee = 1 ether;
+
+	modifier whenFeePaid {
+		require(msg.value >= fee);
+		_;
+	}
+```
+Auf Zeile 1 ist die Höhe der Gebühr (```fee```) definiert. Ab Zeile 3 folgt ein Modifier. Dieser überprüft, ob der Betrag in der Transaktion gross genug ist um die Gebühr von Zeile 1 zu bezahlen. 
+
+
+```{ .sol .numberLines}
+	function reserve(bytes32 _name)
+		external
+		payable
+		whenUnreserved(_name)
+		whenFeePaid
+		returns (bool success)
+	{
+		entries[_name].owner = msg.sender;
+		emit Reserved(_name, msg.sender);
+		return true;
+	}
+```
+Mit der Methode ```reserve``` kann ein Eintrag in der Liste ```entries``` für den Namen ```_name``` reserviert werden. Durch die Verwendung von ```external``` auf Zeile 2, kann die Methode von anderen Accounts aufgerufen werden. 
+Der Modifier ```payable``` erlaubt es, Ether an die Methode zu senden. Auf Zeile 4 wird überprüft, ob der Eintrag in ```entries``` noch frei ist. Schliesslich wird geprüft ob der Transaktion genügend Ether mitgegeben wird um die Gebühr zu begleichen. 
+Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` eine neuer Eintrag erstellt. Als Besitzer des Eintrags wird der Sender der Transaktion gesetzt. 
+Auf Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
+
+```{ .sol .numberLines}
+    function setAddress(bytes32 _name, string _key, address _value)
+		external
+		whenEntryRaw(_name)
+		onlyOwnerOf(_name)
+		returns (bool success)
+	{
+		entries[_name].data[_key] = bytes32(_value);
+		emit DataChanged(_name, _key, _key);
+		return true;
+	}
+```
+
+
 
 
 #### Certifier \label{sec_ssimpleCertifier}
