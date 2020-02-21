@@ -107,7 +107,10 @@ Auf Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
 		return true;
 	}
 ```
-
+Mit dieser Methode wird ein reservierter Eintrag in ```entries``` befüllt. Als erster Parameter wird der Name des Eintags (```_name```) übergeben. Dieser muss identisch zum verwendeten Namen in der Methode ```reserve``` sein. Mit dem Parameter ```_key``` wird der Zugriff auf die innere Map ```data``` verwaltet. Mit ```_value``` wird die zu registrierende Adresse übergeben. 
+Auch diese Methode muss von Aussen aufgerufen werden können, daher ```external``` auf zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und ```onlyOwnerOf``` auf Zeile 3 und 4 erfüllt sind, wird die eigentliche Registrierung vorgenommen. 
+In der Map ```data``` wird die Adresse (```_value```) an der Position ```_key``` gespeichert. 
+Die Änderung der Daten wird auf Zeile 9 ans Netzwerk gesendet.
 
 
 
