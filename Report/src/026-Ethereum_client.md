@@ -20,7 +20,7 @@ In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine lesba
 Smart Contracts können für eine Gebühr von einem Ether registriert werden. Dabei wird die Adresse des Smart Contracts zusammen mit dem gewählten Namen registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart kodierte Adressen verwendet werden müssen. 
 Dieses System ist analog zu einem DNS Lookup[@wiki_dns].
 
-Die Name Registry ist in Parity standardmässig unter der Addresse ```0x0000000000000000000000000000000000001337``` zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert werden. 
+Die Name Registry ist in Parity standardmässig immer unter der selben Addresse zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert werden. 
 Nachfolgenden sind die involvierten Methoden und Modifier[@wiki_modifier] der Name Registry aufgeführt und erklärt. Der vollständige Code ist im Anhang unter \ref{app_registry} zu finden. 
 
 ```{ .sol .numberLines}
@@ -110,13 +110,78 @@ Auf Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
 Mit dieser Methode wird ein reservierter Eintrag in ```entries``` befüllt. Als erster Parameter wird der Name des Eintags (```_name```) übergeben. Dieser muss identisch zum verwendeten Namen in der Methode ```reserve``` sein. Mit dem Parameter ```_key``` wird der Zugriff auf die innere Map ```data``` verwaltet. Mit ```_value``` wird die zu registrierende Adresse übergeben. 
 Auch diese Methode muss von Aussen aufgerufen werden können, daher ```external``` auf zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und ```onlyOwnerOf``` auf Zeile 3 und 4 erfüllt sind, wird die eigentliche Registrierung vorgenommen. 
 In der Map ```data``` wird die Adresse (```_value```) an der Position ```_key``` gespeichert. 
-Die Änderung der Daten wird auf Zeile 9 ans Netzwerk gesendet.
+Die Änderung der Daten wird auf Zeile 9 ans Netzwerk gesendet.  
 
+#### Certifier \label{sec_simpleCertifier}
 
-
-#### Certifier \label{sec_ssimpleCertifier}
+Als Standard werden alle Transaktionen mit einem Gas Price von 0 verworfen. Das heisst, diese Transaktionen werden bereits beim Node zurückgewiesen und erreichen nie die Blockchain. 
+Dieses Verhalten kann geändert werden. Mit der Registrierung des Certifiers bei der Name Registry. Beim Start von Parity wird geprüft ob der Eintrag in ```entries``` vorhanden ist. Sofern vorhanden, werden Transaktionen mit einem Gas Price von 0 nicht mehr direkt abgewiesen, sondern es wird geprüft ob der Absender zertifiziert ist. Transaktionen von zertifizierten Accounts werden selbst mit einem Gas Price von 0 in die Blockchain aufgenommen. Gratis Transaktionen von unzertifiziereten Benutzern werden weiterhin abgewiesen. 
 
 In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers aufgeführt und erklärt. Der gesammte Code ist im Anhang unter \ref{app_certifier} zu finden. 
+
+```{ .sol .numberLines}
+	struct Certification {
+		bool active;
+	}
+
+	mapping (address => Certification) certs;
+```
+
+Die zentrale Datenstrucktur des Certifiers, die Whitelist. In der Liste ```certs``` sind zertifizierte Accounts gespeichert. 
+
+
+```{ .sol .numberLines}
+	address public delegate = msg.sender;
+
+	modifier onlyDelegate {
+		require(msg.sender == delegate);
+		_;
+	}
+```
+Auf Zeile 1 wird der Besitzer (```msg.sender```) des Smart Contracts gespeichert und der Variabel ```delegate``` zugewiesen. 
+Mit dem Modifier wird geprüft ob es sich beim Absender der aktuellen Anfrage um den Besitzer des Smart Contracts handelt. 
+
+```{ .sol .numberLines}
+	function certify(address _who)
+		external
+		onlyDelegate
+	{
+		certs[_who].active = true;
+		emit Confirmed(_who);
+	}
+```
+Mit dieser Methode wird ein Account registriert. Als Paramater wird die zu registrierende Adresse (```_who```) angegeben. Mit ```external``` auf Zeile 2 ist die Methode von Aussen aufrufbar. 
+Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account registrieren kann. Ist diese Prüfung erfolgreich, wird der Account ```_who``` der Liste ```certs``` hinzugefügt. Der Account ist nun für gratis Transaktionen berechtigt. 
+Der Event wird auf Zeile 6 an das Netzwerk gesendet.
+
+```{ .sol .numberLines}
+	function certified(address _who)
+		external
+		view
+		returns (bool)
+	{
+		return certs[_who].active;
+	}
+```
+Mit der Methode ```certified``` kann jederzeit überprüft werden, ob ein Account (```_who```) zertifierziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass es sich um eine Abfrage ohne weitere Komputationskosten handelt. Solche Abfragen sind daher mit keinen Transaktionskosten verbunden. 
+
+
+```{ .sol .numberLines}
+	function revoke(address _who)
+		external
+		onlyDelegate
+		onlyCertified(_who)
+	{
+		certs[_who].active = false;
+		emit Revoked(_who);
+	}
+```
+
+
+
+
+
+
 
 ### Geprüfte Alternativen
 
