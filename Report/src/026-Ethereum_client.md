@@ -176,13 +176,10 @@ Mit der Methode ```certified``` kann jederzeit überprüft werden, ob ein Accoun
 		emit Revoked(_who);
 	}
 ```
-
-
-
-
-
+Die Methode ```revoke``` entfernt einen zertifizierten Account (```_who```) von der Whitelist. Auf Zeile 3 wird wiederum sichergestellt, dass nur der Besitzer des Certifiers Änderungen vornehmen kann. Weiter wird auf Zeile 4 verifiziert, dass der Account ```_who``` in der Whitelist ```certs``` registriert ist. 
+Sind alle Bedingungen erfüllt, wird der Account von der Whitelist entfernt. Der Event wird auf Zeile 7 an die Blockchain gesendet. 
 
 
 ### Geprüfte Alternativen
 
-Die Clients Geth, Aleth und Trinity sind ebenfalls evaluiert worden. Bei diesen Clients ist keine Möglichkeit gefunden worden, bestimmte Accounts für gratis Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die FHNW geeignet.
+Die Clients Geth, Aleth und Trinity sind ebenfalls evaluiert worden. Bei diesen Clients ist keine Möglichkeit vorhanden, bestimmte Accounts für gratis Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die FHNW geeignet.
