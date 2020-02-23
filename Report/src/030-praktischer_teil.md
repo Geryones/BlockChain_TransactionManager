@@ -144,7 +144,7 @@ Zeile 9
 :     Die verwendete Netzwerk ID. Die grossen Netzwerke haben eine definierte ID. Falls einem bestehenden Netzwerk beigetreten werden soll, muss diese korrekt gewählt werden. Der Wert ```11``` ist keinem Netzwerk zugeordnet, daher kann dieser für ein privates Netzwerk genutzt werden.
 
 Zeile 10
-:     Der ```registrar``` hat als Wert die Adresse der ```SimpleRegistry```. Dieser Parameter und der dazugehörende Smart Contract halten und verwalten die Whitelist in Parity. Sobald eine Transaktion ohne Gas Preis auf dem Node eintrifft, wird der Smart Contract an dieser Adresse verwendet, um zu prüfen ob eine gratis Transaktion erlaubt ist oder nicht.
+:     Der ```registrar``` hat als Wert die Adresse der Name Registry, siehe \ref{sec_simpleRegistry}. Da bereits beim ersten Start von Parity die Adresse der Name Registry hinterlegt werden muss, findet das Deployment direkt in der Blockchainspezifikation statt. 
 
 Zeile 11
 :     Die maximale Grösse eines Smart Contracts welcher in mit einer Transaktion deployed wird. 
@@ -179,12 +179,78 @@ Zeile 24
 Zeile 25
 :      Definition von einem Benutzeraccount. Der erste Parameter ist die Adresse. Dem Account kann ein beliebiges Guthaben zugewiesen werden. 
 
+
 ### Docker \label{sec_prac_docker}
 
 Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird Docker[@docker] für die Betreibung der Blockchain verwendet. Mehr Details zur Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
 
-### Account für gratis Transaktionen zertifizieren
+### Name Registry
+
+Die Name Registry wird standardmässig in Parity verwendet. Die zur Verfügung gestellte Implementation der Name Registry ist SimpleRegistry genannt. Der vollständige Code ist im Anhang unter \ref{app_registry} aufgeführt. 
 
 
+### Certifier
+
+Parity stellt eine Implementation des Certifiers zu Verfügung, den SimpleCertifier. Der vollständige Code ist im Anhang unter \ref{app_certifier} aufgeführt. 
+
+Sobald der Certifier bei der Name Registry registriert ist, können Accounts definiert werden, die gratis Transaktionen tätigen können. 
+
+#### Deployment und Registrierung
+
+Für eine Erfolgreiche Verwendung des Certifiers, die Name Registry in der Blockchainspezifikation definiert sein. Sobald Parity gestartet ist, kann mit dem Deplyoment des Certifiers begonnen werden. Hierfür wird Java und das Framework Web3j[@web3j] verwendet.  
+
+Um in Java mit Smart Contracts auf der Blockchain interagieren zu können, wird eine Wrapperklasse des Smart Contracts benötigt. Für dessen Generierung wird das Web3j Command Line Tool (web3j-cli)[@web3j_cml] und der Solidity Compiler (solc)[@solc] verwendet. Die Wrapper für die SimplyRegistry und den SimpleCertifier sind im Anhang unter \ref{sec_app_simpleRegistry_java} und \ref{sec_app_simpleCertifier_java} zu finden. Der Bytecode ist bei beiden Wrapper nicht enthalten. Dieser kann jederzeit mit solc generiert werden[@tutorial_solc].
+
+Um einen Smart Contract auszurollen wird eine Instanz der generierten Wrapperklasse genutzt. Es wird die Methode ```deploy``` der Wrapperklasse genutzt. 
+
+```{.java .numberLines}
+private Web3j web3j = Web3j.build(new HttpService("http://jurijnas.myqnapcloud.com:8545/"));
+private TransactionManager transactionManager = new RawTransactionManager(web3j, Credentials.create(privateKey));
+
+private SimpleCertifier simpleCertifier;
+try {
+	simpleCertifier = SimpleCertifier.deploy(web3j, transactionManager, new DefaultGasProvider()).send();
+} catch (Exception e) {
+    e.printStackTrace(); 
+}
+
+String simpleCertifierAddress = simpleCertifier.getContractAddress();
+```
+Die Verbindung zu einem Node wird mit einer Instanz von ```Web3j``` auf Zeile 1 definiert. 
+Auf der zweiten Zeile wird ein ```TransactionManager``` instanziert. Dieser definiert, wie und mit welchem Account auf die Ethereumblockchain verbunden wird. 
+Auf Zeile 6 findet das eigentliche Deployment statt. Nebst dem ```Web3j``` und dem ```Transactionmanager``` wird ein ```ContractGasProvider``` benötigt. Dieser definiert den Gas Price und die Gas Limite. Mit dem ```DefaultGasProvicer``` werden Standardwerte verwendet. Durch das Deployment erhalten wir eine Instanz des ```SimpleCertifiers```. Diese kann nun verwendet werden um weitere Aktionen auf der Blockchain auszuführen.
+Auf Zeile 11 wird die Adresse des Smart Contracts in eine Variable gespeichert.  
+
+Um den Certifier bei der Name Registry registrieren zu können, muss von der Name Registry ebenfalls eine Instanz erstellt werden. Auch hier wird die Wrapperklasse verwendet.
+
+```{.java .numberLines}
+private Web3j web3j = Web3j.build(new HttpService("http://jurijnas.myqnapcloud.com:8545/"));
+private TransactionManager transactionManager = new RawTransactionManager(web3j, Credentials.create(privateKey));
+
+private SimpleRegistry simpleRegistry;
+try {
+	simpleRegistry = SimpleRegistry.load(simpleRegistryAddress, web3j, transactionManager,new DefaultGasProvider());
+} catch (Exception e) {
+    e.printStackTrace(); 
+}
+```
+Um eine Instanz von einem bereits platzierten Smart Contract zu erhalten, wird die Methode ```load``` verwendet. Als erster Argument wird die Adresse der Name Registry mitgegeben. Analog zum vorherigem Beispiel wird die Verbindung zur Blockchain mit  ```Web3j```, einem ```Transactionmanager``` und einem ```DefaultGasProvider``` definiert. 
+Der Rückgabewert ist eine Instanz der ```SimpleRegistry```. 
+
+Mit den zur Verfügung stehenden Instanzen, kann die Registrierung des Certifiers bei der Name Registry gemacht werden. 
+
+```{.java .numberLines}
+private static BigInteger REGISTRATION_FEE = BigInteger.valueOf(1000000000000000000L);
+
+String str_hash = "6d3815e6a4f3c7fcec92b83d73dda2754a69c601f07723ec5a2274bd6e81e155";
+private byte[] hash = new BigInteger(str_hash, 16).toByteArray();
+
+try {
+	simpleRegistry.reserve(hash, REGISTRATION_FEE).send();
+	simpleRegistry.setAddress(hash, "A", simpleCertifier.getContractAddress()).send();
+} catch (Exception e) {
+    e.printStackTrace(); 
+}
+``` 
 
 
