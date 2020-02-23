@@ -252,5 +252,10 @@ try {
     e.printStackTrace(); 
 }
 ``` 
+Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziert.
+Der Auf Zeile 3 definierte String ist der sha3-Hash für den String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein Byte-Array umgewandelt. Der zu verwendende Namen bei der Registrierung des Certifiers ist von Parity vorgegeben. 
+Auf Zeile 7 wird die Reservierung bei der Name Registry vorgenommen. Hier wird der Name und die anfallende Gebühr von einem Ether gesendet. 
+Auf Zeile 8 wird die Registrierung abgeschlossen. In der Name Registry wird die Bindung zwischen Namen und Adresse erstellt. Als erster Parameter wird der Name übergeben. Das zweite Argument ist der Zugriffsschlüssel in der Map. Auch dieser ist von Parity vorgegeben, es muss zwingend ```"A"``` übergeben werden. Das dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz abgerufen. 
+
 
 
