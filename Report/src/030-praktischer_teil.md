@@ -195,9 +195,9 @@ Parity stellt eine Implementation des Certifiers zu Verfügung, den SimpleCertif
 
 Sobald der Certifier bei der Name Registry registriert ist, können Accounts definiert werden, die gratis Transaktionen tätigen können. 
 
-#### Deployment und Registrierung
+#### Deployment und Registrierung \label{sec_prac_deployment}
 
-Für eine Erfolgreiche Verwendung des Certifiers, die Name Registry in der Blockchainspezifikation definiert sein. Sobald Parity gestartet ist, kann mit dem Deplyoment des Certifiers begonnen werden. Hierfür wird Java und das Framework Web3j[@web3j] verwendet.  
+Für eine Erfolgreiche Verwendung des Certifiers, die Name Registry in der Blockchainspezifikation definiert sein. Sobald Parity gestartet ist, kann mit dem Deplyoment des Certifiers begonnen werden. Hierfür wird Java und die Bibliothek Web3j[@web3j] verwendet.  
 
 Um in Java mit Smart Contracts auf der Blockchain interagieren zu können, wird eine Wrapperklasse des Smart Contracts benötigt. Für dessen Generierung wird das Web3j Command Line Tool (web3j-cli)[@web3j_cml] und der Solidity Compiler (solc)[@solc] verwendet. Die Wrapper für die SimplyRegistry und den SimpleCertifier sind im Anhang unter \ref{sec_app_simpleRegistry_java} und \ref{sec_app_simpleCertifier_java} zu finden. Der Bytecode ist bei beiden Wrapper nicht enthalten. Dieser kann jederzeit mit solc generiert werden[@tutorial_solc].
 
@@ -253,7 +253,7 @@ try {
 }
 ``` 
 Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziert.\
-Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein Byte-Array umgewandelt. Diese Variabel hält den Namen, unter welchem der Certifier bei der Name Registry registriert wird. Die Verwendung des Strings ```service_transaction_checker``` und sein Umwandlung sind in Parity hart kodiert und können nicht angepasst werden. \
+Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein Byte-Array umgewandelt. Diese Variabel hält den Namen, unter welchem der Certifier bei der Name Registry registriert wird. Die Verwendung des Strings ```service_transaction_checker``` und sein Umwandlung sind in Parity hart kodiert und können nicht angepasst werden.\
 Auf Zeile 7 wird die Reservierung bei der Name Registry vorgenommen. Hier wird der Name und die anfallende Gebühr von einem Ether gesendet.\
 Auf Zeile 8 wird die Registrierung abgeschlossen. In der Name Registry wird die Bindung zwischen Namen und Adresse erstellt. Als erster Parameter wird der Name übergeben. Das zweite Argument ist der Zugriffsschlüssel in der Map. Auch dieser ist von Parity vorgegeben, es muss zwingend ```"A"``` übergeben werden. Das dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz abgerufen. 
 

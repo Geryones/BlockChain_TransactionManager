@@ -2,7 +2,7 @@
 
 //TODO Spellcheck 
 
-In diesem Abschnitt sind die Komponenten des DoS-Algorithmus aufgeführt. Der Algorithmus wird verwendet um getätigte gratis Transaktionen zu überwachen und falls nötig einzuschränken. Wird ein Account als Bedrohung für die Blockchain eingestuft, wird dieser Account von der Whitelist gelöscht. 
+In diesem Abschnitt sind die Komponenten des DoS-Algorithmus aufgeführt. Verschiedene Parameter und deren Verwendung werden untersucht. Die Behandlung von Accounts, die vom Algorithmus als Gefahr identfiziert werden, wird ebenfalls evaluiert. 
 
 #### Parameter \label{sec_dla_params}
 

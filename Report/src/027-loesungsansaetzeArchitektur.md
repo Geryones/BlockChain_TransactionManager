@@ -167,9 +167,10 @@ Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den D
 
 #### Resultat Evaluation
 
-Durch die hohe Gewichtung von Machbarkeit, erzielt ALA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher ALA 2 umgesetzt. 
+Durch die hohe Gewichtung von Machbarkeit, erzielt ALA 2 die meisten Punkte. Im weiteren Verlauf des Projektes wird daher ALA 2 umgesetzt.
+
+Für die Realisierung des externen Programmes ist die Programmiersprache der Wahl Java. Java ist den Teammitgliedern bereits bekannt. Mit der Bibliothek Web3j sind Interaktionen mit der Blockchain effizient und intuitiv. 
 
 Im Anhang ist unter \ref{app_weitereLoesungen} ein weiterer Lösungsanatz aufgelistet. Dieser ist sehr früh in der Evaluierung als nicht realisierbar eingestuft worden und ist hier deshalb nicht aufgeführt.
 
-//TODO ausfleischen? 
 
