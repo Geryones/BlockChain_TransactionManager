@@ -68,7 +68,7 @@ Das lässt nur die Möglichkeit, jeden Account einzeln zu konfigurieren. Es wird
 
 Um zu verhindern, dass das externe Programm angreifbar wird, kann das Reset-Intervall nur global definiert werden. Bei einem individuellen Reset-Intervall müsste für jeden Verstoss einer neuer Thread im Programm gestartet werden. Dadurch würde das Programm selbst anfällig für eine DoS Attacke.
 
-### Konfiguration des Algorithmus
+### Konfiguration des Algorithmus \label{sec_algConf}
 
 Um dem Betreiber die Möglichkeit zu geben, den Algorithmus an seine Bedürfnisse anzupassen, können die Parameter und Zeitintervalle, siehe \ref{sec_evalAlgo}, konfiguriert werden. 
 Die Konfiguration wird mit einer Textdatei vorgenommen. Für alle Parameter müssen natürliche Zahlen verwendet werden. Folgende Parameter können pro Account gesetzt werden: 
