@@ -5,7 +5,7 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 //TODO Text
 
 | Nr.       | Titel  | Beschreibung |
-| :------------- |:------------| :-----|
+| :- |:------------| :-----|
 | 1.     |  Bezahlte Transaktionen für alle  | Jeder gültige Account kann Transaktionen mit Gas Price durchführen|
 | 2.     |  Gratis Transaktionen für Whitelist | Ein Account der für die Whitelist zertifiziert ist, kann Transaktionen mit Gas Price "0" durchführen  |
 | 3.     |  Account aus Liste für Whitelist zertifizieren  | Alle Account die auf der Liste stehen sind für die Whitelist certifiziert |
