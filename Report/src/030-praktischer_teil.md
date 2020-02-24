@@ -217,8 +217,8 @@ try {
 String simpleCertifierAddress = simpleCertifier.getContractAddress();
 ```
 Die Verbindung zu einem Node wird mit einer Instanz von ```Web3j``` auf Zeile 1 definiert. 
-Auf der zweiten Zeile wird ein ```TransactionManager``` instanziert. Dieser definiert, wie und mit welchem Account auf die Ethereumblockchain verbunden wird. 
-Auf Zeile 6 findet das eigentliche Deployment statt. Nebst dem ```Web3j``` und dem ```Transactionmanager``` wird ein ```ContractGasProvider``` benötigt. Dieser definiert den Gas Price und die Gas Limite. Mit dem ```DefaultGasProvicer``` werden Standardwerte verwendet. Durch das Deployment erhalten wir eine Instanz des ```SimpleCertifiers```. Diese kann nun verwendet werden um weitere Aktionen auf der Blockchain auszuführen.
+Auf der zweiten Zeile wird ein ```TransactionManager``` instanziert. Dieser definiert, wie und mit welchem Account auf die Ethereumblockchain verbunden wird.\
+Auf Zeile 6 findet das eigentliche Deployment statt. Nebst dem ```Web3j``` und dem ```Transactionmanager``` wird ein ```ContractGasProvider``` benötigt. Dieser definiert den Gas Price und die Gas Limite. Mit dem ```DefaultGasProvicer``` werden Standardwerte verwendet. Durch das Deployment erhalten wir eine Instanz des ```SimpleCertifiers```. Diese kann nun verwendet werden um weitere Aktionen auf der Blockchain auszuführen.\
 Auf Zeile 11 wird die Adresse des Smart Contracts in eine Variable gespeichert.  
 
 Um den Certifier bei der Name Registry registrieren zu können, muss von der Name Registry ebenfalls eine Instanz erstellt werden. Auch hier wird die Wrapperklasse verwendet.
@@ -252,9 +252,9 @@ try {
     e.printStackTrace(); 
 }
 ``` 
-Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziert.
-Der Auf Zeile 3 definierte String ist der sha3-Hash für den String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein Byte-Array umgewandelt. Der zu verwendende Namen bei der Registrierung des Certifiers ist von Parity vorgegeben. 
-Auf Zeile 7 wird die Reservierung bei der Name Registry vorgenommen. Hier wird der Name und die anfallende Gebühr von einem Ether gesendet. 
+Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziert.\
+Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein Byte-Array umgewandelt. Diese Variabel hält den Namen, unter welchem der Certifier bei der Name Registry registriert wird. Die Verwendung des Strings ```service_transaction_checker``` und sein Umwandlung sind in Parity hart kodiert und können nicht angepasst werden. \
+Auf Zeile 7 wird die Reservierung bei der Name Registry vorgenommen. Hier wird der Name und die anfallende Gebühr von einem Ether gesendet.\
 Auf Zeile 8 wird die Registrierung abgeschlossen. In der Name Registry wird die Bindung zwischen Namen und Adresse erstellt. Als erster Parameter wird der Name übergeben. Das zweite Argument ist der Zugriffsschlüssel in der Map. Auch dieser ist von Parity vorgegeben, es muss zwingend ```"A"``` übergeben werden. Das dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz abgerufen. 
 
 

@@ -20,7 +20,7 @@ Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der Blockcha
 
 Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder nicht. Dies ist in der Abbildung \ref{img_arc_smartWallet} dargestellt. 
 
-Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted, dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln. 
+Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted, dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln.\
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit Accounts, muss eine Liste von Verbindungen geführt werden. So kann definiert werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
 
 ##### Pro
@@ -29,7 +29,7 @@ Dieser Ansatz besticht durch die Tatsache, dass alles auf der Blockchain läuft.
 
 ##### Contra
 
-Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache, Rust[@rust], benötigt. 
+Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache, Rust[@rust], benötigt.\
 Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine neue Smart Wallet für jeden Account deployed werden muss. Das bedingt, dass die Whitelist ebenfalls mit den neuen Accounts aktualisiert wird. 
 
 ##### Prozessworkflow
@@ -46,14 +46,14 @@ Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet. Stattd
 
 ![Externes Programm für die Verwaltung der Whitelist \label{img_solution2}](images/solution2.png "Externes Programm für die Verwaltung der Whitelist") 
 
-Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}. 
+Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe \ref{sec_whitelist}.\
 Im externen Programm werden alle gratis Transaktionen analysiert, die das Blockchain Netzwerk erreichen. Das Programm verfügt über einen eigenen Benutzer Account, siehe \ref{sec_account}. Dieser ist berechtigt, die Whitelist zu manipulieren. Dadurch kann bei einer identifizierten Attacke, der angreifende Account automatisch von der Whitelist gelöscht werden. 
 
 Transaktionen für die ein Transaktionsgebühren gezahlt werden sind immer möglich. Diese werden vom externen Programm auch nicht überwacht. Die anfallenden Gebühren sind Schutz genug. 
 
 ##### Pro
 
-Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit. 
+Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe Programm neu deployed werden. Eine aktualisierung der Whitelist ist nicht nötig. 
 
 ##### Contra
@@ -78,8 +78,8 @@ Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld, si
 
 ![Externes Programm mit Whitelist \label{img_solution3}](images/solution3.png "Externes Programm mit Whitelist") 
 
-Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.  
-Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.
+Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld wird die eigentliche Transaktion extrahiert und abgesetzt.\
+Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für jeden Benutzer einmalig zu halten.\
 Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der Account des externen Programmes aufgelistet. So ist sichergestellt, dass nur Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf die Smart Wallet zugreifen. Dies ist insbesondere wichtig, falls das Programm nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
 
@@ -91,7 +91,7 @@ Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe 
 ##### Contra
 
 Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. 
-Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls administriert werden. 
+Durch das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls administriert werden.\
 Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
 
 ##### Prozessworkflow
@@ -149,8 +149,8 @@ Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der 
 Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Da das Programm die Transaktionshistorie der Blockchain überwacht und nur bei einer DoS Attacke aktiv ist, wird 2 Punkte für Blockchainprinzipien gegeben. 
 
 Falls eine Anpassung am DoS Algorithus nötig ist, muss das externe Programm neu deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. 
-Für die Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von neuen Accounts für eine Klasse einfach automatisierbar. 
-Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt. Das bedeuted einen Mehraufwand für die FHNW. 
+Für die Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von neuen Accounts für eine Klasse einfach automatisierbar.\
+Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt. Das bedeuted einen Mehraufwand für die FHNW.\
 Da der ALA einfach zu Automatisieren ist, sind für Betrieb 2 Punkte gesetzt worden. 
 
 #### ALA 3: Externes Programm mit Whitelist
@@ -159,9 +159,9 @@ Bei diesem ALA muss eine Smart Wallet und ein externes Programm entwickelt werde
 
 Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Im Gegensatz zu ALA 2, hat dieses Programm eine sehr viel zentralere Rolle. Das Programm interagiert nicht nur bei einer DoS Attacke mit der Blockchain, sondern ständig. Jede Transaktion wird an das Programm übermittelt und dort verarbeitet. Da die zentrale Authorität im Vergleich zu ALA 2 viel aktiver ist, ist für Blockchainprinzipien 1 Punkt vergeben worden.
 
-Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig. 
-Änderungen an der Smart Wallet bedingen ein erneutes Deployment. 
-In der Whitelist der Blockchain ist nur der Account des externen Programmes hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis Transaktionen berechtigt sind. 
+Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig.\
+Änderungen an der Smart Wallet bedingen ein erneutes Deployment.\
+In der Whitelist der Blockchain ist nur der Account des externen Programmes hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis Transaktionen berechtigt sind.\
 Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den DoS Schutzalgorithmus enthält. Die Automatisierung wird daher als einfach eingestuft, da das externe Programm mit Java geschrieben wird und somit sehr viel zugänglicher ist. Daher sind bei Betrieb 3 Punkte vergeben worden. 
 
 
