@@ -72,7 +72,7 @@ fakultativen Parameter anzugeben. Es müssen beide angegeben werden.\
 Ab Zeile 2 müssen die Parameter folgendermassen angegeben werden:
 
 1. Accountadresse
-1. Anzahl vergehen 
+1. Anzahl Vergehen 
 1. Anzahl verbleibende Revoke-Intervalls 
 2. [Anzahl gratis Transaktionen]
 3. [Menge an gratis Gas]
@@ -85,7 +85,7 @@ Ein mögliche Konfigurationsdatei könnte folgendermassen ausehen:
 2;3;10;50000000;
 0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b;0;0;5;100000
 0xf13264C4bD595AEbb966E089E99435641082ff24;0;0
-0x00a329c0648769A73afAc7F9381E08FB43dBEA72;1;5;3;500000
+0x00a329c0648769A73afAc7F9381E08FB43dBEA72;0;5;3;500000
 ```
 
 Zeile 1
