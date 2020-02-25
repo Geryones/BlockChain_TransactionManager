@@ -93,6 +93,7 @@ von 3 und der daraus resultierenden Suspendierung von der Whitelist in Minuten:
 
 
 
+
 #### Benutzermanagement
 
 Es besteht der Bedarf, dass Accounts von Dozenten toleranter behandelt werden
@@ -126,13 +127,21 @@ konfiguriert werden. Die Konfiguration wird mit einer Textdatei vorgenommen. Fü
 alle Parameter müssen natürliche Zahlen verwendet werden. Folgende Parameter
 können pro Account gesetzt werden: 
 
+Anzahl Vergehen
+:       Gibt an, wie oft ein Account bereits von der Whitelist suspendiert
+worden ist. Sollte standardmässig mit 0 initalisiert werden. Bei einem
+Vergehen des Accounts wird dieser Parameter automatisch hochgezählt.
+
 Gratis Transaktionen
-:       Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+:       Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall 
+getätigt werden können.
 
 Gratis Gas
-:       Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht werden können.
+:       Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb 
+eines Reset-Intervalls verbraucht werden können.
 
-Wenn für einen Account individuelle Schwellenwerte für Transaktionen und Gas definiert werden, müssen immer beide Parameter gesetzt werden. 
+Wenn für einen Account individuelle Schwellenwerte für Transaktionen und Gas 
+definiert werden, müssen immer beide Parameter gesetzt werden. 
 
 Folgende Parameter gelten für alle Accounts:
 
@@ -140,12 +149,18 @@ Reset-Intervall
 :     Einheit ist Minuten, definiert die Länge des Reset-Intervalls.
 
 Revoke-Intervall
-:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung durch den Algorithmus von der Whitelist gelöscht wird. 
+:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung 
+durch den Algorithmus von der Whitelist gelöscht wird. 
 
 Standardwert gratis Transaktionen
-:      Giltet für Accounts die ohne Parameter erfasst werden. Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+:      Giltet für Accounts die ohne Parameter erfasst werden. Definiert die maximale 
+Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
 
-Standardwert gratis Gas
-:     Giltet für Accounts die ohne Parameter erfasst werden.  Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht werden können.
+Standardwert gratis Gas 
+:     Giltet für Accounts die ohne Parameter erfasst werden. Definirt die maximale 
+Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht 
+werden können.
 
-Bei der Konfiguration sollten die Abhängigkeiten zwischen den Parametern geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Reset-Intervall sollten immer zusammen konfiguriert werden. 
+Bei der Konfiguration sollten die Abhängigkeiten zwischen den Parametern
+geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Reset-Intervall
+sollten immer zusammen konfiguriert werden. 

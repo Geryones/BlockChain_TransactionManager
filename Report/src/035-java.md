@@ -36,23 +36,17 @@ Erstes Mal starten ++ Deployment
 Um die Datenpersistenz zu gewährleisten, werden diese in einer Textdatei
 gespeichert. Wird das Programm gestoppt, kann so bei beim nächsten Start der
 letzte Zustand wieder hergestellt werden.\
-Es werden zwei unterschiedliche Dateien verwendet:
 
-1. Konfigurationsdatei mit Accounts die auf die Whitelist gehören
-2. Liste mit allen Accounts die von der Whitelist suspendiert sind
-
-In der Konfigurationsdatei sind nebst allen konfigurierbaren Parameter, auch
-alle Accounts die auf der Whitelist sind erfasst. Nach einem Programmstop, wird
-die Datei ausgelesen. Alle Parameter werden wieder gesetzt. Alle Accounts werden
-geladen und überprüft, ob sie sich noch auf der Whitelist befinden. Falls nötig,
-werden sie erneut certifiziert. Mehr zur Konfigurationsdatei ist im
-nachfolgenden Abschnitt, \ref{sec_prac_conf}, zu finden.\
+In dieser Datei sind nebst allen konfigurierbaren Parameter, auch alle Accounts
+die auf der Whitelist sind erfasst. Nach einem Programmstop, wird die Datei
+ausgelesen. Alle Parameter werden wieder gesetzt. Alle Accounts werden geladen
+und überprüft, ob sie sich noch auf der Whitelist befinden. Falls nötig, werden
+sie erneut certifiziert oder permanent von der Whitelist gelöscht. Mehr zur
+Konfigurationsdatei ist im nachfolgenden Abschnitt, \ref{sec_prac_conf}, zu
+finden.\
 
 
-
-
-
-### Konfiguration \label{sec_prac_conf}
+#### Konfiguration \label{sec_prac_conf}
 
 Die Konfiguration des Programmes findet mit einer Textdatei statt. In dieser
 werden alle Accounts angegeben, welche auf die Whitelist sollen. Weiter werden
@@ -78,6 +72,8 @@ fakultativen Parameter anzugeben. Es müssen beide angegeben werden.\
 Ab Zeile 2 müssen die Parameter folgendermassen angegeben werden:
 
 1. Accountadresse
+1. Anzahl vergehen 
+1. Anzahl verbleibende Revoke-Intervalls 
 2. [Anzahl gratis Transaktionen]
 3. [Menge an gratis Gas]
 
@@ -87,22 +83,34 @@ Ein mögliche Konfigurationsdatei könnte folgendermassen ausehen:
 
 ```{.numberLines}
 2;3;10;50000000;
-0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b;5;100000
-0xf13264C4bD595AEbb966E089E99435641082ff24
-0x00a329c0648769A73afAc7F9381E08FB43dBEA72;3;500000
+0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b;0;0;5;100000
+0xf13264C4bD595AEbb966E089E99435641082ff24;0;0
+0x00a329c0648769A73afAc7F9381E08FB43dBEA72;1;5;3;500000
 ```
 
 Zeile 1
-:     Reset-Intervall mit 2 Minuten, Revoke-Intervall mit einem Multiplikator von 3, den Standardwert für gratis Transaktionen mit 10 und der Standardwert für gratis Gas mit 50'000'000 Einheiten. 
+:     Reset-Intervall mit 2 Minuten, Revoke-Intervall mit einem Multiplikator 
+von 3, den Standardwert für gratis Transaktionen mit 10 und der Standardwert 
+für gratis Gas mit 50'000'000 Einheiten. 
 
 Zeile 2
-:     Accountadresse mit individuell konfigurierten Parametern. Der Account kann also 5 gratis Transaktionen oder 100'000 Gaseinheiten pro Reset-Intervall verbrauchen. 
+:     Accountadresse mit individuell konfigurierten Parametern. Der Account 
+ist noch nie von der Whitelist suspendiert worden und hat auch keine verbleibenden 
+Revoke-Intervalls. Das heisst, der Account ist auf der Whitelist. Der Account kann 
+also 5 gratis Transaktionen oder 100'000 Gaseinheiten pro Reset-Intervall verbrauchen. 
 
 Zeile 3
-:     Eine Accountadresse ohne individuelle Parameter. Dieser Account wird mit Standardwerten versehen. Er kann also 10 gratis Transaktionen oder 50'000'000 Einheiten Gas pro Reset-Intervall verbrauchen. 
+:     Eine Accountadresse ohne individuelle Parameter. Auch dieser Account wurde 
+noch nie suspendiert und hat keine verbleibenden Revoke-Intervalls. Dieser Account 
+wird mit Standardwerten versehen. Er kann also 10 gratis Transaktionen oder 50'000'000 
+Einheiten Gas pro Reset-Intervall verbrauchen. 
 
 Zeile 4
-:     Accountadresse mit individuell konfigurierten Parametern. Der Account kann also 3 gratis Transaktionen oder 50'000 Gaseinheiten pro Reset-Intervall verbrauchen. 
+:     Accountadresse mit individuell konfigurierten Parametern. Dieser Account wurde 
+bereits 1 Mal suspendiert. Er befindet sich zur Zeit nicht auf der Whitelist, da er noch 
+für 5 weitere Revoke-Intervalle suspendiert ist. Der Account kann, sobald der Zähler 
+für Revoke-Intervalle wieder auf 0 ist, 3 gratis Transaktionen oder 50'000 Gaseinheiten 
+pro Reset-Intervall verbrauchen. 
 
 
 
