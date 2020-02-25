@@ -30,7 +30,8 @@ sowohl um einen Benutzeraccount oder einen Smart Contract handeln.
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall
 bewertet werden. Hier werden zwei unterschiedliche Ansätze untersucht: 
 
-Allgemeines Intervall :      Gratis Transaktionen werden für alle Accounts im
+Allgemeines Intervall 
+:      Gratis Transaktionen werden für alle Accounts im
 selben Zeitintervall betrachtet. Der Zeitpunkt ist relativ zum Programmstart.
 Beispielsweise ist als Intervall eine Stunde gesetzt und der Progammstart
 erfolgt um 8:00 UCT. Dadurch sind gratis Transaktionen die um 08:59 UTC gemacht
@@ -38,9 +39,10 @@ werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge
 dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf
 eines Intervalls ausführen können.  
 
-Individuelles Intervall :      Das Intervall ist relativ zum Zeitpunkt einer
-getätigter gratis Transaktionen. Bei einer Prüfung wird untersucht, wie viele
-gratis Transaktionen der betroffene Account im vergangenen Zeitintervall,
+Individuelles Intervall 
+:      Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis 
+Transaktionen. Bei einer Prüfung wird untersucht, wie viele gratis 
+Transaktionen der betroffene Account im vergangenen Zeitintervall,
 gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat. Mit den selben
 Startparametern wie im oben aufgeführten Beispiel, ist eine um 08:59 UTC
 getätigte gratis Transaktion bis 09:59 relevant. 
@@ -76,11 +78,16 @@ wieder zur Whitelist hinzuzufügen.
 
 ##### Fixer Zeitpunkt für alle
 
-Es wird ein fixer Zeitpunkt definiert, bei dem alle Accounts zurückgesetzt
-werden. Das heisst das Kontingent wird bei allen Accounts wieder auf den
-konfigurierten Wert gesetzt. Von der Whitelist gelöschte Accounts werden dieser
-wieder hinzugefügt. Zum Beispiel könnte als Zeitpunkt Montag 8:00 UTC definiert
-werden.
+Es wird ein fixes Intervall, relativ zum Programmstart, definiert. An dessen
+Ende werden alle Accounts zurückgesetzt. Das heisst das Kontingent wird bei
+allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist
+gelöschte Accounts werden dieser wieder hinzugefügt.\
+Ein Beispiel:\
+Als Intervall ist eine Woche definiert. Das Programm startet am
+Montag um 8:00 UTC.\
+Nun werden alle gesperrten Accounts, jeweils am Montag um 8:00 UTC wieder auf
+die Whitelist genommen.
+ 
 
 ##### Nach Zeitintervall
 
@@ -91,25 +98,22 @@ Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen.
 ##### Inkrementierendes Zeitintervall
 
 Wie lange ein Account von der Whitelist entfernt wird, ist abhängig von der
-Anzahl bereits begangener Verstösse. 
+Anzahl bereits begangener Verstösse. Für das erste Vergehen ist eine Dauer der
+Suspendierung definiert. Dieses Intervall dient als Basis. Alle folgenden
+Verstösse und deren Suspendierung werden aus dem Basisintervall und den begannen
+Verstössen berechnet. 
 
-Beispiel:
+Beispiel mit einer quadratischen Abhängigkeit zwischen Verstössen Sperrung und
+einem Basisintervall von 5 Minuten:
 
 | # Verstösse | Dauer Sperrung  |
 |:-----------:|-------------------:|
-| 1 | 0.50  |
-| 2 | 1.00|
-| 3 | 3.00 |
-| 4 | 12.00|
-| 5 | 60.00|
-| 6 | 360.00 |
-
-In der oben aufgeführten Tabelle ist ersichtlich, dass die Dauer der Sperrung
-proportional zu den Verstössen ist. 
-
-
-
-
+| 1 | 5  |
+| 2 | 25|
+| 3 | 45 |
+| 4 | 80|
+| 5 | 125|
+| 6 | 180 |
 
 
 

@@ -246,14 +246,14 @@ der Blockchain verwendet. Mehr Details zur Verwendung von Docker sind im Anhang 
 ### Name Registry
 
 Die Name Registry wird standardmässig in Parity verwendet. Die zur Verfügung gestellte Implementation der 
-Name Registry ist SimpleRegistry genannt. Der vollständige Code ist im Anhang unter \ref{app_registry} aufgeführt. 
+Name Registry ist SimpleRegistry genannt. Der vollständige Code ist im Anhang unter \ref{app_parity_code} verlinkt. 
 
 
 ### Certifier
 
 Parity stellt eine Implementation des Certifiers zu Verfügung, den
-SimpleCertifier. Der vollständige Code ist im Anhang unter \ref{app_certifier}
-aufgeführt. 
+SimpleCertifier. Der vollständige Code ist im Anhang unter \ref{app_parity_code}
+verlinkt. 
 
 Sobald der Certifier bei der Name Registry registriert ist, können Accounts
 definiert werden, die gratis Transaktionen tätigen können. 
@@ -269,10 +269,7 @@ Um in Java mit Smart Contracts auf der Blockchain interagieren zu können, wird
 eine Wrapperklasse des Smart Contracts benötigt. Für dessen Generierung wird das
 Web3j Command Line Tool (web3j-cli)[@web3j_cml] und der Solidity Compiler
 (solc)[@solc] verwendet. Die Wrapper für die SimplyRegistry und den
-SimpleCertifier sind im Anhang unter \ref{sec_app_simpleRegistry_java} und
-\ref{sec_app_simpleCertifier_java} zu finden. Der Bytecode ist bei beiden
-Wrapper nicht enthalten. Dieser kann jederzeit mit solc generiert
-werden[@tutorial_solc].
+SimpleCertifier sind im Anhang unter \ref{sec_app_java_code} verlinkt. 
 
 Um einen Smart Contract auszurollen wird eine Instanz der generierten
 Wrapperklasse genutzt. Es wird die Methode ```deploy``` der Wrapperklasse

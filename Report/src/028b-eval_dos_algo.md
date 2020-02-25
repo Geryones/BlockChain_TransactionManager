@@ -29,6 +29,11 @@ Intervalls, werden die Zähler für alle Parameter pro Account zurückgesetzt.
 Die Auswirkung des genannten Nachteils beim allgemeinen Intervall ist stark von
 dessen Länge abhängig. Je kürzer das Intervall gewählt wird, umso kleiner sind
 die möglichen Folgen.
+Falls damit gerechnet werden muss, dass das Programm regelmässig gestoppt wird,
+muss für einen optimalen Betrieb, das Reset-Intervall entsprechend angepasst 
+werden. Das Reset-Intervall sollte kleiner gewählt werden, als die zu erwartende 
+Dauer zwischen den Programmstops. 
+
 
 ##### Anzahl gratis Transaktionen
 
@@ -48,50 +53,32 @@ Angriff sehr naheliegend. Daher wird dieser Parameter ebenfalls verwendet.
 Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die
 Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis
 Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von
-der Whitelist gelöscht wird. Wenn der gesetzte Zeitpunkt dem Benutzer bekannt
+der Whitelist gelöscht wird. 
+Wenn der gesetzte Zeitpunkt dem Benutzer bekannt
 ist, kann das System missbraucht werden. Wird ein DoS Angriff kurz vor dem
 Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein
 Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem
 Zeitmanagement gleich wieder entsperrt. 
 
-Mit einem Zeitintervall werden alle Accounts gleich lange von der Whitelist
-gelöscht. Dieser Ansatz bietet daher mehr Fairness als ein fixer Zeitpunkt. 
+Mit einem Zeitintervall ab Zeitpunkt des Vergehens, werden alle Accounts gleich
+lange von der Whitelist gelöscht. Dieser Ansatz bietet daher mehr Fairness als
+ein fixer Zeitpunkt. Die Implementierung wird als komplexer betrachtet. 
 
 Je öfter mit einem Account gegen die Regeln verstossen wird, desto kleiner ist
 die Wahrscheinlichkeit, dass es sich um Versehen handelt. Daher kann davon
 ausgegangen werden, dass ein Wiederholungstäter aktiv versucht, die Blockchain
 zu schädigen. Mit einem inkrementierenden Intervall werden diese Accounts
-gezielt und härter bestraft als bei den anderen Ansätzen.  
-Einmalige Verstösse die versehentlich auftreten werden in einer Lernumgebung als
-wahrschneinlich eingeschätzt. Mit diesem System werden solche Versehn sehr milde
-bestraft. 
+gezielt und härter bestraft als bei den anderen Ansätzen.\
+Eine inkrementierende Bestrafung ist bei einem Schutz vor DoS Attacken
+nicht relevant. Es gnügt, wenn der Angriff unterbrochen werden kann. Eine immer
+stärkere Bestrafung ist nicht nötig.\
+Die Dauer der Suspendierung ist nicht mehr konstant. Daher muss einem Benutzer
+mitgeteilt werden, für wie lange er suspendiert ist. Wie diese Kommunikation
+realisiert werden soll, ist noch unklar.
 
-Wir haben uns entschieden, eine Kombination aus einem fixen Zeitpunkt und einem
-inkrementierenden Intervall zu verwenden. Dieser Ansatz ist in der gegebenen
-Zeit realisierbar und bietet nebst einem effizienten Schutz auch eine Toleranz
-für einmalige Verstösse.\
-Die Dauer einer Suspendierung von der Whitelist kann mit dem Parameter
-"Revoke-Faktor" konfiguriert werden. Als Basis wird das Reset-Intervall
-verwendet.
-
-$t = resInter * revFak * v^2$
-
-Wobei $t$ die Dauer der Suspendierung, $resInter$ das Reset-Intervall, $revFak$
-der Revoke-Faktor und $v$ die Anzahl bereits begangener Verstösse abbilden. 
-
-Anbei Beispiel mit einem Reset-Intervall von fünf Minuten, einem Revoke-Faktor
-von 3 und der daraus resultierenden Suspendierung von der Whitelist in Minuten:
-
-| resInter | revFak  | Verstösse | Suspendierung (min) |
-|:----------:|--------:|----------:|--------------------:|
-| 5 | 3 | 1 | 15 | 
-| 5 | 3 | 2 | 60 | 
-| 5 | 3 | 3 | 135 | 
-| 5 | 3 | 4 | 240 | 
-| 5 | 3 | 5 | 375 | 
-| 5 | 3 | 6 | 540 |
-
-
+Wir haben uns entschieden, einen fixen Zeitpunkt für die Wiederaufnahme in die
+Whitelist zu verwenden. Grund für diesen Entscheid ist die sichere Machbarkeit in der
+verbleibenden Zeit.  
 
 
 #### Benutzermanagement
@@ -112,12 +99,6 @@ Parametern besteht. Um diesen Umstand gerecht zu werden, werden
 Standardparameter angeboten. Diese werden verwendet, für die Parameter nicht
 explizit definiert werden. So kann die Mehrheit der Accounts über
 Standardparameter und Ausnahmen individuell konfiguriert werden.  
-
-Um zu verhindern, dass das externe Programm angreifbar wird, kann das
-Reset-Intervall nur global definiert werden. Bei einem individuellen
-Reset-Intervall müsste für jeden Verstoss einer neuer Thread im Programm
-gestartet werden. Dadurch würde das Programm selbst anfällig für eine DoS
-Attacke.
 
 ### Konfiguration des Algorithmus \label{sec_algConf}
 

@@ -46,7 +46,7 @@ Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert
 werden.\
 Nachfolgenden sind die involvierten Methoden und Modifier[@wiki_modifier] der
 Name Registry aufgeführt und erklärt. Der vollständige Code ist im Anhang unter
-\ref{app_registry} zu finden. 
+\ref{app_parity_code} verlinkt. 
 
 ```{ .sol .numberLines}
 struct Entry {
@@ -178,7 +178,7 @@ abgewiesen.
 
 In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers
 aufgeführt und erklärt. Der gesammte Code ist im Anhang unter
-\ref{app_certifier} zu finden. 
+\ref{app_parity_code} verlinkt. 
 
 ```{ .sol .numberLines}
 struct Certification {
