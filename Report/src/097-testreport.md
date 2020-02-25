@@ -2,13 +2,13 @@
 
 ### Abnahme Test 1
 
-| **AK Nr.:**              |   |**Titel:** |   | **Testart:**|   |
-|:------------------------|---|:--------|---|:----------|---|
-| **Tester:**             |   | **Datum:** |   | **Status** |   |
-| **Vorbedingung:**        |   |        |   |          |   |
-| **Ablauf:**             |   |        |   |          |   |
-| **Erwünschtes Resultat:** |   |        |   |          |   |
-| **Tatsächliches Resuktat** |   |        |   |          |   |
+| **AK Nr.:**                |   |**Titel:** |   | **Testart:**|   |
+|:---------------------------|---|:----------|---|:------------|---|
+| **Tester:**                |   | **Datum:**|   | **Status**  |   |
+| **Vorbedingung:**          |   |           |   |             |   |
+| **Ablauf:**                |   |           |   |             |   |
+| **Erwünschtes Resultat:**  |   |           |   |             |   |
+| **Tatsächliches Resultat** |   |           |   |             |   |
 
 ### Abnahme Test 2
 ### Abnahme Test 3

@@ -1,33 +1,68 @@
 
 ## Externes Programm  \label{sec_prac_ext_prog}
 
-In diesem Kapitl ist die Implementierung des externen Programms zur Überwachung der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die Funktionsweise von einzelnen Komponenten näher erklärt. 
+In diesem Kapitl ist die Implementierung des externen Programms zur Überwachung
+der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
+Funktionsweise von einzelnen Komponenten näher erklärt. 
 
 ### Wrapperklassen
 
-Für die Interaktion mit Smart Contracts werden generierte Wrapperklassen verwendet. Es ist je eine Wrapperklasse für die Name Registry und den Certifier vorhanden. Für dessen Generierung und Verwendung siehe \ref{sec_prac_deployment}.
+Für die Interaktion mit Smart Contracts werden generierte Wrapperklassen
+verwendet. Es ist je eine Wrapperklasse für die Name Registry und den Certifier
+vorhanden. Für dessen Generierung und Verwendung siehe
+\ref{sec_prac_deployment}.
 
 ### Überwachung von Transaktionen
 
-Um die Transaktionen auf der Blockchain zu Observieren wird ein Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es uns, eine ```Subscription``` zu erstellen. Diese läuft asynchron in einem eigenen Thread.\
-Jede getätigte Transaktion wird von der ```Subscription``` erfasst. Es werden jedoch nur Transaktionen genauer untersucht, die einen Gas Preis von Null aufweisen. 
-
-//TODO
-
-### DoS Algorithmus
+Um die Transaktionen auf der Blockchain zu Observieren wird ein
+Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es uns, eine
+```Subscription``` zu erstellen. Diese läuft asynchron in einem eigenen Thread.\
+Jede getätigte Transaktion wird von der ```Subscription``` erfasst. Es werden
+jedoch nur Transaktionen genauer untersucht, die einen Gas Preis von Null
+aufweisen. 
 
 //TODO
 
 ### Initialisierung
 
-Deployment und Registrierung
+Erstes Mal starten ++ Deployment 
 
-### Konfiguration
+### DoS Algorithmus
 
-Die Konfiguration des Programmes findet mit einer Textdatei statt. In dieser werden alle Accounts angegeben, welche auf die Whitelist sollen. Weiter werden die Schwellenwerte für den DoS Algorithmus angegeben.
+//TODO
 
-Die Konfigurationsdatei wird zeilenweise interpretiert. Das Einlesen der Datei hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur stets eingehalten werden.\ 
-Wie unter \ref{sec_algConf} erläutert, gibt es Einstellungen pro Account und solche die global gelten. In der ersten Zeile der Datei werden alle globalen Parameter in folgender Reihenfolge aufgelistet:
+### Persistenz
+
+Um die Datenpersistenz zu gewährleisten, werden diese in einer Textdatei
+gespeichert. Wird das Programm gestoppt, kann so bei beim nächsten Start der
+letzte Zustand wieder hergestellt werden.\
+Es werden zwei unterschiedliche Dateien verwendet:
+
+1. Konfigurationsdatei mit Accounts die auf die Whitelist gehören
+2. Liste mit allen Accounts die von der Whitelist suspendiert sind
+
+In der Konfigurationsdatei sind nebst allen konfigurierbaren Parameter, auch
+alle Accounts die auf der Whitelist sind erfasst. Nach einem Programmstop, wird
+die Datei ausgelesen. Alle Parameter werden wieder gesetzt. Alle Accounts werden
+geladen und überprüft, ob sie sich noch auf der Whitelist befinden. Falls nötig,
+werden sie erneut certifiziert. Mehr zur Konfigurationsdatei ist im
+nachfolgenden Abschnitt, \ref{sec_prac_conf}, zu finden.\
+
+
+
+
+
+### Konfiguration \label{sec_prac_conf}
+
+Die Konfiguration des Programmes findet mit einer Textdatei statt. In dieser
+werden alle Accounts angegeben, welche auf die Whitelist sollen. Weiter werden
+die Schwellenwerte für den DoS Algorithmus angegeben.
+
+Die Konfigurationsdatei wird zeilenweise interpretiert. Das Einlesen der Datei
+hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur stets
+eingehalten werden.\ Wie unter \ref{sec_algConf} erläutert, gibt es
+Einstellungen pro Account und solche die global gelten. In der ersten Zeile der
+Datei werden alle globalen Parameter in folgender Reihenfolge aufgelistet:
 
 1. Reset-Intervall in Minuten
 2. Revoke-Intervall
@@ -36,7 +71,10 @@ Wie unter \ref{sec_algConf} erläutert, gibt es Einstellungen pro Account und so
 
 Es müssen alle vier Parameter angegeben und mit einem ```;``` separiert werden. 
 
-Alle nachfolgenden Zeilen enthalten jeweils eine Accountadresse. Zusätzlich kann die Anzahl gratis Transaktionen und die Menge gratis Gas pro Account definiert werden. Hier muss beachtet werden, dass es nicht möglich ist, nur einen der fakultativen Parameter anzugeben. Es müssen beide angegeben werden.\
+Alle nachfolgenden Zeilen enthalten jeweils eine Accountadresse. Zusätzlich kann
+die Anzahl gratis Transaktionen und die Menge gratis Gas pro Account definiert
+werden. Hier muss beachtet werden, dass es nicht möglich ist, nur einen der
+fakultativen Parameter anzugeben. Es müssen beide angegeben werden.\
 Ab Zeile 2 müssen die Parameter folgendermassen angegeben werden:
 
 1. Accountadresse
