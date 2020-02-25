@@ -75,22 +75,34 @@ erlauben es Daten in der Blockchain zu erstellen oder anzupassen. Eine
 Transaktion verfügt über folgende Felder:
 
 From
-:     Der Sender der Transaktion. Wird mit einer 20 Byte langen Adresse, siehe Abschnitt \ref{sec_address}, dargestellt. 
+:     Der Sender der Transaktion. Wird mit einer 20 Byte langen Adresse, siehe
+Abschnitt \ref{sec_address}, dargestellt. 
 
-To
-:     Der Empfänger der Transaktion. Wird ebenfalls mit einer 20 Byte langen Adresse dargestellt. Falls es sich um ein Deployment von einem Smart Contract handelt, wird dieses Feld leer gelassen. 
+To 
+:     Der Empfänger der Transaktion. Wird ebenfalls mit einer 20 Byte langen
+Adresse dargestellt. Falls es sich um ein Deployment von einem Smart Contract
+handelt, wird dieses Feld leer gelassen. 
 
-Value
-:     Mit diesem Feld wird angegeben, wieviel Wei[@wei] übertragen werden soll. Der Betrag wird von "From" nach "To" übertragen. 
+Value 
+:     Mit diesem Feld wird angegeben, wieviel Wei[@wei] übertragen werden
+soll. Der Betrag wird von "From" nach "To" übertragen. 
 
-Data/Input
-:     Dieses Feld wird hauptsächlich für die Interaktion mit Smart Contracts, siehe Abschnitt \ref{sec_smartContracts}, verwendet. Wenn ein Smart Contract deployed werden soll, wir in diesem Feld der dessen Bytecode[@bytecode] übertragen. Bei Funktionsaufrufen auf einen Smart Contract wird die Funktionssignatur und die codierten Parameter mitgegeben. Bei reinen Kontoübertragungen wird das Feld leer gelassen.
+Data/Input 
+:     Dieses Feld wird hauptsächlich für die Interaktion mit Smart
+Contracts, siehe Abschnitt \ref{sec_smartContracts}, verwendet. Wenn ein Smart
+Contract deployed werden soll, wir in diesem Feld der dessen Bytecode[@bytecode]
+übertragen. Bei Funktionsaufrufen auf einen Smart Contract wird die
+Funktionssignatur und die codierten Parameter mitgegeben. Bei reinen
+Kontoübertragungen wird das Feld leer gelassen.
 
-Gas Price
-:     Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen. Mehr dazu im Abschnitt \ref{sec_gas}
+Gas Price 
+:     Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen.
+Mehr dazu im Abschnitt \ref{sec_gas}
 
-Gas Limit
-:     Definiert die maximale Anzahl Gas Einheiten, die für diese Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas} [@transactions]
+Gas Limit 
+:     Definiert die maximale Anzahl Gas Einheiten, die für diese
+Transaktion verwendet werden können, siehe Abschnitt \ref{sec_gas}
+[@transactions]
 
 Damit eine Transaktion in die Blockchain aufgenommen werden kann, muss sie
 signiert[@signing_transaction] sein. Dies kann beim Benutzer offline gemacht

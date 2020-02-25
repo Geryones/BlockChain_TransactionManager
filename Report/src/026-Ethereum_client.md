@@ -48,7 +48,7 @@ Nachfolgenden sind die involvierten Methoden und Modifier[@wiki_modifier] der
 Name Registry aufgeführt und erklärt. Der vollständige Code ist im Anhang unter
 \ref{app_parity_code} verlinkt. 
 
-```{ .sol .numberLines}
+```{caption="Eintrag bei der Name Registry" label=li_entry_nameRegistry  .sol .numberLines}
 struct Entry {
 	address owner;
 	address reverse;
@@ -64,7 +64,7 @@ gespeichert.\
 Die Map ```entries``` ist die zentrale Datenstruktur der Name Registry.
 Änderungn daran sind daher durch Modifiers eingeschränkt.
 
-```{ .sol .numberLines}
+```{caption="Modifier whenUnreserved" label=li_whenUnreserved .sol .numberLines}
 modifier whenUnreserved(bytes32 _name) {
 	require(!entries[_name].deleted && entries[_name].owner == 0);
 	_;
@@ -76,7 +76,7 @@ geprüft, ob die gewünschte Position in der Map ```entries``` noch frei ist und
 somit reserviert werden kann.
 
 
-```{ .sol .numberLines}
+```{caption="Modifier onlyOwnerOf" label=li_onlyOwnerOf .sol .numberLines}
 modifier onlyOwnerOf(bytes32 _name) {
 	require(entries[_name].owner == msg.sender);
 	_;
@@ -87,7 +87,7 @@ Namen ```_name``` in ```entries``` verglichen. Nur wenn dieser identisch ist,
 dürfen Änderungen an einem existierenden Eintrag vorgenommen werden. 
 
 
-```{ .sol .numberLines}
+```{caption="Modifier whenEntryRaw" label=li_whenEntryRaw .sol .numberLines}
 modifier whenEntryRaw(bytes32 _name) {
 	require(
 		!entries[_name].deleted &&
@@ -101,7 +101,7 @@ gültigen Besitzer verfügt. Mit ```!= address(0)``` wird der geprüft ob sich u
 mehr als einen uninitialisierten Account handelt. 
 
 
-```{ .sol .numberLines}
+```{caption="Gebühr (Fee) und Modifier whenFeePaid" label=li_fee .sol .numberLines}
 uint public fee = 1 ether;
 
 modifier whenFeePaid {
@@ -114,7 +114,7 @@ Modifier. Dieser überprüft, ob der Betrag in der Transaktion gross genug ist u
 die Gebühr von Zeile 1 zu bezahlen. 
 
 
-```{ .sol .numberLines}
+```{caption="Methode Reserve" label=li_reserve .sol .numberLines}
 function reserve(bytes32 _name)
 	external
 	payable
@@ -138,7 +138,7 @@ Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` eine neuer Eintrag
 erstellt. Als Besitzer des Eintrags wird der Sender der Transaktion gesetzt. Auf
 Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
 
-```{ .sol .numberLines}
+```{caption="Methode setAddress" label=li_setAddress .sol .numberLines}
 function setAddress(bytes32 _name, string _key, address _value)
 	external
 	whenEntryRaw(_name)
@@ -180,7 +180,7 @@ In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers
 aufgeführt und erklärt. Der gesammte Code ist im Anhang unter
 \ref{app_parity_code} verlinkt. 
 
-```{ .sol .numberLines}
+```{caption="Die Whitelist im Certifier" label=li_whitelist .sol .numberLines}
 struct Certification {
 	bool active;
 }
@@ -191,7 +191,7 @@ Die zentrale Datenstrucktur des Certifiers, die Whitelist. In der Liste
 ```certs``` sind zertifizierte Accounts gespeichert. 
 
 
-```{ .sol .numberLines}
+```{caption="Modifier onlyDelegate" label=li_onlyDelegate .sol .numberLines}
 address public delegate = msg.sender;
 
 modifier onlyDelegate {
@@ -204,7 +204,7 @@ und der Variabel ```delegate``` zugewiesen. Mit dem Modifier wird geprüft ob es
 sich beim Absender der aktuellen Anfrage um den Besitzer des Smart Contracts
 handelt. 
 
-```{ .sol .numberLines}
+```{caption="Methode certify" label=li_certify .sol .numberLines}
 function certify(address _who)
 	external
 	onlyDelegate
@@ -222,7 +222,7 @@ der Liste ```certs``` hinzugefügt. Der Account ist nun für gratis Transaktione
 berechtigt.\
 Der Event wird auf Zeile 6 an das Netzwerk gesendet.
 
-```{ .sol .numberLines}
+```{caption="Methode certified" label=li_certified .sol .numberLines}
 function certified(address _who)
 	external
 	view
@@ -237,7 +237,7 @@ es sich um eine Abfrage ohne weitere Komputationskosten handelt. Solche Abfragen
 sind daher mit keinen Transaktionskosten verbunden. 
 
 
-```{ .sol .numberLines}
+```{caption="Methode revoke" label=li_revoke .sol .numberLines}
 function revoke(address _who)
     external
     onlyDelegate

@@ -115,6 +115,7 @@ einem Basisintervall von 5 Minuten:
 | 5 | 125|
 | 6 | 180 |
 
+Table: Beispiel für Suspendierung mit inkrementellen Intervallen \label{tab_bsp_inkrements}
 
 
 

@@ -28,7 +28,7 @@ Bedürfnisse geprüft und gegebenenfalls angepasst werden.
 Für die Konfiguration der Blockchain wird eine Konfigurationsdatei verwendet.
 Diese hat das Dateiformat .toml[@wiki_toml]. 
 
-``` {#tomlFile .numberLines}
+```{caption="Konfigurationsdatei für Parity" label=li_toml .numberLines}
 [parity]
 chain = "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json"
 base_path = "/home/parity/"
@@ -130,7 +130,7 @@ Spezifikation den Genesis Block. Weiter können Benutzeraccounts und Smart
 Contracts definiert werden. Diese können verwendet werden, sobald die Blockchain
 gestartet ist. 
 
-```{#Blockchainspezifikation .json .numberLines}
+```{caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec .json .numberLines}
 {
 	"name": "BachelorBlockChain",
 	"engine": {
@@ -275,7 +275,7 @@ Um einen Smart Contract auszurollen wird eine Instanz der generierten
 Wrapperklasse genutzt. Es wird die Methode ```deploy``` der Wrapperklasse
 genutzt. 
 
-```{.java .numberLines}
+```{caption="Deplyoment des Certifiers" label=li_certifier_deployment .java .numberLines}
 private Web3j web3j = Web3j.build(new HttpService("http://jurijnas.myqnapcloud.com:8545/"));
 private TransactionManager transactionManager = new RawTransactionManager(web3j, Credentials.create(privateKey));
 
@@ -304,7 +304,7 @@ Um den Certifier bei der Name Registry registrieren zu können, muss von der Nam
 Registry ebenfalls eine Instanz erstellt werden. Auch hier wird die
 Wrapperklasse verwendet.
 
-```{.java .numberLines}
+```{caption="Erstellen der Name Registry - Instanz" label=li_registration_cert .java .numberLines}
 private Web3j web3j = Web3j.build(new HttpService("http://jurijnas.myqnapcloud.com:8545/"));
 private TransactionManager transactionManager = new RawTransactionManager(web3j, Credentials.create(privateKey));
 
@@ -325,7 +325,7 @@ Blockchain mit  ```Web3j```, einem ```Transactionmanager``` und einem
 Mit den zur Verfügung stehenden Instanzen, kann die Registrierung des Certifiers
 bei der Name Registry gemacht werden. 
 
-```{.java .numberLines}
+```{caption="Reservierung und anschliessende Registrierung bei der Name Registry" label=li_reservation_and_registration .java .numberLines}
 private static BigInteger REGISTRATION_FEE = BigInteger.valueOf(1000000000000000000L);
 
 String str_hash = "6d3815e6a4f3c7fcec92b83d73dda2754a69c601f07723ec5a2274bd6e81e155";
