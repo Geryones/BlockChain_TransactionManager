@@ -57,9 +57,10 @@ struct Entry {
 }
 mapping (bytes32 => Entry) entries;
 ```
-In der Map ```entries``` sind alle registrierten Accounts festgehalten. Pro
-Eintrag wird der Besitzer (```owner```), die Adresse (```address```), ein Flag
-ob der Eintrag gelöscht ist (```deleted```) und dessen Daten (```data```)
+Im Codeausschnitt \ref{li_entry_nameRegistry} ist die Map ```entries```
+aufgeführt. Sie enthält alle registrierten Accounts in Form eines ```Entry```.
+Pro Eintrag wird der Besitzer (```owner```), die Adresse (```address```), ein
+Flag ob der Eintrag gelöscht ist (```deleted```) und dessen Daten (```data```)
 gespeichert.\
 Die Map ```entries``` ist die zentrale Datenstruktur der Name Registry.
 Änderungn daran sind daher durch Modifiers eingeschränkt.
@@ -70,10 +71,10 @@ modifier whenUnreserved(bytes32 _name) {
 	_;
 }
 ```
-Stellt sicher, dass ein Eintrag zu einem Namen (```_name```) nicht bereits
-existiert oder zu einem früheren Zeitpunkt gelöscht worden ist. Es wird also
-geprüft, ob die gewünschte Position in der Map ```entries``` noch frei ist und
-somit reserviert werden kann.
+Der unter \ref{li_whenUnreserved} gezeigte Code, stellt sicher, dass ein Eintrag
+zu einem Namen (```_name```) nicht bereits existiert oder zu einem früheren
+Zeitpunkt gelöscht worden ist. Es wird also geprüft, ob die gewünschte Position
+in der Map ```entries``` noch frei ist und somit reserviert werden kann.
 
 
 ```{caption="Modifier onlyOwnerOf" label=li_onlyOwnerOf .sol .numberLines}
@@ -82,7 +83,7 @@ modifier onlyOwnerOf(bytes32 _name) {
 	_;
 }
 ```
-Der Besitzer einer Nachricht wird mit dem Besitzer eines Eintrags unter dem
+Unter \ref{li_onlyOwnerOf} wird der Besitzer einer Nachricht mit dem Besitzer eines Eintrags unter dem
 Namen ```_name``` in ```entries``` verglichen. Nur wenn dieser identisch ist,
 dürfen Änderungen an einem existierenden Eintrag vorgenommen werden. 
 
@@ -96,9 +97,10 @@ modifier whenEntryRaw(bytes32 _name) {
 	_;
 }
 ```
-Prüft ob der Eintrag für Namen ```_name``` nicht gelöscht ist und über einen
-gültigen Besitzer verfügt. Mit ```!= address(0)``` wird der geprüft ob sich um
-mehr als einen uninitialisierten Account handelt. 
+Der unter \ref{li_whenEntryRaw} aufgeführte Modifier prüft, ob der Eintrag für
+den Namen ```_name``` nicht gelöscht ist und über einen gültigen Besitzer
+verfügt. Mit ```!= address(0)``` wird der geprüft ob sich um mehr als einen
+uninitialisierten Account handelt. 
 
 
 ```{caption="Gebühr (Fee) und Modifier whenFeePaid" label=li_fee .sol .numberLines}
@@ -109,9 +111,9 @@ modifier whenFeePaid {
 	_;
 }
 ```
-Auf Zeile 1 ist die Höhe der Gebühr (```fee```) definiert. Ab Zeile 3 folgt ein
-Modifier. Dieser überprüft, ob der Betrag in der Transaktion gross genug ist um
-die Gebühr von Zeile 1 zu bezahlen. 
+Im Codeausschnitt \ref{li_fee} ist auf Zeile 1 die Höhe der Gebühr (```fee```)
+definiert. Ab Zeile 3 folgt ein Modifier. Dieser überprüft, ob der Betrag in der
+Transaktion gross genug ist um die Gebühr von Zeile 1 zu bezahlen. 
 
 
 ```{caption="Methode Reserve" label=li_reserve .sol .numberLines}
@@ -127,9 +129,10 @@ function reserve(bytes32 _name)
 	return true;
 }
 ```
-Mit der Methode ```reserve``` kann ein Eintrag in der Liste ```entries``` für
-den Namen ```_name``` reserviert werden. Durch die Verwendung von ```external```
-auf Zeile 2, kann die Methode von anderen Accounts aufgerufen werden.\
+Unter \ref{li_reserve} wird gezeigt, wie mit der Methode ```reserve``` ein
+Eintrag in der Liste ```entries``` für den Namen ```_name``` reserviert wird.
+Durch die Verwendung von ```external``` auf Zeile 2, kann die Methode von
+anderen Accounts aufgerufen werden.\
 Der Modifier ```payable``` erlaubt es, Ether an die Methode zu senden. Auf Zeile
 4 wird überprüft, ob der Eintrag in ```entries``` noch frei ist. Schliesslich
 wird geprüft ob der Transaktion genügend Ether mitgegeben wird um die Gebühr zu
@@ -150,7 +153,7 @@ function setAddress(bytes32 _name, string _key, address _value)
 	return true;
 }
 ```
-Mit dieser Methode wird ein reservierter Eintrag in ```entries``` befüllt. Als
+Mit Methode ```setAddress``` unter \ref{li_setAddress}, wird ein reservierter Eintrag in ```entries``` befüllt. Als
 erster Parameter wird der Name des Eintags (```_name```) übergeben. Dieser muss
 identisch zum verwendeten Namen in der Methode ```reserve``` sein. Mit dem
 Parameter ```_key``` wird der Zugriff auf die innere Map ```data``` verwaltet.
