@@ -15,13 +15,44 @@ vorhanden. Für dessen Generierung und Verwendung siehe
 ### Überwachung von Transaktionen
 
 Um die Transaktionen auf der Blockchain zu Observieren wird ein
-Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es uns, eine
+Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es, eine
 ```Subscription``` zu erstellen. Diese läuft asynchron in einem eigenen Thread.\
-Jede getätigte Transaktion wird von der ```Subscription``` erfasst. Es werden
-jedoch nur Transaktionen genauer untersucht, die einen Gas Preis von Null
-aufweisen. 
+Jede getätigte Transaktion wird von der ```Subscription``` erfasst. In einem
+ersten Schritt wird der verwendete Gas Preis der Transaktion betrachtet. Nur
+wenn dieser null ist, wird die Transaktion und der dazugehörende Account durch
+den DoS Algorithmus evaluiert. 
 
-//TODO
+
+![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm") 
+
+Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
+dem externen Programm, auf dem Diagramm "Java Programm" genannt, der Blockchain
+und den Benutzern gezeigt. Transaktionen sind mit "TX" abgekürzt.\
+Links auf dem Diagramm sind die Benutzer "A" und "C" mit ihrem jeweiligen
+Account abgebildet. Beide erstellen eine Transaktion mit einem Gas Preis von
+null. Diese werden an den Parity Node übermittelt. Beim Node wird geprüft, ob
+der Sender beim Certifier in der Whitelist erfasst ist. Der Account von Benutzer
+C ist nicht erfasst. Daher wird seine Transaktion vom Node abgelehnt. Der
+Benutzer C erhält einen Error, da er einen ungültigen Gas Preis verwendet hat.\
+Die Transaktion von Benutzer A wird vom Node akzeptiert, da sein Account in der
+Whitelist erfasst ist. Die Transaktion wird anschliessend mined und in den
+nächsten Block aufgenommen.\
+Die Subscription im Java-Programm registriert, dass eine neue Transaktion in die
+Blockchain aufgenommen wurde. Die Daten der Transaktion werden runtergeladen.
+Der verwendete Gas Preis wird überprüft. Falls ein Gas Preis ungleich null
+vorhanden ist, wird die Transaktion nicht weiter betrachtet. Falls bei der
+Transaktion ein Gas Preis von null festgestellt wird, wird diese an den DoS
+Algorithmus übergeben. Als erster wird der Sender der Transaktion ermittelt.
+Anschliessend wird die Anzahl getätigter gratis Transaktionen und das
+verbrauchte Gas für den Account A ausgewertet. Es wird geprüft, ob mit der neue
+erfassten Transaktion ein Grenzwert überschritten worden ist. Sind diese nicht
+überschritten worden, werden in der Liste "Accounts" die Zähler aktualisiert.
+Die Prüfung für diese Transaktion ist somit abgeschlossen. Sind die Grenzwerte
+überschritten worden, werden die Counter angepasst. Weiter wird vermerkt, dass
+der Account gesperrt ist. Das Java-Programm erstellt eine Transaktion, welche den
+Account A von der Whitelist zu entfernt.
+
+
 
 ### Initialisierung
 

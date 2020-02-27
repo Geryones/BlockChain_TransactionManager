@@ -1,10 +1,13 @@
 # Einleitung
 
-Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. Es
-ist die Problemstellung, das Ziel der Arbeit und die Methodik aufgeführt. Weiter
-ist eine Übersicht über die Strukturierung des Berichts gegeben. 
+Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. . Weiter ist
+eine Übersicht über die Strukturierung des Berichts gegeben. 
 
-## Problemstellung
+## Was wurde gemacht //TODO titel
+
+
+
+## Problemstellung und Ziel
 Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die
 Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur Verfügung zu stellen, welches
 von den Studierenden zu Testzwecken genutzt werden kann.\
@@ -19,7 +22,6 @@ und elegant ist, eignet er sich nicht für eine Lernumgebung. Hier sollen
 Anwender die Möglichkeit haben, Transaktionen ohne anfallende Gebühren ausführen
 zu können. Dadurch wird jedoch die Blockchain anfällig für DoS Attacken. 
 
-## Ziel
 Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für
 eine definierte Gruppe von Benutzern gratis Transaktionen erlaubt und trotzdem
 über einen Schutzmechanismus gegen DoS Attacken verfügt.

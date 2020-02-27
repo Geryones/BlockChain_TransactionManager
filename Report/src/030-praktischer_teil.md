@@ -87,10 +87,10 @@ Zeile 10
 :    Der minimale Gas-Preis der gezahlt werden muss, damit eine Transaktion in 
 einen Block aufgenommen wird. Der Preis ist in WEI angegeben. Um sicherstellen, 
 dass nur die definierte Benutzergruppe gratis Transaktionen tätigen kann, muss 
-dieser Wert grösser als Null sein. 
+dieser Wert grösser als null sein. 
 
 Zeile 11
-:    Service Transaktionen haben einen Gas-Presi von Null. Wird hier "true" 
+:    Service Transaktionen haben einen Gas-Preis von null. Wird hier "true" 
 gesetzt, können keine gratis Transaktionen getätigt werden, unabhängig davon, 
 ob eine Whitelist vorhanden ist oder nicht.
 
@@ -98,7 +98,7 @@ Zeile 12
 :    Dieser Parameter wird benötigt, dass Transaktionen die mittels RPC an 
 Parity übermittelt werden, nicht als lokal betracht werden. Das ist sehr 
 wichtig, da lokale Transaktionen standarmässig auch über einen Gas-Preis 
-von Null verfügen dürfen. So wird sichergestellt, dass nur die definierte 
+von null verfügen dürfen. So wird sichergestellt, dass nur die definierte 
 Benutzergruppe gratis Transaktionen tätigen darf. 
 
 Zeile 13
