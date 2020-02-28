@@ -12,6 +12,14 @@ verwendet. Es ist je eine Wrapperklasse für die Name Registry und den Certifier
 vorhanden. Für dessen Generierung und Verwendung siehe
 \ref{sec_prac_deployment}.
 
+### Initialisierung
+
+Erstes Mal starten ++ Deployment 
+
+### DoS Algorithmus
+
+//TODO
+
 ### Überwachung von Transaktionen
 
 Um die Transaktionen auf der Blockchain zu Observieren wird ein
@@ -23,7 +31,7 @@ wenn dieser null ist, wird die Transaktion und der dazugehörende Account durch
 den DoS Algorithmus evaluiert. 
 
 
-![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm") 
+![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm"){ width=50% height=50% }
 
 Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
 dem externen Programm, auf dem Diagramm "Java Programm" genannt, der Blockchain
@@ -50,17 +58,8 @@ erfassten Transaktion ein Grenzwert überschritten worden ist. Sind diese nicht
 Die Prüfung für diese Transaktion ist somit abgeschlossen. Sind die Grenzwerte
 überschritten worden, werden die Counter angepasst. Weiter wird vermerkt, dass
 der Account gesperrt ist. Das Java-Programm erstellt eine Transaktion, welche den
-Account A von der Whitelist zu entfernt.
+Account A von der Whitelist entfernt.
 
-
-
-### Initialisierung
-
-Erstes Mal starten ++ Deployment 
-
-### DoS Algorithmus
-
-//TODO
 
 ### Persistenz
 
@@ -85,9 +84,10 @@ die Schwellenwerte für den DoS Algorithmus angegeben.
 
 Die Konfigurationsdatei wird zeilenweise interpretiert. Das Einlesen der Datei
 hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur stets
-eingehalten werden.\ Wie unter \ref{sec_algConf} erläutert, gibt es
-Einstellungen pro Account und solche die global gelten. In der ersten Zeile der
-Datei werden alle globalen Parameter in folgender Reihenfolge aufgelistet:
+eingehalten werden.\
+Wie unter \ref{sec_algConf} erläutert, gibt es Einstellungen pro Account und
+solche die global gelten. In der ersten Zeile der Datei werden alle globalen
+Parameter in folgender Reihenfolge aufgelistet:
 
 1. Reset-Intervall in Minuten
 2. Revoke-Intervall

@@ -8,25 +8,21 @@ In diesem Abschnitt werden die Komponenten des Algorithmus evaluiert.
 Die aufgeführten Parameter werden auf ihre Relevanz für die Erkennung einer DoS
 Attacke geprüft. 
 
-##### Sender
+Sender
+:    Ist zwingend nötig um eine Transaktion einem Account zuweisen zu können. 
 
-Ist zwingend nötig um eine Transaktion einem Account zuweisen zu können. 
-
-##### Empfänger
-
-Dieser kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des
+Empfänger
+:    Dieser kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des
 Empfängers für eine Transaktion benötigt. Jeder Benutzer ist weiter in der Lage,
 selbst neue Accounts zu erstellen und diese als Empfänger zu verwenden. Der
 Parameter hat somit keine Aussagekraft und wird nicht verwendet.
 
-##### Reset-Intervall
-
-Wir haben uns für die Implementierung eines allgemeinen Intervalls entschieden.
+Reset-Intervall
+:    Wir haben uns für die Implementierung eines allgemeinen Intervalls entschieden.
 Der Ansatz ist bedeutend einfacher umzusetzen als ein individuelles Intervall
 und kann daher sicher in der gegebenen Zeit realisiert werden. Am Ende des
-Intervalls, werden die Zähler für alle Parameter pro Account zurückgesetzt. 
-
-Die Auswirkung des genannten Nachteils beim allgemeinen Intervall ist stark von
+Intervalls, werden die Zähler für alle Parameter pro Account zurückgesetzt.\
+Die Auswirkung des genannten Nachteils bei einem allgemeinen Intervall ist stark von
 dessen Länge abhängig. Je kürzer das Intervall gewählt wird, umso kleiner sind
 die möglichen Folgen.
 Falls damit gerechnet werden muss, dass das Programm regelmässig gestoppt wird,
@@ -35,15 +31,13 @@ werden. Das Reset-Intervall sollte kleiner gewählt werden, als die zu erwartend
 Dauer zwischen den Programmstops. 
 
 
-##### Anzahl gratis Transaktionen
-
-Dieser Parameter wird verwendet. Er ermöglicht es eine DoS Attacke zu
+Anzahl gratis Transaktionen
+:    Dieser Parameter wird verwendet. Er ermöglicht es eine DoS Attacke zu
 identifizieren, welche die Beeinträchtigung der Blockchain mittels einer grossen
 Zahl von gratis Transaktionen erreichen will. 
 
-##### Anzahl verbrauchtes Gas
-
-Wie unter \ref{sec_dos} erwähnt, können Transaktionen mit einem sehr hohen
+Anzahl verbrauchtes Gas
+:    Wie unter \ref{sec_dos} erwähnt, können Transaktionen mit einem sehr hohen
 Gas-Bedarf für eine DoS-Attacke verwendet werden. Da beim Angreifer mit der
 Verwendung von gratis Transaktionen keine Mehrkosten anfallen, ist dieser
 Angriff sehr naheliegend. Daher wird dieser Parameter ebenfalls verwendet.
