@@ -31,7 +31,7 @@ wenn dieser null ist, wird die Transaktion und der dazugehörende Account durch
 den DoS Algorithmus evaluiert. 
 
 
-![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm"){ width=50% height=50% }
+![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm")
 
 Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
 dem externen Programm, auf dem Diagramm "Java Programm" genannt, der Blockchain

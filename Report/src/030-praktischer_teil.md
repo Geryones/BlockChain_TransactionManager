@@ -361,7 +361,7 @@ abgerufen.
 In diesem Abschnitt sind die Interaktionen zwischen Name Registry und Certifier
 aufgeführt. 
 
-![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier"){ width=50% height=50% }
+![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier")
 
 Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer in blau
 dargestellt. Dieser sendet eine Transaktion mit einem Gas Preis von null an
