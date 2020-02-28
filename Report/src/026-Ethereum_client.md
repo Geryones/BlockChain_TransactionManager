@@ -30,6 +30,9 @@ Registry[@parity_nameRegistry] und der Service Transaction
 Checker[@parity_service_transaction_checker]. Diese sind in den folgenden
 Abschnitten erklärt.
 
+
+
+
 #### Name Registry \label{sec_simpleRegistry}
 
 In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine
@@ -190,7 +193,7 @@ struct Certification {
 mapping (address => Certification) certs;
 ```
 
-Die zentrale Datenstrucktur des Certifiers, die Whitelist. In der Liste
+Das ```mapping``` unter \ref{li_whitelsit} ist die zentrale Datenstrucktur des Certifiers, die Whitelist. In der Liste
 ```certs``` sind zertifizierte Accounts gespeichert. 
 
 
@@ -202,7 +205,7 @@ modifier onlyDelegate {
 	_;
 }
 ```
-Auf Zeile 1 wird der Besitzer (```msg.sender```) des Smart Contracts gespeichert
+Auf Zeile 1 des Listings \ref{li_onlyDelegate}, wird der Besitzer (```msg.sender```) des Smart Contracts gespeichert
 und der Variabel ```delegate``` zugewiesen. Mit dem Modifier wird geprüft ob es
 sich beim Absender der aktuellen Anfrage um den Besitzer des Smart Contracts
 handelt. 
@@ -216,7 +219,7 @@ function certify(address _who)
 	emit Confirmed(_who);
 }
 ```
-Mit dieser Methode wird ein Account registriert. Als Paramater wird die zu
+Mit der unter \ref{li_certify} aufgeführten Methode, wird ein Account registriert. Als Paramater wird die zu
 registrierende Adresse (```_who```) angegeben. Mit ```external``` auf Zeile 2
 ist die Methode von Aussen aufrufbar.\
 Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account
@@ -234,7 +237,7 @@ function certified(address _who)
 	return certs[_who].active;
 }
 ```
-Mit der Methode ```certified``` kann jederzeit überprüft werden, ob ein Account
+Mit der Methode ```certified```, unter \ref{li_certified}, kann jederzeit überprüft werden, ob ein Account
 (```_who```) zertifierziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass
 es sich um eine Abfrage ohne weitere Komputationskosten handelt. Solche Abfragen
 sind daher mit keinen Transaktionskosten verbunden. 
@@ -256,7 +259,6 @@ des Certifiers Änderungen vornehmen kann. Weiter wird auf Zeile 4 verifiziert,
 dass der Account ```_who``` in der Whitelist ```certs``` registriert ist.\
 Sind alle Bedingungen erfüllt, wird der Account von der Whitelist entfernt. Der
 Event wird auf Zeile 7 an die Blockchain gesendet. 
-
 
 ### Geprüfte Alternativen
 

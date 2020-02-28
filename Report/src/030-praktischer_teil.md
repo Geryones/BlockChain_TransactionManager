@@ -356,4 +356,25 @@ dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz
 abgerufen. 
 
 
+### Interaktionsübersicht auf einem Parity Node
 
+In diesem Abschnitt sind die Interaktionen zwischen Name Registry und Certifier
+aufgeführt. 
+
+![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier"){ width=50% height=50% }
+
+Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer in blau
+dargestellt. Dieser sendet eine Transaktion mit einem Gas Preis von null an
+einen Parity Node. Der Parity Node ist in grün dargestellt.\
+Als erstes wird in Parity geprüft, ob eine Name Registry vorhanden ist. Deren
+Deployment ist unter \ref{sec_prac_spec} beschrieben, spezifisch Zeile 10 und 24. 
+In der Name Registry muss im mapping ```entries``` der Certifier hinterlegt
+sein. Weiter muss die Adresse im mapping ```data``` mit dem Key "A" abgelegt
+sein. Das ist keine Konfiguration, sondern hart kodiert in Parity. Dieser
+Vorgang ist unter \ref{sec_prac_deployment} ausführlich beschrieben.
+Anschliessend wird die Adresse des Certifiers ausgelesen.\
+Im Certifier wird geprüft, ob der Sender der gratis Transaktion, also Account
+"A" zertifiert ist. Wenn einer dieser Schritte fehl schlägt, erhält der Benutzer
+einen Error, da er einen ungültigen Gas Preis verwendet. Sind alle Schritte
+erfolgreich durchgeführt worden und der Account ist zertifiziert, wird die
+Transaktion in die Blockchain aufgenommen.  
