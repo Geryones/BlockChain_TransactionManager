@@ -26,7 +26,7 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 | 17.   | Certifier nur von Owner deployen | Der Certifier kann nur vom Owner registriert werden  |
 | 18.   | Certifier nur einmal deploybar  | Der Certifier kann nur einmal deplyt/registriert werden |
 | 19.   | Owner Account | Der Certifier Owner Account kann nicht gesperrt werden  |
-| 20.   | |   |
+| 20.   | Accounts nicht doppelt | Es gibt eine Meldung wenn Accounts doppelt in datei geführt werden  |
 | 21.   | |   |
 
 
