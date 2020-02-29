@@ -11,9 +11,28 @@ Transaktionen werden durch den Blockchaintransaktionmanager überwacht. Der
 entwickelte Transaktionsmanager stellt sicher, dass gratis Transaktionen
 nicht für eine Denial of Service (DoS) Attacke[@wiki_dos] genutzt werden können.
 
-![Übersicht \label{img_intro_overview}](images/overview_blockchain_txmanager.png "Interaktion von Benutzer, Blockchain und Transaktionsmanager")
+![Interaktion von Benutzer, Blockchain und Transaktionsmanager \label{img_intro_overview}](images/overview_blockchain_txmanager.png "Übersicht")
 
-Auf der Grafik \ref{img_intro_overview} 
+Auf der Grafik \ref{img_intro_overview} sind die Interaktionen zwischen einem
+Benutzer, dem Blockchainnetzwerk und dem Transaktionmanager ersichtlich.\
+Ein Benutzer sendet mit seinem Account eine gratis Transaktion an einen Node der
+Blockchain. Dieser prüft, ob der verwendete Account für gratis Transaktionen
+berechtigt ist. Dafür wird eine Whitelist[wwiki_whitelisting] verwendet. Diese
+befindet sich in der Blockchain. Ist diese Prüfung erfolgreich, wird die
+Transaktion in den nächsten Block aufgenommen.\
+Der Transaktionmanager registriert, dass eine neue gratis Transaktion in die
+Blockchain aufgenommen worden ist. Der Transaktionsmanager führt eine Kopie der
+Whitelist. Der Absender der Transaktion wird ermittelt. Mit dem DoS Algorithmus
+wird geprüft, ob der verwendete Account mit dieser Transaktion gegen eine
+Richtlinie verstösst. Sollte diese Prüfung ergeben, dass ein Verstoss vorliegt,
+wird der Account von der Whitelist in der Blockchain gelöscht. Im
+Transaktionsmanager wird vermerkt, dass sich dieser Account momentan nicht mehr
+auf der Whitelist befindet. Das hat zur Folge, dass mit diesem Account keine
+gratis Transaktionen mehr getätigt werden können.\
+Der Transaktionsmanager kann den Account nach einer gewissen Zeit wieder auf die
+Whitelist setzen. Der Benutzer kann den Account somit wieder für gratis
+Transaktionen verwenden.
+
 
 ## Problemstellung und Ziel
 
