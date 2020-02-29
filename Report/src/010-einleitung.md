@@ -3,18 +3,24 @@
 Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. . Weiter ist
 eine Übersicht über die Strukturierung des Berichts gegeben. 
 
-## Was wurde gemacht //TODO titel
+## Blockchaintransaktionmanager
 
-
+Es ist eine private Ethereumblockchain aufgesetzt worden, die es einer
+spezifischen Benutzergruppe erlaubt, gratis Transaktionen zu tätigen. Diese
+Transaktionen werden durch den Blockchaintransaktionmanager überwacht. Der
+entwickelte Transaktionsmanager stellt sicher, dass die gratis Transaktionen
+nicht für eine Denial of Service (DoS) Attacke[@wiki_dos] genutzt werden können.
 
 ## Problemstellung und Ziel
+
+//TODO , keine Verweise
+
 Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die
 Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur Verfügung zu stellen, welches
 von den Studierenden zu Testzwecken genutzt werden kann.\
 Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken
 abzusichern. Eine davon ist eine Gebühr auf jeder Transaktion, der sogenannte
-Gas Price \ref{sec_gas} [@gasprice]. Dadurch können Denial of Service (DoS)
-Attacken \ref{sec_dos} [@wiki_dos], bei denen das Netzwerk mit unzähligen
+Gas Preis[@gasprice]. Dadurch können DoS Attacken, bei denen das Netzwerk mit unzähligen
 Transaktionen geflutet wird, effizient bekämpft werden. Der Angreifer kann die
 Attacke nicht aufrecht erhalten, da ihm die finanziellen Mittel ausgehen.\
 Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizient
@@ -28,13 +34,13 @@ eine definierte Gruppe von Benutzern gratis Transaktionen erlaubt und trotzdem
 
 ## Methodik
  
-Zu Beginn wurde ein provisorischer Projekt Plan mit möglichen Arbeitspaketen und
-Meilensteine definiert. Da die Thematik komplett unbekannt war, ist auf ein
-agiles Vorgehen gesetzt worden. So können neue Erkentnisse in die Planung
-einfliessen. Nach der Einlese- und Probierphase, wurden Lösungskonzepte
-konzipiert, evaluiert und an der Zwischenpräsentation dem Expertenund den
-Betreuern präsentiert. Hier wurde das weitere Vorgehen besprochen und die neuen
-Meilensteine definiert. Die Arbeitspakete werden alle zwei Wochen definiert.
+Zu Beginn ist ein provisorischer Projekt Plan mit möglichen Arbeitspaketen und
+Meilensteine definiert worden. Da die Thematik komplett unbekannt ist, wird auf ein
+agiles Vorgehen gesetzt. So können neue Erkentnisse in die Planung
+einfliessen. Nach der Einlese- und Probierphase, sind Lösungskonzepte
+konzipiert, evaluiert und an der Zwischenpräsentation dem Experten und den
+Betreuern präsentiert worden. Das weitere Vorgehen ist besprochen und neue
+Meilensteine definiert worden. Die Arbeitspakete werden alle zwei Wochen definiert.
 
 ## Strukturierung des Berichts
 

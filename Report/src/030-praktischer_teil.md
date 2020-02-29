@@ -356,25 +356,32 @@ dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz
 abgerufen. 
 
 
-### Interaktionsübersicht auf einem Parity Node
+### Interaktionsübersicht auf einem Parity Node \label{prac_nameRegistry_Certifier}
 
 In diesem Abschnitt sind die Interaktionen zwischen Name Registry und Certifier
 aufgeführt. 
 
 ![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier")
 
-Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer in blau
-dargestellt. Dieser sendet eine Transaktion mit einem Gas Preis von null an
-einen Parity Node. Der Parity Node ist in grün dargestellt.\
+Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer XY in blau
+dargestellt. Der Parity Node ist in grün dargestellt. Der Benutzer sendet eine
+Transaktion mit einem Gas Preis von null an den Parity Node.\
 Als erstes wird in Parity geprüft, ob eine Name Registry vorhanden ist. Deren
-Deployment ist unter \ref{sec_prac_spec} beschrieben, spezifisch Zeile 10 und 24. 
-In der Name Registry muss im mapping ```entries``` der Certifier hinterlegt
-sein. Weiter muss die Adresse im mapping ```data``` mit dem Key "A" abgelegt
-sein. Das ist keine Konfiguration, sondern hart kodiert in Parity. Dieser
-Vorgang ist unter \ref{sec_prac_deployment} ausführlich beschrieben.
-Anschliessend wird die Adresse des Certifiers ausgelesen.\
+Deployment ist unter \ref{sec_prac_spec} beschrieben. Der Eintrag
+```registrar``` hat als Wert die Adresse der Name Registry hinterlegt.\
+In der Name Registry wird das Mapping ```entries``` untersucht. Der Certifier
+muss unter dem richtigen Namen hinterlegt sein. Der Name ist ein SHA3-Hash des
+Strings "service_transaction_checker". Der Hash ist der Zugriffsschlüssel im
+Mapping ```entries```. Der korrespondierende Wert ist ein ```Entry``` für den
+Certifiers. Im Struct ```Entry``` ist ```data```, ein weiteres Mapping,
+vorhanden. In ```data``` muss unter dem Zugriffsschlüssel "A" die Adresse des
+Certifiers abgelegt sein. Das ist keine Konfiguration, sondern hart kodiert in
+Parity. Dieser Vorgang ist unter \ref{sec_prac_deployment} ausführlich
+beschrieben.\
+Mit der so ermittelten Adresse des Certifiers, kann dieser aufgerufen werden.
 Im Certifier wird geprüft, ob der Sender der gratis Transaktion, also Account
-"A" zertifiert ist. Wenn einer dieser Schritte fehl schlägt, erhält der Benutzer
-einen Error, da er einen ungültigen Gas Preis verwendet. Sind alle Schritte
-erfolgreich durchgeführt worden und der Account ist zertifiziert, wird die
-Transaktion in die Blockchain aufgenommen.  
+"XX" zertifiert ist.\
+Wenn einer dieser Schritte fehl schlägt, erhält der Benutzer
+einen Error, da er einen ungültigen Gas Preis verwendet.\
+Konnten alle Schritte erfolgreich durchgeführt werden und der Account ist
+zertifiziert, wird die Transaktion in die Blockchain aufgenommen.  

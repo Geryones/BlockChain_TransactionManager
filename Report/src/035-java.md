@@ -34,31 +34,38 @@ den DoS Algorithmus evaluiert.
 ![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm")
 
 Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
-dem externen Programm, auf dem Diagramm "Java Programm" genannt, der Blockchain
+dem Blockchaintransaktionsmanager, auf dem Diagramm "Java Programm" genannt, der Blockchain
 und den Benutzern gezeigt. Transaktionen sind mit "TX" abgekürzt.\
 Links auf dem Diagramm sind die Benutzer "A" und "C" mit ihrem jeweiligen
-Account abgebildet. Beide erstellen eine Transaktion mit einem Gas Preis von
-null. Diese werden an den Parity Node übermittelt. Beim Node wird geprüft, ob
-der Sender beim Certifier in der Whitelist erfasst ist. Der Account von Benutzer
-C ist nicht erfasst. Daher wird seine Transaktion vom Node abgelehnt. Der
-Benutzer C erhält einen Error, da er einen ungültigen Gas Preis verwendet hat.\
+Account abgebildet. In der Liste ```Accounts``` im Java-Programm sind alle
+Accounts erfasst, die für gratis Transaktionen berechtigt sind. Hier ist für
+jeden Account vermerkt, wie viele gratis Transaktionen und wie viel gratis Gas
+im aktuellen Reset-Intervall bereits verbraucht wurde.\
+Die beiden Benutzer erstellen je eine Transaktion mit einem Gas Preis von
+null. Diese werden an den Parity Node übermittelt.\
+Beim Node wird geprüft, ob der Sender in der Whitelist erfasst ist. Dieser
+Vorgang ist unter \ref{prac_nameRegistry_Certifier} genauer erklärt. Der Account
+von Benutzer C ist nicht erfasst. Daher wird seine Transaktion vom Node
+abgelehnt. Der Benutzer C erhält einen Error, da er einen ungültigen Gas Preis
+verwendet hat.\
 Die Transaktion von Benutzer A wird vom Node akzeptiert, da sein Account in der
-Whitelist erfasst ist. Die Transaktion wird anschliessend mined und in den
+Whitelist erfasst ist. Die Transaktion wird anschliessend verarbeitet und in den
 nächsten Block aufgenommen.\
 Die Subscription im Java-Programm registriert, dass eine neue Transaktion in die
-Blockchain aufgenommen wurde. Die Daten der Transaktion werden runtergeladen.
-Der verwendete Gas Preis wird überprüft. Falls ein Gas Preis ungleich null
-vorhanden ist, wird die Transaktion nicht weiter betrachtet. Falls bei der
-Transaktion ein Gas Preis von null festgestellt wird, wird diese an den DoS
-Algorithmus übergeben. Als erster wird der Sender der Transaktion ermittelt.
-Anschliessend wird die Anzahl getätigter gratis Transaktionen und das
-verbrauchte Gas für den Account A ausgewertet. Es wird geprüft, ob mit der neue
-erfassten Transaktion ein Grenzwert überschritten worden ist. Sind diese nicht
-überschritten worden, werden in der Liste "Accounts" die Zähler aktualisiert.
-Die Prüfung für diese Transaktion ist somit abgeschlossen. Sind die Grenzwerte
-überschritten worden, werden die Counter angepasst. Weiter wird vermerkt, dass
-der Account gesperrt ist. Das Java-Programm erstellt eine Transaktion, welche den
-Account A von der Whitelist entfernt.
+Blockchain aufgenommen worden ist. Die Daten der Transaktion werden heruntergeladen.
+Der verwendete Gas Preis wird überprüft. Bei einem Gas Preis ungleich null, wird
+die Transaktion nicht weiter betrachtet.\
+Falls bei der Transaktion ein Gas Preis von null festgestellt worden ist, wird
+der Sender ermittelt, in diesem Fall der Account XX. Die Zähler des Accounts
+werden in der Liste ```Accounts``` aktualisiert. Der Account wird anschliessend
+an den DoS Algorithmus übergeben.\
+Im DoS Algorithmus wird die Anzahl getätigter gratis Transaktionen und das
+verbrauchte Gas ausgewertet. Es wird geprüft, ob mit der neu erfassten
+Transaktion ein Grenzwert im aktuellen Reset-Intevall überschritten worden ist.
+Wenn das nicht der Fall ist, sind keine weiteren Aktionen nötig. Ist ein
+Grenzwert überschritten worden, wird dies für den entsprechenden Account in
+```Accounts``` festgehalten. Zusätzlich wird eine Transaktion erstellt, die den
+Account von der Whitelist in Parity entfernt.
 
 
 ### Persistenz
