@@ -34,8 +34,8 @@ den DoS Algorithmus evaluiert.
 ![Prozess bei der Überwachung von Transaktionen \label{img_prac_interactions}](images/process_whitelist.png "Überwachung von gratis Transaktionen durch Java Programm")
 
 Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
-dem Blockchaintransaktionsmanager, auf dem Diagramm "Java Programm" genannt, der Blockchain
-und den Benutzern gezeigt. Transaktionen sind mit "TX" abgekürzt.\
+dem Transaktionsmanager, der Blockchain und den Benutzern gezeigt. Transaktionen
+sind mit "TX" abgekürzt.\
 Links auf dem Diagramm sind die Benutzer "A" und "C" mit ihrem jeweiligen
 Account abgebildet. In der Liste ```Accounts``` im Java-Programm sind alle
 Accounts erfasst, die für gratis Transaktionen berechtigt sind. Hier ist für

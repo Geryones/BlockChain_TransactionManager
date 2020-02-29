@@ -8,8 +8,12 @@ eine Übersicht über die Strukturierung des Berichts gegeben.
 Es ist eine private Ethereumblockchain aufgesetzt worden, die es einer
 spezifischen Benutzergruppe erlaubt, gratis Transaktionen zu tätigen. Diese
 Transaktionen werden durch den Blockchaintransaktionmanager überwacht. Der
-entwickelte Transaktionsmanager stellt sicher, dass die gratis Transaktionen
+entwickelte Transaktionsmanager stellt sicher, dass gratis Transaktionen
 nicht für eine Denial of Service (DoS) Attacke[@wiki_dos] genutzt werden können.
+
+![Übersicht \label{img_intro_overview}](images/overview_blockchain_txmanager.png "Interaktion von Benutzer, Blockchain und Transaktionsmanager")
+
+Auf der Grafik \ref{img_intro_overview} 
 
 ## Problemstellung und Ziel
 
