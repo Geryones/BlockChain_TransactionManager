@@ -6,10 +6,10 @@ Weiter wird der Anwendungsbereich der Lösung behandelt.
 
 ## Anwendungsbereich
 
-Die FHNW möchte zu Ausbildungszwecken eine eigene Ethereum Blockchain betreiben.
-Die Blockchain soll die selbe Funktionalität wie die öffentliche Ethereum
-Blockchain vorweisen. Sie soll den Studenten die Möglichkeit bieten, in einer
-sicheren Umgebung Erfahrungen zu sammeln und Wissen zu gewinnen.\
+Die FHNW möchte zu Ausbildungszwecken eine eigene Ethereumblockchain betreiben.
+Die Blockchain soll dieselbe Funktionalität wie die öffentliche
+Ethereumblockchain vorweisen. Sie soll den Studenten die Möglichkeit bieten, in
+einer sicheren Umgebung Erfahrungen zu sammeln und Wissen zu gewinnen.\
 Obwohl eine öffentliche Blockchain für jedermann frei zugänglich ist, sind fast
 alle Aktionen mit Kosten verbunden. Die Kosten sind ein fixer Bestandteil einer
 Blockchain. So fallen zum Beispiel bei jeder Transaktionen Gebühren an. Diese
@@ -22,6 +22,7 @@ Blockchain agieren können, ohne dass der Betrieb oder die Sicherheit der
 Blockchain kompromitiert werden.\
 Die FHNW bietet die kostenlose Verarbeitung von Transaktionen zu Verfügung.
 Damit sichert sie den Betrieb der Blockchain. Die Implementation von gratis
-Transaktionen und einem Schutzmechanismus wird in diesem Bericht behandelt. 
+Transaktionen für eine definierte Benutzergruppe und einem Schutzmechanismus
+wird in diesem Bericht behandelt. 
 
 

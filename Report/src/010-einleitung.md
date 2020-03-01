@@ -33,6 +33,12 @@ Der Transaktionsmanager kann den Account nach einer gewissen Zeit wieder auf die
 Whitelist setzen. Der Benutzer kann den Account somit wieder für gratis
 Transaktionen verwenden.
 
+Der Transaktionsmanager kann durch die Betreiber konfiguriert werden. Die
+Parameter für den DoS Algorithmus sind pro Account individuell definierbar.\
+Wird die Whitelist im Transaktionsmanager mit weiteren Accounts ergänzt, werden
+diese an das Blockchainentzwerk übermittelt und dort ebenfalls in die Whitelist
+aufgenommen. Accounts können auch permanent von gratis Transaktionen
+ausgeschlossen werden.  
 
 ## Problemstellung und Ziel
 
@@ -50,8 +56,9 @@ Gas Preis[@gasprice] multipliziert. Diese Kosten werden vom Sender einer
 Transaktion an den Node gezahlt, der die Transaktion verarbeitet hat.\
 Die Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) möchte für die Studierenden
 eine Blockchain zur Verfügung stellen. Den Studierenden soll so eine Möglichkeit
-geboten werden, erste Erfahrungen mit einer Blockchain zu sammeln.\
-Für eine Lernumgebung sind anfallende Kosten nicht erwünscht. Daher soll ein Weg
+geboten werden, erste Erfahrungen und Wissen im Umgang mit einer Blockchain zu
+gewinnen.\
+Für eine Lernumgebung sind anfallende Kosten nicht praktikabel. Daher soll ein Weg
 gefunden werden, um einer definierten Benutzergruppe gratis Transaktionen zu
 ermöglichen, ohne die Blockchain anfällig gegen DoS Attacken zu machen.  
 
@@ -65,11 +72,14 @@ Nodes verwendet werden.\
 Sobald auf einem Node eine gratis Transaktion eingeht, wird geprüft, ob sich der
 verwendete Account auf der Whitelist befindet. Nur dann, wird die Transaktion
 vom Node angenommen und weiter verarbeitet.\
-Der Blockchaintransaktionsmanger ist als Javaapplikation realisert worden. Mit
-der Bibliothek Web3j[@web3j] ist die Anbindung an eine Blockchain sehr effizient
-und intuitiv. Im Transaktionsmanager wird eine Kopie der Whitelist geführt. Zu
-jedem Account werden zusätzliche Informationen gespeichert. Diese werden für die
-Beurteilung, ob der Account eine Bedrohung ist, verwendet.\
+Der Blockchaintransaktionsmanger ist als Javaapplikation realisert worden. Die
+Interaktion mit dem Betreiber findet über die Kommandozeile und einer
+Konfigurationsdatei statt. Mit der Bibliothek Web3j[@web3j] ist die Anbindung an
+eine Blockchain sehr effizient und intuitiv. Im Transaktionsmanager wird eine
+Kopie der Whitelist geführt. Zu jedem Account werden zusätzliche Informationen
+gespeichert. Diese werden für die Beurteilung, ob der Account eine Bedrohung
+ist, verwendet. Um eine Datenpersistenz zu gewährleisten, wird die Liste regelmässig
+in der Konfiguationsdatei gespeichert.\
 Mit einer Subscription wird jeweils der aktuelle Block der Blockchain auf
 Transaktionen untersucht. Bei gefundenen gratis Transaktionen wird das Verhalten
 des Senderaccounts evaluiert. Anhand der gätigten gratis Transaktionen und dem
@@ -77,8 +87,7 @@ dabei verbrauchtem Gas, wird bestimmt, ob die Transaktion Teil einer DoS Attacke
 ist. Fällt diese Prüfung positiv aus, wird der Account für eine bestimmte Dauer
 von der Whitelist entfernt. Das bedeuted, dass er keine gratis Transaktionen
 mehr tätigen kann. Reguläre, also kostenpflichtige Transaktionen, sind weiterhin
-möglich.
-
+möglich. 
 
 ## Strukturierung des Berichts
 

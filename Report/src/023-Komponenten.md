@@ -4,8 +4,7 @@
 
 Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
 Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem
-grundsätzlichen Verständnis für die Materie immer der Schutz vor einer Denial of
-Servie (DoS) Attacke im Fokus.  
+grundsätzlichen Verständnis für die Materie immer der Schutz vor einer DoS Attacke im Fokus.  
 
 ### Ethereum Blockchain \label{sec_blockchain}
 
@@ -21,8 +20,9 @@ und Einstellungen um eine Blockchain zu starten.
 
 Blockchains sind auf einem peer-to-peer (P2P) Netzwerk[@wiki_p2p] aufgebaut. Ein
 Computer der Teil von diesem Netzwerk ist, wird Node genannt. Jeder Node hat
-eine identische Kopie der Historie aller Transaktionen. Es gibt keinen zentralen
-Server der angegriffen werden kann. Das erhöht die Sicherheit der Blockchain.\
+eine identische Kopie der Historie aller Transaktionen.\
+Es gibt keinen zentralen Server der angegriffen werden kann. Das erhöht die
+Sicherheit der Blockchain.\
 Es muss davon ausgegangen werden, dass es Nodes gibt, die versuchen die Daten
 der Blockchain zu verfälschen. Dem wird mit der Verwendung von diversen Consenus
 Algorithmen[@consensus_alg] entgegengewirkt. Die Consensus Algorithemen stellen

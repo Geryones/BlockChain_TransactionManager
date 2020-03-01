@@ -1,7 +1,7 @@
 
-## Externes Programm  \label{sec_prac_ext_prog}
+## Transaktionsmanager  \label{sec_prac_ext_prog}
 
-In diesem Kapitl ist die Implementierung des externen Programms zur Überwachung
+In diesem Kapitl ist die Implementierung des Transaktionsmanagers zur Überwachung
 der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
 Funktionsweise von einzelnen Komponenten näher erklärt. 
 
@@ -14,7 +14,43 @@ vorhanden. Für dessen Generierung und Verwendung siehe
 
 ### Initialisierung
 
-Erstes Mal starten ++ Deployment 
+Wenn die Blockchain frisch aufgesetzt wird, sind inital keine gratis
+Transaktionen möglich. Der dafür nötige Certifier ist noch nicht deployed oder
+bei der Name Registry registriert.\
+Mit der Methode ```init``` in der Klasse ```Main``` wird die Blockchain für den
+Betrieb vorbereitet. Folgende Schritte werden dabei ausgeführt:
+
+1. Instanzierung der Name Registry\
+   Mit der Wrapperklasse für die Name Registry und deren Adresse auf der
+   Blockchain wird ein Objekt für die Interaktion mit dem eigentlichen Smart
+   Contract erzeugt. 
+1. Deployment des Certifiers\
+   Die Wrapperklasse für den Certifier wird instanziert und auf die Blockchain
+   deployed. 
+1. Registrierung des Certifiers bei der Name Registry\
+   Die Adresse des Certifiers wird bei der Name Registry registriert.
+1. Zertifizierung von Account für Transaktionsmanager\
+   Der Account des Transaktionsmanagers wird für gratis Transaktionen
+   berechtigt. 
+
+Siehe \ref{sec_prac_deployment} für mehr Informationen zu Wrapperklassen,
+Deployment und Registrierung von Accounts.
+
+Die Adresse der Name Registry wird aus der Konfigurationsdatei gelesen, siehe
+\ref{sec_prac_conf}. Hier muss beachtet werden, dass diese mit der Adresse in
+der Blockchainspezifkation, siehe \ref{sec_prac_spec}, übereinstimmen muss.\
+Sobald der Certifier deployed ist, wird dessen Adresse in die
+Konfigurationsdatei geschrieben. Sobald die Überwachung der Blockchain gestartet
+wird, wird die Adresse ausgelesen und der Certifier instanziert.\
+Der Account für den Transaktionsmanger wird in der Blockchainspezifikation
+definiert, siehe \ref{sec_prac_spec}. Dieser Account wird verwendet um
+Änderungen an der Whitelist vorzunehmen. Aus Sicherheitsgründen wird der private
+Schlüssel von diesem Account nicht in den Quellcode des Transaktionsmanagers
+geschrieben. Er wird beim Start der Applikation aus einer eigenen Datei gelesen.
+Hier muss beachtet werden, dass diese Datei bei der Verwendung von einer
+Versionierungssoftware nicht inkludiert wird.
+
+
 
 ### DoS Algorithmus
 
@@ -70,9 +106,11 @@ Account von der Whitelist in Parity entfernt.
 
 ### Persistenz
 
-Um die Datenpersistenz zu gewährleisten, werden diese in einer Textdatei
-gespeichert. Wird das Programm gestoppt, kann so bei beim nächsten Start der
-letzte Zustand wieder hergestellt werden.\
+//re TODO
+
+Um die Datenpersistenz zu gewährleisten, wird die Whitelist des
+Transaktionsmanagers in einer Textdatei gespeichert. Wird das Programm gestoppt,
+kann so bei beim nächsten Start der letzte Zustand wieder hergestellt werden.\
 
 In dieser Datei sind nebst allen konfigurierbaren Parameter, auch alle Accounts
 die auf der Whitelist sind erfasst. Nach einem Programmstop, wird die Datei
@@ -84,6 +122,8 @@ finden.\
 
 
 #### Konfiguration \label{sec_prac_conf}
+
+//TODO
 
 Die Konfiguration des Programmes findet mit einer Textdatei statt. In dieser
 werden alle Accounts angegeben, welche auf die Whitelist sollen. Weiter werden
