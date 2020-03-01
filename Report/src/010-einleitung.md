@@ -5,7 +5,7 @@ eine Übersicht über die Strukturierung des Berichts gegeben.
 
 ## Blockchaintransaktionmanager
 
-Es ist eine private Ethereumblockchain aufgesetzt worden, die es einer
+Es ist eine private Ethereumblockchain[@ethereum][@wiki_blockchain] aufgesetzt worden, die es einer
 spezifischen Benutzergruppe erlaubt, gratis Transaktionen zu tätigen. Diese
 Transaktionen werden durch den Blockchaintransaktionmanager überwacht. Der
 entwickelte Transaktionsmanager stellt sicher, dass gratis Transaktionen
@@ -17,8 +17,8 @@ Auf der Grafik \ref{img_intro_overview} sind die Interaktionen zwischen einem
 Benutzer, dem Blockchainnetzwerk und dem Transaktionmanager ersichtlich.\
 Ein Benutzer sendet mit seinem Account eine gratis Transaktion an einen Node der
 Blockchain. Dieser prüft, ob der verwendete Account für gratis Transaktionen
-berechtigt ist. Dafür wird eine Whitelist[wwiki_whitelisting] verwendet. Diese
-befindet sich in der Blockchain. Ist diese Prüfung erfolgreich, wird die
+berechtigt ist. Dafür wird eine Whitelist[wiki_whitelisting] verwendet. Diese
+befindet sich auf der Blockchain. Ist diese Prüfung erfolgreich, wird die
 Transaktion in den nächsten Block aufgenommen.\
 Der Transaktionmanager registriert, dass eine neue gratis Transaktion in die
 Blockchain aufgenommen worden ist. Der Transaktionsmanager führt eine Kopie der
@@ -36,41 +36,56 @@ Transaktionen verwenden.
 
 ## Problemstellung und Ziel
 
-//TODO , keine Verweise
+Der beste Schutz einer Blockchain gegen eine DoS Attacke, sind die anfallenden
+Kosten für den Angreifer. Auf jede Transaktion wird eine Gebühr erhoben. Bei
+Ethereum werden zusätzlich anfallende Komputationskosten auf der Blockchain
+berücksichtigt. Die Komputationskosten werden mit Gas beziffert. Je Komplexer
+der Task, desto mehr Gas wird benötigt. Es existiert ein Maximum an Gas, dass
+durch eine Transaktion verbraucht werden kann. Wird dieses Maximum erreicht
+bevor die Berechnungen fertig sind, werden diese Abgebrochen. Das ist ebenfalls
+ein Schutzmechanismus gegn DoS Attacken. Ohne diesen Schutz, könnten zum
+Beispiel Schlaufen ohne Abbruchbedingung für einen Angriff verwendet werden.\
+Um die Kosten einer Transaktion zu berechnen, wird das verbrauchte Gas mit dem
+Gas Preis[@gasprice] multipliziert. Diese Kosten werden vom Sender einer
+Transaktion an den Node gezahlt, der die Transaktion verarbeitet hat.\
+Die Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) möchte für die Studierenden
+eine Blockchain zur Verfügung stellen. Den Studierenden soll so eine Möglichkeit
+geboten werden, erste Erfahrungen mit einer Blockchain zu sammeln.\
+Für eine Lernumgebung sind anfallende Kosten nicht erwünscht. Daher soll ein Weg
+gefunden werden, um einer definierten Benutzergruppe gratis Transaktionen zu
+ermöglichen, ohne die Blockchain anfällig gegen DoS Attacken zu machen.  
 
-Die Aufgabe beinhaltet ein Blockchain Netzwerk [@wiki_blockchain] für die
-Fachhochschule Nordwest Schweiz[@fhnw] (FHNW) zur Verfügung zu stellen, welches
-von den Studierenden zu Testzwecken genutzt werden kann.\
-Blockchains verfügen über verschiedene Mechanismen, um sich gegen Attacken
-abzusichern. Eine davon ist eine Gebühr auf jeder Transaktion, der sogenannte
-Gas Preis[@gasprice]. Dadurch können DoS Attacken, bei denen das Netzwerk mit unzähligen
-Transaktionen geflutet wird, effizient bekämpft werden. Der Angreifer kann die
-Attacke nicht aufrecht erhalten, da ihm die finanziellen Mittel ausgehen.\
-Obwohl dieser Schutzmechanismus auf einer öffentlichen Blockchain sehr effizient
-und elegant ist, eignet er sich nicht für eine Lernumgebung. Hier sollen
-Anwender die Möglichkeit haben, Transaktionen ohne anfallende Gebühren ausführen
-zu können. Dadurch wird jedoch die Blockchain anfällig für DoS Attacken. 
+## Realisierung
 
-Das Ziel der Arbeit ist es ein Test Blockchain Netzwerk aufzubauen, welches für
-eine definierte Gruppe von Benutzern gratis Transaktionen erlaubt und trotzdem
-über einen Schutzmechanismus gegen DoS Attacken verfügt.
+Parity ist zur Zeit der einzige Ethereumclient, der über ein Benutzermanagement
+für gratis Transaktionen verfügt. Durch die Verwendung von Smart
+Contracts[@smartContractDef] ist eine Whitelist für gratis Transaktionen
+möglich. Da die Whitelist auf der Blockchain gespeichert ist, kann sie von allen
+Nodes verwendet werden.\
+Sobald auf einem Node eine gratis Transaktion eingeht, wird geprüft, ob sich der
+verwendete Account auf der Whitelist befindet. Nur dann, wird die Transaktion
+vom Node angenommen und weiter verarbeitet.\
+Der Blockchaintransaktionsmanger ist als Javaapplikation realisert worden. Mit
+der Bibliothek Web3j[@web3j] ist die Anbindung an eine Blockchain sehr effizient
+und intuitiv. Im Transaktionsmanager wird eine Kopie der Whitelist geführt. Zu
+jedem Account werden zusätzliche Informationen gespeichert. Diese werden für die
+Beurteilung, ob der Account eine Bedrohung ist, verwendet.\
+Mit einer Subscription wird jeweils der aktuelle Block der Blockchain auf
+Transaktionen untersucht. Bei gefundenen gratis Transaktionen wird das Verhalten
+des Senderaccounts evaluiert. Anhand der gätigten gratis Transaktionen und dem
+dabei verbrauchtem Gas, wird bestimmt, ob die Transaktion Teil einer DoS Attacke
+ist. Fällt diese Prüfung positiv aus, wird der Account für eine bestimmte Dauer
+von der Whitelist entfernt. Das bedeuted, dass er keine gratis Transaktionen
+mehr tätigen kann. Reguläre, also kostenpflichtige Transaktionen, sind weiterhin
+möglich.
 
-## Methodik
- 
-Zu Beginn ist ein provisorischer Projekt Plan mit möglichen Arbeitspaketen und
-Meilensteine definiert worden. Da die Thematik komplett unbekannt ist, wird auf ein
-agiles Vorgehen gesetzt. So können neue Erkentnisse in die Planung
-einfliessen. Nach der Einlese- und Probierphase, sind Lösungskonzepte
-konzipiert, evaluiert und an der Zwischenpräsentation dem Experten und den
-Betreuern präsentiert worden. Das weitere Vorgehen ist besprochen und neue
-Meilensteine definiert worden. Die Arbeitspakete werden alle zwei Wochen definiert.
 
 ## Strukturierung des Berichts
 
  Der Bericht ist in einen theoretischen und praktischen Teil gegliedert.
- Gemachte Literaturstudiuen, geprüfte Tools, der aktuelle Stand der Ethereum
- Blockchain, sowie die konzipierten Lösungsansätze und derern Evaluation werden
- im theoretischen Teil behandelt.\
+ Gemachte Literaturstudiuen, geprüfte Tools, der aktuelle Stand der
+ Ethereumblockchain, sowie die konzipierten Lösungsansätze und derern Evaluation
+ werden im theoretischen Teil behandelt.\
  Im praktischen Teil wird beschrieben, wie das gewonnene Wissen umgesetzt wird.
  Es wird auf die implementierte Lösung und deren Vor- und Nachteile eingegangen.
  Geprüfte Alternativen und deren Argumente sind ebenfalls enthalten.\
