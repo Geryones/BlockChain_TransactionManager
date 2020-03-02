@@ -24,7 +24,7 @@ Auf dem Diagramm \ref{img_arc_smartWallet} ist zu sehen, dass ein Benutzer über
 mehrere Accounts verfügen kann. Diese sind in der Smart Wallet des Benutzers
 registriert. Gratis Transaktionen die von einem dieser Accounts durch
 die Smart Wallet gesendet werden, müssen vom DoS Algorithmus geprüft werden.\
-In diesem Beispiel, möchte Benutzer A zwei gratis Transaktionen (TX) tätigen.
+In diesem Beispiel, möchte Benutzer A zwei gratis und eine reguläre Transaktion (TX) tätigen.
 Für die erste Transaktion wird Account XX1 verwendet. In der Smart Wallet wird
 überprüft, ob sich der Account auf der Whitelist befindet. Diese Prüfung ist
 erfolgreich. Die Smart Wallet erstellt die gewünschte Transaktion für den
@@ -38,8 +38,11 @@ gelöscht werden. Der Benutzer kann weiterhin alle seine Accounts benutzen, muss
 aber für die Transaktionsgebühren aufkommen.\
 Die zweite gratis Transaktion möchte der Benutzer A mit seinem Account XX2
 tätigen. Der Account befindet sich jedoch nicht in der Whitelist. Folglich wird
-die Transaktion nicht erstellt. Der Benutzer erhält einen Error.
-
+die Transaktion nicht erstellt. Der Benutzer erhält einen Error.\
+Die dritte Transaktion wird ebenfalls mit Account XX2 erstellt. Es handelt sich
+jedoch nicht um eine gratis Transaktion. Diese wird erstellt und erreicht ihr
+Ziel ungehindert. Eine Prüfung durch den DoS Alogorithmus ist folglich nicht
+nötig. 
 
 Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis
 Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted,
@@ -84,68 +87,71 @@ auch weiter für gratis Transaktionen genutzt werden.
 
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist \label{sec_ala_2}
 
-//TODO Farben anpassen, Accounts in Whitelist, Gratis Transaktion von Account in Whitelist + Transaktion von Account nicht auf Whitelist
-
 Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet.
 Stattdessen wird der Schutzmechnismus gegen DoS Attacken in einem externen
-Programm, dem Transaktionsmanager, implementiert. 
+Programm, dem Transaktionsmanager, implementiert. Dieser Ansatz verwendet ebenfalls
+die Whitelist von Parity, siehe \ref{sec_whitelist}.
 
-![Externes Programm für die Verwaltung der Whitelist \label{img_solution2}](images/solution2.png "Externes Programm für die Verwaltung der Whitelist") 
+![Externes Programm für die Verwaltung der Whitelist \label{img_solution2}](images/solution2_v2.png "Externes Programm für die Verwaltung der Whitelist") 
 
-
-
-
-Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe
-\ref{sec_whitelist}.\
-Im externen Programm werden alle gratis Transaktionen analysiert, die das
-Blockchain Netzwerk erreichen. Das Programm verfügt über einen eigenen Benutzer
-Account, siehe \ref{sec_account}. Dieser ist berechtigt, die Whitelist zu
-manipulieren. Dadurch kann bei einer identifizierten Attacke, der angreifende
-Account automatisch von der Whitelist gelöscht werden. 
-
-Transaktionen für die ein Transaktionsgebühren gezahlt werden sind immer
-möglich. Diese werden vom externen Programm auch nicht überwacht. Die
-anfallenden Gebühren sind Schutz genug. 
+Auf dem Diagramm \ref{img_solution2} ist dargestellt, wie der Benutzer A zwei
+gratis und eine reguläre Transaktion tätigen will. Bei der ersten gratis
+Transaktion (gratis TX 1) wird der Account XX1 verwendet. Die Prüfung, ob sich
+der Account auf der Whitelist befindet ist erfolgreich. Die Transaktion kann
+daher erfolgreich verarbeitet werden und erreicht ihr Ziel.\
+Für die zweite gratis Transaktion (gratis TX 2) wird der Account XX2 verwendet.
+Dieser befindet sich nicht auf der Whitelit. Die Prüfung schlägt deshalb fehl.
+Die Transaktion wird zurückgewiesen und der Benutzer erhält einen Error.\
+Auch die dritte Transaktion (Tx für Account XX2) verwendet den Account XX2. Da
+es sich nicht um eine gratis Transaktion handelt, kann diese problemlos
+ausgeführt werden.\
+Der Transaktionsmanger wird auf einem Server der FHNW ausgeführt. Er überwacht
+alle Transaktionen die erstellt werden. Es werden jedoch nur gratis
+Transaktionen mit dem DoS Algorithmus geprüft. Sollte diese Prüfung eine Gefahr
+für die Blockchain detektieren, wird der entpsrechende Account von der Whitelist
+gelöscht. Dies wird mit dem Pfeil "Verwaltung von Accounts auf Whitelist"
+dargestellt.\
+Der Transaktionsmanager verfügt über einen eigenen Account, siehe
+\ref{sec_account}. Dieser ist berechtigt, die Whitelist zu manipulieren. Dadurch
+kann bei einer identifizierten Attacke, der angreifende Account automatisch von
+der Whitelist gelöscht werden. 
 
 ##### Pro
 
 Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
-Programm neu deployed werden. Eine aktualisierung der Whitelist ist nicht nötig.
+Programm neu ausgerollt werden. Eine aktualisierung der Whitelist ist nicht nötig.
 
 
 ##### Contra
 
-Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe
-Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. Durch
-das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls
-administriert werden.  
+Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der
+Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert
+wird.\
+Für die Betreibung des Transaktionsmangers wird ein Server benötigt. Eine
+weitere Komponente, die administriert werden muss. 
 
 ##### Prozessworkflow
 
-Auf dem Flowchart \ref{img_flow_solution2} dargestellt ist, kann ein Benutzer
-mit einem whitelisted Account direkt gratis Transaktionen ausführen. 
+![Flowchart externes Programm für die Verwaltung der Whitelist \label{img_flow_solution2}](images/flow_solution2_v2.png "Flowchart Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
 
-
-![Flowchart externes Programm für die Verwaltung der Whitelist \label{img_flow_solution2}](images/FCLA2.png "Flowchart Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
+Das Diagramm \ref{img_flow_solution2} zeigt, wie der Prozessworkflow beim ALA 2
+aussieht. Der Benutzer initialisiert eine gratis Transaktion. Beim Parity Node
+wird überprüft, ob der verwendete Account sich auf der Whitelist befindet. Ist
+er das nicht, wird die Transkation abgebrochen und der Benutzer erhält einen
+Error. Ist ein Account verwendet worden, der sich auf der Whitelist befindet,
+wird die Transaktion in die Blockchain aufgenommen.\
+Der Transaktionmanager überwacht alle Transaktionen die auf die Blockchain
+gelangen. Bei gefunden gratis Transaktionen wird das Verhalten des Senders mit
+dem DoS Algorithmus analysiert. Wird eine Bedrohung für die Blockchain
+detektiert, wird der Account von der Whitelist entfernt.\
+Diese Prüfung findet nicht auf der Blockchain statt. Um einen Account von der
+Whitelist zu entfernen, generiert der Transaktionsmanager eine Transaktion.
 
 #### ALA 3: Externes Programm mit Whitelist
 
 Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein
-externes Programm vorgelagert. Das Programm verwaltet eine eigene Whitelist mit
-Accounts. Diese sind für gratis Transaktionen berechtigt. Weiter beinhaltet es
-den  DoS Schutzalgorithmus. Dieser prüft ob der Account auf der Whitelist ist
-und ob die Transaktion die Schutzrichtlinien verletzt. Falls ein Account die
-Sicherheitsrichtlinien verletzt, wird dieser vom Algorithmus aus der eigenen
-Whitelist gelöscht.
-
-Sofern keine Richtlinien verletzt werden, wird die Transaktion ins Data-Feld,
-siehe \ref{sec_transaktionen}, einer neuen Transaktion gepackt. Das ist nötig,
-um die Transaktionsinformationen (wie z.B. Sender Identität) zu präservieren.
-Die neue erstellte Transaktion wird vom Programm an die Smart Wallet gesendet.  
-
-![Externes Programm mit Whitelist \label{img_solution3}](images/solution3.png "Externes Programm mit Whitelist") 
-
+externes Programm, der Transaktionsmanager, vorgelagert. Dieser führt eine Whitelist für Accounts die gratis Transaktionen ausführen dürfen. Der DoS Algorithmus befindet sich ebenfalls im Transaktionsmanager.\
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die
 verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld
 wird die eigentliche Transaktion extrahiert und abgesetzt.\
@@ -158,142 +164,72 @@ werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf
 die Smart Wallet zugreifen. Dies ist insbesondere wichtig, falls das Programm
 nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
+![Externes Programm mit Whitelist \label{img_solution3}](images/solution3_v2.png "Externes Programm mit Whitelist") 
+
+Diagramm \ref{img_solution3} zeigt die Benutzer mit ihren Accounts auf der
+linken Seite. Benutzer A initiert in diesem Beispiel zwei gratis und eine
+gebührenpflichtige Transaktion.\
+Die erste gratis Transaktion (TX 1) wird an den Transaktionsmanager übermittelt.
+Hier wird zuerst geprüft, ob sich der verwendete Account auf der Whitelist
+befindet. Bei dieser Transaktion fällte die Prüfung positiv aus. Das Verhalten
+des Accounts wird daher durch den DoS Algorithmus untersucht. Sollte eine Gefahr
+detektiert werden, wird der betroffene Account von der Whitelist des
+Transaktionsmanagers gelöscht. Hier ist dies nicht der Fall. Die Transaktion "TX
+1" wird im Data Feld, siehe \ref{sec_transaktionen}, einer neu generierten
+Transaktion (TX 3) an die Blockchain gesendet. Bei "TX 3" handelt es sich
+ebenfalls um eine gratis Transaktion. Ansonsten würden die Kosten einer
+Transaktion nicht wegfallen, sondern nur umgelagert werden.\
+Sobald "TX 3" beim Node ankommt, wird überprüft ob sich der Sender auf der
+Whitelist befindet. Das ist der Account des Transaktionsmanagers. Auf der
+Whitelist von Parity ist nur dieser Account vorhanden.\
+Nach erfolgter Prüfung, kommt "TX 3" bei der Smart Wallet an und wird
+verarbeitet. Die ursprüngliche Transaktion "TX 1" wird aus dem Data Feld
+extrahiert und versendet. Dies ist mit "TX 4" dargestellt. Als Absender ist
+wieder der Account XX1 gesetzt.\
+Bei der zweiten gratis Transaktion (TX 2), befindet sich der verwendete Account
+nicht auf der Whitelist des Transaktionsmanagers. Die Transaktion wird
+zurückgewiesen und der Benutzer erhält einen Error.\
+Bei der dritten Transaktion werden die Gebühren bezahlt. Es besteht daher kein
+Bedarf, die Transaktion an den Transaktionsmanager zu senden. Sie kann direkt
+über die Smart Wallet erstellt und verarbeitet werden. 
+
+
 
 ##### Pro
 
-Dieser Ansatz ist in der gegeben Zeit umsetzbar. Falls eine Anpassung des DoS
-Schutzalgorithmus nötig ist, muss nur das externe Programm neu deployed werden.
+Dieser Ansatz ist in der gegeben Zeit umsetzbar.\
+Falls eine Anpassung des DoS
+Schutzalgorithmus nötig ist, muss nur das externe Programm neu ausgerollt werden.
 Eine aktualisierung der Whitelist ist nicht nötig.  
 
 ##### Contra
 
-Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Das externe
-Programm ist eine zentrale Authorität, die von der FHNW kontrolliert wird. Durch
-das externen Programm kommt eine weitere Komponente dazu. Diese muss ebenfalls
+Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert wird. Dieser benötigt einen Server, es kommt also eine weitere Komponente dazu. Diese muss ebenfalls
 administriert werden.\
-Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
+Dieser Ansatz bietet keine Vorteile im Vergleich zum ALA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
 
 ##### Prozessworkflow
 
-![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/FCLA3.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
+![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/flow_solution3_v2.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
 
-Die Abbildung \ref{img_flow_solution3} zeigt, dass alle gratis Transaktionen in
-erster Instanz von einem Programm geprüft werden. Falls keine Richtlinien
-verletzt werden, wird die Transaktion im Data-Feld einer neu generierten
-Transaktion an die Smart Wallet übermittelt. 
+Wie auf Diagramm \ref{img_flow_solution3} gezeigt, beginnt der Prozess mit der
+Initialisierung einer gratis Transaktion durch den Benutzer. Diese wird an den
+Transaktionsmanager übermittelt. In erster Instanz wird geprüft, ob der
+verwendete Account für gratis Transaktionen berechtigt ist. Nur wenn diese
+Prüfung erfolgreich ist, wird die gratis Transaktion weiter bearbeitet.
+Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier eine Gefahr
+detektiert, wird der Account von der Whitelist gelöscht und die Transaktion
+abgebrochen.\
+Ist der Account berechtigt und wird keine Gefahr detektiert, wird die
+Transaktion im Data Feld einer neuen gratis Transaktion an die Blockchain
+übermittelt.\
+Beim Node muss wiederum verifiziert werden, dass sich der Sender auf der
+Whitelist befindet. Da nur der Account des Transaktionsmanagers auf der
+Whitelist von Parity ist, ist sichergestellt, dass gratis Transaktionen nur
+durch den Transaktionsmanager auf die Blockchain gelangen können.\
+Anschliessend gelangt die neu generierte Transaktion zur Smart Wallet des
+Benutzers. Die ursprüngliche Transaktion wird aus dem Data Feld extrahiert und
+ausgeführt. 
 
-
-### Evaluation der Architektur
-
-Die erarbeiteten Lösungsansätze werden gegeneinander verglichen. Um zu bestimmen, welcher Ansatz weiter verfolgt wird, wurden folgende Kriterien definiert:
-
-Machbarkeit (MK)
-:     Bewertet die Machbarkeit des Ansatzes. Das berücksichtigt den gegeben Zeitrahmen und die Komplexität des Ansatzes. 
-:     Da dieses Projekt im gegebenen Zeitrahmen abgeschlossen werden muss, ist es das wichtigste Kriterium. Daher wird es auch mit der höchsten Gewichtung versehen.  
-:     Gewichtung 3
-
-Blockchainprinzipien (BCP)
-:     Gibt an ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, Trust und Security  
-:     Die Einhaltung der Prinzipien ist wichtig, aber für die FHNW nicht zwingend. Daher eine mittelere Gewichtung.     
-:     Gewichtung 2
-
-Betrieb (BT)
-:     Bewertet den administrativen Aufwand im Betrieb und die Möglichkeit zur Automatisierung. Das umfasst Deployment Smart Contracts, Anpassungen der Whitelist und Betreibung von zusätzlichen Servern. 
-:     Wird mit einer mittleren Gewichtung versehen. Ein zu hoher administrativer Aufwand ist nicht praktikabel.
-:     Gewichtung 2
-
-Jeder ALA wird auf diese drei Kriterien untersucht. Pro Kriterium können
-zwischen 3 und 1 Punkt erreicht werden, wobei 3 das Maximum ist. Die erreichten
-Punkte werden mit der entsprechenden Gewichtung multipliziert. Für die
-Evaluation, werden alle Punkte zusammengezählt. Der Ansatz mit den meisten
-Punkten wird weiterverfolgt.  
-
-| |MK | BCP | BT | Total |
-|:------------|:------:|:------:|:------:|-----:|
-| Gewichtung      | 3 | 2 | 2 |    |
-| ALA 1 | 1 | 3 | 2 | 13 |
-| ALA 2 | 3 | 2 | 2 | 17 |
-| ALA 3 | 2 | 1 | 3 | 12 |
-
-
-Table: Evaluation Lösungsansätze \label{tab_evaluationloesungsansaetze}
-
-#### ALA 1: Smart Wallet 
-
-Wir haben diesen Ansatz als sehr komplex eingestuft. Für die Anpassung von
-Parity muss eine zusätzliche Programmiersprache verwendet werden. Es ist nicht
-klar, wie weitreichend die nötigen Anpassungen sind. Zusätzlich muss eine Smart
-Wallet entwickelt werden. 
-
-Dieser Ansatz ist komplett dezentral und in die Blockchain integriert. Daher
-maximale Punktzahl bei Blockchain Prinzipien. 
-
-Falls ein Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu
-deployed werden. Das bedingt, dass die Whitelist ebenfalls aktualisiert wird.
-Die Adressen aller bestehenden Smart Wallets müssen ersetzt werden. Alle
-Studierenden müssen informiert werden, dass sie für ihre Smart Wallet eine neue
-Adresse verwenden müssen. Die Automatisierung dieser Prozesse wird als komplex
-aber machbar eingeschätzt. Daher sind bei Betrieb 2 Punkte gesetzt. 
-
-#### ALA 2: Externes Programm für die Verwaltung der Whitelist
-
-Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der
-Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält
-der ALA für Machbarkeit die volle Punktzahl. 
-
-Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität
-verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Da das
-Programm die Transaktionshistorie der Blockchain überwacht und nur bei einer DoS
-Attacke aktiv ist, wird 2 Punkte für Blockchainprinzipien gegeben. 
-
-Falls eine Anpassung am DoS Algorithus nötig ist, muss das externe Programm neu
-deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. Für die
-Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur
-Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine
-Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von
-neuen Accounts für eine Klasse einfach automatisierbar.\
-Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt.
-Das bedeuted einen Mehraufwand für die FHNW.\
-Da der ALA einfach zu Automatisieren ist, sind für Betrieb 2 Punkte gesetzt
-worden. 
-
-#### ALA 3: Externes Programm mit Whitelist
-
-Bei diesem ALA muss eine Smart Wallet und ein externes Programm entwickelt
-werden. Transaktionen werden im externen Programm verpackt und müssen von der
-Smart Wallet wieder entpackt werden. Somit ist liegt die Machbarkeit zwischen
-dem von ALA 1 und ALA 2. Daher werden 2 Punkte für Machbarkeit vergeben. 
-
-Mit der Verwendung von einem externen Programm, wird eine zentrale Authorität
-verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Im
-Gegensatz zu ALA 2, hat dieses Programm eine sehr viel zentralere Rolle. Das
-Programm interagiert nicht nur bei einer DoS Attacke mit der Blockchain, sondern
-ständig. Jede Transaktion wird an das Programm übermittelt und dort verarbeitet.
-Da die zentrale Authorität im Vergleich zu ALA 2 viel aktiver ist, ist für
-Blockchainprinzipien 1 Punkt vergeben worden.
-
-Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig.\
-Änderungen an der Smart Wallet bedingen ein erneutes Deployment.\
-In der Whitelist der Blockchain ist nur der Account des externen Programmes
-hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis
-Transaktionen berechtigt sind.\
-Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den
-DoS Schutzalgorithmus enthält. Die Automatisierung wird daher als einfach
-eingestuft, da das externe Programm mit Java geschrieben wird und somit sehr
-viel zugänglicher ist. Daher sind bei Betrieb 3 Punkte vergeben worden. 
-
-
-#### Resultat Evaluation
-
-Durch die hohe Gewichtung von Machbarkeit, erzielt ALA 2 die meisten Punkte. Im
-weiteren Verlauf des Projektes wird daher ALA 2 umgesetzt.
-
-Für die Realisierung des externen Programmes ist die Programmiersprache der Wahl
-Java. Java ist den Teammitgliedern bereits bekannt. Mit der Bibliothek Web3j[@web3j]
-sind Interaktionen mit der Blockchain effizient und intuitiv. 
-
-Im Anhang ist unter \ref{app_weitereLoesungen} ein weiterer Lösungsanatz
-aufgelistet. Dieser ist sehr früh in der Evaluierung als nicht realisierbar
-eingestuft worden und ist hier deshalb nicht aufgeführt.
 
 
