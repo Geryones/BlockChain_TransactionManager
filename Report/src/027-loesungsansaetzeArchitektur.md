@@ -1,9 +1,5 @@
 ## Lösungsansätze 
 
-//TODO Spellcheck über ganze Seite
-
-//TODO Erläuterungen zu Flow Charts
-
 In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die
 Stärken und Schwächen von jedem Lösungsansatz (LA) werden analysiert und
 dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser
@@ -18,18 +14,32 @@ behandelt.
 
 Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle
 Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus
-gegen DoS Attacken implementiert. Wie in Abbildung \ref{img_loesungsansatz1}
-ersichtlich, wird für jeden Benutzer eine Smart Wallet deployed. Dies wird von
-der FHNW übernommen. So fallen für die Benutzer keine Transaktionsgebühren an.
+gegen DoS Attacken implementiert. Für jeden Benutzer existiert eine Smart Wallet.\
 Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der
 Blockchain der Client Parity mit einer Withelist verwendet. 
 
-![Architektur mit Smart Wallet \label{img_arc_smartWallet}](images/solution1.png "Architektur mit Smart Wallet") 
+![Architektur mit Smart Wallet \label{img_arc_smartWallet}](images/solution1_v2.png "Architektur mit Smart Wallet") 
 
+Auf dem Diagramm \ref{img_arc_smartWallet} ist zu sehen, dass ein Benutzer über
+mehrere Accounts verfügen kann. Diese sind in der Smart Wallet des Benutzers
+registriert. Gratis Transaktionen die von einem dieser Accounts durch
+die Smart Wallet gesendet werden, müssen vom DoS Algorithmus geprüft werden.\
+In diesem Beispiel, möchte Benutzer A zwei gratis Transaktionen (TX) tätigen.
+Für die erste Transaktion wird Account XX1 verwendet. In der Smart Wallet wird
+überprüft, ob sich der Account auf der Whitelist befindet. Diese Prüfung ist
+erfolgreich. Die Smart Wallet erstellt die gewünschte Transaktion für den
+Account XX1.\
+Anschliessend wird die abgeschlossene Transaktion vom DoS Algorithmus
+ausgewertet. Dafür kann nicht nur eine einzige Transaktion betrachtet werden. Es
+muss das Verhalten aller Accounts von Benutzer A betrachtet werden, die sich auf
+der Whitelist befinden. Sollte der DoS Algorithmus, das Verhalten als Gefahr
+einstufen, müssen alle registrierten Accounts dieser Wallet von der Whitelist
+gelöscht werden. Der Benutzer kann weiterhin alle seine Accounts benutzen, muss
+aber für die Transaktionsgebühren aufkommen.\
+Die zweite gratis Transaktion möchte der Benutzer A mit seinem Account XX2
+tätigen. Der Account befindet sich jedoch nicht in der Whitelist. Folglich wird
+die Transaktion nicht erstellt. Der Benutzer erhält einen Error.
 
-Es muss sichergestellt werden, dass ein Benutzer auf seine Smart Wallet
-zugreifen kann, unabhängig davon ob er gratis Transaktionen tätigen darf oder
-nicht. Dies ist in der Abbildung \ref{img_arc_smartWallet} dargestellt. 
 
 Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis
 Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted,
@@ -38,13 +48,13 @@ können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer
 den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der
 den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln.\
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit
-Accounts, muss eine Liste von Verbindungen geführt werden. So kann definiert
+Accounts, muss in der Whitelist eine Liste von Verbindungen geführt werden. So kann definiert
 werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
 
 ##### Pro
 
 Dieser Ansatz besticht durch die Tatsache, dass alles auf der Blockchain läuft.
-Somit werden grundlegende Prinzipien, wie Dezentralität und Integrität, einer
+Somit werden grundlegende Prinzipien, wie Dezentralität und Integrität einer
 Blockchain bewahrt. 
 
 ##### Contra
@@ -52,26 +62,38 @@ Blockchain bewahrt.
 Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der
 Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die
 Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache,
-Rust[@rust], benötigt.\
-Ein weiterer Nachteil ist, dass bei einer Änderung am DoS Schutzalgorithmus eine
-neue Smart Wallet für jeden Account deployed werden muss. Das bedingt, dass die
-Whitelist ebenfalls mit den neuen Accounts aktualisiert wird. 
+Rust[@rust], für die Umsetzung benötigt.\
+Bei einer Anpassung am DoS Algorithmus, müssen alle Smart Wallets aktualisiert werden. 
 
 ##### Prozessworkflow
 
-In der Abbildung \ref{img_flow_solution1} ist der Prozessablauf für eine gratis Transaktion dargestellt. 
+Der Prozessablauf für eine gratis Transaktion mit ALA 1 könnte folgendermassen aussehen.
 
-![Flowchart für Smart Wallet \label{img_flow_solution1}](images/FCLA1.png "Flowchart für Smart Wallet"){ width=50% height=50% }
+![Flowchart für Smart Wallet \label{img_flow_solution1}](images/flow_solution1_v2.png "Flowchart für Smart Wallet"){ width=50% height=50% }
 
-//TODO weitere Erläuterung?
+Im Diagramm \ref{img_flow_solution1} wird zu Beginn eine gratis Transaktion
+erstellt. Diese erreicht einen Parity Node. Nun wird geprüft ob der Sender der
+Transaktion sich auf der Whitelist befindet. Ist das nicht der Fall, wird die
+Transaktion abgebrochen. Ist die Prüfung erfolgreich, wird die Transaktion
+erstellt und ausgeführt.\
+Anschliessend bewertet der DoS Algorithmus das Verhalten des verwendeten
+Accounts. Wird eine Gefahr für die Blockchain festgestellt, wird der Account von
+der Whitelist entfernt. Gratis Transaktionen sind dann für diesen Account nicht
+mehr verfügbar. Wenn keine Gefahr festgestellt werden kann, kann der Account
+auch weiter für gratis Transaktionen genutzt werden.
 
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist \label{sec_ala_2}
 
+//TODO Farben anpassen, Accounts in Whitelist, Gratis Transaktion von Account in Whitelist + Transaktion von Account nicht auf Whitelist
+
 Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet.
 Stattdessen wird der Schutzmechnismus gegen DoS Attacken in einem externen
-Programm implementiert, dargestellt in Abbildung \ref{img_solution2}. 
+Programm, dem Transaktionsmanager, implementiert. 
 
 ![Externes Programm für die Verwaltung der Whitelist \label{img_solution2}](images/solution2.png "Externes Programm für die Verwaltung der Whitelist") 
+
+
+
 
 Es wird auch für diesen Ansatz die Whitelist von Parity verwendet, siehe
 \ref{sec_whitelist}.\
@@ -152,8 +174,6 @@ administriert werden.\
 Dieser Ansatz bietet keine Vorteile im Vergleich zum LA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
 
 ##### Prozessworkflow
-
-//Todo flowchart falsch, zuerst Java dann richtige smart wallet
 
 ![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/FCLA3.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
 

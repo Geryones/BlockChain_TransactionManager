@@ -259,8 +259,7 @@ ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
 
 Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese
 dürfen gratis Transaktionen ausführen. Diese Gruppe von Benutzer ist eine
-potentielle Bedrohung. Ohne Transaktionskosten hat die Blockchain keinen
-Schutzmechanismus gegen eine DoS Attacke.\
+potentielle Bedrohung. Ohne Transaktionskosten ist die Blockchain anfällig für eine DoS Attacke.\
 Aus diesem Grund muss das Verhalten der priviligierten Accounts überwacht
 werden. Falls einer dieser Accounts eine DoS Attacke einleitet, muss das frühst
 möglich erkannt und unterbunden werden können. 
