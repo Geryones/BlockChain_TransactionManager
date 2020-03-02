@@ -133,10 +133,12 @@ weitere Komponente, die administriert werden muss.
 
 ##### Prozessworkflow
 
-![Flowchart externes Programm für die Verwaltung der Whitelist \label{img_flow_solution2}](images/flow_solution2_v2.png "Flowchart Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
-
 Das Diagramm \ref{img_flow_solution2} zeigt, wie der Prozessworkflow beim ALA 2
-aussieht. Der Benutzer initialisiert eine gratis Transaktion. Beim Parity Node
+aussieht. 
+
+![Flowchart Transaktionsmanager für Verwaltung der Whitelist \label{img_flow_solution2}](images/flow_solution2_v2.png "Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
+
+Der Benutzer initialisiert eine gratis Transaktion. Beim Parity Node
 wird überprüft, ob der verwendete Account sich auf der Whitelist befindet. Ist
 er das nicht, wird die Transkation abgebrochen und der Benutzer erhält einen
 Error. Ist ein Account verwendet worden, der sich auf der Whitelist befindet,
@@ -151,7 +153,9 @@ Whitelist zu entfernen, generiert der Transaktionsmanager eine Transaktion.
 #### ALA 3: Externes Programm mit Whitelist
 
 Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein
-externes Programm, der Transaktionsmanager, vorgelagert. Dieser führt eine Whitelist für Accounts die gratis Transaktionen ausführen dürfen. Der DoS Algorithmus befindet sich ebenfalls im Transaktionsmanager.\
+externes Programm, der Transaktionsmanager, vorgelagert. Dieser führt eine
+Whitelist für Accounts die gratis Transaktionen ausführen dürfen. Der DoS
+Algorithmus befindet sich ebenfalls im Transaktionsmanager.\
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die
 verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld
 wird die eigentliche Transaktion extrahiert und abgesetzt.\
@@ -164,7 +168,7 @@ werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf
 die Smart Wallet zugreifen. Dies ist insbesondere wichtig, falls das Programm
 nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 
-![Externes Programm mit Whitelist \label{img_solution3}](images/solution3_v2.png "Externes Programm mit Whitelist") 
+![Transaktionsmanager mit Whitelist \label{img_solution3}](images/solution3_v2.png "Externes Programm mit Whitelist") 
 
 Diagramm \ref{img_solution3} zeigt die Benutzer mit ihren Accounts auf der
 linken Seite. Benutzer A initiert in diesem Beispiel zwei gratis und eine
@@ -198,28 +202,32 @@ Bedarf, die Transaktion an den Transaktionsmanager zu senden. Sie kann direkt
 ##### Pro
 
 Dieser Ansatz ist in der gegeben Zeit umsetzbar.\
-Falls eine Anpassung des DoS
-Schutzalgorithmus nötig ist, muss nur das externe Programm neu ausgerollt werden.
-Eine aktualisierung der Whitelist ist nicht nötig.  
+Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
+Programm neu ausgerollt werden. Eine aktualisierung der Whitelist ist nicht
+nötig.  
 
 ##### Contra
 
-Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert wird. Dieser benötigt einen Server, es kommt also eine weitere Komponente dazu. Diese muss ebenfalls
-administriert werden.\
-Dieser Ansatz bietet keine Vorteile im Vergleich zum ALA 2, ist aber mit der Verschachtelung von Transaktionen komplexer. 
+Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der
+Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert
+wird. Dieser benötigt einen Server, es kommt also eine weitere Komponente dazu.
+Diese muss ebenfalls administriert werden.\
+Dieser Ansatz bietet keine Vorteile im Vergleich zum ALA 2, ist aber mit der
+Verschachtelung von Transaktionen komplexer. 
 
 ##### Prozessworkflow
 
-![Flowchart externes Programm mit Whitelist \label{img_flow_solution3}](images/flow_solution3_v2.png "Flowchart Flowchart externes Programm mit Whitelist"){ width=50% height=50% } 
-
 Wie auf Diagramm \ref{img_flow_solution3} gezeigt, beginnt der Prozess mit der
-Initialisierung einer gratis Transaktion durch den Benutzer. Diese wird an den
-Transaktionsmanager übermittelt. In erster Instanz wird geprüft, ob der
-verwendete Account für gratis Transaktionen berechtigt ist. Nur wenn diese
-Prüfung erfolgreich ist, wird die gratis Transaktion weiter bearbeitet.
-Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier eine Gefahr
-detektiert, wird der Account von der Whitelist gelöscht und die Transaktion
-abgebrochen.\
+Initialisierung einer gratis Transaktion durch den Benutzer.
+
+![Flowchart für Transaktionsmanager mit Whitelist \label{img_flow_solution3}](images/flow_solution3_v2.png "Flowchart externes Programm mit Whitelist")
+
+ Diese wird an den Transaktionsmanager übermittelt. In erster Instanz wird
+geprüft, ob der verwendete Account für gratis Transaktionen berechtigt ist. Nur
+wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion weiter
+bearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier
+eine Gefahr detektiert, wird der Account von der Whitelist gelöscht und die
+Transaktion abgebrochen.\
 Ist der Account berechtigt und wird keine Gefahr detektiert, wird die
 Transaktion im Data Feld einer neuen gratis Transaktion an die Blockchain
 übermittelt.\
