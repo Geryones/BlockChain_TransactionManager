@@ -186,7 +186,7 @@ Mehr zur Konfigurationsdatei und Beispiele sind im nachfolgenden Abschnitt,
 
 Erfasst werden 3 Accounts. Vor Programmstart könnte die Datei so aussehen:
 
-```{caption="Erfassen von 3 Accounts. Datei vor Programmstart" label=li_accountList_before .json .numberLines}
+```{caption="AccountList.json für die Erfassung von 4 Accounts. Datei vor Programmstart" label=li_accountList_before .json .numberLines}
 [
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
@@ -223,7 +223,7 @@ folgenden Kapitel \ref{sec_prac_conf}. Unter der Annahme, dass der Standarwert
 für Transaktionen auf 5 und für Gas auf 50000000 konfiguriert ist, sieht die
 Datei folgendermassen aus:
 
-```{caption="Erfassen von 3 Accounts. Datei nach Programmstart" label=li_accountList_after .json .numberLines}
+```{caption="AccountList.json mit 4 Accounts. Datei nach Programmstart" label=li_accountList_after .json .numberLines}
 [
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
@@ -269,14 +269,79 @@ Datei folgendermassen aus:
 
 ```
 
+Das Listing \ref{li_accountList_after} zeigt die Datei ```AccountList.json```
+nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet hat.
+Überall wo ein Standardwert verwendet ist der Paramater mit einem Wert von
+```null``` gesetzt worden. 
 
 
+### Konfiguration \label{sec_prac_conf}
 
-#### Konfiguration \label{sec_prac_conf}
+Der Transaktionsmanagers kann mit der Datei ```DefaultSettings.json```
+konfiguriert werden. Folgende Parameter sind unterstützt:
 
-//TODO
+connectionAddress
+:      URL um sich mit der Blockchain zu verbinden. 
 
+resetInterval 
+:      Definiert in welchem Intervall, die Zähler von allen
+Accounts zurückgesetzt werden. Wird in Minuten angegeben.
 
+defaultTXLimit
+:      Der Standardwert für die gratis Transaktionslimite pro Account.
 
+defaultGasLimit
+:      Der Standardwert für die gratis Gaslimite pro Account.
+
+defaultRevokeTime
+:      Der Standardwert für die Dauer der Suspendierung von der Whitelist bei einem Vergehen.
+
+certifierAddress 
+:      Die Adresse des Certifiers. Er wird automatisch beim Deployment des Certifiers gesetzt. Dieser Parameter sollte nicht bearbeitet werden.
+
+nameRegistryAddress
+:      Die Adresse der Name Registry. Hier muss dieselbe Adresse wie in der Blockchainspezifikation verwendet werden. Siehe \ref{sec_prac_spec}.
+
+timestampLastReset
+:      Hier wird der Zeitpunkt des letzen Reset-Intervalls vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht bearbeitet werden.
+
+#### Beispiel
+
+Anbei ein Beispiel für ```DefaultSettings.json``` für eine frisch aufgesetzte Blockchain.
+
+```{.json .numberLines caption="DefaultSettings.json" label=li_defaultSettings_before }
+{
+  "connectionAddress": "http://jurijnas.myqnapcloud.com:8545/",
+  "resetInterval": 10,
+  "defaultTxLimit": 5,
+  "defaultGasLimit": 50000000,
+  "defaultRevokeTime": 10,
+  "certifierAddress": null,
+  "nameRegistryAddress": "0x0000000000000000000000000000000000001337",
+  "timestampLastReset": null
+  
+}
+```
+Unter \ref{li_defaultSettings_before} ist die Datei ```DefaultSettings.json```
+abgebildet. So sieht die Datei aus, bevor der Transaktionsmanager den Certifier
+deployed hat. 
+
+```{.json .numberLines caption="DefaultSettings.json" label=li_defaultSettings_after }
+{
+  "connectionAddress": "http://jurijnas.myqnapcloud.com:8545/",
+  "resetInterval": 10,
+  "defaultTxLimit": 5,
+  "defaultGasLimit": 50000000,
+  "defaultRevokeTime": 10,
+  "certifierAddress": "0xee35211c4d9126d520bbfeaf3cfee5fe7b86f221",
+  "nameRegistryAddress": "0x0000000000000000000000000000000000001337",
+  "timestampLastReset": "Mar 5, 2020 1:53:50 AM"
+  
+}
+```
+
+Listing \ref{li_defaultSettings_after} zeigt die Datei
+```DefaultSettings.json``` nach dem der Certifier deployed wurde. Dessen Adresse
+ist nun eingetragen. Weiter ist ein Zeitstempel gesetzt. 
 
 
