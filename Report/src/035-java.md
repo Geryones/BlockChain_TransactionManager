@@ -133,7 +133,7 @@ txLimit
 :     Definiert die maximale Anzahl gratis Transaktionen, die ein Account in 
 einem Reset-Intervall tätigen darf. 
 
-transactionCounter 
+remainingTransactions 
 :     Mit diesem Feld wird bestimmt, über wie viele gratis
 Transatkionen ein Account noch verfügt. Dieser Wert wird vom Transaktionsmanager
 gepflegt und sollte nicht erfasst oder geändert werden. 
@@ -142,7 +142,7 @@ gasLimit
 :    Definiert die maximale Anzahl gratis Gas, die ein Account während eines 
 Reset-Intervalls verbrauchen darf. 
 
-gasUsedCounter 
+remainingGas 
 :     Mit diesem Feld wird bestimmt, über wie viel gratis Gas ein
 Account noch verfügt. Dieser Wert wird vom Transaktionsmanager gepflegt und
 sollte nicht erfasst oder geändert werden.
@@ -186,7 +186,7 @@ Mehr zur Konfigurationsdatei und Beispiele sind im nachfolgenden Abschnitt,
 
 Erfasst werden 3 Accounts. Vor Programmstart könnte die Datei so aussehen:
 
-```{caption="AccountList.json für die Erfassung von 4 Accounts. Datei vor Programmstart" label=li_accountList_before .json .numberLines}
+```{.json .numberLines caption="AccountList.json für die Erfassung von 4 Accounts. Datei vor Programmstart" label=li_accountList_before }
 [
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
@@ -210,7 +210,7 @@ Erfasst werden 3 Accounts. Vor Programmstart könnte die Datei so aussehen:
 ]
 ```
 
-Unter \ref{li_accountList_before} ist die Erfassung von 3 Accounts gezeigt. Der
+Unter \ref{li_accountList_before} ist die Erfassung von 4 Accounts gezeigt. Der
 erste verwendet überall individuelle Parameter.\
 Der zweite Account hat keine Parameter und verwendet daher überall die Standardwerte.\
 Beim dritten und vierten Account ist gezeigt, dass auch ganz selektiv, einzelne
@@ -223,35 +223,35 @@ folgenden Kapitel \ref{sec_prac_conf}. Unter der Annahme, dass der Standarwert
 für Transaktionen auf 5 und für Gas auf 50000000 konfiguriert ist, sieht die
 Datei folgendermassen aus:
 
-```{caption="AccountList.json mit 4 Accounts. Datei nach Programmstart" label=li_accountList_after .json .numberLines}
+```{.json .numberLines caption="AccountList.json mit 4 Accounts. Datei nach Programmstart" label=li_accountList_after }
 [
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
-    "transactionCounter": 8,
+    "remainingTransactions": 8,
     "txLimit": 8,
     "revokeTime": 15,
     "gasLimit": 60000000,
-    "gasUsedCounter": 60000000,
+    "remainingGas": 60000000,
     "deleteMe": false,
     "timeStamp": null
   },
   {
     "address": "0xf13264C4bD595AEbb966E089E99435641082ff24",
-    "transactionCounter": 5,
+    "remainingTransactions": 5,
     "txLimit": null,
     "revokeTime": null,
     "gasLimit": null,
-    "gasUsedCounter": 50000000,
+    "remainingGas": 50000000,
     "deleteMe": false,
     "timeStamp": null
   },
   {
     "address": "0x00a329c0648769A73afAc7F9381E08FB43dBEA72",
-    "transactionCounter": 5,
+    "remainingTransactions": 5,
     "txLimit": null,
     "revokeTime": 25,
     "gasLimit": 999999999999999,
-    "gasUsedCounter": 999999999999999,
+    "remainingGas": 999999999999999,
     "deleteMe": false,
     "timeStamp": null
   },
@@ -261,7 +261,7 @@ Datei folgendermassen aus:
     "txLimit": null,
     "revokeTime": 2,
     "gasLimit": null,
-    "gasUsedCounter": 50000000,
+    "remainingGas": 50000000,
     "deleteMe": false,
     "timeStamp": null
   }
@@ -320,7 +320,7 @@ wird er ebenfalls aus einer Datei geladen. Hier wird die Datei
 
 Die Datei hat nur einen einzigen Parameter:
 
-```{caption="TransaktionsManagerAccount.json mit einem privaten Schlüssel" .json .numberLines label=li_masterKey}
+```{.json .numberLines caption="TransaktionsManagerAccount.json mit einem privaten Schlüssel"  label=li_masterKey}
 {
   "privateKey": "0x4d5db4107d237df6a3d58ee5f70ae63d73d7658d4026f2eefd2f204c81682cb7"
 }
