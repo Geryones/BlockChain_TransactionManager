@@ -219,28 +219,28 @@ werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
 #### Smart Wallet
 
-Smart Wallets basieren auf Smart Contracts. Der Benutzer ist der Besitzer der
-Smart Contracts und somit der Wallet. Die Verwendung von Smart Contract bei der
+Smart Wallets basieren auf Smart Contracts. Der Benutzer ist der Besitzer des
+Smart Contracts und somit der Wallet. Die Verwendung von Smart Contracts bei der
 implementierung der Wallet ermöglicht mehr Benutzerfreundlichkeit ohne die
 Sicherheit zu kompromittieren. [@smart_wallet_argent], [@smart_wallet_gnosis],
-[@smart_wallet_dapper] //TODO .. 
+[@smart_wallet_dapper]\
+
 
 ### Denial of Service (DoS) Attacken \label{sec_dos}
 
-//TODO ergänzen
-
-Bei einer DoS Attacke versucht der Angreifer einen Service mit Anfragen zu
+Bei einer DoS Attacke versucht der Angreifer einen Service zu
 überlasten. Die Überlastung schränkt die Verfügbarkeit stark ein oder macht den
-Service sogar gänzlich unverfügbar für legitime Anfragen.
+Service gänzlich unverfügbar für legitime Anfragen.
 
 Zurzeit sind Blockchains noch relativ langsam bei der Verarbeitung von
 Transaktionen. Ethereum kann ungefähr 15 Transaktionen pro Sekunde
-abarbeiten.[@interview_vitalik_buterin] Dadurch ist ein möglicher
+abarbeiten[@interview_vitalik_buterin]. Dadurch ist ein möglicher
 Angriffsvektor, die Blockchain mit einer sehr hohen Zahl Transaktionen zu
 fluten.\
 Ein anderer Angriffsvektor, sind Transaktionen mit einem sehr hohen Bedarf an
 Rechenleistung. Hier wird Code auf der Blockchain aufgerufen, dessen
-Verarbeitung sehr lange dauert. Beide Vorgehen haben zur Folge, dass Benutzer
+Verarbeitung sehr lange dauert.\
+Beide Angriffe haben zur Folge, dass Benutzer
 sehr lange auf auf die Ausführung ihrer Transaktionen warten müssen.\
 Blockchains schützen sich vor diesem Angriff mit einer Transaktionsgebühr. Diese
 werden durch Angebot und Nachfrage bestimmt. Das heisst, wenn es viele

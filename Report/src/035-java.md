@@ -104,56 +104,55 @@ Grenzwert überschritten worden, wird dies für den entsprechenden Account in
 Account von der Whitelist in Parity entfernt.
 
 
-### Persistenz
-
-//re TODO
+### Persistenz \label{prac_persistenz}
 
 Um die Datenpersistenz zu gewährleisten, wird die Whitelist des
 Transaktionsmanagers in einer Textdatei gespeichert. Wird das Programm gestoppt,
-kann so bei beim nächsten Start der letzte Zustand wieder hergestellt werden.\
 
-In dieser Datei sind nebst allen konfigurierbaren Parameter, auch alle Accounts
-die auf der Whitelist sind erfasst. Nach einem Programmstop, wird die Datei
-ausgelesen. Alle Parameter werden wieder gesetzt. Alle Accounts werden geladen
-und überprüft, ob sie sich noch auf der Whitelist befinden. Falls nötig, werden
-sie erneut certifiziert oder permanent von der Whitelist gelöscht. Mehr zur
-Konfigurationsdatei ist im nachfolgenden Abschnitt, \ref{sec_prac_conf}, zu
-finden.\
+Dafür wird die Datei ```AccountList.txt``` verwendet. Relativ zur JAR-Datei des
+Transatkionsmanagers muss sie in folgendem Verzeichnis liegen: 
 
+//TODO Filepath
 
-#### Konfiguration \label{sec_prac_conf}
+In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
+jedem Account können die inidviduell konfigurierbaren Parameter gesetzt werden.\
+Nach einem Programmstop, wird die Datei ausgelesen. Alle Accounts werden
+geladen. Wo nötig, die individuellen Parameter gesetzt.
 
-//TODO
-
-Die Konfiguration des Programmes findet mit einer Textdatei statt. In dieser
-werden alle Accounts angegeben, welche auf die Whitelist sollen. Weiter werden
-die Schwellenwerte für den DoS Algorithmus angegeben.
-
-Die Konfigurationsdatei wird zeilenweise interpretiert. Das Einlesen der Datei
-hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur stets
-eingehalten werden.\
-Wie unter \ref{sec_algConf} erläutert, gibt es Einstellungen pro Account und
-solche die global gelten. In der ersten Zeile der Datei werden alle globalen
-Parameter in folgender Reihenfolge aufgelistet:
-
-1. Reset-Intervall in Minuten
-2. Revoke-Intervall
-3. Standardwert für gratis Transaktionen
-4. Standardwert für gratis Gas
-
-Es müssen alle vier Parameter angegeben und mit einem ```;``` separiert werden. 
-
-Alle nachfolgenden Zeilen enthalten jeweils eine Accountadresse. Zusätzlich kann
+Pro Zeile wird ein Account mit einer Adresse definiert. Zusätzlich kann
 die Anzahl gratis Transaktionen und die Menge gratis Gas pro Account definiert
 werden. Hier muss beachtet werden, dass es nicht möglich ist, nur einen der
-fakultativen Parameter anzugeben. Es müssen beide angegeben werden.\
-Ab Zeile 2 müssen die Parameter folgendermassen angegeben werden:
+fakultativen Parameter anzugeben. Es müssen beide oder keine angegeben werden.\
+Die Accountliste wird zeilenweise interpretiert. Das Einlesen der Datei
+hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur für jede Zeile eingehalten werden:
 
 1. Accountadresse
-1. Anzahl Vergehen 
-1. Anzahl verbleibende Revoke-Intervalls 
-2. [Anzahl gratis Transaktionen]
-3. [Menge an gratis Gas]
+2. Anzahl verbleibende Revoke-Intervalls 
+3. [Anzahl gratis Transaktionen]
+4. [Menge an gratis Gas]
+
+Sind die Parameter für Anzahl Transaktionen und Gas nicht gesetzt, wird der Standardwert verwendet, siehe \ref{sec_prac_conf}
+
+
+Falls ein Account zum Zeitpunkt des Programmstops von gratis Transaktionen
+suspendiert war, ist dies mit "Anzahl verbleibende Revoke-Intervalls" vermerkt. In diesem Fall wird die
+verbleidende Dauer evaluiert. Ist die Dauer der Suspendierung bei Programmstart
+bereits verstrichen, wird der Account wieder zertifiziert. Andernfalls, wird die
+verbleibende Dauer der Suspendierung, unter Berücksichtigung der Ausfallzeit neu
+berechnet und gesetzt.
+
+Automatische Suspendierungen von Transaktionsmanager sind immer temporär. Soll
+ein Account permanent von der Whitelist gelöscht werden, muss dies manuell in
+der Datei oder via  gemacht werden. Beim entsprechenden Account muss vor der Adresse ein
+neuer Paramater eingefügt werden. Beim nächsten Intervall oder Start des
+Transaktionsmanagers, wird der Account von der Whitelist in Parity und dem
+Transaktionsmanager gelöscht. Anschliessend wird auch der Eintrag in der Datei
+entfernt.\
+Mehr zur Konfigurationsdatei und Beispiele sind im nachfolgenden Abschnitt,
+\ref{sec_prac_conf}, zu finden.\
+
+
+
 
 #### Beispiel
 
@@ -189,6 +188,40 @@ bereits 1 Mal suspendiert. Er befindet sich zur Zeit nicht auf der Whitelist, da
 für 5 weitere Revoke-Intervalle suspendiert ist. Der Account kann, sobald der Zähler 
 für Revoke-Intervalle wieder auf 0 ist, 3 gratis Transaktionen oder 50'000 Gaseinheiten 
 pro Reset-Intervall verbrauchen. 
+
+
+
+
+#### Konfiguration \label{sec_prac_conf}
+
+//TODO
+
+ConnectionString,IntervallZeit,DefaultrevokeCounter,DefaultMaxTx,DefaultMaxGas,RegisterAdd; Certifier
+
+
+Die Konfiguration des Programmes findet mit zwei weiteren Textdateien statt. Die Dateien müssen sich im selben Verzeichnis wie ```AccountList.txt``` befinden. Siehe \ref{prac_persistenz}. 
+
+```TransaktionManagerAccount.txt```
+:     Der Transaktionsmanager benötigt für alle Interaktionen mit der Blockchain einen Account. In dieser Datei ist der private SChlüssel gespeichert. Hier muss darauf geachtet werden, dass der Schlüssel nicht versehentlich bei einer Versionierungssoftware hinzugefügt wird. 
+
+```DefaultSettings.txt```
+:      Mit dieser Datei wird der Transaktionsmanager konfiguriert. 
+
+
+Die Konfigurationsdatei wird zeilenweise interpretiert. Das Einlesen der Datei
+hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur stets
+eingehalten werden. In der ersten Zeile werden folgende Parameter angegeben:
+
+1. Verbindungsstring zur Blockchain 
+1. Reset-Intervall in Minuten
+2. Revoke-Intervall
+3. Standardwert für gratis Transaktionen
+4. Standardwert für gratis Gas
+5. Adresse der Name Registry
+6. [Adresse des Certifiers]
+
+Die ersten 6 Parameter müssen angegeben und mit einem ```;``` separiert werden. Der letzte Parameter, die Adresse des Certifiers, wird nach erfolgreichem Depyloment des Certifiers selbst gesetzt.\
+
 
 
 
