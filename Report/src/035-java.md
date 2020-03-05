@@ -278,7 +278,11 @@ nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet hat.
 ### Konfiguration \label{sec_prac_conf}
 
 Der Transaktionsmanagers kann mit der Datei ```DefaultSettings.json```
-konfiguriert werden. Folgende Parameter sind unterstützt:
+konfiguriert werden. 
+
+//TODO Filepath
+
+Folgende Parameter sind unterstützt:
 
 connectionAddress
 :      URL um sich mit der Blockchain zu verbinden. 
@@ -304,6 +308,28 @@ nameRegistryAddress
 
 timestampLastReset
 :      Hier wird der Zeitpunkt des letzen Reset-Intervalls vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht bearbeitet werden.
+
+
+Eine weitere, sehr zentrale Konfiguration ist der Account des
+Transaktionsmanagers. Dieser wird für jede Interaktion mit der Blockchain
+verwendet. Um zu verhindern, dass dieser fix im Code eingetragen werden muss,
+wird er ebenfalls aus einer Datei geladen. Hier wird die Datei
+```TransaktionsManagerAccount.json``` verwendet.\
+
+//TODO Filepath
+
+Die Datei hat nur einen einzigen Parameter:
+
+```{caption="TransaktionsManagerAccount.json mit einem privaten Schlüssel" .json .numberLines label=li_masterKey}
+{
+  "privateKey": "0x4d5db4107d237df6a3d58ee5f70ae63d73d7658d4026f2eefd2f204c81682cb7"
+}
+```
+
+Die unter \ref{li_masterKey} gezeigte Datei beinhaltet den Account für den
+Transaktionsmanager. Dieser sollte auf keinen Fall öffentlich gemacht werden.
+Der hier gezeigte Schlüssel ist der Standardaccount im Entwicklungsmodus von
+Parity.
 
 #### Beispiel
 
