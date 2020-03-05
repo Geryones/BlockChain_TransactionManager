@@ -48,11 +48,6 @@ Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die
 Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis
 Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von
 der Whitelist gelöscht wird. 
-Wenn der gesetzte Zeitpunkt dem Benutzer bekannt
-ist, kann das System missbraucht werden. Wird ein DoS Angriff kurz vor dem
-Resetzeitpunkt ausführt, hat es praktisch keine Folgen für den Benutzer. Sein
-Account wird zwar von der Whitelist entfernt, aber mit dem entsprechendem
-Zeitmanagement gleich wieder entsperrt. 
 
 Mit einem Zeitintervall ab Zeitpunkt des Vergehens, werden alle Accounts gleich
 lange von der Whitelist gelöscht. Dieser Ansatz bietet daher mehr Fairness als
@@ -70,9 +65,8 @@ Die Dauer der Suspendierung ist nicht mehr konstant. Daher muss einem Benutzer
 mitgeteilt werden, für wie lange er suspendiert ist. Wie diese Kommunikation
 realisiert werden soll, ist noch unklar.
 
-Wir haben uns entschieden, einen fixen Zeitpunkt für die Wiederaufnahme in die
-Whitelist zu verwenden. Grund für diesen Entscheid ist die sichere Machbarkeit in der
-verbleibenden Zeit.  
+Wir haben uns entschieden, ein Zeitintervall ab Zeitpunkt des Vergehens zu
+implementieren. Dieser Ansatz ist fair und verständlich für die Benutzer.
 
 
 #### Benutzermanagement
@@ -102,39 +96,39 @@ konfiguriert werden. Die Konfiguration wird mit einer Textdatei vorgenommen. Fü
 alle Parameter müssen natürliche Zahlen verwendet werden. Folgende Parameter
 können pro Account gesetzt werden: 
 
-Anzahl Vergehen
-:       Gibt an, wie oft ein Account bereits von der Whitelist suspendiert
-worden ist. Sollte standardmässig mit 0 initalisiert werden. Bei einem
-Vergehen des Accounts wird dieser Parameter automatisch hochgezählt.
 
-Gratis Transaktionen
+Gratis Transaktionen Limite
 :       Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall 
 getätigt werden können.
 
-Gratis Gas
+Gratis Gas Limite
 :       Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb 
 eines Reset-Intervalls verbraucht werden können.
 
-Wenn für einen Account individuelle Schwellenwerte für Transaktionen und Gas 
-definiert werden, müssen immer beide Parameter gesetzt werden. 
+Revoke-Intervall
+:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung 
+durch den Algorithmus von der Whitelist gelöscht wird. 
+
 
 Folgende Parameter gelten für alle Accounts:
 
 Reset-Intervall
 :     Einheit ist Minuten, definiert die Länge des Reset-Intervalls.
 
-Revoke-Intervall
-:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung 
-durch den Algorithmus von der Whitelist gelöscht wird. 
 
-Standardwert gratis Transaktionen
-:      Giltet für Accounts die ohne Parameter erfasst werden. Definiert die maximale 
+Standardwert gratis Transaktionen Limite
+:      Giltet für Accounts die ohne Transaktionslimite erfasst werden. Definiert die maximale 
 Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
 
-Standardwert gratis Gas 
-:     Giltet für Accounts die ohne Parameter erfasst werden. Definirt die maximale 
+Standardwert gratis Gas Limite
+:     Giltet für Accounts die ohne Gaslimite erfasst werden. Definirt die maximale 
 Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht 
 werden können.
+
+Standardwert Revoke-intervall 
+:     Giltet für Accounts die ohne
+Revoke-Intervall erfasst werden. Definiert wie lange ein Account bei einem
+Vergehen von der Whitelist suspendiert wird.
 
 Bei der Konfiguration sollten die Abhängigkeiten zwischen den Parametern
 geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Reset-Intervall

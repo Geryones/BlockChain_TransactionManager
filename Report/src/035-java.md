@@ -107,9 +107,9 @@ Account von der Whitelist in Parity entfernt.
 ### Persistenz \label{prac_persistenz}
 
 Um die Datenpersistenz zu gewährleisten, wird die Whitelist des
-Transaktionsmanagers in einer Textdatei gespeichert. Wird das Programm gestoppt,
+Transaktionsmanagers in einer JSON-Datei gespeichert. 
 
-Dafür wird die Datei ```AccountList.txt``` verwendet. Relativ zur JAR-Datei des
+Dafür wird die Datei ```AccountList.json``` verwendet. Relativ zur JAR-Datei des
 Transatkionsmanagers muss sie in folgendem Verzeichnis liegen: 
 
 //TODO Filepath
@@ -117,52 +117,95 @@ Transatkionsmanagers muss sie in folgendem Verzeichnis liegen:
 In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
 jedem Account können die inidviduell konfigurierbaren Parameter gesetzt werden.\
 Nach einem Programmstop, wird die Datei ausgelesen. Alle Accounts werden
-geladen. Wo nötig, die individuellen Parameter gesetzt.
+geladen. Wo nötig, die individuellen Parameter gesetzt. Für alle Parameter die
+nicht gesetzt sind, werden die konfigurierten Defaultwerte verwendet, siehe \ref{sec_prac_conf} Parameter,
+für die der Defaultwert verwendet werden soll, können entweder mit Wert
+```null``` erfasst oder ganz weggelassen werden. 
 
-Pro Zeile wird ein Account mit einer Adresse definiert. Zusätzlich kann
-die Anzahl gratis Transaktionen und die Menge gratis Gas pro Account definiert
-werden. Hier muss beachtet werden, dass es nicht möglich ist, nur einen der
-fakultativen Parameter anzugeben. Es müssen beide oder keine angegeben werden.\
-Die Accountliste wird zeilenweise interpretiert. Das Einlesen der Datei
-hat keine Fehlertoleranz. Daher muss die hier beschriebene Struktur für jede Zeile eingehalten werden:
+Die Datei ist als Array von Accounts aufgebaut. Für jeden Account sind folgende Felder vorhanden:
 
-1. Accountadresse
-2. Anzahl verbleibende Revoke-Intervalls 
-3. [Anzahl gratis Transaktionen]
-4. [Menge an gratis Gas]
+address
+:     Die Adresse des Accounts. Das ist der einzige Parameter, der zwingend definiert sein muss. 
 
-Sind die Parameter für Anzahl Transaktionen und Gas nicht gesetzt, wird der Standardwert verwendet, siehe \ref{sec_prac_conf}
+txLimit
+:     Definiert die maximale Anzahl gratis Transaktionen, die ein Account in 
+einem Reset-Intervall tätigen darf. 
+
+transactionCounter
+:     Mit diesem Feld wird bestimmt, über wie viele gratis Transatkionen 
+ein Account noch verfügt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht geändert werden. 
+
+gasLimit
+:    Definiert die maximale Anzahl gratis Gas, die ein Account während eines 
+Reset-Intervalls verbrauchen darf. 
+
+gasUsedCounter
+:     Mit diesem Feld wird bestimmt, über wie viel gratis Gas ein Account
+noch verfügt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht geändert werden.
+
+revokeTime
+:     Definiert, wie lange ein Account bei einem Vergehen von der Whitelist suspendiert wird.
+
+deleteMe
+:     Dieser Parameter wird nur verwendet, wenn ein Account permanent von der Whitelist gelöscht werden soll. 
+Nach dem der Account von der Whitelist entfernt wurde, wird der Eintrag auch aus ```AccountList.json``` gelöscht.
+
+timeStamp
+:     Definiert, wann ein Account wieder in die Whitelist aufgenommen werden soll. 
+Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht geändert werden.
 
 
 Falls ein Account zum Zeitpunkt des Programmstops von gratis Transaktionen
-suspendiert war, ist dies mit "Anzahl verbleibende Revoke-Intervalls" vermerkt. In diesem Fall wird die
-verbleidende Dauer evaluiert. Ist die Dauer der Suspendierung bei Programmstart
-bereits verstrichen, wird der Account wieder zertifiziert. Andernfalls, wird die
-verbleibende Dauer der Suspendierung, unter Berücksichtigung der Ausfallzeit neu
-berechnet und gesetzt.
+suspendiert war, ist der ```timeStamp``` gesetzt. Sollte der Zeitpunkt in der
+Vergangenheit liegen, wird der Account wieder certifiziert. Andernfalls wird er
+erneut der Priority-Queue hinzugefügt und bleibt bis zum vorgesehenen Zeitpunkt
+suspendiert.
 
 Automatische Suspendierungen von Transaktionsmanager sind immer temporär. Soll
 ein Account permanent von der Whitelist gelöscht werden, muss dies manuell in
-der Datei oder via  gemacht werden. Beim entsprechenden Account muss vor der Adresse ein
-neuer Paramater eingefügt werden. Beim nächsten Intervall oder Start des
-Transaktionsmanagers, wird der Account von der Whitelist in Parity und dem
-Transaktionsmanager gelöscht. Anschliessend wird auch der Eintrag in der Datei
-entfernt.\
+der Datei ```AccountList.json``` mit dem Parameter ```deleteMe``` oder via
+____________TODO Funktion CLI___________  gemacht werden.
+
 Mehr zur Konfigurationsdatei und Beispiele sind im nachfolgenden Abschnitt,
 \ref{sec_prac_conf}, zu finden.\
 
-
-
-
 #### Beispiel
 
-Ein mögliche Konfigurationsdatei könnte folgendermassen ausehen: 
+Die Datei ```AccountList.json``` könnte folgendermassen aussehen:
 
-```{.numberLines}
-2;3;10;50000000;
-0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b;0;0;5;100000
-0xf13264C4bD595AEbb966E089E99435641082ff24;0;0
-0x00a329c0648769A73afAc7F9381E08FB43dBEA72;0;5;3;500000
+```{.json .numberLines}
+[
+  {
+    "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
+    "transactionCounter": 4,
+    "txLimit": null,
+    "revokeTime": null,
+    "gasLimit": null,
+    "gasUsedCounter": 49979000,
+    "deleteMe": false,
+    "timeStamp": null
+  },
+  {
+    "address": "0xf13264C4bD595AEbb966E089E99435641082ff24",
+    "transactionCounter": 5,
+    "txLimit": null,
+    "revokeTime": null,
+    "gasLimit": null,
+    "gasUsedCounter": 50000000,
+    "deleteMe": false,
+    "timeStamp": null
+  },
+  {
+    "address": "0x00a329c0648769A73afAc7F9381E08FB43dBEA72",
+    "transactionCounter": 1000,
+    "txLimit": 1000,
+    "revokeTime": 25,
+    "gasLimit": 99999,
+    "gasUsedCounter": 99999,
+    "deleteMe": false,
+    "timeStamp": null
+  }
+]
 ```
 
 Zeile 1
