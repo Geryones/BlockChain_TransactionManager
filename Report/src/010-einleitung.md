@@ -64,6 +64,8 @@ ermöglichen, ohne die Blockchain anfällig gegen DoS Attacken zu machen.
 
 ## Realisierung
 
+//TODO ergänzen Priority Queue und Command Pattern
+
 Parity ist zur Zeit der einzige Ethereumclient, der über ein Benutzermanagement
 für gratis Transaktionen verfügt. Durch die Verwendung von Smart
 Contracts[@smartContractDef] ist eine Whitelist für gratis Transaktionen
@@ -73,21 +75,27 @@ Sobald auf einem Node eine gratis Transaktion eingeht, wird geprüft, ob sich de
 verwendete Account auf der Whitelist befindet. Nur dann, wird die Transaktion
 vom Node angenommen und weiter verarbeitet.\
 Der Blockchaintransaktionsmanger ist als Javaapplikation realisert worden. Die
-Interaktion mit dem Betreiber findet über die Kommandozeile und einer
-Konfigurationsdatei statt. Mit der Bibliothek Web3j[@web3j] ist die Anbindung an
-eine Blockchain sehr effizient und intuitiv. Im Transaktionsmanager wird eine
+Interaktion mit dem Betreiber findet über die Kommandozeile und
+Konfigurationsdateien statt. Mit der Bibliothek Web3j[@web3j] ist die Anbindung
+an eine Blockchain sehr effizient und intuitiv. Im Transaktionsmanager wird eine
 Kopie der Whitelist geführt. Zu jedem Account werden zusätzliche Informationen
 gespeichert. Diese werden für die Beurteilung, ob der Account eine Bedrohung
-ist, verwendet. Um eine Datenpersistenz zu gewährleisten, wird die Liste regelmässig
-in der Konfiguationsdatei gespeichert.\
+ist, verwendet. Um eine Datenpersistenz zu gewährleisten, wird die Liste
+regelmässig als JSON-Datei gespeichert.\
 Mit einer Subscription wird jeweils der aktuelle Block der Blockchain auf
 Transaktionen untersucht. Bei gefundenen gratis Transaktionen wird das Verhalten
-des Senderaccounts evaluiert. Anhand der gätigten gratis Transaktionen und dem
+des Senderaccounts evaluiert. Anhand der Anzahl gätigten gratis Transaktionen und dem
 dabei verbrauchtem Gas, wird bestimmt, ob die Transaktion Teil einer DoS Attacke
 ist. Fällt diese Prüfung positiv aus, wird der Account für eine bestimmte Dauer
 von der Whitelist entfernt. Das bedeuted, dass er keine gratis Transaktionen
 mehr tätigen kann. Reguläre, also kostenpflichtige Transaktionen, sind weiterhin
-möglich. 
+möglich.\
+Die verfügbaren gratis Transaktionen und Gas, sowie die Dauer einer
+Suspendierung von der Whitelist können konfiguriert werden. Der Betreiber hat
+die Möglichkeit, diese Parameter für jeden Account individuell zu definieren.\
+Um eine individuelle Suspendierung von der Whitelist zu ermöglichen, wird eine
+Priority-Queue und ein Command-Pattern verwendet. 
+
 
 ## Strukturierung des Berichts
 
