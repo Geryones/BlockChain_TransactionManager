@@ -184,8 +184,7 @@ Transaktionen initieren, sondern reagieren nur auf zuvor eingegangene. Das wird
 auf der Abbildung \ref{img_tx_accounts} dargestellt. Ein Benutzer Accounts wird
 als "Externally owned account" bezeichnet.
 
-![TX zwischen Accounts \label{img_tx_accounts}](images/tx.png "Transaktionen
-zwischen verschiedenen Accounts[@how_does_ethereum_work]") 
+![Transaktionen zwischen verschiedenen Accounts[@how_does_ethereum_work] \label{img_tx_accounts}](images/tx.png "Transaktionen zwischen Accounts") 
 
 Im Gegensatz zu einem Benutzer Account hat ein Contract Account keine Verwendung
 für einen geheimen oder öffentlichen Schlüssel. Es wird nur eine Adresse

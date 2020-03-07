@@ -1,6 +1,6 @@
 # Einleitung
 
-Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. . Weiter ist
+Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. Weiter ist
 eine Übersicht über die Strukturierung des Berichts gegeben. 
 
 ## Blockchaintransaktionmanager

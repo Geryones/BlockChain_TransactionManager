@@ -82,13 +82,14 @@ in der Map ```entries``` noch frei ist und somit reserviert werden kann.
 
 ```{caption="Modifier onlyOwnerOf" label=li_onlyOwnerOf .sol .numberLines}
 modifier onlyOwnerOf(bytes32 _name) {
-	require(entries[_name].owner == msg.sender);
-	_;
+    require(entries[_name].owner == msg.sender);
+    _;
 }
 ```
-Unter \ref{li_onlyOwnerOf} wird der Besitzer einer Nachricht mit dem Besitzer eines Eintrags unter dem
-Namen ```_name``` in ```entries``` verglichen. Nur wenn dieser identisch ist,
-dürfen Änderungen an einem existierenden Eintrag vorgenommen werden. 
+Unter \ref{li_onlyOwnerOf} wird der Besitzer einer Nachricht mit dem Besitzer
+eines Eintrags unter dem Namen ```_name``` in ```entries``` verglichen. Nur wenn
+dieser identisch ist, dürfen Änderungen an einem existierenden Eintrag
+vorgenommen werden. 
 
 
 ```{caption="Modifier whenEntryRaw" label=li_whenEntryRaw .sol .numberLines}
@@ -156,11 +157,12 @@ function setAddress(bytes32 _name, string _key, address _value)
 	return true;
 }
 ```
-Mit Methode ```setAddress``` unter \ref{li_setAddress}, wird ein reservierter Eintrag in ```entries``` befüllt. Als
-erster Parameter wird der Name des Eintags (```_name```) übergeben. Dieser muss
-identisch zum verwendeten Namen in der Methode ```reserve``` sein. Mit dem
-Parameter ```_key``` wird der Zugriff auf die innere Map ```data``` verwaltet.
-Mit ```_value``` wird die zu registrierende Adresse übergeben.\
+Mit Methode ```setAddress``` unter \ref{li_setAddress}, wird ein reservierter
+Eintrag in ```entries``` befüllt. Als erster Parameter wird der Name des Eintags
+(```_name```) übergeben. Dieser muss identisch zum verwendeten Namen in der
+Methode ```reserve``` sein. Mit dem Parameter ```_key``` wird der Zugriff auf
+die innere Map ```data``` verwaltet. Mit ```_value``` wird die zu registrierende
+Adresse übergeben.\
 Auch diese Methode muss von Aussen aufgerufen werden können, daher
 ```external``` auf zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und
 ```onlyOwnerOf``` auf Zeile 3 und 4 erfüllt sind, wird die eigentliche
@@ -193,8 +195,9 @@ struct Certification {
 mapping (address => Certification) certs;
 ```
 
-Das ```mapping``` unter \ref{li_whitelsit} ist die zentrale Datenstrucktur des Certifiers, die Whitelist. In der Liste
-```certs``` sind zertifizierte Accounts gespeichert. 
+Das ```mapping``` unter \ref{li_whitelsit} ist die zentrale Datenstrucktur des
+Certifiers, die Whitelist. In der Liste ```certs``` sind zertifizierte Accounts
+gespeichert. 
 
 
 ```{caption="Modifier onlyDelegate" label=li_onlyDelegate .sol .numberLines}
@@ -205,10 +208,10 @@ modifier onlyDelegate {
 	_;
 }
 ```
-Auf Zeile 1 des Listings \ref{li_onlyDelegate}, wird der Besitzer (```msg.sender```) des Smart Contracts gespeichert
-und der Variabel ```delegate``` zugewiesen. Mit dem Modifier wird geprüft ob es
-sich beim Absender der aktuellen Anfrage um den Besitzer des Smart Contracts
-handelt. 
+Auf Zeile 1 des Listings \ref{li_onlyDelegate}, wird der Besitzer
+(```msg.sender```) des Smart Contracts gespeichert und der Variabel
+```delegate``` zugewiesen. Mit dem Modifier wird geprüft ob es sich beim
+Absender der aktuellen Anfrage um den Besitzer des Smart Contracts handelt. 
 
 ```{caption="Methode certify" label=li_certify .sol .numberLines}
 function certify(address _who)
@@ -219,9 +222,9 @@ function certify(address _who)
 	emit Confirmed(_who);
 }
 ```
-Mit der unter \ref{li_certify} aufgeführten Methode, wird ein Account registriert. Als Paramater wird die zu
-registrierende Adresse (```_who```) angegeben. Mit ```external``` auf Zeile 2
-ist die Methode von Aussen aufrufbar.\
+Mit der unter \ref{li_certify} aufgeführten Methode, wird ein Account
+registriert. Als Paramater wird die zu registrierende Adresse (```_who```)
+angegeben. Mit ```external``` auf Zeile 2 ist die Methode von Aussen aufrufbar.\
 Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account
 registrieren kann. Ist diese Prüfung erfolgreich, wird der Account ```_who```
 der Liste ```certs``` hinzugefügt. Der Account ist nun für gratis Transaktionen
