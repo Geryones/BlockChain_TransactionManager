@@ -65,6 +65,8 @@ Für die Handhabung des Reset-Intervalls und Suspendierungen von der Whitelist,
 wird ein Command-Pattern[@wiki_command_pattern] verwendet. Die Commands werden mit einem Zeitstempel
 versehen. Dieser gibt an, wann die Methode ```execute()``` ausgeführt werden
 soll.\
-Für die Zeitgerechte Ausführung wird eine Priority-Queue[@java_priority_queue] verwendet. In einem eigenen Prozess, wird im Sekundentakt geprüft, ob der Zeitpunkt für die Ausführung des anstehenden Commands gekommen ist.
+Für die Zeitgerechte Ausführung wird eine Priority-Queue[@java_priority_queue]
+verwendet. In einem eigenen Prozess, wird im Sekundentakt geprüft, ob der
+Zeitpunkt für die Ausführung des anstehenden Commands gekommen ist.
 
 
