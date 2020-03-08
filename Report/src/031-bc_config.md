@@ -4,7 +4,7 @@
 
 Parity wird mit der Konsole gestartet. Der Benutzer hat hier die Möglichkeit,
 gewisse Parameter an Parity zu übergeben. Eine einfache Konfiguration ist somit
-möglich. Für kompliziertere Konfigurationen, wird die Verwendung von einer
+möglich. Für kompliziertere Konfigurationen wird die Verwendung von einer
 Konfigurationsdatei empfohlen, diese ist im nächsten Abschnitt
 \ref{sec_prac_config_toml} beschrieben.
 
@@ -17,7 +17,7 @@ Bedürfnisse geprüft und gegebenenfalls angepasst werden.
 #### Config.toml \label{sec_prac_config_toml}
 
 Für die Konfiguration der Blockchain wird eine Konfigurationsdatei verwendet.
-Diese hat das Dateiformat .toml[@wiki_toml]. 
+Diese hat das Dateiformat ".toml"[@wiki_toml]. 
 
 ```{caption="Konfigurationsdatei für Parity" label=li_toml .numberLines}
 [parity]
@@ -214,7 +214,7 @@ Zeile 21
 berechnet wird, hat dieser Wert einen Einfluss auf zukünftige Gaslimiten. 
 
 Zeile 23 - 26    
-:      Dieser Abschnitt erlaubt es, Accounts zu definieren. Diese können für Benutzer oder 
+:      Dieser Abschnitt erlaubtes, Accounts zu definieren. Diese können für Benutzer oder 
 Smart Contracts sein. Jeder Account wird mit einer Adresse und einem Guthaben initialisiert. 
 Bei einem Account für einen Smart Contract, wird zusätzlich dessen Bytecode angegeben.
 

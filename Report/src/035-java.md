@@ -32,7 +32,7 @@ Links auf dem Diagramm sind die Benutzer "A" und "C" mit ihrem jeweiligen
 Account abgebildet. In der Liste ```Accounts``` im Java-Programm sind alle
 Accounts erfasst, die für gratis Transaktionen berechtigt sind. Hier ist für
 jeden Account vermerkt, wie viele gratis Transaktionen und wie viel gratis Gas
-im aktuellen Reset-Intervall bereits verbraucht wurde.\
+im aktuellen Resett-Intervall bereits verbraucht wurde.\
 Die beiden Benutzer erstellen je eine Transaktion mit einem Gas Preis von
 null. Diese werden an den Parity Node übermittelt.\
 Beim Node wird geprüft, ob der Sender in der Whitelist erfasst ist. Dieser
@@ -53,7 +53,7 @@ werden in der Liste ```Accounts``` aktualisiert. Der Account wird anschliessend
 an den DoS Algorithmus übergeben.\
 Im DoS Algorithmus wird die Anzahl getätigter gratis Transaktionen und das
 verbrauchte Gas ausgewertet. Es wird geprüft, ob mit der neu erfassten
-Transaktion ein Grenzwert im aktuellen Reset-Intevall überschritten worden ist.
+Transaktion ein Grenzwert im aktuellen Resett-Intevall überschritten worden ist.
 Wenn das nicht der Fall ist, sind keine weiteren Aktionen nötig. Ist ein
 Grenzwert überschritten worden, wird dies für den entsprechenden Account in
 ```Accounts``` festgehalten. Zusätzlich wird eine Transaktion erstellt, die den
@@ -61,12 +61,39 @@ Account von der Whitelist in Parity entfernt.
 
 ### Command Pattern und Priority Queue
 
-Für die Handhabung des Reset-Intervalls und Suspendierungen von der Whitelist,
+Für die Handhabung des Resett-Intervalls und Suspendierungen von der Whitelist,
 wird ein Command-Pattern[@wiki_command_pattern] verwendet. Die Commands werden mit einem Zeitstempel
 versehen. Dieser gibt an, wann die Methode ```execute()``` ausgeführt werden
 soll.\
 Für die Zeitgerechte Ausführung wird eine Priority-Queue[@java_priority_queue]
 verwendet. In einem eigenen Prozess, wird im Sekundentakt geprüft, ob der
-Zeitpunkt für die Ausführung des anstehenden Commands gekommen ist.
+Zeitpunkt für die Ausführung des anstehenden Commands gekommen ist.\
+Für das Zurücksetzen aller Accountparameter wird das ```ResetAccountsCommand```
+verwendet.
+
+```{.java .numberLines caption="ResetAccountsCommand um die Accountparameter zurückzusetzen" label=li_resetAccountsCommand}
+    @Override 
+    public void execute() {
+        log.info(new Date().toString());
+        this.setAllCountersToMax();
+        this.jsonDefaultSettingsHandler.getDefaultSettings()
+                .setTimestampLastReset(new Timestamp(System.currentTimeMillis()));
+        this.jsonAccountHandler.writeAccountList();
+        this.jsonDefaultSettingsHandler.writeDefaultSettings();
+
+        DoSAlgorithm.getInstance().offerCommand(new ResetAccountsCommand());
+    }
+
+```
+
+Der Codeausschnitt \ref{li_resetAccountsCommand} zeigt die ```execute``` Methode
+des ```ResetAccountsCommand```. Dieses Command wird am Ende eines
+Resett-Intervalls ausgeführt. Auf Zeile 4 bis 8, werden zuerst alle Accounts
+zurückgesetzt und der Zeitpunkt der Ausführung wird in den DefaultSettings
+gespeichert. Anschliessend werden die Dateien ```AccountList.json``` und
+```DefaultSettings.json``` neu geschrieben.\
+Auf Zeile 10 wird rekursiv, das nächste ```ResetAccountsCommand``` erstellt und
+in die Priority Queue gelegt. Im Constructor des neuen Commands, wird der
+Zeitpunkt für dessen Durchführung mit den DefaultSettings berechnet. 
 
 

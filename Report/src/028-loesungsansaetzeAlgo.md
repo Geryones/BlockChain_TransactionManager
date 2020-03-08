@@ -13,7 +13,7 @@ Um zu bewerten, ob ein Account eine Gefahr für die Blockchain darstellt, brauch
 ein Algorithmus Parameter. Diese werden durch die Überwachung von getätigten
 gratis Transaktionen gesammelt. Dabei muss jeweils pro Account entschieden
 werden, ob ein Verhalten eine Gefahr darstellt. Nachfolgend sind mögliche
-Parameter für die Berurteilung von Accounts aufgeführt. 
+Parameter für die Beurteilung von Accounts aufgeführt. 
 
 ##### Sender 
 
@@ -25,7 +25,7 @@ Account zu verknüpfen.
 Eine Transaktion wird immer an eine Adresse gesendet. Hierbei kann es sich
 sowohl um einen Benutzeraccount oder einen Smart Contract handeln. 
 
-##### Reset-Intervall 
+##### Resett-Intervall 
 
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall
 bewertet werden. Hier werden zwei unterschiedliche Ansätze untersucht: 
@@ -43,7 +43,7 @@ Individuelles Intervall
 :      Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis 
 Transaktionen. Bei einer Prüfung wird untersucht, wie viele gratis 
 Transaktionen der betroffene Account im vergangenen Zeitintervall,
-gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat. Mit den selben
+gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat. Mit denselben
 Startparametern wie im oben aufgeführten Beispiel, ist eine um 08:59 UTC
 getätigte gratis Transaktion bis 09:59 relevant. 
 

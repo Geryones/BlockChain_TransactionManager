@@ -1,7 +1,5 @@
 ## Komponenten
 
-//TODO Spellcheck
-
 Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
 Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem
 grundsätzlichen Verständnis für die Materie immer der Schutz vor einer DoS Attacke im Fokus.  
@@ -16,19 +14,19 @@ Transaktionsdaten[@wiki_blockchain].\
 Ein speziell erwähnenswerter Block, ist der sogenannte
 Genesisblock[@wiki_genesis_block]. Dieser ist der erste Block in einer
 Blockchain. Der Genesisblock ist eine JSON Datei mit allen nötigen Parametern
-und Einstellungen um eine Blockchain zu starten.
+und Einstellungen, um eine Blockchain zu starten.
 
 Blockchains sind auf einem peer-to-peer (P2P) Netzwerk[@wiki_p2p] aufgebaut. Ein
 Computer der Teil von diesem Netzwerk ist, wird Node genannt. Jeder Node hat
 eine identische Kopie der Historie aller Transaktionen.\
-Es gibt keinen zentralen Server der angegriffen werden kann. Das erhöht die
+Es gibt keinen zentralen Server, der angegriffen werden kann. Das erhöht die
 Sicherheit der Blockchain.\
 Es muss davon ausgegangen werden, dass es Nodes gibt, die versuchen die Daten
 der Blockchain zu verfälschen. Dem wird mit der Verwendung von diversen Consenus
 Algorithmen[@consensus_alg] entgegengewirkt. Die Consensus Algorithemen stellen
 sicher, dass die Transaktionen auf der Blockchain valide und authentisch sind.
 
-Im Gegensatz zur Bitcoin[@wiki_bitcoin] kann bei Ethereum[@ethereum] auch Code
+Im Gegensatz zu Bitcoin[@wiki_bitcoin] kann bei Ethereum[@ethereum] auch Code
 in der Chain gespeichert werden, sogenannte Smart Contracts, siehe
 \ref{sec_smartContracts}.\
 Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH). 
@@ -157,7 +155,7 @@ von Benutzer verwendet um mit der Blockchain zu interagieren.
 ##### Geheimer Schlüssel \label{sec_private_key}
 
 Der geheime Schlüssel ist ein 256 Bit lange zufällig generierte Zahl. Er
-definiert einen Account und wird verwendet um Transaktionen zu signieren. Daher
+definiert einen Account und wird verwendet, um Transaktionen zu signieren. Daher
 ist es von grösster Wichtigkeit, dass ein geheimer Schlüssel sicher gelagert
 wird. Wenn er verloren geht, gibt es keine Möglichkeit mehr auf diesen Account
 zuzugreifen. 
@@ -172,8 +170,8 @@ die Signatur einer Transaktion zu verifizieren.
 ##### Adresse \label{sec_address}
 
 Die Adresse wird aus dem öffentlichen Schlüssel abgeleitet. Es wird
-SHA3[@wiki_sha3] verwendet um einen 32 Byte langen String zu bilden. Von diesem
-bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse von einem Account. Die
+SHA3[@wiki_sha3] verwendet, um einen 32 Byte langen String zu bilden. Von diesem
+bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse eines Account. Die
 Adresse wird bei Transaktionen oder Interaktionen mit einem Smart Contract
 verwendet. 
 
@@ -207,11 +205,13 @@ kümmern. Bei den meisten Wallets ist es möglich verschiedene Währungen zu
 verwalten.\
 Es existieren zwei unterschiedliche Arten von Wallets, Hot und Cold Wallets: 
 
-Hot Wallet :     Ein Stück Software, welches die geheimen Schlüssel verwaltet. :
+Hot Wallet 
+:     Ein Stück Software, welches die geheimen Schlüssel verwaltet. :
 Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
 [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
-Cold Wallet :     Der geheime Schlüssel wird in einem Stück Hardware
+Cold Wallet 
+:     Der geheime Schlüssel wird in einem Stück Hardware
 gespeichert. Dadurch können die geheimen Schlüssel offline gelagert werden. Das
 erhöht die Sicherheit der Wallet, da Angriffe aus dem Internet ausgeschlossen
 werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
@@ -258,7 +258,7 @@ ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
 
 Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese
 dürfen gratis Transaktionen ausführen. Diese Gruppe von Benutzer ist eine
-potentielle Bedrohung. Ohne Transaktionskosten ist die Blockchain anfällig für eine DoS Attacke.\
+potenzielle Bedrohung. Ohne Transaktionskosten ist die Blockchain anfällig für eine DoS Attacke.\
 Aus diesem Grund muss das Verhalten der priviligierten Accounts überwacht
 werden. Falls einer dieser Accounts eine DoS Attacke einleitet, muss das frühst
 möglich erkannt und unterbunden werden können. 

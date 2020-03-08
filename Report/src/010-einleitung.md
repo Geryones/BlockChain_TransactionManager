@@ -3,7 +3,7 @@
 Dieses Kapitel liefert eine ausführliche Zusammenfassung der Bachelorthesis. Weiter ist
 eine Übersicht über die Strukturierung des Berichts gegeben. 
 
-## Blockchaintransaktionmanager
+## Blockchain-Transaktionsmanager
 
 Es ist eine private Ethereumblockchain[@ethereum][@wiki_blockchain] aufgesetzt worden, die es einer
 spezifischen Benutzergruppe erlaubt, gratis Transaktionen zu tätigen. Diese
@@ -45,7 +45,7 @@ ausgeschlossen werden.
 Der beste Schutz einer Blockchain gegen eine DoS Attacke, sind die anfallenden
 Kosten für den Angreifer. Auf jede Transaktion wird eine Gebühr erhoben. Bei
 Ethereum werden zusätzlich anfallende Komputationskosten auf der Blockchain
-berücksichtigt. Die Komputationskosten werden mit Gas beziffert. Je Komplexer
+berücksichtigt. Die Komputationskosten werden mit Gas beziffert. Je komplexer
 der Task, desto mehr Gas wird benötigt. Es existiert ein Maximum an Gas, dass
 durch eine Transaktion verbraucht werden kann. Wird dieses Maximum erreicht
 bevor die Berechnungen fertig sind, werden diese Abgebrochen. Das ist ebenfalls
@@ -72,8 +72,8 @@ Contracts[@smartContractDef] ist eine Whitelist für gratis Transaktionen
 möglich. Da die Whitelist auf der Blockchain gespeichert ist, kann sie von allen
 Nodes verwendet werden.\
 Sobald auf einem Node eine gratis Transaktion eingeht, wird geprüft, ob sich der
-verwendete Account auf der Whitelist befindet. Nur dann, wird die Transaktion
-vom Node angenommen und weiter verarbeitet.\
+verwendete Account auf der Whitelist befindet. Nur dann wird die Transaktion
+vom Node angenommen und weiterverarbeitet.\
 Der Blockchaintransaktionsmanger ist als Javaapplikation realisert worden. Die
 Interaktion mit dem Betreiber findet über die Kommandozeile und
 Konfigurationsdateien statt. Mit der Bibliothek Web3j[@web3j] ist die Anbindung

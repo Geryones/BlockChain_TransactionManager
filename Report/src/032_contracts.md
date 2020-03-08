@@ -77,9 +77,9 @@ try {
 }
 ```
 Um eine Instanz von einem bereits platzierten Smart Contract zu erhalten, wird
-die Methode ```load``` verwendet. Als erster Argument wird die Adresse der Name
-Registry mitgegeben. Analog zum vorherigem Beispiel wird die Verbindung zur
-Blockchain mit  ```Web3j```, einem ```Transactionmanager``` und einem
+die Methode ```load``` verwendet. Als erstes Argument wird die Adresse der Name
+Registry mitgegeben. Analog zum vorherigen Beispiel wird die Verbindung zur
+Blockchain mit ```Web3j```, einem ```Transactionmanager``` und einem
 ```DefaultGasProvider``` definiert. Der Rückgabewert ist eine Instanz der
 ```SimpleRegistry```. 
 
@@ -105,7 +105,7 @@ Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den
 String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein
 Byte-Array umgewandelt. Diese Variabel hält den Namen, unter welchem der
 Certifier bei der Name Registry registriert wird. Die Verwendung des Strings
-```service_transaction_checker``` und sein Umwandlung sind in Parity hart
+```service_transaction_checker``` und seine Umwandlung sind in Parity hart
 kodiert und können nicht angepasst werden.\
 Auf Zeile 7 wird die Reservierung bei der Name Registry vorgenommen. Hier wird
 der Name und die anfallende Gebühr von einem Ether gesendet.\
@@ -142,7 +142,7 @@ beschrieben.\
 Mit der so ermittelten Adresse des Certifiers, kann dieser aufgerufen werden.
 Im Certifier wird geprüft, ob der Sender der gratis Transaktion, also Account
 "XX" zertifiert ist.\
-Wenn einer dieser Schritte fehl schlägt, erhält der Benutzer
+Wenn einer dieser Schritte fehlschlägt, erhält der Benutzer
 einen Error, da er einen ungültigen Gas Preis verwendet.\
 Konnten alle Schritte erfolgreich durchgeführt werden und der Account ist
 zertifiziert, wird die Transaktion in die Blockchain aufgenommen.  

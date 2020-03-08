@@ -2,9 +2,9 @@
 
 Für die Betreibung von einem Ethereum Node ist ein Client nötig. Dieser muss das
 Ethereum Protokoll[@github_ethereum_protcol] implementieren. Das Protokoll
-definiert die minimal Anforderungen an den Clienten. Das erlaubt, dass der
+definiert die minimalen Anforderungen an den Client. Das erlaubt, dass der
 Client in verschiedenen Sprachen, von verschiedenen Teams, realisiert werden
-kann. Nebst der verwendeten Programmiersprache, unterscheiden sich die Clienten
+kann. Nebst der verwendeten Programmiersprache unterscheiden sich die Clients
 bei implementierten Zusatzfunktionen, die im Protokoll nicht spezifiziert sind.
 Die populärsten Clients sind Go Ethereum (GETH)[@geth], Parity[@parity],
 Aleth[@aleth] und Trinity[@trinity]. Die Clients wurden auf die
@@ -43,7 +43,7 @@ registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart
 kodierte Adressen verwendet werden müssen. Dieses System ist analog zu einem DNS
 Lookup[@wiki_dns].
 
-Die Name Registry ist in Parity standardmässig immer unter der selben Addresse
+Die Name Registry ist in Parity standardmässig immer unter derselben Addresse
 zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart
 Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert
 werden.\
@@ -117,7 +117,7 @@ modifier whenFeePaid {
 ```
 Im Codeausschnitt \ref{li_fee} ist auf Zeile 1 die Höhe der Gebühr (```fee```)
 definiert. Ab Zeile 3 folgt ein Modifier. Dieser überprüft, ob der Betrag in der
-Transaktion gross genug ist um die Gebühr von Zeile 1 zu bezahlen. 
+Transaktion gross genug ist, um die Gebühr von Zeile 1 zu bezahlen. 
 
 
 ```{caption="Methode Reserve" label=li_reserve .sol .numberLines}
@@ -141,7 +141,7 @@ Der Modifier ```payable``` erlaubt es, Ether an die Methode zu senden. Auf Zeile
 4 wird überprüft, ob der Eintrag in ```entries``` noch frei ist. Schliesslich
 wird geprüft ob der Transaktion genügend Ether mitgegeben wird um die Gebühr zu
 begleichen.\
-Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` eine neuer Eintrag
+Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` ein neuer Eintrag
 erstellt. Als Besitzer des Eintrags wird der Sender der Transaktion gesetzt. Auf
 Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
 
@@ -185,7 +185,7 @@ Gratis Transaktionen von unzertifiziereten Benutzern werden weiterhin
 abgewiesen. 
 
 In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers
-aufgeführt und erklärt. Der gesammte Code ist im Anhang unter
+aufgeführt und erklärt. Der gesamte Code ist im Anhang unter
 \ref{app_parity_code} verlinkt. 
 
 ```{caption="Die Whitelist im Certifier" label=li_whitelist .sol .numberLines}

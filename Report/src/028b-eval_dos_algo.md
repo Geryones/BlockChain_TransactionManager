@@ -9,7 +9,7 @@ Die aufgeführten Parameter werden auf ihre Relevanz für die Erkennung einer Do
 Attacke geprüft. 
 
 Sender
-:    Ist zwingend nötig um eine Transaktion einem Account zuweisen zu können. 
+:    Ist zwingend nötig, um eine Transaktion einem Account zuweisen zu können. 
 
 Empfänger
 :    Dieser kann von Sender frei gewählt werden. Es wird auch kein Einverständnis des
@@ -17,7 +17,7 @@ Empfängers für eine Transaktion benötigt. Jeder Benutzer ist weiter in der La
 selbst neue Accounts zu erstellen und diese als Empfänger zu verwenden. Der
 Parameter hat somit keine Aussagekraft und wird nicht verwendet.
 
-Reset-Intervall
+Resett-Intervall
 :    Wir haben uns für die Implementierung eines allgemeinen Intervalls entschieden.
 Der Ansatz ist bedeutend einfacher umzusetzen als ein individuelles Intervall
 und kann daher sicher in der gegebenen Zeit realisiert werden. Am Ende des
@@ -26,9 +26,9 @@ Die Auswirkung des genannten Nachteils bei einem allgemeinen Intervall ist stark
 dessen Länge abhängig. Je kürzer das Intervall gewählt wird, umso kleiner sind
 die möglichen Folgen.
 Falls damit gerechnet werden muss, dass das Programm regelmässig gestoppt wird,
-muss für einen optimalen Betrieb, das Reset-Intervall entsprechend angepasst 
-werden. Das Reset-Intervall sollte kleiner gewählt werden, als die zu erwartende 
-Dauer zwischen den Programmstops. 
+muss für einen optimalen Betrieb, das Resett-Intervall entsprechend angepasst 
+werden. Das Resett-Intervall sollte kleiner gewählt werden als die zu erwartende 
+Dauer zwischen den Programm-Stopps. 
 
 
 Anzahl gratis Transaktionen
@@ -45,7 +45,7 @@ Angriff sehr naheliegend. Daher wird dieser Parameter ebenfalls verwendet.
 #### Wiederaufnahme auf die Whitelist
 
 Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die
-Accounts nicht mehr gleich behandelt. Wie lange ein Account keine gratis
+Accounts nicht mehr gleichbehandelt. Wie lange ein Account keine gratis
 Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von
 der Whitelist gelöscht wird. 
 
@@ -98,38 +98,38 @@ können pro Account gesetzt werden:
 
 
 Gratis Transaktionen Limite
-:       Definiert die maximale Anzahl gratis Transaktionen die pro Reset-Intervall 
+:       Definiert die maximale Anzahl gratis Transaktionen die pro Resett-Intervall 
 getätigt werden können.
 
 Gratis Gas Limite
 :       Definirt die maximale Menge an Gas die mit gratis Transaktionen innerhalb 
-eines Reset-Intervalls verbraucht werden können.
+eines Resett-Intervalls verbraucht werden können.
 
 Revoke-Intervall
-:      Anzahl der Reset-Intervalls, für die ein Account bei einer positiven Prüfung 
+:      Anzahl der Resett-Intervalls, für die ein Account bei einer positiven Prüfung 
 durch den Algorithmus von der Whitelist gelöscht wird. 
 
 
 Folgende Parameter gelten für alle Accounts:
 
-Reset-Intervall
-:     Einheit ist Minuten, definiert die Länge des Reset-Intervalls.
+Resett-Intervall
+:     Einheit ist Minuten, definiert die Länge des Resett-Intervalls.
 
 
 Standardwert gratis Transaktionen Limite
-:      Giltet für Accounts die ohne Transaktionslimite erfasst werden. Definiert die maximale 
-Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+:      Gilt für Accounts die ohne Transaktionslimite erfasst werden. Definiert die maximale 
+Anzahl gratis Transaktionen die pro Resett-Intervall getätigt werden können.
 
 Standardwert gratis Gas Limite
-:     Giltet für Accounts die ohne Gaslimite erfasst werden. Definirt die maximale 
-Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht 
+:     Gilt für Accounts die ohne Gaslimite erfasst werden. Definirt die maximale 
+Menge an Gas die mit gratis Transaktionen innerhalb eines Resett-Intervalls verbraucht 
 werden können.
 
 Standardwert Revoke-intervall 
-:     Giltet für Accounts die ohne
+:     Gilt für Accounts die ohne
 Revoke-Intervall erfasst werden. Definiert wie lange ein Account bei einem
 Vergehen von der Whitelist suspendiert wird.
 
 Bei der Konfiguration sollten die Abhängigkeiten zwischen den Parametern
-geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Reset-Intervall
+geachtet werden. Verfügbares Gas, Anzahl Transaktionen und das Resett-Intervall
 sollten immer zusammen konfiguriert werden. 

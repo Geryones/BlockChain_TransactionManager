@@ -1,5 +1,5 @@
 
-### Initialisierung
+### Initialisierung \label{sec_prac_init}
 
 Wenn die Blockchain frisch aufgesetzt wird, sind inital keine gratis
 Transaktionen möglich. Der dafür nötige Certifier ist weder deployed noch
@@ -36,3 +36,32 @@ Schlüssel von diesem Account nicht in den Quellcode des Transaktionsmanagers
 geschrieben. Er wird beim Start der Applikation aus einer eigenen Datei gelesen.
 Hier muss beachtet werden, dass diese Datei bei der Verwendung von einer
 Versionierungssoftware nicht inkludiert wird.
+
+
+### Run
+
+Mit der Klasse ```Run``` wird der Transaktionsmanger für den regulären Betrieb
+gestartet. Vorraussetzung ist, dass der Certifier deployed und registriert ist,
+siehe \ref{sec_prac_init}.\
+Beim Aufruf der Klasse ```Run``` werden folgende Schritte ausgeführt:
+
+1. Laden der DefaultSettings\
+   Die Datei ```DefaultSettings.json``` wird ausgelesen und das Objekt
+   ```JsonDefaultSettings``` damit befüllt. 
+2. Laden der Accountliste\
+   Die Datei ```AccountList.json``` wird ausgelesen. Die Accounts werden mit den
+   konifgurierten Parameter instanziert. 
+3. Instanzierung von Name Registry und Certifier\
+   Mit der jeweiligen Adresse, wird die Name Registry und der Certifier instanziert. 
+4. Die Klasse ```ChainInteractions``` wird instanziert. 
+5. Zertifizierung aller geladenen Accounts\
+   Alle geladenen Accounts werden geprüft. Sollte ein Account über einen
+   Zeitstempel verfügen, wird geprüft ob er suspendiert werden muss. Ansonsten
+   werden alle Accounts zertifiziert. 
+6. Instanzierung der Klasse ```SubscriptionTX```\
+   Eine Subscription, die eigentliche Überwachung der Blockchain, wird
+   gestartet. Das Command ```ResetAccountsCommand``` fügt sich rekursiv in die
+   Priority Queue ein. 
+
+Sobald der Transaktionsmanager mit einer Kommandozeile gestartet wurde, wird der
+Benutzer über aktuellen Vorgänge mit Lognachrichten infomriert. 

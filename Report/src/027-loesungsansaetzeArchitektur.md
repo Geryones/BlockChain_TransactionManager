@@ -24,7 +24,7 @@ Auf dem Diagramm \ref{img_arc_smartWallet} ist zu sehen, dass ein Benutzer über
 mehrere Accounts verfügen kann. Diese sind in der Smart Wallet des Benutzers
 registriert. Gratis Transaktionen die von einem dieser Accounts durch
 die Smart Wallet gesendet werden, müssen vom DoS Algorithmus geprüft werden.\
-In diesem Beispiel, möchte Benutzer A zwei gratis und eine reguläre Transaktion (TX) tätigen.
+In diesem Beispiel möchte Benutzer A zwei gratis und eine reguläre Transaktion (TX) tätigen.
 Für die erste Transaktion wird Account XX1 verwendet. In der Smart Wallet wird
 überprüft, ob sich der Account auf der Whitelist befindet. Diese Prüfung ist
 erfolgreich. Die Smart Wallet erstellt die gewünschte Transaktion für den

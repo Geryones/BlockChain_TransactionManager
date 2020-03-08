@@ -26,7 +26,7 @@ zwingend definiert sein muss.
 
 txLimit
 :     Definiert die maximale Anzahl gratis Transaktionen, die ein Account in 
-einem Reset-Intervall tätigen darf. 
+einem Resett-Intervall tätigen darf. 
 
 remainingTransactions 
 :     Mit diesem Feld wird bestimmt, über wie viele gratis
@@ -35,7 +35,7 @@ gepflegt und sollte nicht erfasst oder geändert werden.
 
 gasLimit
 :    Definiert die maximale Anzahl gratis Gas, die ein Account während eines 
-Reset-Intervalls verbrauchen darf. 
+Resett-Intervalls verbrauchen darf. 
 
 remainingGas 
 :     Mit diesem Feld wird bestimmt, über wie viel gratis Gas ein
@@ -202,7 +202,7 @@ nameRegistryAddress
 :      Die Adresse der Name Registry. Hier muss dieselbe Adresse wie in der Blockchainspezifikation verwendet werden. Siehe \ref{sec_prac_spec}.
 
 timestampLastReset
-:      Hier wird der Zeitpunkt des letzen Reset-Intervalls vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht bearbeitet werden.
+:      Hier wird der Zeitpunkt des letzen Resett-Intervalls vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht bearbeitet werden.
 
 
 Eine weitere, sehr zentrale Konfiguration ist der Account des
