@@ -5,6 +5,16 @@ In diesem Kapitl ist die Implementierung des Transaktionsmanagers zur Überwachu
 der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
 Funktionsweise von einzelnen Komponenten näher erklärt. 
 
+### Übersicht
+
+Das folgende Klassendiagramm dient der Übersicht. 
+
+![Klassendiagramm des Transaktionsmanagers \label{img_prac_classes}](images/KlassendiagrammDependencysWhite.png "Klassendiagramm für Transaktionsmanger")
+
+Das Klassendiagramm \ref{img_prac_classes} zeigt alle verwendeten Klassen ohne Methoden oder Attribute. Die vollständigen Klassendiagramme sind im Anhang unter \ref{app_transaktionsmanager} verlinkt.\
+
+//TODO klassendiagramm gruppieren && Beschreibung verfassen
+
 ### Wrapperklassen
 
 Für die Interaktion mit Smart Contracts werden generierte Wrapperklassen
