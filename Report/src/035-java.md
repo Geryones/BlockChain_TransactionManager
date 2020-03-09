@@ -9,7 +9,7 @@ Funktionsweise von einzelnen Komponenten näher erklärt.
 
 Das folgende Klassendiagramm dient der Übersicht. 
 
-![Klassendiagramm des Transaktionsmanagers \label{img_prac_classes}](images/KlassendiagrammDependencysWhite.png "Klassendiagramm für Transaktionsmanger")
+![Klassendiagramm des Transaktionsmanagers \label{img_prac_classes}](images/KlassendiagrammDependencys.png "Klassendiagramm für Transaktionsmanger")
 
 Das Klassendiagramm \ref{img_prac_classes} zeigt alle verwendeten Klassen ohne
 Methoden oder Attribute. Die vollständigen Klassendiagramme sind im Anhang unter

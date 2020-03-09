@@ -46,7 +46,7 @@ manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 
 ![Ein Smart Contract[@smart_contracts_alpiq] \label{img_smartContract}](images/smart_contract.PNG "smart contract")
 
-Der grosse Vorteil von Smart Contracts ist, dass keine third parties benötigt
+Der grosse Vorteil von Smart Contracts ist, dass keine Drittparteien benötigt
 werden, das ist auf den Bildern \ref{img_tradContract} und
 \ref{img_smartContract} dargestellt. Der Code kontrolliert die Transaktionen,
 welche Nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag

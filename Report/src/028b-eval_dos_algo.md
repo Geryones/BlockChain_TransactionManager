@@ -46,8 +46,7 @@ Angriff sehr naheliegend. Daher wird dieser Parameter ebenfalls verwendet.
 
 Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die
 Accounts nicht mehr gleichbehandelt. Wie lange ein Account keine gratis
-Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von
-der Whitelist gelöscht wird. 
+Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. 
 
 Mit einem Zeitintervall ab Zeitpunkt des Vergehens, werden alle Accounts gleich
 lange von der Whitelist gelöscht. Dieser Ansatz bietet daher mehr Fairness als
@@ -66,7 +65,7 @@ mitgeteilt werden, für wie lange er suspendiert ist. Wie diese Kommunikation
 realisiert werden soll, ist noch unklar.
 
 Wir haben uns entschieden, ein Zeitintervall ab Zeitpunkt des Vergehens zu
-implementieren. Dieser Ansatz ist fair und verständlich für die Benutzer.
+implementieren. Dieser Ansatz ist fair und verständlich für die Benutzer. Das Intervall ist fortan Revoke-Intervall genannt.
 
 
 #### Benutzermanagement

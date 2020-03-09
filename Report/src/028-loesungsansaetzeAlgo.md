@@ -35,9 +35,7 @@ Allgemeines Intervall
 selben Zeitintervall betrachtet. Der Zeitpunkt ist relativ zum Programmstart.
 Beispielsweise ist als Intervall eine Stunde gesetzt und der Progammstart
 erfolgt um 8:00 UCT. Dadurch sind gratis Transaktionen die um 08:59 UTC gemacht
-werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge,
-dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf
-eines Intervalls ausführen können.  
+werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge, dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf eines Intervalls ausführen können.  
 
 Individuelles Intervall 
 :      Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis 
@@ -77,10 +75,8 @@ gelöschte Accounts werden dieser wieder hinzugefügt.\
 Ein Beispiel:\
 Als Intervall ist eine Woche definiert. Das Programm startet am
 Montag um 8:00 UTC.\
-Nun werden alle gesperrten Accounts, jeweils am Montag um 8:00 UTC wieder auf
-die Whitelist genommen.
+Nun werden alle gesperrten Accounts, jeweils am nächsten Montag um 8:00 UTC wieder auf die Whitelist genommen.
  
-
 ##### Nach Zeitintervall
 
 Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit
