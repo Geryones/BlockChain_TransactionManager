@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ch.brugg.fhnw.btm.ChainSetup</OriginalElement>
+  <nodes>
+    <node x="1430.0330275974025" y="2651.0">ch.brugg.fhnw.btm.command.ResetAccountsCommand</node>
+    <node x="1156.0500757575753" y="864.0">ch.brugg.fhnw.btm.pojo.JsonAccount</node>
+    <node x="677.5500757575753" y="995.0">ch.brugg.fhnw.btm.command.Command</node>
+    <node x="668.4684713203465" y="3031.0">ch.brugg.fhnw.btm.SubscriptionTX</node>
+    <node x="761.4684713203465" y="3368.0">ch.brugg.fhnw.btm.Run</node>
+    <node x="245.2794832251085" y="3368.0">ch.brugg.fhnw.btm.Init</node>
+    <node x="673.2517775974025" y="1779.0">ch.brugg.fhnw.btm.command.CertifyCommand</node>
+    <node x="570.5084090909086" y="0.0">ch.brugg.fhnw.btm.pojo.JsonDefaultSettings</node>
+    <node x="160.2876028138528" y="2606.0">ch.brugg.fhnw.btm.ChainInteractions</node>
+    <node x="452.38340909090863" y="383.0">ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler</node>
+    <node x="93.63908279220755" y="744.0">ch.brugg.fhnw.btm.ChainSetup</node>
+    <node x="722.5642775974025" y="1451.0">ch.brugg.fhnw.btm.command.AbstractCommand</node>
+    <node x="147.2794832251085" y="3107.0">ch.brugg.fhnw.btm.Stop</node>
+    <node x="1002.5642775974025" y="1779.0">ch.brugg.fhnw.btm.command.RevokeAccountCommand</node>
+    <node x="412.50840909090863" y="140.0">ch.brugg.fhnw.btm.pojo.MasterKey</node>
+    <node x="558.3018046536798" y="2115.0">ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm</node>
+    <node x="1385.2581304112553" y="1670.0">ch.brugg.fhnw.btm.handler.JsonAccountHandler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ch.brugg.fhnw.btm.Stop" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="-65.59999999999991" y="-47.5" />
+      <point x="163.67948322510858" y="3011.0" />
+      <point x="104.84174242424183" y="3011.0" />
+      <point x="104.84174242424183" y="2566.0" />
+      <point x="61.1098403679656" y="2566.0" />
+      <point x="61.1098403679656" y="704.0" />
+      <point x="498.4334090909086" y="704.0" />
+      <point x="-107.45000000000005" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Init" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="-68.33333333333326" y="-47.5" />
+      <point x="258.94614989177524" y="3348.0" />
+      <point x="0.0" y="3348.0" />
+      <point x="0.0" y="694.0" />
+      <point x="467.73340909090854" y="694.0" />
+      <point x="-138.1500000000001" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.ChainInteractions" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="148.33333333333326" y="-167.5" />
+      <point x="486.62093614718606" y="2586.0" />
+      <point x="1326.0642775974025" y="2586.0" />
+      <point x="1326.0642775974025" y="1431.0" />
+      <point x="1324.716742424242" y="1431.0" />
+      <point x="30.666666666666742" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Stop" target="ch.brugg.fhnw.btm.ChainInteractions">
+      <point x="0.0" y="-47.5" />
+      <point x="229.2794832251085" y="2991.0" />
+      <point x="185.71617424242436" y="2991.0" />
+      <point x="-152.57142857142844" y="167.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Init" target="ch.brugg.fhnw.btm.ChainInteractions">
+      <point x="13.666666666666742" y="-47.5" />
+      <point x="340.94614989177524" y="3328.0" />
+      <point x="389.2235037878786" y="3328.0" />
+      <point x="389.2235037878786" y="2971.0" />
+      <point x="338.2876028138528" y="2971.0" />
+      <point x="0.0" y="167.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.ResetAccountsCommand" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="56.28571428571422" y="-122.5" />
+      <point x="1683.3187418831167" y="2566.0" />
+      <point x="1867.3142775974025" y="2566.0" />
+      <point x="1867.3142775974025" y="1411.0" />
+      <point x="1416.716742424242" y="1411.0" />
+      <point x="122.66666666666669" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.ResetAccountsCommand" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="112.57142857142856" y="-122.5" />
+      <point x="1739.604456168831" y="2576.0" />
+      <point x="1885.730944264069" y="2576.0" />
+      <point x="1885.730944264069" y="714.0" />
+      <point x="682.6334090909086" y="714.0" />
+      <point x="76.75" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.RevokeAccountCommand" target="ch.brugg.fhnw.btm.command.Command">
+      <point x="37.75" y="-68.5" />
+      <point x="1191.3142775974025" y="1650.0" />
+      <point x="1202.5500757575753" y="1650.0" />
+      <point x="1202.5500757575753" y="1361.0" />
+      <point x="830.6334090909086" y="1361.0" />
+      <point x="69.58333333333326" y="47.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.SubscriptionTX" target="ch.brugg.fhnw.btm.command.ResetAccountsCommand">
+      <point x="80.0" y="-123.5" />
+      <point x="888.4684713203465" y="3001.0" />
+      <point x="1627.0330275974025" y="3001.0" />
+      <point x="0.0" y="122.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.RevokeAccountCommand" target="ch.brugg.fhnw.btm.command.AbstractCommand">
+      <point x="-113.25" y="-68.5" />
+      <point x="1040.3142775974025" y="1640.0" />
+      <point x="884.4392775974025" y="1640.0" />
+      <point x="32.375" y="79.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.SubscriptionTX" target="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm">
+      <point x="0.0" y="-123.5" />
+      <point x="808.4684713203465" y="2971.0" />
+      <point x="840.3767775974023" y="2971.0" />
+      <point x="840.3767775974023" y="2576.0" />
+      <point x="833.5518046536798" y="2576.0" />
+      <point x="91.75" y="210.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.SubscriptionTX" target="ch.brugg.fhnw.btm.handler.JsonAccountHandler">
+      <point x="40.0" y="-123.5" />
+      <point x="848.4684713203465" y="2991.0" />
+      <point x="1419.5330275974025" y="2991.0" />
+      <point x="1419.5330275974025" y="2085.0" />
+      <point x="1539.6956304112553" y="2085.0" />
+      <point x="-22.0625" y="177.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Run" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-70.28571428571422" y="-47.5" />
+      <point x="773.1827570346322" y="3318.0" />
+      <point x="85.89174242424178" y="3318.0" />
+      <point x="85.89174242424178" y="2586.0" />
+      <point x="110.34174242424183" y="2586.0" />
+      <point x="110.34174242424183" y="1421.0" />
+      <point x="167.51408279220755" y="1421.0" />
+      <point x="-123.125" y="298.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.CertifyCommand" target="ch.brugg.fhnw.btm.command.AbstractCommand">
+      <point x="30.875" y="-68.5" />
+      <point x="827.6267775974025" y="1650.0" />
+      <point x="819.6892775974025" y="1650.0" />
+      <point x="-32.375" y="79.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.command.Command">
+      <point x="-68.8125" y="-210.5" />
+      <point x="672.9893046536798" y="2085.0" />
+      <point x="606.9788879870132" y="2085.0" />
+      <point x="606.9788879870132" y="1411.0" />
+      <point x="691.466742424242" y="1411.0" />
+      <point x="-69.58333333333331" y="47.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="68.8125" y="-210.5" />
+      <point x="810.6143046536798" y="2045.0" />
+      <point x="1315.0642775974025" y="2045.0" />
+      <point x="1315.0642775974025" y="1431.0" />
+      <point x="1294.0500757575753" y="1431.0" />
+      <point x="0.0" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.command.CertifyCommand">
+      <point x="22.9375" y="-210.5" />
+      <point x="764.7393046536798" y="2095.0" />
+      <point x="796.7517775974025" y="2095.0" />
+      <point x="0.0" y="68.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.ChainInteractions" target="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm">
+      <point x="-29.666666666666742" y="-167.5" />
+      <point x="308.62093614718606" y="2556.0" />
+      <point x="588.8851379870132" y="2556.0" />
+      <point x="-152.91666666666663" y="210.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler" target="ch.brugg.fhnw.btm.pojo.JsonDefaultSettings">
+      <point x="115.125" y="-145.5" />
+      <point x="721.0084090909086" y="358.0" />
+      <point x="764.7584090909086" y="358.0" />
+      <point x="64.75" y="166.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Run" target="ch.brugg.fhnw.btm.SubscriptionTX">
+      <point x="0.0" y="-47.5" />
+      <point x="35.0" y="123.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.handler.JsonAccountHandler" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="88.25" y="-177.5" />
+      <point x="1650.0081304112553" y="1650.0" />
+      <point x="1523.7563528138528" y="1650.0" />
+      <point x="1523.7563528138528" y="1421.0" />
+      <point x="1386.0500757575753" y="1421.0" />
+      <point x="92.0" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.ChainSetup" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="-98.5" y="-298.5" />
+      <point x="192.13908279220755" y="714.0" />
+      <point x="529.1334090909086" y="714.0" />
+      <point x="-76.75" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.RevokeAccountCommand" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="113.25" y="-68.5" />
+      <point x="1266.8142775974025" y="1650.0" />
+      <point x="1251.0081304112553" y="1650.0" />
+      <point x="1251.0081304112553" y="1431.0" />
+      <point x="1263.3834090909088" y="1431.0" />
+      <point x="-30.66666666666663" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.AbstractCommand" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-51.799999999999955" y="-79.5" />
+      <point x="800.2642775974025" y="1391.0" />
+      <point x="463.01408279220755" y="1391.0" />
+      <point x="172.375" y="298.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Stop" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-32.799999999999955" y="-47.5" />
+      <point x="196.47948322510854" y="3001.0" />
+      <point x="126.84174242424183" y="3001.0" />
+      <point x="126.84174242424183" y="1431.0" />
+      <point x="216.76408279220755" y="1431.0" />
+      <point x="-73.875" y="298.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Stop" target="ch.brugg.fhnw.btm.handler.JsonAccountHandler">
+      <point x="65.59999999999991" y="-47.5" />
+      <point x="294.8794832251084" y="2981.0" />
+      <point x="1337.0642775974025" y="2981.0" />
+      <point x="1337.0642775974025" y="2075.0" />
+      <point x="1495.5706304112553" y="2075.0" />
+      <point x="-66.1875" y="177.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.ResetAccountsCommand" target="ch.brugg.fhnw.btm.command.Command">
+      <point x="-112.57142857142867" y="-122.5" />
+      <point x="1514.4615990259738" y="2566.0" />
+      <point x="992.0642775974025" y="2566.0" />
+      <point x="992.0642775974025" y="1371.0" />
+      <point x="802.8000757575753" y="1371.0" />
+      <point x="41.75" y="47.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.SubscriptionTX" target="ch.brugg.fhnw.btm.ChainInteractions">
+      <point x="-120.0" y="-123.5" />
+      <point x="688.4684713203465" y="2971.0" />
+      <point x="490.85903138528124" y="2971.0" />
+      <point x="152.57142857142844" y="167.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="-160.5625" y="-210.5" />
+      <point x="581.2393046536798" y="2095.0" />
+      <point x="578.2705546536798" y="2095.0" />
+      <point x="578.2705546536798" y="714.0" />
+      <point x="590.5334090909087" y="714.0" />
+      <point x="-15.349999999999909" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.ChainInteractions" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-89.0" y="-167.5" />
+      <point x="249.2876028138528" y="2586.0" />
+      <point x="257.02924242424183" y="2586.0" />
+      <point x="257.02924242424183" y="1431.0" />
+      <point x="315.26408279220755" y="1431.0" />
+      <point x="24.625" y="298.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.AbstractCommand" target="ch.brugg.fhnw.btm.command.Command">
+      <point x="0.0" y="-79.5" />
+      <point x="852.0642775974025" y="1381.0" />
+      <point x="774.9667424242419" y="1381.0" />
+      <point x="13.916666666666629" y="47.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler" target="ch.brugg.fhnw.btm.pojo.MasterKey">
+      <point x="-115.125" y="-145.5" />
+      <point x="490.75840909090863" y="358.0" />
+      <point x="447.00840909090863" y="358.0" />
+      <point x="-34.5" y="26.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Run" target="ch.brugg.fhnw.btm.handler.JsonAccountHandler">
+      <point x="46.85714285714289" y="-47.5" />
+      <point x="890.3256141774893" y="3338.0" />
+      <point x="1845.5330275974025" y="3338.0" />
+      <point x="1845.5330275974025" y="2085.0" />
+      <point x="1716.1956304112553" y="2085.0" />
+      <point x="154.4375" y="177.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.CertifyCommand" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="92.625" y="-68.5" />
+      <point x="889.3767775974025" y="1650.0" />
+      <point x="1113.17680465368" y="1650.0" />
+      <point x="1113.17680465368" y="1431.0" />
+      <point x="1232.716742424242" y="1431.0" />
+      <point x="-61.33333333333337" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.ChainInteractions">
+      <point x="-30.583333333333258" y="210.5" />
+      <point x="711.2184713203466" y="2576.0" />
+      <point x="427.2876028138528" y="2576.0" />
+      <point x="89.0" y="-167.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Run" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="70.28571428571422" y="-47.5" />
+      <point x="913.7541856060607" y="3348.0" />
+      <point x="1907.730944264069" y="3348.0" />
+      <point x="1907.730944264069" y="694.0" />
+      <point x="744.0334090909084" y="694.0" />
+      <point x="138.14999999999986" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.ResetAccountsCommand" target="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm">
+      <point x="-168.85714285714295" y="-122.5" />
+      <point x="1458.1758847402596" y="2576.0" />
+      <point x="894.7184713203463" y="2576.0" />
+      <point x="152.91666666666652" y="210.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.ResetAccountsCommand" target="ch.brugg.fhnw.btm.handler.JsonAccountHandler">
+      <point x="0.0" y="-122.5" />
+      <point x="1627.0330275974025" y="2586.0" />
+      <point x="1604.3901704545451" y="2586.0" />
+      <point x="1604.3901704545451" y="2095.0" />
+      <point x="1627.9456304112553" y="2095.0" />
+      <point x="66.1875" y="177.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.SubscriptionTX" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-80.0" y="-123.5" />
+      <point x="728.4684713203465" y="2961.0" />
+      <point x="526.7876028138528" y="2961.0" />
+      <point x="526.7876028138528" y="1431.0" />
+      <point x="364.51408279220755" y="1431.0" />
+      <point x="73.875" y="298.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.AbstractCommand" target="ch.brugg.fhnw.btm.pojo.JsonAccount">
+      <point x="51.799999999999955" y="-79.5" />
+      <point x="903.8642775974024" y="1411.0" />
+      <point x="1171.3834090909088" y="1411.0" />
+      <point x="-122.66666666666663" y="178.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.command.CertifyCommand" target="ch.brugg.fhnw.btm.command.Command">
+      <point x="-92.625" y="-68.5" />
+      <point x="704.1267775974025" y="1650.0" />
+      <point x="708.9268046536798" y="1650.0" />
+      <point x="708.9268046536798" y="1431.0" />
+      <point x="747.1334090909087" y="1431.0" />
+      <point x="-13.916666666666629" y="47.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Init" target="ch.brugg.fhnw.btm.SubscriptionTX">
+      <point x="41.0" y="-47.5" />
+      <point x="368.2794832251085" y="3338.0" />
+      <point x="703.4684713203465" y="3338.0" />
+      <point x="-105.0" y="123.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.dosAlgorithm.DoSAlgorithm" target="ch.brugg.fhnw.btm.handler.JsonAccountHandler">
+      <point x="160.5625" y="-210.5" />
+      <point x="902.3643046536798" y="2065.0" />
+      <point x="1451.4456304112553" y="2065.0" />
+      <point x="-110.3125" y="177.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Run" target="ch.brugg.fhnw.btm.ChainInteractions">
+      <point x="-46.85714285714289" y="-47.5" />
+      <point x="796.6113284632036" y="3308.0" />
+      <point x="400.2235037878786" y="3308.0" />
+      <point x="400.2235037878786" y="2961.0" />
+      <point x="389.1447456709957" y="2961.0" />
+      <point x="50.85714285714289" y="167.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.pojo.JsonAccount" target="ch.brugg.fhnw.btm.handler.JsonDefaultSettingsHandler">
+      <point x="0.0" y="-178.5" />
+      <point x="1294.0500757575753" y="724.0" />
+      <point x="651.9334090909085" y="724.0" />
+      <point x="46.049999999999955" y="145.5" />
+    </edge>
+    <edge source="ch.brugg.fhnw.btm.Init" target="ch.brugg.fhnw.btm.ChainSetup">
+      <point x="-41.0" y="-47.5" />
+      <point x="286.2794832251085" y="3338.0" />
+      <point x="50.1098403679656" y="3338.0" />
+      <point x="50.1098403679656" y="2576.0" />
+      <point x="99.34174242424183" y="2576.0" />
+      <point x="99.34174242424183" y="1411.0" />
+      <point x="118.26408279220755" y="1411.0" />
+      <point x="-172.375" y="298.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.2698342823331654" x="-338.6682192989392" y="681.6907695035916" />
+  <SelectedNodes>
+    <node>ch.brugg.fhnw.btm.ChainSetup</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
