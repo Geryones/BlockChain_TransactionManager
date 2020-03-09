@@ -222,7 +222,7 @@ Zeile 24
 :      Hier ist die SimpleRegistry, siehe Abschnitt \ref{sec_whitelist} und \ref{sec_simpleRegistry}, 
 definiert. Der erste Parameter ist die Adresse, unter welcher der Smart Contract erreichbar sein soll. 
 Das Guthaben wir mit einem Ether initalisiert. Der Wert für ```constructor``` ist der Bytecode des 
-kompilierten Smart Contracts. Dieser ist aufgrund seiner Grösse durch einen Platzhalter ersetzt worden.  
+kompilierten Smart Contracts. Dieser ist aufgrund seiner Grösse durch einen Platzhalter ersetzt worden.
 
 Zeile 25
 :      Definition von einem Benutzeraccount. Der erste Parameter ist die Adresse. Dem Account kann ein 

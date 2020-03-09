@@ -30,9 +30,6 @@ Registry[@parity_nameRegistry] und der Service Transaction
 Checker[@parity_service_transaction_checker]. Diese sind in den folgenden
 Abschnitten erklärt.
 
-
-
-
 #### Name Registry \label{sec_simpleRegistry}
 
 In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine

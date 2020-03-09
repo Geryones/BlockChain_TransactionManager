@@ -1,13 +1,15 @@
 
 ### Docker \label{sec_prac_docker}
 
-Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird Docker[@docker] für die Betreibung 
-der Blockchain verwendet. Mehr Details zur Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
+Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird
+Docker[@docker] für die Betreibung der Blockchain verwendet. Mehr Details zur
+Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
 
 ### Name Registry
 
-Die Name Registry wird standardmässig in Parity verwendet. Die zur Verfügung gestellte Implementation der 
-Name Registry ist SimpleRegistry genannt. Der vollständige Code ist im Anhang unter \ref{app_parity_code} verlinkt. 
+Die Name Registry wird standardmässig in Parity verwendet. Die zur Verfügung
+gestellte Implementation der Name Registry ist SimpleRegistry genannt. Der
+vollständige Code ist im Anhang unter \ref{app_parity_code} verlinkt. 
 
 
 ### Certifier
@@ -21,7 +23,7 @@ definiert werden, die gratis Transaktionen tätigen können.
 
 #### Deployment und Registrierung \label{sec_prac_deployment}
 
-Für eine Erfolgreiche Verwendung des Certifiers, die Name Registry in der
+Für eine Erfolgreiche Verwendung des Certifiers muss die Name Registry in der
 Blockchainspezifikation definiert sein. Sobald Parity gestartet ist, kann mit
 dem Deplyoment des Certifiers begonnen werden. Hierfür wird Java und die
 Bibliothek Web3j[@web3j] verwendet.  

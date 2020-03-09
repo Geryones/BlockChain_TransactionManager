@@ -64,8 +64,6 @@ ermöglichen, ohne die Blockchain anfällig gegen DoS Attacken zu machen.
 
 ## Realisierung
 
-//TODO ergänzen Priority Queue und Command Pattern
-
 Parity ist zur Zeit der einzige Ethereumclient, der über ein Benutzermanagement
 für gratis Transaktionen verfügt. Durch die Verwendung von Smart
 Contracts[@smartContractDef] ist eine Whitelist für gratis Transaktionen

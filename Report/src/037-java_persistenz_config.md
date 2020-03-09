@@ -5,9 +5,8 @@ Um die Datenpersistenz zu gewährleisten, wird die Whitelist des
 Transaktionsmanagers regelmässig in einer JSON-Datei gespeichert. 
 
 Dafür wird die Datei ```AccountList.json``` verwendet. Relativ zur JAR-Datei des
-Transatkionsmanagers muss sie in folgendem Verzeichnis liegen: 
+Transatkionsmanagers muss sie in folgendem Verzeichnis liegen: ```\src\main\resources\whitelist```
 
-//TODO Filepath
 
 In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
 jedem Account können die inidviduell konfigurierbaren Parameter gesetzt werden.\
@@ -192,17 +191,24 @@ defaultTXLimit
 defaultGasLimit
 :      Der Standardwert für die gratis Gaslimite pro Account.
 
-defaultRevokeTime
-:      Der Standardwert für die Dauer der Suspendierung von der Whitelist bei einem Vergehen.
+defaultRevokeTime 
+:      Der Standardwert für die Dauer der Suspendierung von
+der Whitelist bei einem Vergehen.
 
 certifierAddress 
-:      Die Adresse des Certifiers. Er wird automatisch beim Deployment des Certifiers gesetzt. Dieser Parameter sollte nicht bearbeitet werden.
+:      Die Adresse des Certifiers. Er wird automatisch beim
+Deployment des Certifiers gesetzt. Dieser Parameter sollte nicht bearbeitet
+werden.
 
-nameRegistryAddress
-:      Die Adresse der Name Registry. Hier muss dieselbe Adresse wie in der Blockchainspezifikation verwendet werden. Siehe \ref{sec_prac_spec}.
+nameRegistryAddress 
+:      Die Adresse der Name Registry. Hier muss dieselbe
+Adresse wie in der Blockchainspezifikation verwendet werden. Siehe
+\ref{sec_prac_spec}.
 
-timestampLastReset
-:      Hier wird der Zeitpunkt des letzen Resett-Intervalls vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht bearbeitet werden.
+timestampLastReset 
+:      Hier wird der Zeitpunkt des letzen Resett-Intervalls
+vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht
+bearbeitet werden.
 
 
 Eine weitere, sehr zentrale Konfiguration ist der Account des

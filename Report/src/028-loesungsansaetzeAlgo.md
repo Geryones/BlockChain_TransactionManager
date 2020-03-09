@@ -61,14 +61,6 @@ genannten Parameter, werden hier die verursachten Komputationskosten auf der
 Blockchain berücksichtigt. 
 
 
-
-
-
-
-
-
-
-
 #### Wiederaufnahme auf die Whitelist
 
 Falls die Prüfung durch den Algorithmus positiv ausfällt, wird der betreffende
@@ -117,10 +109,7 @@ einem Basisintervall von 5 Minuten:
 
 Table: Beispiel für Suspendierung mit inkrementellen Intervallen \label{tab_bsp_inkrements}
 
-
-
 #### Benutzermanagement
-
 
 Bei der Verwaltung von Accounts geht es darum, wie die vorhergehenden Parameter
 und Intervalle auf die Accounts angewendet werden. Es werden drei Mögliche
