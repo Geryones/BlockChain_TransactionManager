@@ -15,7 +15,20 @@ Diese Tests haben gezeigt, dass das Programm erst ab der 30sten Transaktion anf�
 Auch haben die tests gezeigt, dass das System viele (500) Transaktionen verarbeiten kann der das Programm diese beobachten kann
 
 #### Lese Tests
-bei diesen tests wurde geschaut ob die Daten richtig aus der Datei gelesen wird. Dabei wurde eine test f체r die Attributliste und ein test f체r die Default Settings geschrieben. 
+Bei diesen Tests wurde geschaut ob die Daten richtig aus der Datei gelesen wird. Dabei wurde eine test f체r die Attributliste und ein Test f체r die Default Settings geschrieben. 
+
+Resultat:
+Die Daten werden korrekt aus dem File ausgelesen
 #### Intervall Tests
+Bei den Intervall Tests wurden Transaktionen bet채tigt und dannach geschaut, ob Transaktionen und Gas abgezogen wurden. Nach dem eingestellten ResetIntervall Time vom DefaultSettings File wurde geschaut ob die Counter wieder zur체ckgesetzt sind.
+
+Resultat:
+Die Tests sind positiv ausgefallen und haben best채tig wa die manuellen Tests auch bets채tigt haben, das der Intervall mit dem priority Queue Pattern funktioniert
 #### Unit Tests
+Hier werden verschiedene einzelne Methoden getestet. Wir steuern keine 100% Testbadeckung an und wollen durch Tests der gesamten Funktionalit채ten das Programm mehrheitlich testen.
+
+- RevokeAccount
+- RevokeAccountList
+- CertifyAccount
+- CertifyAccountList
 //TODO - Gemachte Tests, Resultat, Schlussfolgerung
