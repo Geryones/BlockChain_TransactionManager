@@ -137,7 +137,7 @@ erhöhen, werden sie jedoch separiert aufgeführt.
 		}
 	},
 ```
-
+Code-Ausschnitt \ref{li_blockchainSpec1}:
 
 Zeile 2
 :     Name der Blockchain
@@ -164,6 +164,7 @@ Algorithmus verwendet wird, kann dieser hier konfiguriert werden.
 		"gasLimitBoundDivisor": "0x0400"
 	},
 ```
+Code-Ausschnitt \ref{li_blockchainSpec2}:
 
 Zeile 1 - 8
 :     Im Abschnitt ```params``` sind die generellen Parameter für die Blockchain aufgeführt.
@@ -203,6 +204,8 @@ Zeile 7
 	},
 ```
 
+Code-Ausschnitt \ref{li_blockchainSpec3}:
+
 Zeile 1 - 7
 :      Mit dem Abschnitt ```genesis``` ist der Genesis Block, also der erste Block, 
 der Blockchain definiert. 
@@ -221,7 +224,7 @@ Zeile 6
 berechnet wird, hat dieser Wert einen Einfluss auf zukünftige Gaslimiten. 
 
 
-```{.json caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec1  .numberLines}
+```{.json caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec4  .numberLines}
 	"accounts": {
 		"0000000000000000000000000000000000001337": { "balance": "1", "constructor": "Platzhalter für Bytecode von SimpleRegistry" },
 		"00a329c0648769a73afac7f9381e08fb43dbea72": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }
@@ -229,6 +232,8 @@ berechnet wird, hat dieser Wert einen Einfluss auf zukünftige Gaslimiten.
 }
 
 ```
+
+Code-Ausschnitt \ref{li_blockchainSpec4}:
 
 Zeile 1 - 4    
 :      Dieser Abschnitt erlaubtes, Accounts zu definieren. Diese können für Benutzer oder 

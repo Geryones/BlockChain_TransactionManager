@@ -5,18 +5,6 @@ In diesem Kapitl ist die Implementierung des Transaktionsmanagers zur Überwachu
 der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
 Funktionsweise von einzelnen Komponenten näher erklärt. 
 
-### Übersicht
-
-Das folgende Klassendiagramm dient der Übersicht. 
-
-![Klassendiagramm des Transaktionsmanagers \label{img_prac_classes}](images/KlassendiagrammDependencys.png "Klassendiagramm für Transaktionsmanger")
-
-Das Klassendiagramm \ref{img_prac_classes} zeigt alle verwendeten Klassen ohne
-Methoden oder Attribute. Die vollständigen Klassendiagramme sind im Anhang unter
-\ref{app_transaktionsmanager} verlinkt.\
-
-//TODO klassendiagramm gruppieren && Beschreibung verfassen
-
 ### Wrapperklassen
 
 Für die Interaktion mit Smart Contracts werden generierte Wrapperklassen
@@ -28,7 +16,7 @@ vorhanden. Für dessen Generierung und Verwendung siehe
 
 Um die Transaktionen auf der Blockchain zu Observieren wird ein
 Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es, eine
-```Subscription``` zu erstellen. Diese läuft asynchron in einem eigenen Thread.\
+```Subscription``` zu erstellen. Diese läuft asynchron .\
 Jede getätigte Transaktion wird von der ```Subscription``` erfasst. In einem
 ersten Schritt wird der verwendete Gas Preis der Transaktion betrachtet. Nur
 wenn dieser null ist, wird die Transaktion und der dazugehörende Account durch

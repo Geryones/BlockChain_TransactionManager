@@ -6,7 +6,7 @@ Lösungsansätzen gegenübergestellt.
 
 ![Blockchain mit Transaktionsmanager \label{img_prac_overview}](images/overview_blockchain_txmanager.png "übersicht Transaktionsmanager und Blockchain") 
 
-Im folgenden Kapitel wird die Blockchain behandelt, diese auf dem Diagramm \ref{img_prac_overview} in grün eingefärbt. Anschliessend wird der Transaktionsmanger behandelt, im Diagramm gelb eingefärbt. 
+Im folgenden Abschnitt wird die Blockchain behandelt, diese ist auf dem Diagramm \ref{img_prac_overview} grün eingefärbt. Anschliessend wird der Transaktionsmanger behandelt, im Diagramm gelb eingefärbt. 
 
 ## Parity \label{sec_prac_parity}
 
