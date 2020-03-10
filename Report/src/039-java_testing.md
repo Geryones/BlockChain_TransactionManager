@@ -1,8 +1,8 @@
 
 ### Tests
-Um das Programm getestet zu haben. Haben wir nebst einigen Unit Tests auch automatisierte Abnahme Tests gemacht, mit den wichtigsten Funktionen. Zu denen gehören Performance Tests, das Tesetn des richtigen Einlesens der Files und das Testen vom Resett Intervall.
+Um das Programm automatisiert zu testen, wurden neben einigen Unit Tests auch automatisierte Abnahme Tests der wichtigsten Funktionalitäten gemacht. Zu denen gehören Performance Tests, das Tesetn des richtigen Einlesens der beiden Dateien und das Testen vom Resett Intervall.
 #### Performance Tests
-Bei den Performance Tests wurden für eine Account verschieden viele Transaktionen ausgelöst.
+Bei den Performance Tests wurde für eine Account verschieden viele Transaktionen ausgelöst.
 - MaxTxLimite -1
 - MaxTxLimite
 - MaxTxlimite +1
