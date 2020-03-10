@@ -1,6 +1,6 @@
 
 ### Tests
-Um das Programm getestet zu haben. Haben wir nebst einigen Unit tests auch automatisierte Abnahme Tests gemacht. Zu denen gehören Performance Tests, das Tesetn des richtigen Einlesens der Files und Intervall Tests.
+Um das Programm getestet zu haben. Haben wir nebst einigen Unit Tests auch automatisierte Abnahme Tests gemacht, mit den wichtigsten Funktionen. Zu denen gehören Performance Tests, das Tesetn des richtigen Einlesens der Files und das Testen vom Resett Intervall.
 #### Performance Tests
 Bei den Performance Tests wurden für eine Account verschieden viele Transaktionen ausgelöst.
 - MaxTxLimite -1
@@ -11,8 +11,8 @@ Bei den Performance Tests wurden für eine Account verschieden viele Transaktion
 - 500 mit eine Tx Linmite von 450.
 
 Resultat:
-Diese Tests haben gezeigt, dass das Programm erst ab der 30sten Transaktion anfängt die Transktionen zu beobachten. Also lohnt sich eine Limite unter 30 nicht wirklich.
-Auch haben die tests gezeigt, dass das System viele (500) Transaktionen verarbeiten kann der das Programm diese beobachten kann
+Diese Tests haben gezeigt, dass das Programm erst ab der 30sten Transaktion anfängt die Transktionen zu beobachten. Also lohnt sich eine Limite unter 30 nicht wirklich. Auch weil eine kleinere Limite nicht einer DoS Attacke wiederspiegelt.
+Auch haben die Tests gezeigt, dass das System viele (500) Transaktionen verarbeiten kann der das Programm diese beobachten kann
 
 #### Lese Tests
 Bei diesen Tests wurde geschaut ob die Daten richtig aus der Datei gelesen wird. Dabei wurde eine test für die Attributliste und ein Test für die Default Settings geschrieben. 
