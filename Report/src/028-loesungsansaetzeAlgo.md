@@ -30,20 +30,33 @@ sowohl um einen Benutzeraccount oder einen Smart Contract handeln.
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall
 bewertet werden. Hier werden zwei unterschiedliche Ansätze untersucht: 
 
-Allgemeines Intervall 
-:      Gratis Transaktionen werden für alle Accounts im
+- Allgemeines Intervall\
+Gratis Transaktionen werden für alle Accounts im
 selben Zeitintervall betrachtet. Der Zeitpunkt ist relativ zum Programmstart.
 Beispielsweise ist als Intervall eine Stunde gesetzt und der Progammstart
 erfolgt um 8:00 UCT. Dadurch sind gratis Transaktionen die um 08:59 UTC gemacht
-werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge, dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf eines Intervalls ausführen können.  
+werden, um 09:01 UTC nicht mehr relevant für die Beurteilung. Das hat zur Folge, dass Benutzer alle zulässigen Aktionen direkt vor und noch einmal, nach Ablauf eines Intervalls ausführen können.
 
-Individuelles Intervall 
-:      Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis 
+![Allgemeines Reset-Intervall \label{img_resetIntervall}](images/reset_intervall.png "Allgemeines Reset-Intervall") 
+
+Auf Abbildung \ref{img_resetIntervall} ist das allgemeine Reset-Intervall
+dargestellt. Am Ende eines Intervalls werden alle Zähler der Accounts
+zurückgesetzt.
+
+- Individuelles Intervall\
+Das Intervall ist relativ zum Zeitpunkt einer getätigter gratis 
 Transaktionen. Bei einer Prüfung wird untersucht, wie viele gratis 
 Transaktionen der betroffene Account im vergangenen Zeitintervall,
 gerechnet ab dem Zeitpunkt der Prüfung, getätigt hat. Mit denselben
 Startparametern wie im oben aufgeführten Beispiel, ist eine um 08:59 UTC
 getätigte gratis Transaktion bis 09:59 relevant. 
+
+![Individuelles Reset-Intervall \label{img_individual_resetIntervall}](images/individual_reset_intervall.png "Individuelles Reset-Intervall") 
+
+Auf dem Diagramm \ref{img_individual_resetIntervall} ist es graphisch
+dargestellt. Die grünen Haken, markieren getätigte gratis Transaktionen. Das
+Reset-Intervall wird erst ab einer getätigten gratis Transaktion gestartet und
+ist unabhängig vom Programm Start.
 
 ##### Anzahl getätigte Transaktionen
 

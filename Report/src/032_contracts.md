@@ -1,9 +1,5 @@
 
-### Docker \label{sec_prac_docker}
 
-Um eine möglichst realitätsnahe Entwicklungsumgebung zu erhalten, wird
-Docker[@docker] für die Betreibung der Blockchain verwendet. Mehr Details zur
-Verwendung von Docker sind im Anhang unter \ref{app_docker} vorhanden.
 
 ### Name Registry
 

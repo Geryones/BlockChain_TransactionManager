@@ -1,9 +1,10 @@
 ## Lösungsansätze 
 
-In diesem Kapitel werden die erarbeiteten Lösungsansätze vorgestellt. Die
-Stärken und Schwächen von jedem Lösungsansatz (LA) werden analysiert und
-dokumentiert. Mit der vorgenommenen Analyse wird ein Favorit bestimmt. Dieser
-wird weiterverfolgt und implementiert.  
+In diesem Kapitel werden die erarbeiteten Lösungsansätze für die Implementation
+von einem Transaktionsmanager vorgestellt. Die Stärken und Schwächen von jedem
+Lösungsansatz (LA) werden analysiert und dokumentiert. Mit der vorgenommenen
+Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.
+
 
 ### Architektur 
 

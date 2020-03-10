@@ -107,7 +107,7 @@ Für die Realisierung des externen Programmes ist die Programmiersprache der Wah
 Java. Java ist den Teammitgliedern bereits bekannt. Mit der Bibliothek Web3j[@web3j]
 sind Interaktionen mit der Blockchain effizient und intuitiv. 
 
-Im Anhang ist unter \ref{app_weitereLoesungen} ein weiterer Lösungsanatz
+Im Anhang ist unter \ref{app_weitereLoesungen} ein weiterer Lösungsansatz
 aufgelistet. Dieser ist sehr früh in der Evaluierung als nicht realisierbar
 eingestuft worden und ist hier deshalb nicht aufgeführt.
 

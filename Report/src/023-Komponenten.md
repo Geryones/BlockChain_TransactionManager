@@ -1,6 +1,6 @@
 ## Komponenten
 
-Die folgenden Abschnitte behandeln die gemachten Literaturrecherchen. Für jedes
+Die folgenden Abschnitte behandeln das Resultat der gemachten Literaturrecherchen. Für jedes
 Thema sind die gewonnen Erkenntnisse aufgeführt. Dabei ist nebst einem
 grundsätzlichen Verständnis für die Materie immer der Schutz vor einer DoS Attacke im Fokus.  
 
@@ -13,7 +13,7 @@ Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und
 Transaktionsdaten[@wiki_blockchain].\
 Ein speziell erwähnenswerter Block, ist der sogenannte
 Genesisblock[@wiki_genesis_block]. Dieser ist der erste Block in einer
-Blockchain. Der Genesisblock ist eine JSON Datei mit allen nötigen Parametern
+Blockchain. Der Genesisblock beinhaltet alle nötigen Parametern
 und Einstellungen, um eine Blockchain zu starten.
 
 Blockchains sind auf einem peer-to-peer (P2P) Netzwerk[@wiki_p2p] aufgebaut. Ein
@@ -35,9 +35,10 @@ Ethereum verfügt über eine eigene Kryptowährung, den Ether (ETH).
 ### Smart Contracts \label{sec_smartContracts}
 
 Der Begriff Smart Contract, wurde von Nick Szabo[@wiki_nick_szabo] in den frühen
-1990 Jahren zum erten Mal verwendet. Es handelt sich um ein Stück Code, das auf
+1990 Jahren zum ersten Mal verwendet. Es handelt sich um ein Stück Code, das auf
 der Blockchain liegt. Es können Vertragsbedingungen als Code geschrieben werden.
-Sobald die Bedingungen erfüllt sind, führt sich der Smart Contract selbst aus.\
+Sobald die letzte Transaktion eintrifft und alle Bedingungen erfüllt sind, führt
+sich der Smart Contract selbst aus.\
 Der Code kann von allen Teilnehmern der Blockchain inspiziert werden. Da er
 dezentral auf der Blockchain gespeichert ist, kann er auch nicht nachträglich
 manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
@@ -47,9 +48,9 @@ manipuliert werden. Das schafft Sicherheit für die beteiligten Parteien.
 ![Ein Smart Contract[@smart_contracts_alpiq] \label{img_smartContract}](images/smart_contract.PNG "smart contract")
 
 Der grosse Vorteil von Smart Contracts ist, dass keine Drittparteien benötigt
-werden, das ist auf den Bildern \ref{img_tradContract} und
+werden. Das ist auf den Bildern \ref{img_tradContract} und
 \ref{img_smartContract} dargestellt. Der Code kontrolliert die Transaktionen,
-welche Nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag
+welche nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag
 werden diese durch third parties kontrolliert und meistens auch ausgeführt. 
 
 Sobald ein Smart Contract auf Ethereum deployed ist, verfügt er über eine
@@ -62,13 +63,13 @@ Eine DApp ist ist eine Applikation (App), deren backend Code dezentral auf einem
 peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend
 Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das
 Backend möglich sind.\
-DApp's für die Ethereum Blockchain werden mit Smart Contracts realisiert. Das
-prominenteste Beispiel einer DApp ist CryptoKitties[@cryptokitties]. Die
-Benutzer können mit digitale Katzen handeln und züchten. 
+DApp's für die Ethereum Blockchain werden mit Smart Contracts realisiert. Ein
+Beispiel ist der Ethereum Name Server (ENS)[@ens]. Analog zu DNS, können
+Adressen leserliche Namen zugeordnet werden.
 
 ### Transaktionen \label{sec_transaktionen}
 
-Um mit der Blockchain zu interagieren, werden Transaktionen benötigt. Sie
+Um mit der Blockchain zu interagieren, werden Transaktionen verwendet. Sie
 erlauben es Daten in der Blockchain zu erstellen oder anzupassen. Eine
 Transaktion verfügt über folgende Felder:
 
@@ -88,13 +89,13 @@ soll. Der Betrag wird von "From" nach "To" übertragen.
 Data/Input 
 :     Dieses Feld wird hauptsächlich für die Interaktion mit Smart
 Contracts, siehe Abschnitt \ref{sec_smartContracts}, verwendet. Wenn ein Smart
-Contract deployed werden soll, wir in diesem Feld der dessen Bytecode[@bytecode]
+Contract deployed werden soll, wir in diesem Feld dessen Bytecode[@bytecode]
 übertragen. Bei Funktionsaufrufen auf einen Smart Contract wird die
 Funktionssignatur und die codierten Parameter mitgegeben. Bei reinen
 Kontoübertragungen wird das Feld leer gelassen.
 
 Gas Price 
-:     Gibt an, welcher Preis pro Einheit Gas man gwillt ist zu zahlen.
+:     Gibt an, welcher Preis pro Einheit Gas man gewillt ist zu zahlen.
 Mehr dazu im Abschnitt \ref{sec_gas}
 
 Gas Limit 
@@ -111,8 +112,8 @@ call(RPC)[@wiki_rpc] gemacht.
 
 ### Gas \label{sec_gas}
 
-Mit Gas[@gasprice] ist in der Ethereum Blockchain eine spezielle Währung
-gemeint. Mit ihr werden Transaktionskosten gezahlt. Jede Aktion in der
+Mit Gas[@gasprice] ist in der Ethereum Blockchain eine Quantifizierung von
+Aufwand gemeint. Damit werden Transaktionskosten gezahlt. Jede Aktion in der
 Blockchain kostet eine bestimmte Menge an Gas (Gas Cost). Somit ist die
 benötigte Menge an Gas proportional zur benötigten Rechenleistung. So wird
 sichergestellt, dass die anfallenden Kosten einer Interaktion gerecht verrechnet
@@ -124,7 +125,7 @@ es sich für einen Miner, siehe Abschnitt \ref{sec_mining}, nicht lohnt, diese z
 verarbeiten. Ein hoher Gas Price stellt zwar sicher, dass die Transaktion
 schnell verarbeitet wird, kann aber hohe Gebühren generieren. 
 
-$TX = gasCost * gasPrice$
+$TxPrice = gasCost * gasPrice$
 
 Die Transaktionskosten werden nicht direkt in Ether berechnet, da dieser starken
 Kursschwankungen unterworfen sein kann. Die Kosten für Rechenleistung, also

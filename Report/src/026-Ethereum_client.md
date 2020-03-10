@@ -83,7 +83,7 @@ modifier onlyOwnerOf(bytes32 _name) {
     _;
 }
 ```
-Unter \ref{li_onlyOwnerOf} wird der Besitzer einer Nachricht mit dem Besitzer
+Unter \ref{li_onlyOwnerOf} wird der Sender einer Nachricht mit dem Besitzer
 eines Eintrags unter dem Namen ```_name``` in ```entries``` verglichen. Nur wenn
 dieser identisch ist, dürfen Änderungen an einem existierenden Eintrag
 vorgenommen werden. 
@@ -192,7 +192,7 @@ struct Certification {
 mapping (address => Certification) certs;
 ```
 
-Das ```mapping``` unter \ref{li_whitelsit} ist die zentrale Datenstrucktur des
+Das ```mapping``` unter \ref{li_whitelist} ist die zentrale Datenstruktur des
 Certifiers, die Whitelist. In der Liste ```certs``` sind zertifizierte Accounts
 gespeichert. 
 
@@ -262,7 +262,7 @@ Event wird auf Zeile 7 an die Blockchain gesendet.
 
 ### Geprüfte Alternativen
 
-Die Clients Geth, Aleth und Trinity sind ebenfalls evaluiert worden. Bei diesen
+Bei der Auswahl des Ethereumclienten sind die populärsten[@stack_clientList] berücksichtigt worden. Nebst Parity sind daher noch Geth, Aleth und Trinity evaluiert worden. Bei diesen
 Clients ist keine Möglichkeit vorhanden, bestimmte Accounts für gratis
 Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die
 FHNW geeignet.
