@@ -1,7 +1,7 @@
 
 # Fazit 
 
-// TODO
+// TODO Jurij 
 
 #### Dokumentation \label{blubber}
 
@@ -23,4 +23,5 @@ praktisch alle gefundenen Tutorials nicht mehr gültig sind.
 - Genesisblock 
   - Deployment von Certifier
   - Registrierung von Certifier
-- Report (Alle vorkommnisse ..)
+- Report (Alle Vorkommnisse ..)
+- Inputvalidation

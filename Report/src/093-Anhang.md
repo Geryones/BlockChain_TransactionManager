@@ -30,7 +30,7 @@
 | Mining             | Validierung von Transaktionen. Für erfolgreiche Validierung erhält der Miner eine Belohnung|
 | Name Registry      | Smart Contract in Parity. Zuständig für Mapping zwischen einem Namen und einer Adresse.|
 | Node               | Ein Computer in einem Netzwerk.|
-| Resett-Intervall   | Am Ende des Intervalls werden die Zähler aller Accounts zurückgesetzt. Definiert die Dauer zwischen zwei Resetts. |
+| Reset-Intervall   | Am Ende des Intervalls werden die Zähler aller Accounts zurückgesetzt. Definiert die Dauer zwischen zwei Resets. |
 | Revoke-Intervall   | Definiert die Dauer einer Suspendierung von der Whitelist.|
 | Öffentlicher SChlüssel| Wird aus dem geheimen Schlüssel abgeleitet. Wird für die Signierung von Transaktionen benötigt.|
 | Parity             | Ein Ethereumclient. |

@@ -17,7 +17,7 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 | 9.    | Zeitintervall setzten |   |
 | 10.   | Sperrzeit |   |
 | 11.   | Anzahl Sperrungen speichern | Die Anzahl Sperrungen eines Accounts werden in einem File gespeichert  |
-| 13.   | Counter resetten | Der Counter aller Accounts wird nach Zeitperiode wieder auf 0 gesetzt |
+| 13.   | Counter Reseten | Der Counter aller Accounts wird nach Zeitperiode wieder auf 0 gesetzt |
 | 14.   | Transaktionslimite pro User | Die Anzahl Transaktionen bis ein Account gesperrt wird, kann für jeden Account individuell eingestellt werden |
 | 15.   | GasUsed Limite pro User | Die Anzahl Gas Used bis ein Account gesperrt wird, kann für jeden Account individuell eingestellt werden |
 | 16.   | Default Werte | Es können default Werte für max Transaktionen und max Gas Used gesetzt werden  |

@@ -25,7 +25,7 @@ Account zu verknüpfen.
 Eine Transaktion wird immer an eine Adresse gesendet. Hierbei kann es sich
 sowohl um einen Benutzeraccount oder einen Smart Contract handeln. 
 
-##### Resett-Intervall 
+##### Reset-Intervall 
 
 Alle Interaktionen auf der Blockchain müssen relativ zu einem Zeitintervall
 bewertet werden. Hier werden zwei unterschiedliche Ansätze untersucht: 

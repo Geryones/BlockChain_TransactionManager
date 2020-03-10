@@ -25,7 +25,7 @@ zwingend definiert sein muss.
 
 txLimit
 :     Definiert die maximale Anzahl gratis Transaktionen, die ein Account in 
-einem Resett-Intervall tätigen darf. 
+einem Reset-Intervall tätigen darf. 
 
 remainingTransactions 
 :     Mit diesem Feld wird bestimmt, über wie viele gratis
@@ -34,7 +34,7 @@ gepflegt und sollte nicht erfasst oder geändert werden.
 
 gasLimit
 :    Definiert die maximale Anzahl gratis Gas, die ein Account während eines 
-Resett-Intervalls verbrauchen darf. 
+Reset-Intervalls verbrauchen darf. 
 
 remainingGas 
 :     Mit diesem Feld wird bestimmt, über wie viel gratis Gas ein
@@ -206,7 +206,7 @@ Adresse wie in der Blockchainspezifikation verwendet werden. Siehe
 \ref{sec_prac_spec}.
 
 timestampLastReset 
-:      Hier wird der Zeitpunkt des letzen Resett-Intervalls
+:      Hier wird der Zeitpunkt des letzen Reset-Intervalls
 vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht
 bearbeitet werden.
 
