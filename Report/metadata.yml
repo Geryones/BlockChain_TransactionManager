@@ -15,7 +15,8 @@ titlepage-color: "06386e"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 1
-logo: "./images/fhnwlogotrans.png"
+logo-width: 350
+logo: "./images/fhnw-logo-white.png"
 
 toc-own-page: true
 
