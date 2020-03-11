@@ -29,30 +29,33 @@ getätigt. Am Ende wird geprüft, ob der Account von der Whitelist entfernt word
 ist. Folgende Kombination von gratis Transaktionen und Transaktionslimite ist
 getestet worden:
 
-| # Transaktionen | Limite |
-|-------:|---------:|
-|4|5|
-|5|5|
-|6|5|
-|10|5|
-|100|5|
-|500|450|
+| # TX gemacht | Limite |  # TX verarbeitet|Revoked|
+|-------:|---------:|------:|:---:|
+|4|5| 4|Nein|
+|5|5|5|Nein|
+|6|5|6|Ja|
+|10|5|10|Ja|
+|100|5|ca 30|Ja|
+|500|450|500|Ja|
+1000|450|ca 630|Ja|
 
 Table: Leistungstest mit gratis Transaktionen \label{tab_tests}
 
-Die Tabelle \ref{tab_tests} zeigt die Testparameter. Die ersten drei Test prüfen
-um den Grenzwert. Diese verhalten sich wie erwartet. Fünf gratis Transaktionen
-dürfen ohne Konsequenzen durchgeführt werden. Nach der sechsten wird der Account
-von der Whitelist entfernt.\
-Die Tests mit 10 ist zwar erfolgreich, jedoch wird der Account nicht schnell
-genug von der Whitelist entfernt. Es sind alle 10 gratis Transaktionen
-ausgeführt worden. Um zu prüfen, wie viele Transaktionen verarbeitet werden
-können, bevor der Account von der Whitelist entfernt wird, haben wir die gratis
-Transaktionen auf 100 erhöht. Im Durchschnitt werden 30 gratis Transaktionen
-verarbeitet, bevor der Transaktionsmanager den Account von der Whitelist
-entfernen kann.\
+Die Tabelle \ref{tab_tests} zeigt die Testparameter und das Resultat. Mit "# TX
+gemacht" wird angegeben, wie viele Transaktionen in der Schleife erstellt
+werden. "Limite" definiert die Transaktionslimite des Accounts pro
+Reset-Intervall. In der Spalte "# TX verarbeitet" ist aufgeführt, wie viele
+Transaktionen gratis verarbeitet worden sind. Die Spalte "Revoked" zeigt, ob der
+Account am Ende des Tests von der Whitelist entfernt wurde.\
+Die ersten drei Test prüfen um den Grenzwert. Diese verhalten sich wie erwartet.
+Fünf gratis Transaktionen dürfen ohne Konsequenzen durchgeführt werden. Nach der
+sechsten wird der Account von der Whitelist entfernt.\
+Die folgenden Tests sind erfolgreich. Allerdings ist festgestellt worden, dass
+der Transaktionsmanager nicht sofort reagiert. 
 
-//TODO Verhalten bei 500... können alle 500 durchgeführt werden? ist nach 450 schluss?
+//TODO Delay untersuchen
+
+
 
 
 #### Abnahme Test
