@@ -1,51 +1,77 @@
 
 ### Tests
 
-
 //TODO Jurij ausformulieren
 
-Um das Programm getestet zu haben. Haben wir nebst einigen Unit tests auch automatisierte Abnahme Tests gemacht. Zu denen gehören Performance Tests, das Tesetn des richtigen Einlesens der Files und Intervall Tests.
-
-#### Performance Tests
-
-Bei den Performance Tests wurden für eine Account verschieden viele Transaktionen ausgelöst.
-
-- MaxTxLimite -1
-- MaxTxLimite
-- MaxTxlimite +1
-- 10
-- 100
-- 500 mit eine Tx Linmite von 450.
-
-Resultat:
-Diese Tests haben gezeigt, dass das Programm erst ab der 30sten Transaktion anfängt die Transktionen zu beobachten. Also lohnt sich eine Limite unter 30 nicht wirklich. Auch weil eine kleinere Limite nicht einer DoS Attacke wiederspiegelt.
-Auch haben die Tests gezeigt, dass das System viele (500) Transaktionen verarbeiten kann der das Programm diese beobachten kann
-
-#### Lese Tests
-
-Bei diesen Tests wurde geschaut ob die Daten richtig aus der Datei gelesen wird. Dabei wurde eine test für die Attributliste und ein Test für die Default Settings geschrieben. 
-
-Resultat:
-Die Daten werden korrekt aus dem File ausgelesen
-
-#### Intervall Tests
-
-Bei den Intervall Tests wurden Transaktionen betätigt und dannach geschaut, ob Transaktionen und Gas abgezogen wurden. Nach dem eingestellten ResetIntervall Time vom DefaultSettings File wurde geschaut ob die Counter wieder zurückgesetzt sind.
-
-Resultat:
-Die Tests sind positiv ausgefallen und haben bestätig wa die manuellen Tests auch betsätigt haben, das der Intervall mit dem priority Queue Pattern funktioniert
+Um die Lauffähigkeit des Transaktionsmanagers zu verifizieren, sind diverse
+Tests ausgeführt worden.\
+Mit Unit Tests ist die Funktionalität von einzelnen
+Aspekten geprüft worden. Dazu gehören unter anderem, isolierte Transaktionen
+ausführen, lesen und schreiben von Dateien.\
+Mit einem Leistungstest ist untersucht worden, wie sich der Transaktionsmanager
+unter Belastung verhält.\
+Mit den Abnahmetests ist sichergestellt, dass die Applikation als Ganzes,
+wie gewünscht funktioniert.
 
 #### Unit Tests
 
-Hier werden verschiedene einzelne Methoden getestet. Wir steuern keine 100% Testbadeckung an und wollen durch Tests der gesamten Funktionalitäten das Programm mehrheitlich testen.
+Die Funktionalität von zentralen Methoden sind mit Unittests geprüft worden.
+Im Anhang sind alle durchgeführten Tests unter \ref{app_tests} verlinkt. 
 
-- RevokeAccount
-- RevokeAccountList
-- CertifyAccount
-- CertifyAccountList
-//TODO - Gemachte Tests, Resultat, Schlussfolgerung
+Alle Unit Tests sind erfolgreich. 
+
+#### Leistungstest
+
+Um die Leistung des Transaktionsmanagers zu testen, werden verschieden hohe
+Transaktionslimiten auf einem Account geprüft.\
+Im Test werden mit einer Schleife, in sehr rascher Folge, gratis Transaktionen
+getätigt. Am Ende wird geprüft, ob der Account von der Whitelist entfernt worden
+ist. Folgende Kombination von gratis Transaktionen und Transaktionslimite ist
+getestet worden:
+
+| # TX gemacht | Limite |  # TX verarbeitet|Revoked|
+|-------:|---------:|------:|:---:|
+|4|5| 4|Nein|
+|5|5|5|Nein|
+|6|5|6|Ja|
+|10|5|10|Ja|
+|100|5|ca 30|Ja|
+|500|450|500|Ja|
+1000|450|ca 630|Ja|
+
+Table: Leistungstest mit gratis Transaktionen \label{tab_tests}
+
+Die Tabelle \ref{tab_tests} zeigt die Testparameter und das Resultat. Mit "# TX
+gemacht" wird angegeben, wie viele Transaktionen in der Schleife erstellt
+werden. "Limite" definiert die Transaktionslimite des Accounts pro
+Reset-Intervall. In der Spalte "# TX verarbeitet" ist aufgeführt, wie viele
+Transaktionen gratis verarbeitet worden sind. Die Spalte "Revoked" zeigt, ob der
+Account am Ende des Tests von der Whitelist entfernt wurde.\
+Die ersten drei Test prüfen um den Grenzwert. Diese verhalten sich wie erwartet.
+Fünf gratis Transaktionen dürfen ohne Konsequenzen durchgeführt werden. Nach der
+sechsten wird der Account von der Whitelist entfernt.\
+Die folgenden Tests sind erfolgreich. Allerdings ist festgestellt worden, dass
+der Transaktionsmanager nicht sofort reagiert. 
+
+//TODO Delay untersuchen
+
+
+
+
+#### Abnahme Test
+
+Hier wird das Zusammenspiel aller Komponenten geprüft.\
+Um die funktionalen Aspekte zu prüfen führt ein Account auf der Whitelist gratis
+Transaktionen aus. Anschliessend werden die Zähler des Accounts überprüft. Am
+Ende des Reset-Intervalls wird geprüft, ob die Zähler zurückgesetzt werden. So
+wird geprüft ob die Subscription, der DoS Algorithmus, das Reset-Intervall und
+die Priority Queue zusammen funktionieren.\
+Es ist auch geprüft worden, ob der registrierte Certifier mit einer eigenen Version ersetzt werden kann. Damit könnte ein Benutzer den Transaktionsmanager umgehen. Der Schutz vor einer DoS Attacke wäre nicht mehr gewährleistet.
+
+Beide Tests sind erfolgreich, der Transaktionsmanager verhält sich wie gewünscht.   
 
 #### Schlussfolgerung
+
 Automatisierte Tests bestätigen was manuelle Tests bewiesen hatten
 Es können viele Transaktionen gemacht werden
 Tests brauchen lange um abgespielt zu werden, da man zwischen den Tests warten muss, dass der nächste ausgeführt werden kann
