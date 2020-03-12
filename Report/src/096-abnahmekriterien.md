@@ -7,8 +7,8 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
  
 | Nr.   | Titel                             | Beschreibung                                   |
 | -----:|:----------------------------------|:-----------------------------------------------|
-| 1.    | Bezahlte Transaktionen für alle  | Jeder gültige Account kann Transaktionen mit Gas Price durchführen|
-| 2.    | Gratis Transaktionen für Whitelist | Ein Account der für die Whitelist zertifiziert ist, kann Transaktionen mit Gas Price "0" durchführen  |
+| 1.    | Bezahlte Transaktionen für alle Accounts | Jeder gültige Account kann Transaktionen mit Gas Price durchführen|
+| 2.    | Gratis Transaktionen für Accounts in Whitelist | Ein Account der für die Whitelist zertifiziert ist, kann Transaktionen mit Gas Price "0" durchführen  |
 | 3.    | Account aus Liste für Whitelist zertifizieren  | Account die für die Whitelist zertifiziert werden sollen, stehen in der JSON Datei |
 | 4.    | Account aus Liste und Whitelist entfernen  |  Account die für die gelöscht werden sollen, stehen in der JSON Datei mit einer kennzeichnung, dass sie gelöscht werden. Sobald ein Account gelöscht wird, wird er von der Whitelist wie auch von der JSON  Datei entfernt |
 | 5.    | Account nach Transaktionen sperren  | Ein Account der zu viele Transaktionen betätigt hat, wird für eine Zeitspanne gesperrt. |
