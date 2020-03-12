@@ -2,7 +2,7 @@
 
 ### Abnahme Test 1
 
-AK Nr.:   #1    
+#AK Nr. #:   #1    
 Titel:   Bezahlte Transaktionen für alle  
 Testart:   Manuell  
 Tester:   Faustina Bruno  
