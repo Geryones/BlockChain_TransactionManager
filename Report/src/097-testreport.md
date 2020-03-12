@@ -14,18 +14,39 @@ Vorbedingung:
         3. Blockchain ist aufgesetzt und läuft 
         4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
 Ablauf: 
-        1. MetaMask starten 
-        2. Zum Account mit der Adresse "" wechseln
-        3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-        4. 2. Account wählen 
-        5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2 eingeben 
-        6. WEITER und BESTÄTIGEN wählen 
-        7.Warten bis die Transaktion durchlaufen ist        
+       - 1. MetaMask starten 
+       - 2. Zum Account mit der Adresse "" wechseln
+       - 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+       - 4. 2. Account wählen 
+       - 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2 eingeben 
+       - 6. WEITER und BESTÄTIGEN wählen 
+       - 7.Warten bis die Transaktion durchlaufen ist        
 Erwünschtes Resultat: Eine durchlaufene Transaktion      
 Tatsächliches Resultat: ????
 
 ### Abnahme Test 2
 
+AK Nr.:   #    
+Titel:  
+Testart:   Manuell  
+Tester:   Faustina Bruno  
+Datum:   15.3.2020
+Status:  ???
+Vorbedingung:
+        1. Metamask installiert 
+        2. 2 Accounts in Metamask eingerichtet (1. Add: PK: 2. egal) 
+        3. Blockchain ist aufgesetzt und läuft 
+        4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
+Ablauf: 
+       - 1. 
+       - 2. 
+       - 3. 
+       - 4. 
+       - 5. 
+       - 6.  
+       - 7.      
+Erwünschtes Resultat:      
+Tatsächliches Resultat: ????
 | **AK Nr.:** |     #2          |  
 |:---------|---|
 | **Titel:** | Gratis Transaktionen für Accounts in Whitelist |   
