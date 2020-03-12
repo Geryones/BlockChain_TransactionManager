@@ -10,7 +10,7 @@
 | **Datum:** | ?  |
 | **Status** | ?  |
 | **Vorbedingung:**          |  1. Metamask installiert 2. Account in Metamask eingerichtet (Add: PK:) 3.Blockchain ist aufgesetzt und läuft 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist|      
-| **Ablauf:**                |   |          
+| **Ablauf:**                | - MetaMask starten - bla   |          
 | **Erwünschtes Resultat:**  |   |       
 | **Tatsächliches Resultat** |   |         
 
