@@ -37,7 +37,8 @@ getestet worden:
 |10|5|10|Ja|
 |100|5|ca 30|Ja|
 |500|450|500|Ja|
-1000|450|ca 630|Ja|
+|1000|450|ca 980|Ja|
+|2000|450|ca 980|Ja|
 
 Table: Leistungstest mit gratis Transaktionen \label{tab_tests}
 
@@ -51,10 +52,28 @@ Die ersten drei Test prüfen um den Grenzwert. Diese verhalten sich wie erwartet
 Fünf gratis Transaktionen dürfen ohne Konsequenzen durchgeführt werden. Nach der
 sechsten wird der Account von der Whitelist entfernt.\
 Die folgenden Tests sind erfolgreich. Allerdings ist festgestellt worden, dass
-der Transaktionsmanager nicht sofort reagiert. 
-
-//TODO Delay untersuchen
-
+der Transaktionsmanager nicht sofort reagiert.\
+Die Verzögerung ist weiter untersucht worden. Dabei wurde festgestellt, dass vom
+Zeitpunkt der ersten Transaktion, es immer zwischen 14 und 15 Sekunden dauert,
+bis diese in der Subscription registriert wird. In dieser Zeit konnten mir einer
+```for```-Schleife, ca 760 Transaktionen abgesetzt werden.\
+Sobald die Subscription die getätigten Transaktionen erhält, ist die Limite
+bereits überschritten worden. Während die Subscription die anfallenden
+Transaktionen abarbeitet, werden in der ```for```-Schleife laufend neue
+abgesetzt.\
+Ab dem Moment, wo die erste Transaktion von der Subscription registriert wird,
+dauert es nochmals zwischen 14 und 15 Sekunden, bis der Account revoked ist.\
+Dieses Verhalt ist mit der Zeit zwischen Blöcken zu erklären. Sobald der Node
+die erste Transaktion erhält, wird ein neuer Block erstellt und befüllt. Nach
+14-15 Sekunden wird dieser an die Blockchain übermittelt. Es wird ein neuer
+Block befüllt. Während dieser Zeit hat der Transaktionsmanager registriert, dass
+die Limit erreicht worden ist. Er sendet ebenfalls eine Transaktion an den
+Node.\
+Der Node hat bereits sehr viele gratis Transaktionen, deren Verarbeitung noch
+ausstehend sind. Die Transaktion vom Transaktionsmanger wird prioritär
+behandelt, da es keine gratis Transaktion ist. Nach 14 bis 15 weiteren Sekunden,
+erreicht der zweite Block die Blockchain. Jetzt wird das Revoke verarbeitet. Der
+Node akzeptiert keine weiteren gratis Transaktionen von diesem Account.
 
 
 
@@ -66,13 +85,20 @@ Transaktionen aus. Anschliessend werden die Zähler des Accounts überprüft. Am
 Ende des Reset-Intervalls wird geprüft, ob die Zähler zurückgesetzt werden. So
 wird geprüft ob die Subscription, der DoS Algorithmus, das Reset-Intervall und
 die Priority Queue zusammen funktionieren.\
-Es ist auch geprüft worden, ob der registrierte Certifier mit einer eigenen Version ersetzt werden kann. Damit könnte ein Benutzer den Transaktionsmanager umgehen. Der Schutz vor einer DoS Attacke wäre nicht mehr gewährleistet.
+Es ist auch geprüft worden, ob der registrierte Certifier mit einer eigenen
+Version ersetzt werden kann. Damit könnte ein Benutzer den Transaktionsmanager
+umgehen. Der Schutz vor einer DoS Attacke wäre nicht mehr gewährleistet.
 
 Beide Tests sind erfolgreich, der Transaktionsmanager verhält sich wie gewünscht.   
 
 #### Schlussfolgerung
 
-Automatisierte Tests bestätigen was manuelle Tests bewiesen hatten
-Es können viele Transaktionen gemacht werden
-Tests brauchen lange um abgespielt zu werden, da man zwischen den Tests warten muss, dass der nächste ausgeführt werden kann
-Eine hoche Limite bei den Transaktionen und Gas ist erforderlich
+Die Leistungstests haben gezeigt, dass der Transaktionsmanger direkt von den
+Blöcken abhängig ist. Je nach Grösse und Frequenz von neuen Blöcken müssen die
+Parameter von Accounts und DoS Algorithmus entsprechend angepasst werden.\
+Mit den verwendeten Einstellungen und einer Transaktionslimite von 450, wird ein
+Angriff nach ungefähr 30 Sekunden unterbunden.\
+Tiefere Limiten ändern an diesem Verhalten nichts. Der Angreifer hat dennoch die
+Möglichkeit einen Block komplett zu füllen. Eine mögliche Strategie wäre, die
+Limite an der Kapazität von einem Block anzugleichen. Diese ist abhängig vom
+maximalen Gas pro Block und wie oft, dass Blöcke erstellt werden.
