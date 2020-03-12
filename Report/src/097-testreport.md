@@ -2,9 +2,9 @@
 
 ### Abnahme Test 1
 
-| **AK Nr.:**                |   |**Titel:** |   | **Testart:**|   |
+| **AK Nr.:**     1           |   |**Titel:** Bezahlte Transaktionen für alle |   | **Testart:**| Manuell  |
 |:---------------------------|---|:----------|---|:------------|---|
-| **Tester:**                |   | **Datum:**|   | **Status**  |   |
+| **Tester:**                | Faustina Bruno  | **Datum:**| ?  | **Status**  | ?  |
 | **Vorbedingung:**          |   |           |   |             |   |
 | **Ablauf:**                |   |           |   |             |   |
 | **Erwünschtes Resultat:**  |   |           |   |             |   |
