@@ -2,12 +2,12 @@
 
 ### Abnahme Test 1
 
-| **AK Nr.:**|     1           |  
-| **Titel:**| Bezahlte Transaktionen für alle |   
+| **AK Nr.:** |     1           |  
+| **Titel:** | Bezahlte Transaktionen für alle |   
 | **Testart:**| Manuell  |
-| **Tester:**                | Faustina Bruno  |
-| **Datum:**| ?  |
-|**Status**  | ?  |
+| **Tester:** | Faustina Bruno  |
+| **Datum:** | ?  |
+| **Status** | ?  |
 | **Vorbedingung:**          |   |      
 | **Ablauf:**                |   |          
 | **Erwünschtes Resultat:**  |   |       
