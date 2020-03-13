@@ -12,7 +12,8 @@
 1. MetaMask installiert 
 2. 2 Accounts in MetaMask eingerichtet (1. Add: PK: 2. egal) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+
 **Ablauf:** 
 1. MetaMask starten 
 2. Zum Account mit der Adresse "" wechseln
@@ -36,7 +37,8 @@
 1. MetaMask installiert 
 2. 2 Accounts in MetaMask eingerichtet (1. Add: PK: 2. ein Account welcher nicht in der Whitelist ist) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+
 **Ablauf:**
 1. MetaMask starten
 2. Zertifizierten Account wählen
@@ -71,7 +73,8 @@ Vorbedingung:
 2. Alle Accounts aus der Account Liste sind in MetaMask eingerichtet 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-Ablauf: 
+
+**Ablauf:** 
 :Für jeden Account wird der gleiche Ablauf durchgeführt
 1. MetaMask starten
 2. Zertifizierten Account wählen
@@ -171,7 +174,7 @@ Tatsächliches Resultat: ????
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies einmal mehr als die Gaslimite dieses Account ist durchführen
+8. Dies einmal mehr als die Gaslimite dieses Account ist, durchführen
 **Erwünschtes Resultat:**   
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
@@ -180,73 +183,222 @@ Tatsächliches Resultat: ????
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 7
-AK Nr.:   #    
-Titel:  
-Testart:   Manuell  
-Tester:   Faustina Bruno  
-Datum:   15.3.2020
-Status:  ???
-Vorbedingung:
-        1. Metamask installiert 
-        2. 2 Accounts in Metamask eingerichtet (1. Add: PK: 2. egal) 
-        3. Blockchain ist aufgesetzt und läuft 
-        4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-Ablauf: 
-       - 1. 
-       - 2. 
-       - 3. 
-       - 4. 
-       - 5. 
-       - 6.  
-       - 7.         
-Erwünschtes Resultat:   
+**AK Nr.:**   #7   
+**Titel:**  Gesperrte Account entsperren
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
       
-Tatsächliches Resultat: ????
+**Tatsächliches Resultat:** ????
 
 ### Abnahme Test 8
-AK Nr.:   #    
-Titel:  
-Testart:   Manuell  
-Tester:   Faustina Bruno  
-Datum:   15.3.2020
-Status:  ???
-Vorbedingung:
-        1. Metamask installiert 
-        2. 2 Accounts in Metamask eingerichtet (1. Add: PK: 2. egal) 
-        3. Blockchain ist aufgesetzt und läuft 
-        4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-Ablauf: 
-       - 1. 
-       - 2. 
-       - 3. 
-       - 4. 
-       - 5. 
-       - 6.  
-       - 7.        
-Erwünschtes Resultat:   
+**AK Nr.:**   #7   
+**Titel:**  Gesperrte Account entsperren
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
       
-Tatsächliches Resultat: ????
+**Tatsächliches Resultat:** ????
+
 ### Abnahme Test 9
 
-AK Nr.:   #    
-Titel:  
-Testart:   Manuell  
-Tester:   Faustina Bruno  
-Datum:   15.3.2020
-Status:  ???
-Vorbedingung:
-        1. Metamask installiert 
-        2. 2 Accounts in Metamask eingerichtet (1. Add: PK: 2. egal) 
-        3. Blockchain ist aufgesetzt und läuft 
-        4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-Ablauf: 
-       - 1. 
-       - 2. 
-       - 3. 
-       - 4. 
-       - 5. 
-       - 6.  
-       - 7.       
-Erwünschtes Resultat:   
+**AK Nr.:**   #8   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
       
-Tatsächliches Resultat: ????
+**Tatsächliches Resultat:** ????
+### Abnahme Test 10
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 11
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 12
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 13
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 14
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 15
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
