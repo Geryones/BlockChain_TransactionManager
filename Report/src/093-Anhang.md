@@ -11,7 +11,7 @@
 | Blockchain         | ine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.|
 | Certifier           | Smart Contract für die Verwaltung einer Whitelist in Parity.|
 | Client              | Ein Computer oder Programm.|
-| Command Pattern     | Standartisiertes Entwurfsmuster in der objektorientierten Programmierung.|
+| Command Pattern     | Standardisiertes Entwurfsmuster in der objektorientierten Programmierung.|
 | Consens Algorithmus | Prozess, um in einem verteilten System, Einigkeit zum Zustand eines Datensatzes zu erhalten.|
 | Decentralized application (DApp)| Applikation mit einem dezentralen Backend.|
 | Denial of Service (DoS) Attacke | Ein Angriff, bei dem das Zielsystem überlastet wird. Die eigentlichen Benutzer des Systems können dadurch nicht mehr bedient werden. |

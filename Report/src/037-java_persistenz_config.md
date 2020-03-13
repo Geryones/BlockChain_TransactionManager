@@ -4,8 +4,8 @@
 Um die Datenpersistenz zu gewährleisten, wird die Whitelist des
 Transaktionsmanagers regelmässig in einer JSON-Datei gespeichert. 
 
-Dafür wird die Datei ```AccountList.json``` verwendet. Relativ zur JAR-Datei des
-Transatkionsmanagers muss sie in folgendem Verzeichnis liegen: ```\src\main\resources\whitelist```
+Dafür wird die Datei ```AccountList.json``` verwendet. Diese muss im selben
+Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.
 
 
 In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
@@ -68,8 +68,7 @@ suspendiert.
 
 Automatische Suspendierungen von Transaktionsmanager sind immer temporär. Soll
 ein Account permanent von der Whitelist gelöscht werden, muss dies manuell in
-der Datei ```AccountList.json``` mit dem Parameter ```deleteMe``` oder via
-____________TODO Funktion CLI___________  gemacht werden.
+der Datei ```AccountList.json``` mit dem Parameter ```deleteMe``` gemacht werden.
 
 
 
@@ -172,9 +171,9 @@ nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet hat.
 ### Konfiguration \label{sec_prac_conf}
 
 Der Transaktionsmanagers kann mit der Datei ```DefaultSettings.json```
-konfiguriert werden. 
+konfiguriert werden.  Diese muss im selben
+Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.
 
-//TODO Filepath
 
 Folgende Parameter sind unterstützt:
 
@@ -215,9 +214,8 @@ Eine weitere, sehr zentrale Konfiguration ist der Account des
 Transaktionsmanagers. Dieser wird für jede Interaktion mit der Blockchain
 verwendet. Um zu verhindern, dass dieser fix im Code eingetragen werden muss,
 wird er ebenfalls aus einer Datei geladen. Hier wird die Datei
-```TransaktionsManagerAccount.json``` verwendet.\
-
-//TODO Filepath
+```TransaktionsManagerAccount.json``` verwendet. Diese muss im selben
+Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.\
 
 Die Datei hat nur einen einzigen Parameter:
 
