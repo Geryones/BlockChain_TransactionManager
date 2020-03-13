@@ -194,16 +194,20 @@ Tatsächliches Resultat: ????
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. Account Revoke Time auf JSON Datei auf 2' setzten
 **Ablauf:** 
-1. 
-2. 
-3. 
-4. 
-5. 
-6.  
-7.         
+1. MetaMask starten
+2. Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+4. Account wählen
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+6. WEITER und BESTÄTIGEN wählen 
+7. Warten bis die Transaktion durchlaufen ist
+8. Dies so oft durchführen, bis der Account geperrt ist.
+9. Dannach 2' warten
+10. Erneut eine gratis Transaktion durchführen
 **Erwünschtes Resultat:**   
-      
+Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt wurde und 2' gewartet wurde      
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 8
@@ -218,22 +222,28 @@ Tatsächliches Resultat: ????
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. Account Revoke Time auf JSON Datei auf 2' setzten
 **Ablauf:** 
-1. 
-2. 
-3. 
-4. 
-5. 
-6.  
-7.         
+1. MetaMask starten
+2. Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+4. Account wählen
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+6. WEITER und BESTÄTIGEN wählen 
+7. Warten bis die Transaktion durchlaufen ist
+8. Dies so oft durchführen, bis der Account geperrt ist.
+9. DoS Algorithmus stoppen
+10. 4' warten
+11. DoS Algorithmus wieder starten
+12. Erneut eine gratis Transaktion durchführen
 **Erwünschtes Resultat:**   
-      
+Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 9
 
 **AK Nr.:**   #8   
-**Titel:**  
+**Titel:** Reset Zeitintervall setzten 
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
@@ -243,17 +253,21 @@ Tatsächliches Resultat: ????
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. Intervall Zeit auf 2' in der DefaultSettings JSON Datei setzten
 **Ablauf:** 
-1. 
-2. 
-3. 
-4. 
-5. 
-6.  
-7.         
+1. MetaMask starten
+2. Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+4. Account wählen
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+6. WEITER und BESTÄTIGEN wählen 
+7. Warten bis die Transaktion durchlaufen ist
+8. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
+9. 2' warten        
 **Erwünschtes Resultat:**   
-      
+Alle Counter sind wieder auf die max Limite zurückgesetzt      
 **Tatsächliches Resultat:** ????
+
 ### Abnahme Test 10
 **AK Nr.:**   #   
 **Titel:**  
