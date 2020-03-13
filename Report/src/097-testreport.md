@@ -141,7 +141,7 @@ Tatsächliches Resultat: ????
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Account wählen
+4. Beliebigen Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -170,7 +170,7 @@ Tatsächliches Resultat: ????
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Account wählen
+4. Beliebigen Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -183,7 +183,7 @@ Tatsächliches Resultat: ????
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 7
-**AK Nr.:**   #7   
+**AK Nr.:**   #7   & 10
 **Titel:**  Gesperrte Account entsperren A
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
@@ -199,7 +199,7 @@ Tatsächliches Resultat: ????
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Account wählen
+4. Beliebigen Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -227,7 +227,7 @@ Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesper
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Account wählen
+4. Beliebigen Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -258,7 +258,7 @@ Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesper
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Account wählen
+4. Beliebigen Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -285,7 +285,7 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 1. MetaMask starten
 2. Warten bis der erste Intervall gestartet hat
 3. Kontrollieren ob ein neuer Timestamp in die DefaultSettings JSON Datei geschrieben wurde und sich diesen merken 
-4. Account wählen
+4. Beliebigen Account wählen
 5. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 6. anderen Account wählen
 7. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
@@ -302,8 +302,8 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 
 ### Abnahme Test 11
 
-**AK Nr.:**   #   
-**Titel:**  
+**AK Nr.:**   #10 A   
+**Titel:** Sperrzeit 
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
@@ -313,22 +313,27 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. Account hat keine Revoke zeit eingestellt
+6. In den Default Settings ist die Default Revoke Time auf 2 min und der resetIntervall auf 5 min gesetzt
 **Ablauf:** 
-1. 
-2. 
-3. 
-4. 
-5. 
-6.  
-7.         
+1. MetaMask starten
+2. Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+4. Beliebigen Account wählen
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+6. WEITER und BESTÄTIGEN wählen 
+7. Warten bis die Transaktion durchlaufen ist
+8. Dies so oft durchführen, bis der Account geperrt ist.
+9. Dannach 2' warten
+10. Erneut eine gratis Transaktion durchführen       
 **Erwünschtes Resultat:**   
-      
+Account ist nach der Default Revoke Zeit wieder entsperrt     
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 12
 
-**AK Nr.:**   #   
-**Titel:**  
+**AK Nr.:**   #11   
+**Titel:**  Sperrzeit
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
