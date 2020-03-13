@@ -184,7 +184,7 @@ Tatsächliches Resultat: ????
 
 ### Abnahme Test 7
 **AK Nr.:**   #7   
-**Titel:**  Gesperrte Account entsperren
+**Titel:**  Gesperrte Account entsperren A
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
@@ -212,7 +212,7 @@ Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesper
 
 ### Abnahme Test 8
 **AK Nr.:**   #7   
-**Titel:**  Gesperrte Account entsperren
+**Titel:**  Gesperrte Account entsperren B
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
@@ -269,8 +269,8 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 10
-**AK Nr.:**   #   
-**Titel:**  
+**AK Nr.:**   #9    
+**Titel:**  Speicherung des Zeitintervalls
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
@@ -280,16 +280,24 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. Intervall Zeit auf 5' in der DefaultSettings JSON Datei setzten
 **Ablauf:** 
-1. 
-2. 
-3. 
-4. 
-5. 
-6.  
-7.         
-**Erwünschtes Resultat:**   
-      
+1. MetaMask starten
+2. Warten bis der erste Intervall gestartet hat
+3. Kontrollieren ob ein neuer Timestamp in die DefaultSettings JSON Datei geschrieben wurde und sich diesen merken 
+4. Account wählen
+5. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+6. anderen Account wählen
+7. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+8. WEITER und BESTÄTIGEN wählen 
+9. Warten bis die Transaktion durchlaufen ist
+10. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
+11. DoS Algorithmus für 2' pausieren und wieder starten
+12. Warten ob der Intervall bei der vorgemerkten Zeit neu startet
+
+**Erwünschtes Resultat:**
+-Alle Counter sind wieder auf die max Limite zurückgesetzt 
+-Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 11
@@ -393,6 +401,129 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 **Tatsächliches Resultat:** ????
 
 ### Abnahme Test 15
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+### Abnahme Test 13
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+### Abnahme Test 
+
+**AK Nr.:**   #   
+**Titel:**  
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno  
+**Datum:**   15.3.2020
+**Status:**  ???
+**Vorbedingung:**
+1. Metamask installiert 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+**Ablauf:** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6.  
+7.         
+**Erwünschtes Resultat:**   
+      
+**Tatsächliches Resultat:** ????
+
+### Abnahme Test 
 
 **AK Nr.:**   #   
 **Titel:**  
