@@ -73,16 +73,16 @@ Vorbedingung:
         4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
 Ablauf: 
 :Für jeden Account wird der gleiche Ablauf durchgeführt
-       1. MetaMask starten
-       2. Zertifizierten Account wählen
-       3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+1. MetaMask starten
+2. Zertifizierten Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
        4. Beliebigen Account wählen
        5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
        6. WEITER und BESTÄTIGEN wählen 
        7. Warten bis die Transaktion durchlaufen ist
-Erwünschtes Resultat:   
-        - Erste Transaktion erfolgreicher Durchlauf
-        - Zweite Transaktion abgebrochen
+Erwünschtes Resultat:    
+- Erste Transaktion erfolgreicher Durchlauf
+- Zweite Transaktion abgebrochen
 Tatsächliches Resultat: ????
 ### Abnahme Test 4
 
