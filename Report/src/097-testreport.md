@@ -152,26 +152,30 @@ Tatsächliches Resultat: ????
 
 ### Abnahme Test 6
 
-AK Nr.:   #    
-Titel:  
+AK Nr.:   #6    
+Titel:  Account nach GasUsed sperren
 Testart:   Manuell  
 Tester:   Faustina Bruno  
 Datum:   15.3.2020
 Status:  ???
 Vorbedingung:
 1. Metamask installiert 
-2. 2 Accounts in Metamask eingerichtet (1. Add: PK: 2. egal) 
+2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-Ablauf: 
-1. 
-2. 
-3. 
-       - 4. 
-       - 5. 
-       - 6.  
-       - 7.   
+Ablauf:
+1. MetaMask starten
+2. Account wählen
+3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
+4. Account wählen
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+6. WEITER und BESTÄTIGEN wählen 
+7. Warten bis die Transaktion durchlaufen ist
+8. Dies einmal mehr als die Gaslimite dieses Account ist durchführen
 Erwünschtes Resultat:   
+- Die letzte Transaktion wird abgebrochen
+- Der Account hat in der JSON Datei einen Timestamp eingetragen
+- Der Account hat in der JSON Datei keine übriges Gas mehr
       
 Tatsächliches Resultat: ????
 
