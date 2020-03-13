@@ -21,7 +21,7 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 | 12.   | GasUsed Limite pro User | Die Anzahl Gas Used bis ein Account gesperrt wird, kann für jeden Account individuell eingestellt werden |
 | 13.   | Default Werte für Limiten | Es können default Werte für max Transaktionen und max Gas Used gesetzt werden  |
 | 14.   | Certifier nur von Owner deployen | Der Certifier kann nur vom Owner registriert werden  |
-| 15.   | Certifier nur einmal deploybar  | Der Certifier kann nur einmal deplyt/registriert werden |
+| 15.   | Certifier nur einmal deploybar  | Der Certifier kann nur einmal deployt/registriert werden |
 | 16.   | Owner Account | Der Certifier Owner Account kann nicht gesperrt werden  |
 | 21.   | |   |
 
