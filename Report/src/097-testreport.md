@@ -26,7 +26,7 @@ Tatsächliches Resultat: ????
 
 ### Abnahme Test 2
 
-AK Nr.:   #2    
+AK Nr. :   #2    
 Titel:  Gratis Transaktionen nur für Accounts in Whitelist
 Testart:   Manuell  
 Tester:   Faustina Bruno  
@@ -123,12 +123,12 @@ Erwünschtes Resultat:
 Tatsächliches Resultat: ????
 
 ### Abnahme Test 5
-AK Nr.:   #5    
-Titel:  Account nach Transaktionen sperren
-Testart:   Manuell  
-Tester:   Faustina Bruno  
-Datum:   15.3.2020
-Status:  ???
+- AK Nr.:   #5    
+- Titel:  Account nach Transaktionen sperren
+- Testart:   Manuell  
+- Tester:   Faustina Bruno  
+- Datum:   15.3.2020
+- Status:  ???
 Vorbedingung:
         1. Metamask installiert 
         2. Account in MetaMask eingerichtet (1. Add: PK: ) 
