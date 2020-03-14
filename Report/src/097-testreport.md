@@ -10,13 +10,13 @@
 **Status:**  ???
 **Vorbedingung:**
 1. MetaMask installiert 
-2. 2 Accounts in MetaMask eingerichtet (1. Add: PK: 2. egal) 
+2. 2 Accounts in MetaMask eingerichtet: (1.Account Add: 0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK: 080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 
 **Ablauf:** 
 1. MetaMask starten 
-2. Zum Account mit der Adresse "" wechseln
+2. Zum Account mit der Adresse "0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669" wechseln
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. 2. Account wählen 
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2 eingeben 
