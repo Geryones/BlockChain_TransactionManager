@@ -40,7 +40,7 @@
 **Vorbedingung:**  
 
 1. MetaMask installiert 
-2. zweiAccounts in MetaMask eingerichtet (1. Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
+2. zweiAccounts in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 
@@ -108,12 +108,13 @@
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**Status:**  ERFOLGREICH
+**Vorbedingung:**  
 1. Metamask installiert 
-2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1. Add: PK: 2. egal) 
+2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -132,12 +133,16 @@
 15. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 16. WEITER und BESTÄTIGEN wählen 
 17. Warten bis die Transaktion durchlaufen ist
-18. Account Liste Datei kontrollieren
+18. Account wieder in die Liste hinzufügen
 **Erwünschtes Resultat:**   
 - Erste Transaktion erfolgreicher Durchlauf
 - Zweite Transaktion abgebrochen
 - Account ist nicht mehr in der JSON Datei
-**Tatsächliches Resultat:** ????
+
+**Tatsächliches Resultat:** 
+- Erste Transaktion ist erfolgreich durchgelaufen 
+- Zweite Transaktion abgebrochen
+- Account ist nicht mehr in der JSON Datei
 
 ### Abnahme Test 5
 **AK Nr.:**   #5  & #11
