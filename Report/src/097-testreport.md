@@ -104,11 +104,11 @@
 ### Abnahme Test 4
 
 **AK Nr.:**   #4   
-**Titel:**  Account aus Liste und Whitelist entfernen
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ERFOLGREICH
+**Titel:**  Account aus Liste und Whitelist entfernen  
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 1. Metamask installiert 
 2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig) 
@@ -145,13 +145,13 @@
 - Account ist nicht mehr in der JSON Datei
 
 ### Abnahme Test 5
-**AK Nr.:**   #5 & #11
-**Titel:**  Account nach Transaktionen sperren
-**Testart:**   Manuell  
+**AK Nr.:**   #5 & #11  
+**Titel:**  Account nach Transaktionen sperren  
+**Testart:**   Manuell   
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
-**Status:**  ERFOLGREICH
-**Vorbedingung:**  
+**Status:**  ERFOLGREICH 
+**Vorbedingung:**   
 1. Metamask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
