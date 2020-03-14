@@ -148,15 +148,15 @@
 **AK Nr.:**   #5 & #11  
 **Titel:**  Account nach Transaktionen sperren  
 **Testart:**   Manuell   
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ERFOLGREICH 
-**Vorbedingung:**   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
+**Vorbedingung:**    
 1. Metamask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt
+5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt und Gas Limite auf 126000
 
 **Ablauf:** 
 1. MetaMask starten
@@ -181,18 +181,19 @@
 
 ### Abnahme Test 6
 
-**AK Nr.:**   #6     & #11
-**Titel:**  Account nach GasUsed sperren
+**AK Nr.:**   #6  & #11 
+**Titel:**  Account nach GasUsed sperren 
 **Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH   
+**Vorbedingung:**  
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
-5. Account hat in der JSON Datei die gasUsed Limite auf 42000 gesetzt
+5. Account hat in der JSON Datei die gasUsed Limite auf 42000 gesetzt und Transaktion Limite auf 5
+
 **Ablauf:**
 1. MetaMask starten
 2. Account wählen
@@ -201,13 +202,18 @@
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
+8. Nach dem 2. mal JSON Datei kontrollieren
 8. Dies 3 Mal durchführen.
+
 **Erwünschtes Resultat:**   
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei keine übriges Gas mehr
       
-**Tatsächliches Resultat:** ????
+**Tatsächliches Resultat:** 
+- Die letzte Transaktion wird abgebrochen
+- Der Account hat in der JSON Datei einen Timestamp eingetragen
+- Der Account hat in der JSON Datei keine übriges Gas mehr
 
 ### Abnahme Test 7
 **AK Nr.:**   #7   & 10
