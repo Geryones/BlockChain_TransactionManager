@@ -93,8 +93,10 @@
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
+
 **Erwünschtes Resultat:**    
-- Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion  
+- Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion   
+
 **Tatsächliches Resultat:**  
 - Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion   
 
