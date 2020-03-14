@@ -25,7 +25,7 @@
 7.Warten bis die Transaktion durchlaufen ist 
 
 **Erwünschtes Resultat:** 
-- Eine bestätigte Transaktion      
+- Eine bestätigte Transaktion   
 **Tatsächliches Resultat:**
 - Die Transaktion ist erfolgreich durchgeführt worden
 
@@ -63,7 +63,7 @@
 
 **Erwünschtes Resultat:**   
 - Erste Transaktion erfolgreicher durchlaufen
-- Zweite Transaktion abgebrochen
+- Zweite Transaktion abgebrochen  
 
 **Tatsächliches Resultat:**  
 - Erste Transaktion ist erfolgreich durchlaufen
@@ -72,19 +72,19 @@
 
 ### Abnahme Test 3
 
-AK Nr.:   #3    
-Titel:  Account aus Liste für Whitelist zertifizieren
-Testart:   Manuell  
-Tester:   Faustina Bruno  
-Datum:   15.3.2020
-Status:  ???
-Vorbedingung:
+**AK Nr.:**   #3    
+**Titel:**  Account aus Liste für Whitelist zertifizieren
+**Testart:**   Manuell  
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
+**Vorbedingung:**   
 1. Metamask installiert 
 2. Alle Accounts aus der Account Liste sind in MetaMask eingerichtet 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
 
-**Ablauf:** 
+**Ablauf:**  
 :Für jeden Account wird der gleiche Ablauf durchgeführt
 1. MetaMask starten
 2. Zertifizierten Account wählen
@@ -93,10 +93,12 @@ Vorbedingung:
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-Erwünschtes Resultat:    
-- Erste Transaktion erfolgreicher Durchlauf
-- Zweite Transaktion abgebrochen
-Tatsächliches Resultat: ????
+**Erwünschtes Resultat:**    
+- Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion  
+**Tatsächliches Resultat:**  
+- Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion   
+
+
 ### Abnahme Test 4
 
 **AK Nr.:**   # 4   
