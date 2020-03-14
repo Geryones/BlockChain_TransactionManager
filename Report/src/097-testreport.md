@@ -181,9 +181,9 @@
 
 ### Abnahme Test 6
 
-**AK Nr.:**   #6  & #11 
-**Titel:**  Account nach GasUsed sperren 
-**Testart:**   Manuell  
+**AK Nr.:**   #6  & #11  
+**Titel:**  Account nach GasUsed sperren  
+**Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH   
@@ -216,18 +216,19 @@
 - Der Account hat in der JSON Datei keine übriges Gas mehr
 
 ### Abnahme Test 7
-**AK Nr.:**   #7   & 10
-**Titel:**  Gesperrte Account entsperren A
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
+**AK Nr.:**   #7  & #10  
+**Titel:**  Gesperrte Account entsperren A  
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ???  
 **Vorbedingung:**
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
-5. Account Revoke Time auf JSON Datei auf 2' setzten
+5. Account Revoke Time auf JSON Datei auf 2' setzten 
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -239,9 +240,12 @@
 8. Dies so oft durchführen, bis der Account geperrt ist.
 9. Dannach 2' warten
 10. Erneut eine gratis Transaktion durchführen
-**Erwünschtes Resultat:**   
-Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt wurde und 2' gewartet wurde      
-**Tatsächliches Resultat:** ????
+
+**Erwünschtes Resultat:**    
+- Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt wurde und 2' gewartet wurde 
+
+**Tatsächliches Resultat:**  
+- Eine gratis Transaktion war wieder durchführbar , nahdem der Account gesperrt wurde und 2' gewartet wurde 
 
 ### Abnahme Test 8
 **AK Nr.:**   #7   
