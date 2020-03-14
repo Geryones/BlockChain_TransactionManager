@@ -103,7 +103,7 @@
 
 ### Abnahme Test 4
 
-**AK Nr.:**   # 4   
+**AK Nr.:**   #4   
 **Titel:**  Account aus Liste und Whitelist entfernen
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
@@ -145,18 +145,19 @@
 - Account ist nicht mehr in der JSON Datei
 
 ### Abnahme Test 5
-**AK Nr.:**   #5  & #11
+**AK Nr.:**   #5 & #11
 **Titel:**  Account nach Transaktionen sperren
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**Status:**  ERFOLGREICH
+**Vorbedingung:**  
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
 5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -165,13 +166,18 @@
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 6 Mal durchführen
+8. Beim 5. Mal JSON Datei kontrollieren
+9. Ein 6. Mal durchführen
+
 **Erwünschtes Resultat:**   
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei keine übrigen Transaktionen
+- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen Transaktionen
       
-**Tatsächliches Resultat:** ????
+**Tatsächliches Resultat:** 
+- Die letzte Transaktion wird abgebrochen
+- Der Account hat in der JSON Datei einen Timestamp eingetragen
+- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen Transaktionen
 
 ### Abnahme Test 6
 
