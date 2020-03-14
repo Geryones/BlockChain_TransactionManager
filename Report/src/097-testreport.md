@@ -317,9 +317,9 @@
 **Titel:**  Speicherung des Zeitintervalls 
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
+**Datum:**   15.3.2020 
 **Status:**  ERFOLGREICH  
-**Vorbedingung:**
+**Vorbedingung:** 
 1. Metamask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
@@ -383,7 +383,7 @@
 ### Abnahme Test 12
 
 **AK Nr.:**   #13   
-**Titel:**  Default Werte für Limiten A 
+**Titel:**  Default Werte für Limiten A   
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020 
@@ -420,11 +420,11 @@
 ### Abnahme Test 13
 
 **AK Nr.:**   #13 B    
-**Titel:**  Default Werte für Limiten 
+**Titel:**  Default Werte für Limiten  
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020 
-**Status:**  ERFOLGREICH 
+**Status:**  ERFOLGREICH  
 **Vorbedingung:** 
 1. Metamask installiert 
 2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist auf 63000 gesetzt
