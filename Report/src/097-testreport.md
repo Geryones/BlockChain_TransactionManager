@@ -256,7 +256,7 @@
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 5. Account Revoke Time auf JSON Datei auf 2' setzten
@@ -278,22 +278,23 @@
 **Erwünschtes Resultat:**   
 -Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
 **Tatsächliches Resultat:** 
-Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen betätigt werden
+- Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen betätigt werden
 
 ### Abnahme Test 9
 
 **AK Nr.:**   #8   
-**Titel:** Reset Zeitintervall setzten 
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**Titel:** Reset Zeitintervall setzten  
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
+**Vorbedingung:**  
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 5. Intervall Zeit auf 2' in der DefaultSettings JSON Datei setzten
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -303,24 +304,28 @@ Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen betäti
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
-9. 2' warten        
-**Erwünschtes Resultat:**   
-Alle Counter sind wieder auf die max Limite zurückgesetzt      
-**Tatsächliches Resultat:** ????
+9. 2' warten       
+
+**Erwünschtes Resultat:** 
+- Alle Counter sind wieder auf die max. Limite zurückgesetzt     
+
+**Tatsächliches Resultat:** 
+- Alle Counter sind wieder auf der max. Limite
 
 ### Abnahme Test 10
 **AK Nr.:**   #9    
-**Titel:**  Speicherung des Zeitintervalls
+**Titel:**  Speicherung des Zeitintervalls 
 **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020
-**Status:**  ???
+**Status:**  ERFOLGREICH  
 **Vorbedingung:**
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 5. Intervall Zeit auf 5' in der DefaultSettings JSON Datei setzten
+
 **Ablauf:** 
 1. MetaMask starten
 2. Warten bis der erste Intervall gestartet hat
@@ -335,10 +340,12 @@ Alle Counter sind wieder auf die max Limite zurückgesetzt
 11. DoS Algorithmus für 2' pausieren und wieder starten
 12. Warten ob der Intervall bei der vorgemerkten Zeit neu startet
 
-**Erwünschtes Resultat:**
--Alle Counter sind wieder auf die max Limite zurückgesetzt 
--Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
-**Tatsächliches Resultat:** ????
+**Erwünschtes Resultat:**  
+- Alle Counter sind wieder auf die max. Limite zurückgesetzt 
+- Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
+**Tatsächliches Resultat:** 
+- Alle Counter sind wieder auf die max. Limite zurückgesetzt 
+- Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
 
 ### Abnahme Test 11
 
