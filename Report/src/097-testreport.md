@@ -25,23 +25,21 @@
 7.Warten bis die Transaktion durchlaufen ist 
 
 **Erwünschtes Resultat:** 
-
 Eine bestätigte Transaktion      
 **Tatsächliches Resultat:**
-
 Die Transaktion ist erfolgreich durchgeführt worden
 
 ### Abnahme Test 2
 
 **AK Nr. :**   #2    
 **Titel:**  Gratis Transaktionen nur für Accounts in Whitelist
-**Testart:**   Manuell  
+**Testart:**   Manuell    
 **Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH 
+**Vorbedingung:**  
 1. MetaMask installiert 
-2. 2 Accounts in MetaMask eingerichtet (1. Add: PK: 2. ein Account welcher nicht in der Whitelist ist) 
+2. 2 Accounts in MetaMask eingerichtet (1. Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 
@@ -49,7 +47,7 @@ Die Transaktion ist erfolgreich durchgeführt worden
 1. MetaMask starten
 2. Zertifizierten Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. 2. Account wählen
+4. zweiten Account wählen
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
@@ -61,9 +59,11 @@ Die Transaktion ist erfolgreich durchgeführt worden
 13. WEITER und BESTÄTIGEN wählen 
 14. Warten bis die Transaktion durchlaufen ist
 **Erwünschtes Resultat: **  
-- Erste Transaktion erfolgreicher Durchlauf
+- Erste Transaktion erfolgreicher durchlaufen
 - Zweite Transaktion abgebrochen
-**Tatsächliches Resultat:** ????
+**Tatsächliches Resultat:**  
+- Erste Transaktion ist erfolgreich durchlaufen
+- Die zweite Transaktion wurde abgebrochen
  
 
 ### Abnahme Test 3
