@@ -10,7 +10,7 @@
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 1. MetaMask installiert 
-2. 2 Accounts in MetaMask eingerichtet: (1.Account Add: 0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK: 080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
+2. zwei Accounts in MetaMask eingerichtet: (1.Account Add: 0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK: 080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 
@@ -25,9 +25,9 @@
 7.Warten bis die Transaktion durchlaufen ist 
 
 **Erwünschtes Resultat:** 
-Eine bestätigte Transaktion      
+- Eine bestätigte Transaktion      
 **Tatsächliches Resultat:**
-Die Transaktion ist erfolgreich durchgeführt worden
+- Die Transaktion ist erfolgreich durchgeführt worden
 
 ### Abnahme Test 2
 
@@ -36,10 +36,11 @@ Die Transaktion ist erfolgreich durchgeführt worden
 **Testart:**   Manuell    
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020  
-**Status:**  ERFOLGREICH 
+**Status:**  ERFOLGREICH  
 **Vorbedingung:**  
+
 1. MetaMask installiert 
-2. 2 Accounts in MetaMask eingerichtet (1. Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
+2. zweiAccounts in MetaMask eingerichtet (1. Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 
@@ -63,6 +64,7 @@ Die Transaktion ist erfolgreich durchgeführt worden
 **Erwünschtes Resultat:**   
 - Erste Transaktion erfolgreicher durchlaufen
 - Zweite Transaktion abgebrochen
+
 **Tatsächliches Resultat:**  
 - Erste Transaktion ist erfolgreich durchlaufen
 - Die zweite Transaktion wurde abgebrochen
