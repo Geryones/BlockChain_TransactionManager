@@ -20,10 +20,13 @@
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. 2. Account wählen 
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2 eingeben 
-6. WEITER und BESTÄTIGEN wählen 
-7.Warten bis die Transaktion durchlaufen ist        
-**Erwünschtes Resultat:** Eine durchlaufene Transaktion      
-**Tatsächliches Resultat:** ????
+6. WEITER und BESTÄTIGEN wählen
+7.Warten bis die Transaktion durchlaufen ist 
+
+**Erwünschtes Resultat:** 
+Eine bestätigte Transaktion      
+**Tatsächliches Resultat:**
+Die Transaktion ist erfolgreich durchgeführt worden
 
 ### Abnahme Test 2
 
