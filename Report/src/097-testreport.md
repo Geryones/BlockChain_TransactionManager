@@ -221,7 +221,7 @@
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020  
-**Status:**  ???  
+**Status:**  ERFOLGREICH  
 **Vorbedingung:**
 1. Metamask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
@@ -248,18 +248,19 @@
 - Eine gratis Transaktion war wieder durchführbar , nahdem der Account gesperrt wurde und 2' gewartet wurde 
 
 ### Abnahme Test 8
-**AK Nr.:**   #7   
-**Titel:**  Gesperrte Account entsperren B
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**AK Nr.:**   #7    
+**Titel:**  Gesperrte Account entsperren B  
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
+**Vorbedingung:**  
 1. Metamask installiert 
 2. Account in MetaMask eingerichtet (1. Add: PK: ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 5. Account Revoke Time auf JSON Datei auf 2' setzten
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -273,9 +274,11 @@
 10. 4' warten
 11. DoS Algorithmus wieder starten
 12. Erneut eine gratis Transaktion durchführen
+
 **Erwünschtes Resultat:**   
-Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
-**Tatsächliches Resultat:** ????
+-Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
+**Tatsächliches Resultat:** 
+Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen betätigt werden
 
 ### Abnahme Test 9
 
