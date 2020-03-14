@@ -133,7 +133,7 @@
 15. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 16. WEITER und BESTÄTIGEN wählen 
 17. Warten bis die Transaktion durchlaufen ist
-18. Account wieder in die Liste hinzufügen
+18. Account wieder in die Liste hinzufügen  
 **Erwünschtes Resultat:**   
 - Erste Transaktion erfolgreicher Durchlauf
 - Zweite Transaktion abgebrochen
@@ -349,19 +349,20 @@
 
 ### Abnahme Test 11
 
-**AK Nr.:**   #10 A   
-**Titel:** Sperrzeit 
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
+**AK Nr.:**   #10 A    
+**Titel:** Sperrzeit  
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020  
+**Status:**  ERFOLGREICH  
 **Vorbedingung:**
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Add: PK: ) 
+2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
 5. Account hat keine Revoke zeit eingestellt
 6. In den Default Settings ist die Default Revoke Time auf 2 min und der resetIntervall auf 5 min gesetzt
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -373,24 +374,27 @@
 8. Dies so oft durchführen, bis der Account geperrt ist.
 9. Dannach 2' warten
 10. Erneut eine gratis Transaktion durchführen       
+
 **Erwünschtes Resultat:**   
-Account ist nach der Default Revoke Zeit wieder entsperrt     
-**Tatsächliches Resultat:** ????
+- Account ist nach der Default Revoke Zeit wieder entsperrt     
+**Tatsächliches Resultat:**  
+- Account ist nach der Default Revoke Zeit wieder entsperrt 
 
 ### Abnahme Test 12
 
-**AK Nr.:**   #13  
-**Titel:**  Default Werte für Limiten A
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**AK Nr.:**   #13   
+**Titel:**  Default Werte für Limiten A 
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020 
+**Status:**  ERFOLGREICH 
+**Vorbedingung:** 
 1. Metamask installiert 
 2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default Transaktionslimite ist auf 3 gesetzt
-3. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -399,27 +403,35 @@ Account ist nach der Default Revoke Zeit wieder entsperrt
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 4 Mal durchführen
+8. Dies 4 Mal durchführen 
+
 **Erwünschtes Resultat:**   
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei keine übrigen Transaktionen              
-**Tatsächliches Resultat:** ????
+- Der Account hat in der JSON Datei keine übrigen Transaktionen 
+- Limite wird nicht in Datei geschrieben
+
+**Tatsächliches Resultat:** 
+- Die letzte Transaktion wird abgebrochen
+- Der Account hat in der JSON Datei einen Timestamp eingetragen
+- Der Account hat in der JSON Datei keine übrigen Transaktionen 
+
 
 ### Abnahme Test 13
 
-**AK Nr.:**   #13 B   
-**Titel:**  Default Werte für Limiten
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**AK Nr.:**   #13 B    
+**Titel:**  Default Werte für Limiten 
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020 
+**Status:**  ERFOLGREICH 
+**Vorbedingung:** 
 1. Metamask installiert 
 2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist auf 63000 gesetzt
-3. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -429,26 +441,34 @@ Account ist nach der Default Revoke Zeit wieder entsperrt
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies 4 Mal durchführen       
+
 **Erwünschtes Resultat:**   
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei kein übriges Gas         
-**Tatsächliches Resultat:** ????
+- Der Account hat in der JSON Datei kein übriges Gas   
+- Limite wird nicht in Datei geschrieben 
+
+**Tatsächliches Resultat:** 
+- Die letzte Transaktion wird abgebrochen
+- Der Account hat in der JSON Datei einen Timestamp eingetragen
+- Der Account hat in der JSON Datei kein übriges Gas   
+- Limite wird nicht in Datei geschrieben
 
 ### Abnahme Test 14
 
-**AK Nr.:**   #16   
-**Titel:**  Transaktions Manager Account kann nicht gesperrt werden
-**Testart:**   Manuell  
-**Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020
-**Status:**  ???
-**Vorbedingung:**
+**AK Nr.:**   #16    
+**Titel:**  Transaktions Manager Account kann nicht gesperrt werden 
+**Testart:**   Manuell   
+**Tester:**   Faustina Bruno   
+**Datum:**   15.3.2020 
+**Status:**  ??? 
+**Vorbedingung:** 
 1. Metamask installiert 
 2. Account hat die Transaktionslimite 3
-3. Account in MetaMask eingerichtet (1. Add: PK: ) 
+3. Account in MetaMask eingerichtet (1. Add: Adresse zu MasterKey PK: MasterKey ) 
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+
 **Ablauf:** 
 1. MetaMask starten
 2. Account wählen
@@ -457,8 +477,11 @@ Account ist nach der Default Revoke Zeit wieder entsperrt
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 4 Mal durchführen
+8. Dies 4 Mal durchführen 
+
 **Erwünschtes Resultat:**   
-Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen      
+- Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
+
 **Tatsächliches Resultat:** ????
+
 
