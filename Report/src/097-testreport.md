@@ -6,8 +6,8 @@
 **Titel:**  Bezahlte Transaktionen für alle  
 **Testart:**  Manuell  
 **Tester:**  Faustina Bruno  
-**Datum:**  15.3.2020
-**Status:**  ???
+**Datum:**  15.3.2020 
+**Status:**  ERFOLGREICH 
 **Vorbedingung:**
 1. MetaMask installiert 
 2. 2 Accounts in MetaMask eingerichtet: (1.Account Add: 0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK: 080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
