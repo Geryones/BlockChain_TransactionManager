@@ -8,19 +8,20 @@ Um die Parity Instanz zu starten muss auf folgenden Ordner navigiert werden und 
 
 ## Konfigurieren und Deployement des Blockchain TransactionManager
 Vor dem Deployement müssen folgende Dateien im Projekt wie gewünscht eingerichtet sein. Eine Anleitung wie diese Json Dateien konfiguriert werden, finden Sie im Bericht im Kapitel "????"
-- Accounts
-- DefaultSettings
-- MasterKey
+- AccountList.json
+- DefaultSettings.json
+- TransaktionsManagerAccount.json
 
 Sobald die Konfigurationsdateien wie gewünscht ausgefüllt sind, wird das Projekt zu einer .jar Datei ???
 Für diesen Schritt, muss folgender Befehl ausgeführt werden:
 cd ????
-mvn Clean Build 
+mvn clean package
+ Falls das Erstellen des Deployable erfolgreich war, folgt das Deployement. Hierfür wird ???
+ 
+##Starten der Überwachung mit dem Blockchain Transactionmanager
+Um das Programm das erste Mal nach dem aufsetzten der Parity Instanz laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
-
-- Deployement
-
-##Starten Java Programm
 ### init
+
 ### run
-### stop
+
