@@ -18,10 +18,11 @@ cd ????
 mvn clean package
  Falls das Erstellen des Deployable erfolgreich war, folgt das Deployement. Hierfür wird ???
  
-##Starten der Überwachung mit dem Blockchain Transactionmanager
+## Starten der Blockchain Überwachung mit dem Blockchain Transactionmanager
 Um das Programm das erste Mal nach dem aufsetzten der Parity Instanz laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
 ### init
 
+Danach wird nurnoch dieser Befehl genutzt, um das Überwachungsprogramm zu starten:
 ### run
 
