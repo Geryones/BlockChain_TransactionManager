@@ -461,11 +461,11 @@
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020 
-**Status:**  ??? 
+**Status:**  ERFOLGREICH 
 **Vorbedingung:** 
 1. Metamask installiert 
 2. Account hat die Transaktionslimite 3
-3. Account in MetaMask eingerichtet (1. Add: Adresse zu MasterKey PK: MasterKey ) 
+3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 4. Blockchain ist aufgesetzt und läuft 
 5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
 
@@ -477,11 +477,12 @@
 5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 4 Mal durchführen 
+8. Dies 5 Mal durchführen 
 
 **Erwünschtes Resultat:**   
 - Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
 
-**Tatsächliches Resultat:** ????
+**Tatsächliches Resultat:**  
+- Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
 
 
