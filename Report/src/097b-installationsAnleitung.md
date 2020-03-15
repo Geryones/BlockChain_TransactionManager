@@ -2,9 +2,8 @@
 In diesem Kapitel wird dem Benutzer erklärt wie er den BlockChain Transactionmanager in Betrieb nimmt.
 Für die Inbetriebnahme muss Docker auf dem Rechner installiert sein.
 ## Hochfahren der Parity Instanz
-- Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel  \ref{sec_prac_config_toml} im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
-- Die  Blockchainspezifikation wird durch die instant_seal.json Datei definiert. Sie wird in folgendem Ordner "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json" gespeichert. Im Kapitel \ref{sec_prac_spec} "3.1.1.2 Blockchainspezifikation
-" ist der Aufbau beschrieben. 
+- Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel  " \ref{sec_prac_config_toml} " im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
+- Die  Blockchainspezifikation wird durch die instant_seal.json Datei definiert. Sie wird in folgendem Ordner "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json" gespeichert. Im Kapitel " \ref{sec_prac_spec} " ist der Aufbau beschrieben. 
 Um die Parity Instanz zu starten muss auf folgenden Ordner "/home/parity/" navigiert werden und dann folgende zwei Befehle ausgefühert werden:
 
 ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
@@ -17,7 +16,7 @@ Vor dem Deployement müssen folgende Dateien im Projekt wie gewünscht konfiguri
 - DefaultSettings.json
 - TransaktionsManagerAccount.json
 
-Eine Anleitung wie diese Json Dateien konfiguriert werden, sind im Bericht im Kapitel "3.2.4 Persistenz" und Kapitel "3.2.5 Konfiguration" erläutert.
+Eine Anleitung wie diese Json Dateien konfiguriert werden, sind im Bericht im Kapitel " \ref{prac_persistenz} " und Kapitel "  \ref{sec_prac_conf}" erläutert.
 
 
 Sobald die Konfigurationsdateien wie gewünscht ausgefüllt sind, wird aus dem Projekt eine deploybare .jar Datei gebaut.
