@@ -32,8 +32,7 @@ einer Datei gespeichert.\
 Mit der Verwendung von Zeitstempel kann nach einem Unterbruch, der letzte
 Zustand wiederhergestellt werden. Sollte die Suspendierung von einem Account
 während der Ausfallszeit abgelaufen sein, kann das beim Neustart einfach
-ermittelt werden.
-
+ermittelt werden.\
 Mit dem entwickelten Transaktionsmanager sind gratis Transaktionen
 möglich, ohne dass die Sicherheit der Blockchain komprimitiert wird. Das
 ermöglicht der FHNW, ihren Studierenden und Mitarbeitenden, eine sichere und
@@ -60,6 +59,21 @@ sehr oft unvollständig oder veraltet ist. Dadurch hat sich die Bereitstellung
 der Blockchain stark verzögert. Aufgrund der Verzögerung musste der Fokus
 stärker als geplant auf die Kernfunktionalität gerichtet werden. Dadurch konnte
 zum Beispiel ein automatisierter Deploy des Certifiers nicht implementiert
-werden.\
+werden.
+
+Der Transaktionsmanager hat ein grosses Potential für Erweiterungen. Wenn die
+Blockchain frisch aufgesetzt wird, könnte das Deployment und die Registrierung
+des Certifiers automatisiert werden. Analog zur Name Registry kann der Certifier
+direkt in der Blockchainspezifikation deployed werden. Zusätlich ist es möglich,
+den Constructor vom Certifier so anzupassen, dass er sich automatisch bei der
+Name Registry registriert. Dafür muss der ```SimpleCertifier``` und die
+Blockchainspezifikation angepasst werden.\
+Um die Benutzerfreundlichkeit zu erhöhen, könnte eine leserliche
+Zusammenstellung aller Ereignisse erstellt werden. Diese könnte manuell
+abgerufen oder automatisch via Email an die Betreiber des Transaktionsmanagers
+gesendet werden. Für eine Zustellung via Mail muss ein Mailserver zur Verfügung
+stehen.\
+Mit einer Validierung der Input-Dateien und einer entsprechenden Meldung, könnte
+mehr Benutzerfreundlichkeit erreicht werden.
 
 
