@@ -5,7 +5,7 @@ Für die Inbetriebnahme muss Docker auf dem Rechner installiert sein.
 - Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel "3.1.1.1 Config.toml" im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
 - Die  Blockchainspezifikation wird durch die instant_seal.json Datei definiert. Sie wird in folgendem Ordner "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json" gespeichert. Im Kapitel "3.1.1.2 Blockchainspezifikation
 " ist der Aufbau beschrieben. 
-Um die Parity Instanz zu starten muss auf folgenden Ordner "???" navigiert werden und dann folgende zwei Befehle ausgefühert werden:
+Um die Parity Instanz zu starten muss auf folgenden Ordner "/home/parity/" navigiert werden und dann folgende zwei Befehle ausgefühert werden:
 
 ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
@@ -32,9 +32,9 @@ Falls das Erstellen des Deployable erfolgreich war, folgt das Deployement. Hierf
 ## Starten der Blockchain Überwachung mit dem Blockchain Transactionmanager
 Um das Programm das erste Mal nach dem aufsetzten der Parity Instanz laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
-```java -jar BTMChainObserver init```
+```java -jar BTMChainObserver Init```
 
 Danach wird nurnoch dieser Befehl genutzt, um das Überwachungsprogramm zu starten:
 
-```java -jar BTMChainObserver run```
+```java -jar BTMChainObserver Run```
 
