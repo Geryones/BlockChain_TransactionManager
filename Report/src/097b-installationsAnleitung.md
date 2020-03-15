@@ -4,11 +4,15 @@ Für die Inbetriebnahme muss Docker auf dem Rechner installiert sein.
 ## Hochfahren der Parity Instanz
 - Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel  " \ref{sec_prac_config_toml} " im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
 - Die  Blockchainspezifikation wird durch die instant_seal.json Datei definiert. Sie wird in folgendem Ordner "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json" gespeichert. Im Kapitel " \ref{sec_prac_spec} " ist der Aufbau beschrieben. 
-Um die Parity Instanz zu starten muss auf folgenden Ordner "/home/parity/" navigiert werden und dann folgende zwei Befehle ausgefühert werden:
+Um die Parity Instanz zu starten muss auf folgenden Ordner "/home/parity/" navigiert werden und dann folgende Befehle ausgefühert werden:
+
+``` docker pull parity/parity:v2.1.3 ```
+
+```docker volume create --driver=local --opt o=uid=1000 --opt type=tmpfs --opt device=tmpfs paritydb ```
 
 ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
-```docker volume create --driver=local --opt o=uid=1000 --opt type=tmpfs --opt device=tmpfs paritydb ```
+
 
 ## Konfigurieren und Deployement des Programms
 Vor dem Deployement müssen folgende Dateien im Projekt wie gewünscht konfiguriert sein.
