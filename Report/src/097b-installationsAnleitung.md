@@ -7,9 +7,9 @@ Für die in Betriebnahme muss Docker auf dem Rechner installiert sein.
 " ist der Aufbau beschrieben. 
 Um die Parity Instanz zu starten muss auf folgenden Ordner "???" navigiert werden und dann folgende zwei Befehle ausgefühert werden.
 
-docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all
+```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
-docker volume create --driver=local --opt o=uid=1000 --opt type=tmpfs --opt device=tmpfs paritydb
+```docker volume create --driver=local --opt o=uid=1000 --opt type=tmpfs --opt device=tmpfs paritydb ```
 
 ## Konfigurieren und Deployement des Blockchain TransactionManager
 Vor dem Deployement müssen folgende Dateien im Projekt wie gewünscht eingerichtet sein.
@@ -23,18 +23,18 @@ Eine Anleitung wie diese Json Dateien konfiguriert werden, finden Sie im Bericht
 Sobald die Konfigurationsdateien wie gewünscht ausgefüllt sind, wird aus dem Projekt eine deploybare .jar Datei gebaut.
 Für diesen Schritt, muss folgender Befehl in Porjekt Ordner über die Console ausgeführt werden:
 
-mvn clean package
+```mvn clean package```
 
 Falls das Erstellen des Deployable erfolgreich war, folgt das Deployement. Hierfür wird folgender Befehl in der Console ausgeführt:
 
-mvn deploy ???
+```mvn deploy ???```
  
 ## Starten der Blockchain Überwachung mit dem Blockchain Transactionmanager
 Um das Programm das erste Mal nach dem aufsetzten der Parity Instanz laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
-java -jar DATEINAME init
+```java -jar DATEINAME init```
 
 Danach wird nurnoch dieser Befehl genutzt, um das Überwachungsprogramm zu starten:
 
-java -jar DATEINAME run
+```java -jar DATEINAME run```
 
