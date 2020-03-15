@@ -2,7 +2,7 @@
 In diesem Kapitel wird dem Benutzer erklärt wie er den BlockChain Transactionmanager in Betrieb nimmt.
 Für die Inbetriebnahme muss Docker auf dem Rechner installiert sein.
 ## Hochfahren der Parity Instanz
-- Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel "3.1.1.1 Config.toml" im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
+- Die Konfiguration der Blockchain wird über die config.toml Datei gemacht. Wie sie aufgesetzt wird, wird im Kapitel \ref{sec_prac_config_toml} "3.1.1.1 Config.toml" im Bericht aufgezeigt. Die Bedeutung jedes Parameters wird dort erläutert.  Die Datei muss in folgendem Ordner "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
 - Die  Blockchainspezifikation wird durch die instant_seal.json Datei definiert. Sie wird in folgendem Ordner "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json" gespeichert. Im Kapitel "3.1.1.2 Blockchainspezifikation
 " ist der Aufbau beschrieben. 
 Um die Parity Instanz zu starten muss auf folgenden Ordner "/home/parity/" navigiert werden und dann folgende zwei Befehle ausgefühert werden:
