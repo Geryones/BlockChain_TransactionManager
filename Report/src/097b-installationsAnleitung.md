@@ -18,7 +18,7 @@ Rechner installiert sein.
   ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
   Datei ```instant_seal.json```.
 
-3. Für die "Stable"-Version von Parity kann follgender Befehl verwendet werden:\
+3. Für die "Stable"-Version von Parity kann folgender Befehl verwendet werden:\
    ``` docker pull parity/parity:stable```
 
 4. Mit follgendem Befehl wird ein neuer Party-Container erstellt:\
@@ -55,7 +55,7 @@ bedeutend grösser.
 
 ### Konfigurieren des Transaktionsmanagers
 
-Die Konfiguration des Transaktionsmanager geschieht über follgende Dateien:
+Die Konfiguration des Transaktionsmanager geschieht über folgende Dateien:
 
 1. ```AccountList.json```
 1. ```DefaultSettings.json```
