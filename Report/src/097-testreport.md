@@ -9,40 +9,51 @@
 **Datum:**  15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
+
 1. MetaMask installiert 
-2. zwei Accounts in MetaMask eingerichtet: (1.Account Add: 0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK: 080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
+2. zwei Accounts in MetaMask eingerichtet: (1.Account Add:
+   0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669 PK:
+   080BACEA441C50059857889AFD35D22E91C5F27C1639BE441C8E456DF678B28D 2. egal) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 
 **Ablauf:** 
 
 1. MetaMask starten 
-2. Zum Account mit der Adresse "0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669" wechseln
+2. Zum Account mit der Adresse "0xdb3cc88CA30407c079deCBcfF9c34E4a23Aaa669"
+   wechseln
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. zweiten Account wählen 
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 2
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen
-7.Warten bis die Transaktion durchlaufen ist 
+7. Warten bis die Transaktion durchlaufen ist 
 
 **Erwünschtes Resultat:** 
+
 - Eine bestätigte Transaktion   
+
 **Tatsächliches Resultat:**
+
 - Die Transaktion ist erfolgreich durchgeführt worden
 
 ### Abnahme Test 2
 
 **AK Nr. :**   #2    
-**Titel:**  Gratis Transaktionen nur für Accounts in Whitelist
-**Testart:**   Manuell    
+**Titel:**  Gratis Transaktionen nur für Accounts in Whitelist **Testart:**
+Manuell    
 **Tester:**   Faustina Bruno  
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 
 1. MetaMask installiert 
-2. zweiAccounts in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein Account welcher nicht in der Whitelist ist) 
+2. zweiAccounts in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
+   FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein
+   Account welcher nicht in der Whitelist ist) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 
 **Ablauf:**
 
@@ -50,54 +61,63 @@
 2. Zertifizierten Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. zweiten Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Auf den 2. Account wechseln
 9. Kontrollieren ob der Betrag überwiesen wurde
 10. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 11. Zertifizierten Account wählen
-12. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben
+12. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+    eingeben
 13. WEITER und BESTÄTIGEN wählen 
 14. Warten bis die Transaktion durchlaufen ist
 
 **Erwünschtes Resultat:**   
+
 - Erste Transaktion erfolgreicher durchlaufen
 - Zweite Transaktion abgebrochen  
 
 **Tatsächliches Resultat:**  
+
 - Erste Transaktion ist erfolgreich durchlaufen
 - Die zweite Transaktion wurde abgebrochen
- 
+
 
 ### Abnahme Test 3
 
 **AK Nr.:**   #3    
-**Titel:**  Account aus Liste für Whitelist zertifizieren
-**Testart:**   Manuell  
+**Titel:**  Account aus Liste für Whitelist zertifizieren **Testart:**   Manuell
+
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**   
+
 1. Metamask installiert 
 2. Alle Accounts aus der Account Liste sind in MetaMask eingerichtet 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist  
 
 **Ablauf:**  
 :Für jeden Account wird der gleiche Ablauf durchgeführt
+
 1. MetaMask starten
 2. Zertifizierten Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 
 **Erwünschtes Resultat:**    
+
 - Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion   
 
 **Tatsächliches Resultat:**  
+
 - Bei allen Accounts ein erfolgreicher Durchlauf der Transaktion   
 
 
@@ -110,36 +130,47 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
-1. Metamask installiert 
-2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig) 
-3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
 
-**Ablauf:** 
+1. Metamask installiert 
+2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1.
+   Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
+   FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig)
+   
+3. Blockchain ist aufgesetzt und läuft 
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist  
+
+**Ablauf:**
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Algorithmus stoppen
-9. Account der gelöscht werden soll in Account Liste JSON Datei als solcher kennzeichnen
+9. Account der gelöscht werden soll in Account Liste JSON Datei als solcher
+   kennzeichnen
 10. DoS Algorithmus starten (run-Befehl)
 11. MetaMask starten
 12. Account wählen
 13. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 14. Beliebigen Account wählen
-15. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+15. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+    eingeben 
 16. WEITER und BESTÄTIGEN wählen 
 17. Warten bis die Transaktion durchlaufen ist
 18. Account wieder in die Liste hinzufügen  
+
 **Erwünschtes Resultat:**   
+
 - Erste Transaktion erfolgreicher Durchlauf
 - Zweite Transaktion abgebrochen
 - Account ist nicht mehr in der JSON Datei
 
 **Tatsächliches Resultat:** 
+
 - Erste Transaktion ist erfolgreich durchgelaufen 
 - Zweite Transaktion abgebrochen
 - Account ist nicht mehr in der JSON Datei
@@ -152,32 +183,43 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**    
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK: FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account beliebig ) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
+   FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account
+   beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist  
-5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt und Gas Limite auf 126000
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
+5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt und Gas
+   Limite auf 126000
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Beim 5. Mal JSON Datei kontrollieren
 9. Ein 6. Mal durchführen
 
-**Erwünschtes Resultat:**   
+**Erwünschtes Resultat:**  
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen Transaktionen
-      
+- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen
+  Transaktionen
+
 **Tatsächliches Resultat:** 
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen Transaktionen
+- Der Account hat nach 5 Transaktionen in der JSON Datei keine übrigen
+  Transaktionen
 
 ### Abnahme Test 6
 
@@ -188,29 +230,36 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH   
 **Vorbedingung:**  
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig ) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
-5. Account hat in der JSON Datei die gasUsed Limite auf 42000 gesetzt und Transaktion Limite auf 5
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
+5. Account hat in der JSON Datei die gasUsed Limite auf 42000 gesetzt und
+   Transaktion Limite auf 5
 
 **Ablauf:**
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Nach dem 2. mal JSON Datei kontrollieren
 8. Dies 3 Mal durchführen.
 
 **Erwünschtes Resultat:**   
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei keine übriges Gas mehr
-      
+
 **Tatsächliches Resultat:** 
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei keine übriges Gas mehr
@@ -223,18 +272,22 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 5. Account Revoke Time auf JSON Datei auf 2' setzten 
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies so oft durchführen, bis der Account geperrt ist.
@@ -242,10 +295,14 @@
 10. Erneut eine gratis Transaktion durchführen
 
 **Erwünschtes Resultat:**    
-- Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account gesperrt wurde und 2' gewartet wurde 
+
+- Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account
+  gesperrt wurde und 2' gewartet wurde 
 
 **Tatsächliches Resultat:**  
-- Eine gratis Transaktion war wieder durchführbar , nahdem der Account gesperrt wurde und 2' gewartet wurde 
+
+- Eine gratis Transaktion war wieder durchführbar , nahdem der Account gesperrt
+  wurde und 2' gewartet wurde 
 
 ### Abnahme Test 8
 **AK Nr.:**   #7    
@@ -255,18 +312,22 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 5. Account Revoke Time auf JSON Datei auf 2' setzten
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies so oft durchführen, bis der Account geperrt ist.
@@ -276,9 +337,14 @@
 12. Erneut eine gratis Transaktion durchführen
 
 **Erwünschtes Resultat:**   
--Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
+
+- Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account
+  gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
+
 **Tatsächliches Resultat:** 
-- Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen betätigt werden
+
+- Nach dem Starten des pausierten Programmes, konnten wieder Transaktionen
+  betätigt werden
 
 ### Abnahme Test 9
 
@@ -289,51 +355,60 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 5. Intervall Zeit auf 2' in der DefaultSettings JSON Datei setzten
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
 9. 2' warten       
 
 **Erwünschtes Resultat:** 
+
 - Alle Counter sind wieder auf die max. Limite zurückgesetzt     
 
 **Tatsächliches Resultat:** 
+
 - Alle Counter sind wieder auf der max. Limite
 
 ### Abnahme Test 10
 **AK Nr.:**   #9    
-**Titel:**  Speicherung des Zeitintervalls 
-**Testart:**   Manuell  
+**Titel:**  Speicherung des Zeitintervalls **Testart:**   Manuell  
 **Tester:**   Faustina Bruno  
-**Datum:**   15.3.2020 
-**Status:**  ERFOLGREICH  
+**Datum:**   15.3.2020 **Status:**  ERFOLGREICH  
 **Vorbedingung:** 
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 5. Intervall Zeit auf 5' in der DefaultSettings JSON Datei setzten
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Warten bis der erste Intervall gestartet hat
-3. Kontrollieren ob ein neuer Timestamp in die DefaultSettings JSON Datei geschrieben wurde und sich diesen merken 
+3. Kontrollieren ob ein neuer Timestamp in die DefaultSettings JSON Datei
+   geschrieben wurde und sich diesen merken 
 4. Beliebigen Account wählen
 5. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 6. anderen Account wählen
-7. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+7. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 8. WEITER und BESTÄTIGEN wählen 
 9. Warten bis die Transaktion durchlaufen ist
 10. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
@@ -341,9 +416,12 @@
 12. Warten ob der Intervall bei der vorgemerkten Zeit neu startet
 
 **Erwünschtes Resultat:**  
+
 - Alle Counter sind wieder auf die max. Limite zurückgesetzt 
 - Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
+
 **Tatsächliches Resultat:** 
+
 - Alle Counter sind wieder auf die max. Limite zurückgesetzt 
 - Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
 
@@ -356,19 +434,24 @@
 **Datum:**   15.3.2020  
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**
+
 1. Metamask installiert 
-2. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
+2. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 5. Account hat keine Revoke zeit eingestellt
-6. In den Default Settings ist die Default Revoke Time auf 2 min und der resetIntervall auf 5 min gesetzt
+6. In den Default Settings ist die Default Revoke Time auf 2 min und der
+   resetIntervall auf 5 min gesetzt
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies so oft durchführen, bis der Account geperrt ist.
@@ -376,8 +459,12 @@
 10. Erneut eine gratis Transaktion durchführen       
 
 **Erwünschtes Resultat:**   
+
 - Account ist nach der Default Revoke Zeit wieder entsperrt     
+
+
 **Tatsächliches Resultat:**  
+
 - Account ist nach der Default Revoke Zeit wieder entsperrt 
 
 ### Abnahme Test 12
@@ -386,32 +473,37 @@
 **Titel:**  Default Werte für Limiten A   
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 
-**Status:**  ERFOLGREICH 
-**Vorbedingung:** 
+**Datum:**   15.3.2020 **Status:**  ERFOLGREICH **Vorbedingung:** 
+
 1. Metamask installiert 
-2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default Transaktionslimite ist auf 3 gesetzt
-3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
+2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default
+   Transaktionslimite ist auf 3 gesetzt
+3. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+5. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist 
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies 4 Mal durchführen 
 
 **Erwünschtes Resultat:**   
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei keine übrigen Transaktionen 
 - Limite wird nicht in Datei geschrieben
 
 **Tatsächliches Resultat:** 
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei keine übrigen Transaktionen 
@@ -423,32 +515,38 @@
 **Titel:**  Default Werte für Limiten  
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 
-**Status:**  ERFOLGREICH  
+**Datum:**   15.3.2020 **Status:**  ERFOLGREICH  
 **Vorbedingung:** 
+
 1. Metamask installiert 
-2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist auf 63000 gesetzt
-3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
+2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist
+   auf 63000 gesetzt
+3. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+5. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist 
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies 4 Mal durchführen       
 
 **Erwünschtes Resultat:**   
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei kein übriges Gas   
 - Limite wird nicht in Datei geschrieben 
 
 **Tatsächliches Resultat:** 
+
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
 - Der Account hat in der JSON Datei kein übriges Gas   
@@ -457,32 +555,36 @@
 ### Abnahme Test 14
 
 **AK Nr.:**   #16    
-**Titel:**  Transaktions Manager Account kann nicht gesperrt werden 
-**Testart:**   Manuell   
+**Titel:**  Transaktions Manager Account kann nicht gesperrt werden **Testart:**
+Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 
-**Status:**  ERFOLGREICH 
-**Vorbedingung:** 
+**Datum:**   15.3.2020 **Status:**  ERFOLGREICH **Vorbedingung:** 
+
 1. Metamask installiert 
 2. Account hat die Transaktionslimite 3
-3. Account in MetaMask eingerichtet (1. Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
+3. Account in MetaMask eingerichtet (1. Account Add:
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 4. Blockchain ist aufgesetzt und läuft 
-5. DoS Algorithmus läuft und der Account ist zertifiziert/ in der Whitelist 
+5. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist 
 
 **Ablauf:** 
+
 1. MetaMask starten
 2. Account wählen
 3. auf SENDEN dann ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
-5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0 eingeben 
+5. In das Betrag Feld 100 ETH eingeben und in das Transaktionsgebühr Feld 0
+   eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
 8. Dies 5 Mal durchführen 
 
 **Erwünschtes Resultat:**   
+
 - Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
 
 **Tatsächliches Resultat:**  
+
 - Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
 
 
