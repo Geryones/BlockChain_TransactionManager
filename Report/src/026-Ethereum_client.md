@@ -239,7 +239,7 @@ function certified(address _who)
 ```
 Mit der Methode ```certified```, unter \ref{li_certified}, kann jederzeit überprüft werden, ob ein Account
 (```_who```) zertifiziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass
-es sich um eine Abfrage ohne weitere Komputationskosten handelt. Solche Abfragen
+es sich um eine Abfrage ohne weitere Rechenkosten handelt. Solche Abfragen
 sind daher mit keinen Transaktionskosten verbunden. 
 
 
