@@ -194,7 +194,7 @@ Zeile 7
 :      Schränkt die Schwankungen der Gas Limite zwischen Blöcken ein. 
 
 
-```{.json caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec1  .numberLines}
+```{.json caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec3  .numberLines}
 	"genesis": {
 		"seal": {
 			"generic": "0x0"

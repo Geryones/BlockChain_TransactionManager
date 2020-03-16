@@ -100,7 +100,8 @@ try {
 Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf
 Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziert.\
 Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den
-String ```service_transaction_checker```. Dieser wird auf Zeile 4 in ein
+String \
+```service_transaction_checker```. Dieser wird auf Zeile 4 in ein
 Byte-Array umgewandelt. Diese Variabel hält den Namen, unter welchem der
 Certifier bei der Name Registry registriert wird. Die Verwendung des Strings
 ```service_transaction_checker``` und seine Umwandlung sind in Parity hart
