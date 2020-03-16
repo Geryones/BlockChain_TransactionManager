@@ -1,10 +1,8 @@
 ### DoS-Algorithmus
 
-//TODO Spellcheck 
-
 In diesem Abschnitt sind die Komponenten des DoS-Algorithmus aufgeführt.
 Verschiedene Parameter und deren Verwendung werden untersucht. Die Behandlung
-von Accounts, die vom Algorithmus als Gefahr identfiziert werden, wird ebenfalls
+von Accounts, die vom Algorithmus als Gefahr identifiziert werden, wird ebenfalls
 evaluiert. 
 
 #### Parameter \label{sec_dla_params}
@@ -62,13 +60,13 @@ ist unabhängig vom Programm Start.
 
 Pro Account wird verfolgt, wie viele gratis Transaktionen pro Zeitintervall
 gemacht werden. Hier werden die Transaktionen unabhängig von Typ oder
-verursachten Komputationskosten auf der Blockchain gezählt. 
+verursachten Rechenskosten auf der Blockchain gezählt. 
 
 ##### Anzahl verbrauchtes Gas
 
 Pro Account wird verfolgt, wie viel Gas pro Zeitintervall auf der Blockchain
 durch dessen gratis Transaktionen verbraucht wird. Im Gegensatz zum oben
-genannten Parameter, werden hier die verursachten Komputationskosten auf der
+genannten Parameter, werden hier die verursachten Rechenkosten auf der
 Blockchain berücksichtigt. 
 
 

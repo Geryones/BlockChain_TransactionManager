@@ -12,5 +12,3 @@ Im folgenden Abschnitt wird die Blockchain behandelt, diese ist auf dem Diagramm
 
 In diesem Abschnitt ist beschrieben, wie die Blockchain konfiguriert ist. Als
 Client wird die stable Version[@parity_releases] von Parity verwendet. 
-
-

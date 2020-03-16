@@ -9,7 +9,7 @@ Machbarkeit (MK)
 
 Blockchainprinzipien (BCP)
 :     Gibt an ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, Trust und Security  
-:     Die Einhaltung der Prinzipien ist wichtig, aber für die FHNW nicht zwingend. Daher eine mittelere Gewichtung.     
+:     Die Einhaltung der Prinzipien ist wichtig, aber für die FHNW nicht zwingend. Daher eine mittlere Gewichtung.     
 :     Gewichtung 2
 
 Betrieb (BT)
@@ -56,16 +56,16 @@ Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der
 Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält
 der ALA für Machbarkeit die volle Punktzahl. 
 
-Mit der Verwendung eines externen Programms, wird eine zentrale Authorität
+Mit der Verwendung eines externen Programms, wird eine zentrale Autorität
 verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Da das
 Programm die Transaktionshistorie der Blockchain überwacht und nur bei einer DoS
 Attacke aktiv ist, wird 2 Punkte für Blockchainprinzipien gegeben. 
 
-Falls eine Anpassung am DoS Algorithus nötig ist, muss das externe Programm neu
+Falls eine Anpassung am DoS Algorithmus nötig ist, muss das externe Programm neu
 deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. Für die
 Verwaltung der Whitelist, braucht das Programm eine Funktion, um Accounts zur
 Whitelist hinzuzufügen. Diese Funktion kann einfach erweitert werden, um eine
-Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das hinzufügen von
+Liste von Accounts zur Whitelist hinzuzufügen. Dadurch ist das Hinzufügen von
 neuen Accounts für eine Klasse einfach automatisierbar.\
 Für die Betreibung des externen Programms wird ein zusätzlicher Server benötigt.
 Das bedeutet einen Mehraufwand für die FHNW.\
@@ -79,12 +79,12 @@ werden. Transaktionen werden im externen Programm verpackt und müssen von der
 Smart Wallet wieder entpackt werden. Somit ist liegt die Machbarkeit zwischen
 dem von ALA 1 und ALA 2. Daher werden 2 Punkte für Machbarkeit vergeben. 
 
-Mit der Verwendung eines externen Programms, wird eine zentrale Authorität
+Mit der Verwendung eines externen Programms, wird eine zentrale Autorität
 verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Im
 Gegensatz zu ALA 2, hat dieses Programm eine sehr viel zentralere Rolle. Das
 Programm interagiert nicht nur bei einer DoS Attacke mit der Blockchain, sondern
 ständig. Jede Transaktion wird an das Programm übermittelt und dort verarbeitet.
-Da die zentrale Authorität im Vergleich zu ALA 2 viel aktiver ist, ist für
+Da die zentrale Autorität im Vergleich zu ALA 2 viel aktiver ist, ist für
 Blockchainprinzipien 1 Punkt vergeben worden.
 
 Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig.\

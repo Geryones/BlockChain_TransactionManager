@@ -19,7 +19,7 @@ berücksichtigt. Die Komputationskosten werden mit Gas beziffert. Je komplexer
 der Task, desto mehr Gas wird benötigt. Es existiert ein Maximum an Gas, dass
 durch eine Transaktion verbraucht werden kann. Wird dieses Maximum erreicht
 bevor die Berechnungen fertig sind, werden diese Abgebrochen. Das ist ebenfalls
-ein Schutzmechanismus gegn DoS Attacken. Ohne diesen Schutz, könnten zum
+ein Schutzmechanismus gegen DoS Attacken. Ohne diesen Schutz, könnten zum
 Beispiel Schleifen ohne Abbruchbedingung für einen Angriff verwendet werden.\
 Um die Kosten einer Transaktion zu berechnen, wird das verbrauchte Gas mit dem
 Gas Preis[@gasprice] multipliziert. Diese Kosten werden vom Sender einer
@@ -72,15 +72,15 @@ Nodes verwendet werden.\
 Sobald auf einem Node eine gratis Transaktion eingeht, wird geprüft, ob sich der
 verwendete Account auf der Whitelist befindet. Nur dann wird die Transaktion
 vom Node angenommen und weiterverarbeitet.\
-Der Blockchaintransaktionsmanger ist als Java-Applikation realisert worden. Die
+Der Blockchaintransaktionsmanger ist als Java-Applikation realisiert worden. Die
 Interaktion mit dem Betreiber des Transaktionsmanagers findet über die Kommandozeile und
 Konfigurationsdateien statt.
 Es wird der  aktuelle Block der Blockchain aufgerufen und auf
 Transaktionen untersucht. Bei gefundenen gratis Transaktionen wird das Verhalten
-des Senderaccounts evaluiert. Anhand der Anzahl gätigten gratis Transaktionen und dem
+des Senderaccounts evaluiert. Anhand der Anzahl getätigten gratis Transaktionen und dem
 dabei verbrauchtem Gas, wird bestimmt, ob die Transaktion Teil einer DoS Attacke
 ist. Fällt diese Prüfung positiv aus, wird der Account für eine bestimmte Dauer
-von der Whitelist entfernt. Das bedeuted, dass er keine gratis Transaktionen
+von der Whitelist entfernt. Das bedeutet, dass er keine gratis Transaktionen
 mehr tätigen kann. Reguläre, also kostenpflichtige Transaktionen, sind weiterhin
 möglich.\
 Die verfügbaren gratis Transaktionen und Gas, sowie die Dauer einer
@@ -93,8 +93,8 @@ Priority-Queue und ein Command-Pattern verwendet.
 ## Strukturierung des Berichts
 
  Der Bericht ist in einen theoretischen und praktischen Teil gegliedert.
- Gemachte Literaturstudiuen, geprüfte Tools, der aktuelle Stand der
- Ethereumblockchain, sowie die konzipierten Lösungsansätze und derern Evaluation
+ Gemachte Literaturstudien, geprüfte Tools, der aktuelle Stand der
+ Ethereumblockchain, sowie die konzipierten Lösungsansätze und deren Evaluation
  werden im theoretischen Teil behandelt.\
  Im praktischen Teil wird beschrieben, wie das gewonnene Wissen umgesetzt wird.
  Es wird auf die implementierte Lösung und deren Vor- und Nachteile eingegangen.

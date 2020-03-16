@@ -44,7 +44,7 @@ Angriff sehr naheliegend. Daher wird dieser Parameter ebenfalls verwendet.
 
 #### Wiederaufnahme auf die Whitelist
 
-Ein fixer Zeitpuntk ist sehr einfach umzusetzen. Allerdings werden dadurch die
+Ein fixer Zeitpunkt ist sehr einfach umzusetzen. Allerdings werden dadurch die
 Accounts nicht mehr gleichbehandelt. Wie lange ein Account keine gratis
 Transaktionen mehr tätigen kann, ist abhängig davon, zu welchem Zeitpunkt er von der Whitelist gelöscht wird. 
 
@@ -58,7 +58,7 @@ ausgegangen werden, dass ein Wiederholungstäter aktiv versucht, die Blockchain
 zu schädigen. Mit einem inkrementierenden Intervall werden diese Accounts
 gezielt und härter bestraft als bei den anderen Ansätzen.\
 Eine inkrementierende Bestrafung ist bei einem Schutz vor DoS Attacken
-nicht relevant. Es gnügt, wenn der Angriff unterbrochen werden kann. Eine immer
+nicht relevant. Es genügt, wenn der Angriff unterbrochen werden kann. Eine immer
 stärkere Bestrafung ist nicht nötig.\
 Die Dauer der Suspendierung ist nicht mehr konstant. Daher muss einem Benutzer
 mitgeteilt werden, für wie lange er suspendiert ist. Wie diese Kommunikation
@@ -116,12 +116,12 @@ Reset-Intervall
 
 
 Standardwert gratis Transaktionen Limite
-:      Gilt für Accounts die ohne Transaktionslimite erfasst werden. Definiert die maximale 
-Anzahl gratis Transaktionen die pro Reset-Intervall getätigt werden können.
+:      Gilt für Accounts, die ohne Transaktionslimite erfasst werden. Definiert die maximale 
+Anzahl gratis Transaktionen, die pro Reset-Intervall getätigt werden können.
 
 Standardwert gratis Gas Limite
-:     Gilt für Accounts die ohne Gaslimite erfasst werden. Definirt die maximale 
-Menge an Gas die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht 
+:     Gilt für Accounts, die ohne Gaslimite erfasst werden. Definiert die maximale 
+Menge an Gas, die mit gratis Transaktionen innerhalb eines Reset-Intervalls verbraucht 
 werden können.
 
 Standardwert Revoke-intervall 

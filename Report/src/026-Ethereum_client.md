@@ -21,7 +21,7 @@ Laufzeit ist über die Kommandozeile möglich.
 
 Parity ist der einzige Client, der es erlaubt, einer definierten Gruppe von
 Benutzern gratis Transaktionen zu erlauben.\
-Die Verwaltung der priviligierten Accounts geschieht mittels eines Smart
+Die Verwaltung der privilegierten Accounts geschieht mittels eines Smart
 Contracts. Die Accounts sind in einer Liste, der sogenannten Whitelist,
 gespeichert.   
 
@@ -32,7 +32,7 @@ Abschnitten erklärt.
 
 #### Name Registry \label{sec_simpleRegistry}
 
-In Parity wir die Name Registry verwendet, um eine Accountaddresse in eine
+In Parity wir die Name Registry verwendet, um eine Accountadresse in eine
 lesbare Form zu übersetzen.\
 Smart Contracts können für eine Gebühr von einem Ether registriert werden. Dabei
 wird die Adresse des Smart Contracts zusammen mit dem gewählten Namen
@@ -40,7 +40,7 @@ registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart
 kodierte Adressen verwendet werden müssen. Dieses System ist analog zu einem DNS
 Lookup[@wiki_dns].
 
-Die Name Registry ist in Parity standardmässig immer unter derselben Addresse
+Die Name Registry ist in Parity standardmässig immer unter derselben Adresse
 zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart
 Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert
 werden.\
@@ -63,7 +63,7 @@ Pro Eintrag wird der Besitzer (```owner```), die Adresse (```address```), ein
 Flag ob der Eintrag gelöscht ist (```deleted```) und dessen Daten (```data```)
 gespeichert.\
 Die Map ```entries``` ist die zentrale Datenstruktur der Name Registry.
-Änderungn daran sind daher durch Modifiers eingeschränkt.
+Änderungen daran sind daher durch Modifiers eingeschränkt.
 
 ```{caption="Modifier whenUnreserved" label=li_whenUnreserved .sol .numberLines}
 modifier whenUnreserved(bytes32 _name) {
@@ -136,7 +136,7 @@ Durch die Verwendung von ```external``` auf Zeile 2, kann die Methode von
 anderen Accounts aufgerufen werden.\
 Der Modifier ```payable``` erlaubt es, Ether an die Methode zu senden. Auf Zeile
 4 wird überprüft, ob der Eintrag in ```entries``` noch frei ist. Schliesslich
-wird geprüft ob der Transaktion genügend Ether mitgegeben wird um die Gebühr zu
+wird geprüft ob der Transaktion genügend Ether mitgegeben wird, um die Gebühr zu
 begleichen.\
 Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` ein neuer Eintrag
 erstellt. Als Besitzer des Eintrags wird der Sender der Transaktion gesetzt. Auf
@@ -155,12 +155,12 @@ function setAddress(bytes32 _name, string _key, address _value)
 }
 ```
 Mit Methode ```setAddress``` unter \ref{li_setAddress}, wird ein reservierter
-Eintrag in ```entries``` befüllt. Als erster Parameter wird der Name des Eintags
+Eintrag in ```entries``` befüllt. Als erster Parameter wird der Name des Eintrags
 (```_name```) übergeben. Dieser muss identisch zum verwendeten Namen in der
 Methode ```reserve``` sein. Mit dem Parameter ```_key``` wird der Zugriff auf
 die innere Map ```data``` verwaltet. Mit ```_value``` wird die zu registrierende
 Adresse übergeben.\
-Auch diese Methode muss von Aussen aufgerufen werden können, daher
+Auch diese Methode muss von aussen aufgerufen werden können, daher
 ```external``` auf zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und
 ```onlyOwnerOf``` auf Zeile 3 und 4 erfüllt sind, wird die eigentliche
 Registrierung vorgenommen.\
@@ -178,7 +178,7 @@ geprüft ob der Eintrag in ```entries``` vorhanden ist. Sofern vorhanden, werden
 Transaktionen mit einem Gas Price von 0 nicht mehr direkt abgewiesen, sondern es
 wird geprüft ob der Absender zertifiziert ist. Transaktionen von zertifizierten
 Accounts werden selbst mit einem Gas Price von 0 in die Blockchain aufgenommen.
-Gratis Transaktionen von unzertifiziereten Benutzern werden weiterhin
+Gratis Transaktionen von unzertifizierten Benutzern werden weiterhin
 abgewiesen. 
 
 In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers
@@ -221,7 +221,7 @@ function certify(address _who)
 ```
 Mit der unter \ref{li_certify} aufgeführten Methode, wird ein Account
 registriert. Als Paramater wird die zu registrierende Adresse (```_who```)
-angegeben. Mit ```external``` auf Zeile 2 ist die Methode von Aussen aufrufbar.\
+angegeben. Mit ```external``` auf Zeile 2 ist die Methode von aussen aufrufbar.\
 Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account
 registrieren kann. Ist diese Prüfung erfolgreich, wird der Account ```_who```
 der Liste ```certs``` hinzugefügt. Der Account ist nun für gratis Transaktionen
@@ -238,8 +238,8 @@ function certified(address _who)
 }
 ```
 Mit der Methode ```certified```, unter \ref{li_certified}, kann jederzeit überprüft werden, ob ein Account
-(```_who```) zertifierziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass
-es sich um eine Abfrage ohne weitere Komputationskosten handelt. Solche Abfragen
+(```_who```) zertifiziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass
+es sich um eine Abfrage ohne weitere Rechenkosten handelt. Solche Abfragen
 sind daher mit keinen Transaktionskosten verbunden. 
 
 
@@ -264,5 +264,5 @@ Event wird auf Zeile 7 an die Blockchain gesendet.
 
 Bei der Auswahl des Ethereumclienten sind die populärsten[@stack_clientList] berücksichtigt worden. Nebst Parity sind daher noch Geth, Aleth und Trinity evaluiert worden. Bei diesen
 Clients ist keine Möglichkeit vorhanden, bestimmte Accounts für gratis
-Transaktionen zu priviligieren. Daher sind sie zu diesem Zeitpunkt nicht für die
+Transaktionen zu privilegieren. Daher sind sie zu diesem Zeitpunkt nicht für die
 FHNW geeignet.

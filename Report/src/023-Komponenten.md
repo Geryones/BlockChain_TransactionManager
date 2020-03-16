@@ -23,7 +23,7 @@ Es gibt keinen zentralen Server, der angegriffen werden kann. Das erhöht die
 Sicherheit der Blockchain.\
 Es muss davon ausgegangen werden, dass es Nodes gibt, die versuchen die Daten
 der Blockchain zu verfälschen. Dem wird mit der Verwendung von diversen Consenus
-Algorithmen[@consensus_alg] entgegengewirkt. Die Consensus Algorithemen stellen
+Algorithmen[@consensus_alg] entgegengewirkt. Die Consensus Algorithmen stellen
 sicher, dass die Transaktionen auf der Blockchain valide und authentisch sind.
 
 Im Gegensatz zu Bitcoin[@wiki_bitcoin] kann bei Ethereum[@ethereum] auch Code
@@ -51,7 +51,7 @@ Der grosse Vorteil von Smart Contracts ist, dass keine Drittparteien benötigt
 werden. Das ist auf den Bildern \ref{img_tradContract} und
 \ref{img_smartContract} dargestellt. Der Code kontrolliert die Transaktionen,
 welche nachverfolgbar und irreversibel sind. Bei einem traditionellen Vertrag
-werden diese durch third parties kontrolliert und meistens auch ausgeführt. 
+werden diese durch Drittparteien kontrolliert und meistens auch ausgeführt. 
 
 Sobald ein Smart Contract auf Ethereum deployed ist, verfügt er über eine
 Adresse, siehe Abschnitt \ref{sec_address}. Mit dieser, kann auf die Funktionen
@@ -117,7 +117,7 @@ Aufwand gemeint. Damit werden Transaktionskosten gezahlt. Jede Aktion in der
 Blockchain kostet eine bestimmte Menge an Gas (Gas Cost). Somit ist die
 benötigte Menge an Gas proportional zur benötigten Rechenleistung. So wird
 sichergestellt, dass die anfallenden Kosten einer Interaktion gerecht verrechnet
-werden. Die anfallenden Gas Kosten werden in Ether gezahlt. Für die Berchnung
+werden. Die anfallenden Gas Kosten werden in Ether gezahlt. Für die Berechnung
 der Transaktionskosten wird der Preis pro Einheit Gas (Gas Price) verwendet.
 Dieser kann vom Sender selbst bestimmt werden. Ein zu tief gewählter Gas Price
 hat zur Folge, dass die Transaktion nicht in die Blockchain aufgenommen wird, da
@@ -179,7 +179,7 @@ verwendet.
 ##### Contract Accounts
 
 Contract Accounts sind durch ihren Code definiert. Sie können keine
-Transaktionen initieren, sondern reagieren nur auf zuvor eingegangene. Das wird
+Transaktionen initiieren, sondern reagieren nur auf zuvor eingegangene. Das wird
 auf der Abbildung \ref{img_tx_accounts} dargestellt. Ein Benutzer Accounts wird
 als "Externally owned account" bezeichnet.
 
@@ -195,7 +195,7 @@ Accounts, der das Deployment vornimmt.[@contract_address]
 
 ### Blockchain Wallet \label{sec_wallet}
 
-Eine Blockchain Wallet, kurz Wallet, ist ein digitales Portmonaie. Der Benutzer
+Eine Blockchain Wallet, kurz Wallet, ist ein digitales Portemonnaie. Der Benutzer
 hinterlegt in der Wallet seinen geheimen Schlüssel, siehe \ref{sec_private_key}.
 Dadurch erhält er eine grafische Oberfläche für die Verwaltung seines Accounts.
 Nebst dem aktuellen Kontostand, wird meistens noch die Transaktionshistorie
@@ -208,7 +208,7 @@ Es existieren zwei unterschiedliche Arten von Wallets, Hot und Cold Wallets:
 
 Hot Wallet 
 :     Ein Stück Software, welches die geheimen Schlüssel verwaltet. :
-Es existieren drei unterschiedliche Typen, Destkop, Web und Mobile Wallets.
+Es existieren drei unterschiedliche Typen, Desktop, Web und Mobile Wallets.
 [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
 Cold Wallet 
@@ -221,7 +221,7 @@ werden können. [@wallet_general], [@wallet_general_2], [@wallet_cold_vs_hot]
 
 Smart Wallets basieren auf Smart Contracts. Der Benutzer ist der Besitzer des
 Smart Contracts und somit der Wallet. Die Verwendung von Smart Contracts bei der
-implementierung der Wallet ermöglicht mehr Benutzerfreundlichkeit ohne die
+Implementierung der Wallet ermöglicht mehr Benutzerfreundlichkeit ohne die
 Sicherheit zu kompromittieren. [@smart_wallet_argent], [@smart_wallet_gnosis],
 [@smart_wallet_dapper]\
 
@@ -246,9 +246,9 @@ Blockchains schützen sich vor diesem Angriff mit einer Transaktionsgebühr. Die
 werden durch Angebot und Nachfrage bestimmt. Das heisst, wenn es viele
 Transaktionen gibt, steigt der Bedarf an deren Verarbeitung und es kann davon
 ausgegangen werden, dass auch die Transaktionsgebühren steigen.\
-Das bedeutet, dass bei einer DoS Attacke die Transaktionsgebühren tedentiell
+Das bedeutet, dass bei einer DoS Attacke die Transaktionsgebühren tendenziell
 steigen. Um sicherzustellen, dass seine Transaktionen weiterhin zuverlässig in
-die Blockchain aufgenommen werden, muss der Angfreifer seinen Gas Price
+die Blockchain aufgenommen werden, muss der Angreifer seinen Gas Price
 kontinuierlich erhöhen.\
 Ein DoS Angriff auf eine Blockchain wird dadurch zu einem sehr kostspieligen
 Unterfangen. Die hohen Kosten schrecken die meisten Angreifer ab und sind somit
@@ -257,11 +257,10 @@ ein sehr effizienter Schutzmechanismus.[@investigation_dos_ethereum]
 
 #### DoS Attacke an der FHWN
 
-Auf der Blockchain der FHNW existiert eine priviligierte Benutzergruppe. Diese
+Auf der Blockchain der FHNW existiert eine privilegierte Benutzergruppe. Diese
 dürfen gratis Transaktionen ausführen. Diese Gruppe von Benutzer ist eine
 potenzielle Bedrohung. Ohne Transaktionskosten ist die Blockchain anfällig für eine DoS Attacke.\
-Aus diesem Grund muss das Verhalten der priviligierten Accounts überwacht
-werden. Falls einer dieser Accounts eine DoS Attacke einleitet, muss das frühst
-möglich erkannt und unterbunden werden können. 
+Aus diesem Grund muss das Verhalten der privilegierten Accounts überwacht
+werden. Falls einer dieser Accounts eine DoS Attacke einleitet, muss das frühestmöglich erkannt und unterbunden werden können. 
 
 
