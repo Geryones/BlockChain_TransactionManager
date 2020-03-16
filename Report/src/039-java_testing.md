@@ -1,8 +1,6 @@
 
 ### Tests
 
-//TODO Jurij ausformulieren
-
 Um die Lauffähigkeit des Transaktionsmanagers zu verifizieren, sind diverse
 Tests ausgeführt worden.\
 Mit Unit Tests ist die Funktionalität von einzelnen
