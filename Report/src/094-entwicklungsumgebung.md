@@ -29,7 +29,7 @@ Zu den möglichen Wallets gehören z.B.:
 - Atomic Wallet [@atomicWallet]
 - Exodus[@exodus]
 
-Es wird davon ausgegangen, dass keine Wallet alle Bedürfnisse abdecken kann, daher wird die gewählte Wallet im Zuge dieses Projekts erweitert. Für Ethereum existiert ein offizieller Service um eine eigene Wallet zu ertellen: MyEtherWallet[@myEtherWallet]
+Es wird davon ausgegangen, dass keine Wallet alle Bedürfnisse abdecken kann, daher wird die gewählte Wallet im Zuge dieses Projekts erweitert. Für Ethereum existiert ein offizieller Service um eine eigene Wallet zu erstellen: MyEtherWallet[@myEtherWallet]
 
 ### Smart Contracts
 
