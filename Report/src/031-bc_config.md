@@ -87,8 +87,8 @@ ob eine Whitelist vorhanden ist oder nicht.
 
 Zeile 4
 :    Dieser Parameter wird benötigt, dass Transaktionen die mittels RPC an 
-Parity übermittelt werden, nicht als lokal betracht werden. Das ist sehr 
-wichtig, da lokale Transaktionen standarmässig auch über einen Gas-Preis 
+Parity übermittelt werden, nicht als lokal betrachtet werden. Das ist sehr 
+wichtig, da lokale Transaktionen standardmässig auch über einen Gas-Preis 
 von null verfügen dürfen. So wird sichergestellt, dass nur die definierte 
 Benutzergruppe gratis Transaktionen tätigen darf. 
 
@@ -99,11 +99,11 @@ Standardmässig, werden aber nur lokale Transaktionen verarbeitet. Daher muss
 hier explizit definiert werden, dass alle Transaktionen verarbeitet werden.
 
 Zeile 6
-:    Gibt an, wieviele Milisekunden im Minimum zwischen der Kreation von 
+:    Gibt an, wie viele Millisekunden im Minimum zwischen der Kreation von 
 Blöcken liegen müssen.
 
 Zeile 7
-:    Defniert die maximale Zeitspanne in Millisekunden zwischen der Kreation 
+:    Definiert die maximale Zeitspanne in Millisekunden zwischen der Kreation 
 von Blöcken. Nach Ablauf dieser Zeit wird automatisch ein Block generiert. Dieser 
 kann leer sein.
 
@@ -117,7 +117,7 @@ unsafe_expose = true
 In dieser Sektion, siehe \ref{li_toml4} sind Parameter, die sonst nirgends reinpassen. 
 
 Zeile 18
-:    Wird für die Interaktion mit Remix und Metamask benötigt.
+:    Wird für die Interaktion mit Remix und MetaMask benötigt.
 
 #### Blockchainspezifikation \label{sec_prac_spec}
 
@@ -243,7 +243,7 @@ Bei einem Account für einen Smart Contract, wird zusätzlich dessen Bytecode an
 Zeile 2
 :      Hier ist die SimpleRegistry, siehe Abschnitt \ref{sec_whitelist} und \ref{sec_simpleRegistry}, 
 definiert. Der erste Parameter ist die Adresse, unter welcher der Smart Contract erreichbar sein soll. 
-Das Guthaben wir mit einem Ether initalisiert. Der Wert für ```constructor``` ist der Bytecode des 
+Das Guthaben wir mit einem Ether initialisiert. Der Wert für ```constructor``` ist der Bytecode des 
 kompilierten Smart Contracts. Dieser ist aufgrund seiner Grösse durch einen Platzhalter ersetzt worden.
 
 Zeile 3
