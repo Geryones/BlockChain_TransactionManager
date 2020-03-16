@@ -17,7 +17,7 @@ auch Schutz vor Attacken.
 Im Gegensatz zu einer öffentlichen Blockchain, sind Transaktionsgebühren in
 einer Lernumgebung nicht praktikabel. Die Studenten sollen gratis mit der
 Blockchain agieren können, ohne dass der Betrieb oder die Sicherheit der
-Blockchain kompromitiert werden.\
+Blockchain kompromittiert werden.\
 Die FHNW bietet die kostenlose Verarbeitung von Transaktionen zu Verfügung.
 Damit sichert sie den Betrieb der Blockchain. Die Implementation von gratis
 Transaktionen für eine definierte Benutzergruppe und einem Schutzmechanismus
