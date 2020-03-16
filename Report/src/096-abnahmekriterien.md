@@ -1,4 +1,4 @@
-## Abnahmekriterien
+## Abnahmekriterien  \label{sec_prac_abnahmekriterien}
 
 In diesem Kapitel werden alle Abnahmekriterien des Blockchain Transaktions Managers aufgelistet und Kategorisiert.
 Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
