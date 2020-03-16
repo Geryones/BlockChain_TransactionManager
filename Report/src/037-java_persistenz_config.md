@@ -9,8 +9,8 @@ Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.
 
 
 In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
-jedem Account können die inidviduell konfigurierbaren Parameter gesetzt werden.\
-Nach einem Programmstop, wird die Datei ausgelesen. Alle Accounts werden
+jedem Account können die individuell konfigurierbaren Parameter gesetzt werden.\
+Nach einem Programmstop wird die Datei ausgelesen. Alle Accounts werden
 geladen. Wo nötig, die individuellen Parameter gesetzt. Für alle Parameter die
 nicht gesetzt sind, werden die konfigurierten Standardwerte verwendet, siehe \ref{sec_prac_conf} Parameter,
 für die der Standardwert verwendet werden soll, können entweder mit Wert
@@ -56,13 +56,13 @@ werden soll. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht
 erfasst oder geändert werden.
 
 Wenn der Transaktionsmanager die Datei neu schreibt, werden alle Parameter
-geschrieben. Das bedeuted, Parameter die nicht gesetzt waren, sind nun mit einem
+geschrieben. Das bedeutet, Parameter die nicht gesetzt waren, sind nun mit einem
 Wert ```null``` erfasst. Ausnahme sind ```gasUsedCounter``` und ```transactionCounter```, diese
 werden mit der entsprechenden Limite initialisiert. 
 
 Falls ein Account zum Zeitpunkt des Programmstops von gratis Transaktionen
 suspendiert war, ist der ```timeStamp``` gesetzt. Sollte der Zeitpunkt in der
-Vergangenheit liegen, wird der Account wieder certifiziert. Andernfalls wird er
+Vergangenheit liegen, wird der Account wieder zertifiziert. Andernfalls wird er
 erneut der Priority-Queue hinzugefügt und bleibt bis zum vorgesehenen Zeitpunkt
 suspendiert.
 
@@ -112,7 +112,7 @@ Parameter gesetzt werden können.
 Sobald die unter \ref{li_accountList_before} Liste von Accounts eingelesen und
 verarbeitet wurde, wird sie vom Transaktionsmanager neu geschrieben. Das
 Resultat ist abhängig von den konfigurierten Standardwerten, dazu mehr im
-folgenden Kapitel \ref{sec_prac_conf}. Unter der Annahme, dass der Standarwert
+folgenden Kapitel \ref{sec_prac_conf}. Unter der Annahme, dass der Standardwert
 für Transaktionen auf 5 und für Gas auf 50000000 konfiguriert ist, sieht die
 Datei folgendermassen aus:
 
@@ -205,7 +205,7 @@ Adresse wie in der Blockchainspezifikation verwendet werden. Siehe
 \ref{sec_prac_spec}.
 
 timestampLastReset 
-:      Hier wird der Zeitpunkt des letzen Reset-Intervalls
+:      Hier wird der Zeitpunkt des letzten Reset-Intervalls
 vermerkt. Dieser Wert wird vom Transaktionsmanager gepflegt und sollte nicht
 bearbeitet werden.
 
