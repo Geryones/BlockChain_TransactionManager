@@ -10,7 +10,7 @@ Rechner installiert sein.
 1. Die Konfiguration der Blockchain wird über die Datei  ```config.toml```
   gemacht, siehe \ref{sec_prac_config_toml}. Hier muss die Abhängigkeit der
   Pfade zum Docker-Home beachtet werden.\
-  Parity stellt für die Konfiguration des Dockers diese Anleitung zur Verfügung:
+  Parity stellt für die Konfiguration des Dockers diese Anleitung zur Verfügung:\
   https://github.com/parity-contracts/name-registry/tree/master/contracts
 
 2. Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```
@@ -18,11 +18,11 @@ Rechner installiert sein.
   ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
   Datei ```instant_seal.json```.
 
-3. Für die "Stable"-Version von Parity kann follgender Befehl verwendet werden: 
-``` docker pull parity/parity:stable```
+3. Für die "Stable"-Version von Parity kann follgender Befehl verwendet werden:\
+   ``` docker pull parity/parity:stable```
 
-4. Der Transaktionsmanager benötigt zwingend den Port ```8454```. Mit follgendem Befehl wird ein neuer Party-Container erstellt:
-```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
+4. Mit follgendem Befehl wird ein neuer Party-Container erstellt:\
+   ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
 
 ## Deployment 
