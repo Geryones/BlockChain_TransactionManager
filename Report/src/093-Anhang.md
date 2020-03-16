@@ -8,7 +8,7 @@
 | Adresse            | 40 Zeichen langer String. Wird aus dem geheimen Schlüssel abgeleitet. Dient zur Identifizierung eines Accounts. |
 | Aleth              | Ein Blockchainclient.|
 | Bitcoin            | Eine Kryptowährung.                              |
-| Blockchain         | ine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.|
+| Blockchain         | Eine Blockchain ist eine kontinuierlich erweiterbare Liste von Datensätzen, „Blöcke“ genannt, die mittels kryptographischer Verfahren miteinander verkettet sind. Jeder Block enthält dabei typischerweise einen kryptographisch sicheren Hash (Streuwert) des vorhergehenden Blocks, einen Zeitstempel und Transaktionsdaten.|
 | Certifier           | Smart Contract für die Verwaltung einer Whitelist in Parity.|
 | Client              | Ein Computer oder Programm.|
 | Command Pattern     | Standardisiertes Entwurfsmuster in der objektorientierten Programmierung.|
@@ -32,7 +32,7 @@
 | Node               | Ein Computer in einem Netzwerk.|
 | Reset-Intervall   | Am Ende des Intervalls werden die Zähler aller Accounts zurückgesetzt. Definiert die Dauer zwischen zwei Resets. |
 | Revoke-Intervall   | Definiert die Dauer einer Suspendierung von der Whitelist.|
-| Öffentlicher SChlüssel| Wird aus dem geheimen Schlüssel abgeleitet. Wird für die Signierung von Transaktionen benötigt.|
+| Öffentlicher Schlüssel| Wird aus dem geheimen Schlüssel abgeleitet. Wird für die Signierung von Transaktionen benötigt.|
 | Parity             | Ein Ethereumclient. |
 | Persistenz         | Speicherung von Daten über einen Programmstopp hinweg.|
 | Priority Queue     | Datenstruktur um eine Warteschlange abzubilden. Die Elemente liegen sortiert vor.|
