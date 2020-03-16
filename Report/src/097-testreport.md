@@ -1,4 +1,4 @@
-## Abnahme Tests Report
+## Abnahme Tests Report \label{sec_prac_abnahmeprotokoll}
 
 ### Abnahme Test 1
 
