@@ -7,48 +7,79 @@ Rechner installiert sein.
 
 ## Hochfahren der Parity Instanz
 
-- Die Konfiguration der Blockchain wird über die Datei  ```config.toml```
-  gemacht, siehe \ref{sec_prac_config_toml}. Die Bedeutung jedes Parameters wird
-  dort erläutert.  Die Datei muss in folgendem Ordner
-  "%AppData%\Parity\Ethereum\config.toml" abgelegt werden.
-- Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```  definiert.
-  Sie wird in folgendem Ordner
-  "/home/parity/.local/share/io.parity.ethereum/genesis/instant_seal.json"
-  gespeichert. Im Kapitel "3.1.1.2 Blockchainspezifikation " ist der Aufbau
-  beschrieben. Um die Parity Instanz zu starten muss auf folgenden Ordner
-  "/home/parity/" navigiert werden und dann folgende zwei Befehle ausgefühert
-  werden:
+1. Die Konfiguration der Blockchain wird über die Datei  ```config.toml```
+  gemacht, siehe \ref{sec_prac_config_toml}. Hier muss die Abhängigkeit der
+  Pfade zum Docker-Home beachtet werden.\
+  Parity stellt für die Konfiguration des Dockers diese Anleitung zur Verfügung:
+  https://github.com/parity-contracts/name-registry/tree/master/contracts
 
+2. Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```
+  definiert. Der Speicherort muss mit dem Wert des Parameters ```chain``` der
+  ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
+  Datei ```instant_seal.json```.
+
+3. Für die "Stable"-Version von Parity kann follgender Befehl verwendet werden: 
+``` docker pull parity/parity:stable```
+
+4. Der Transaktionsmanager benötigt zwingend den Port ```8454```. Mit follgendem Befehl wird ein neuer Party-Container erstellt:
 ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
-```docker volume create --driver=local --opt o=uid=1000 --opt type=tmpfs --opt device=tmpfs paritydb ```
 
-## Konfigurieren und Deployement des Programms
+## Deployment 
 
-Vor dem Deployement müssen folgende Dateien im Projekt wie gewünscht konfiguriert sein.
-- AccountList.json
-- DefaultSettings.json
-- TransaktionsManagerAccount.json
+Der Transaktionsmanager kann zu einer ```.jar``` Datei gepackt werden. Um diese
+neu zu erstellen muss die Methode ```package``` von Maven verwendet werden.
+Dies kann über die Kommandozeile oder in der Entwicklungsumgebung gemacht
+werden.\
+Um alle Tests auszuführen wird bereits eine funktionierende Ethereum Blockchain
+mit einem Parity-Clienten benötigt. Deshalb werden die Tests momentan nicht
+automatisch ausgeführt. Das kann in der ```pom.xml``` eingestellt werden:
 
-Eine Anleitung wie diese Json Dateien konfiguriert werden, sind im Bericht im Kapitel "3.2.4 Persistenz" und Kapitel "3.2.5 Konfiguration" erläutert.
+```{caption="pom.xml Properties" label=pom.xml}
+<properties>
+    <skipTests>true</skipTests>
+</properties>
+```
+Wenn die Zeile 2 im Listing \ref{pom.xml }gelöscht wird, werden vor dem
+Erstellen einer neuen ```.jar``` Datei, alle Tests automatisch ausgeführt.
+
+Es werden zwei unterschiedliche ```.jar``` Dateien erstellt: 
+
+1. ```BTMChainObserver-1.jar```
+2. ```BTMChainObserver-1-jar-with-dependencies.jar```
+
+Die Datei 1. enthält keine Dependencies und ist somit viel schlanker. Im zweiten
+```.jar``` sind alle Dependencies mitgepackt. Sie ist somit unabhängiger, dafür
+bedeutend grösser. 
 
 
-Sobald die Konfigurationsdateien wie gewünscht ausgefüllt sind, wird aus dem Projekt eine deploybare ```.jar``` Datei gebaut.
-Für diesen Schritt, muss folgender Befehl in Porjekt Ordner über die Console ausgeführt werden:
+## Konfigurieren des Transaktionsmanagers
 
-```mvn clean package```
+Die Konfiguration des Transaktionsmanager geschieht über follgende Dateien:
 
-Falls das Erstellen des Deployable erfolgreich war, folgt das Deployement. Hierfür wird folgender Befehl in der Console ausgeführt:
+1. ```AccountList.json```
+1. ```DefaultSettings.json```
+1. ```TransaktionsManagerAccount.json```
 
-```mvn deploy ???```
- 
-## Starten der Blockchain Überwachung mit dem Blockchain Transactionmanager
+Siehe Kapitel \ref{prac_persistenz} und Kapitel \ref{sec_prac_conf} für mehr
+Informationen zu deren Inhalt und Bedeutung.\
+Diese Dateien müssen im selben Verzeichnis wie die ```.jar``` Datei des
+Transaktionsmanagers befinden. 
 
-Um das Programm das erste Mal nach dem aufsetzten der Parity Instanz laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
-```java -jar BTMChainObserver Init```
+## Starten der Blockchain Überwachung mit dem Blockchain Transaktionsmanager
 
-Danach wird nurnoch dieser Befehl genutzt, um das Überwachungsprogramm zu starten:
+Der generierte ```.jar``` Datei wird über die Kommandozeile angesteuert. Die
+hier gezeigten Befehle setzen voraus, dass man sich im selben Verzeichnis
+befindet.
 
-```java -jar BTMChainObserver Run```
+Um das Programm das erste Mal nach dem Aufsetzten der Parity Instanz
+laufen zu lassen, muss folgender Befehl auf der Console ausgeführt werden:
 
+```java -cp BTMChainObserver-1-jar-with-dependencies.jar ch.brugg.fhnw.btm.Init```
+
+Sobald die Initialisierung abgeschlossen ist, kann folgender Befehl genutzt werden:
+
+```java -cp BTMChainObserver-1-jar-with-dependencies.jar ch.brugg.fhnw.btm.Run```
+
+Dieser startet die Überwachung der Blockchain. 

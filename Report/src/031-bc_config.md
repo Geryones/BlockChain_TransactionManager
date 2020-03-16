@@ -34,11 +34,11 @@ Dazu gehören Genesisblock und der Speicherort.
 
 Zeile 2
 :     Der zu verwendende Genesisblock. Es wird der Pfad zu der entsprechenden 
-JSON Datei[@wiki_json] angegeben. 
+JSON Datei[@wiki_json] angegeben. Der gezeigte Pfad ist relativ zum Docker-Home. 
 
 Zeile 3
 :    Mit "base_path" wird angegeben, wo die Blockchain abgespeichert werden 
-soll. Hier wird das gewünschte Verzeichnis angegeben.
+soll. Hier wird das gewünschte Verzeichnis angegeben. Der gezeigte Pfad ist relativ zum Docker-Home.
 
 
 ```{caption="Konfigurationsdatei für Parity" label=li_toml2 .numberLines}
