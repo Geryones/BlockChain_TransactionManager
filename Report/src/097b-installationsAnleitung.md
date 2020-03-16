@@ -35,12 +35,12 @@ Um alle Tests auszuführen wird bereits eine funktionierende Ethereum Blockchain
 mit einem Parity-Clienten benötigt. Deshalb werden die Tests momentan nicht
 automatisch ausgeführt. Das kann in der ```pom.xml``` eingestellt werden:
 
-```{caption="pom.xml Properties" label=pom.xml}
+```{caption="pom.xml Properties" label=pom}
 <properties>
     <skipTests>true</skipTests>
 </properties>
 ```
-Wenn die Zeile 2 im Listing \ref{pom.xml }gelöscht wird, werden vor dem
+Wenn die Zeile 2 im Listing \ref{pom}gelöscht wird, werden vor dem
 Erstellen einer neuen ```.jar``` Datei, alle Tests automatisch ausgeführt.
 
 Es werden zwei unterschiedliche ```.jar``` Dateien erstellt: 

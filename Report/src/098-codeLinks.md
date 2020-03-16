@@ -10,7 +10,11 @@ Hier ist sämtlicher Code verlinkt.
 
 ### Transaktionsmanager \label{app_transaktionsmanager}
 
+https://github.com/FaustinaBrunoFHNW/BTMChainObserver
+
 #### Tests \label{app_tests}
+
+https://github.com/FaustinaBrunoFHNW/BTMChainObserver/tree/master/src/test/java/ch/brugg/fhnw/btm
 
 \newpage
 

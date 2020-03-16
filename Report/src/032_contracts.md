@@ -28,7 +28,7 @@ Um in Java mit Smart Contracts auf der Blockchain interagieren zu können, wird
 eine Wrapperklasse des Smart Contracts benötigt. Für dessen Generierung wird das
 Web3j Command Line Tool (web3j-cli)[@web3j_cml] und der Solidity Compiler
 (solc)[@solc] verwendet. Die Wrapper für die SimplyRegistry und den
-SimpleCertifier sind im Anhang unter \ref{sec_app_transaktionsmanager} verlinkt. 
+SimpleCertifier sind im Anhang unter \ref{app_transaktionsmanager} verlinkt. 
 
 Um einen Smart Contract auszurollen wird eine Instanz der generierten
 Wrapperklasse genutzt. Es wird die Methode ```deploy``` der Wrapperklasse
