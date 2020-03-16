@@ -1,7 +1,7 @@
 ## Lösungsansätze 
 
 In diesem Kapitel werden die erarbeiteten Lösungsansätze für die Implementation
-von einem Transaktionsmanager vorgestellt. Die Stärken und Schwächen von jedem
+eines Transaktionsmanagers vorgestellt. Die Stärken und Schwächen von jedem
 Lösungsansatz (LA) werden analysiert und dokumentiert. Mit der vorgenommenen
 Analyse wird ein Favorit bestimmt. Dieser wird weiterverfolgt und implementiert.
 
@@ -14,7 +14,7 @@ behandelt.
 #### ALA 1: Smart Wallet \label{sec_ala_1}
 
 Es wird selbst eine Smart Wallet entwickelt. Diese benötigt die volle
-Funktionalität einer herkömlichen Wallet. Zusätzlich ist ein Schutzmechanismus
+Funktionalität einer herkömmlichen Wallet. Zusätzlich ist ein Schutzmechanismus
 gegen DoS Attacken implementiert. Für jeden Benutzer existiert eine Smart Wallet.\
 Wie unter \ref{sec_whitelist} beschrieben, wird für die Betreibung der
 Blockchain der Client Parity mit einer Withelist verwendet. 
@@ -42,15 +42,15 @@ tätigen. Der Account befindet sich jedoch nicht in der Whitelist. Folglich wird
 die Transaktion nicht erstellt. Der Benutzer erhält einen Error.\
 Die dritte Transaktion wird ebenfalls mit Account XX2 erstellt. Es handelt sich
 jedoch nicht um eine gratis Transaktion. Diese wird erstellt und erreicht ihr
-Ziel ungehindert. Eine Prüfung durch den DoS Alogorithmus ist folglich nicht
+Ziel ungehindert. Eine Prüfung durch den DoS Algorithmus ist folglich nicht
 nötig. 
 
 Wie in \ref{sec_whitelist} beschrieben, prüft Parity bei einer gratis
-Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeuted,
+Transaktion nur, ob sich der Account in der Whitelist befindet. Das bedeutet,
 dass mit einem whitelisted Account auch gratis Transaktionen getätigt werden
 können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer
 den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der
-den Benutzer zwingt Transaktionen über die Smart Wallet abzuwickeln.\
+den Benutzer zwingt, Transaktionen über die Smart Wallet abzuwickeln.\
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit
 Accounts, muss in der Whitelist eine Liste von Verbindungen geführt werden. So kann definiert
 werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
@@ -63,7 +63,7 @@ Blockchain bewahrt.
 
 ##### Contra
 
-Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzten, muss der
+Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzen, muss der
 Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die
 Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache,
 Rust[@rust], für die Umsetzung benötigt.\
@@ -89,7 +89,7 @@ auch weiter für gratis Transaktionen genutzt werden.
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist \label{sec_ala_2}
 
 Bei diesem Ansatz wird auf die Entwicklung einer Smart Wallet verzichtet.
-Stattdessen wird der Schutzmechnismus gegen DoS Attacken in einem externen
+Stattdessen wird der Schutzmechanismus gegen DoS Attacken in einem externen
 Programm, dem Transaktionsmanager, implementiert. Dieser Ansatz verwendet ebenfalls
 die Whitelist von Parity, siehe \ref{sec_whitelist}.
 
@@ -101,7 +101,7 @@ Transaktion (gratis TX 1) wird der Account XX1 verwendet. Die Prüfung, ob sich
 der Account auf der Whitelist befindet ist erfolgreich. Die Transaktion kann
 daher erfolgreich verarbeitet werden und erreicht ihr Ziel.\
 Für die zweite gratis Transaktion (gratis TX 2) wird der Account XX2 verwendet.
-Dieser befindet sich nicht auf der Whitelit. Die Prüfung schlägt deshalb fehl.
+Dieser befindet sich nicht auf der Whitelist. Die Prüfung schlägt deshalb fehl.
 Die Transaktion wird zurückgewiesen und der Benutzer erhält einen Error.\
 Auch die dritte Transaktion (Tx für Account XX2) verwendet den Account XX2. Da
 es sich nicht um eine gratis Transaktion handelt, kann diese problemlos
@@ -109,7 +109,7 @@ ausgeführt werden.\
 Der Transaktionsmanger wird auf einem Server der FHNW ausgeführt. Er überwacht
 alle Transaktionen die erstellt werden. Es werden jedoch nur gratis
 Transaktionen mit dem DoS Algorithmus geprüft. Sollte diese Prüfung eine Gefahr
-für die Blockchain detektieren, wird der entpsrechende Account von der Whitelist
+für die Blockchain detektieren, wird der entsprechende Account von der Whitelist
 gelöscht. Dies wird mit dem Pfeil "Verwaltung von Accounts auf Whitelist"
 dargestellt.\
 Der Transaktionsmanager verfügt über einen eigenen Account, siehe
@@ -121,13 +121,13 @@ der Whitelist gelöscht werden.
 
 Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
-Programm neu ausgerollt werden. Eine aktualisierung der Whitelist ist nicht nötig.
+Programm neu ausgerollt werden. Eine Aktualisierung der Whitelist ist nicht nötig.
 
 
 ##### Contra
 
 Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der
-Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert
+Transaktionsmanager ist eine zentrale Autorität, die von der FHNW kontrolliert
 wird.\
 Für die Betreibung des Transaktionsmangers wird ein Server benötigt. Eine
 weitere Komponente, die administriert werden muss. 
@@ -164,7 +164,7 @@ Jeder Benutzer besitzt eine eigene Smart Wallet um die Sender Identität für
 jeden Benutzer einmalig zu halten.\
 Auf der im Abschnitt \ref{sec_whitelist} beschriebenen Whitelist ist nur der
 Account des externen Programmes aufgelistet. So ist sichergestellt, dass nur
-Transaktionen die vom Programm weitergeleitet werden, kostenfrei durchgeführt
+Transaktionen, die vom Programm weitergeleitet werden, kostenfrei durchgeführt
 werden können. Der Benutzer kann immer mit kostenpflichtigen Transaktionen auf
 die Smart Wallet zugreifen. Dies ist insbesondere wichtig, falls das Programm
 nicht aufrufbar ist, wenn z.B. der Server ausfällt.
@@ -172,7 +172,7 @@ nicht aufrufbar ist, wenn z.B. der Server ausfällt.
 ![Transaktionsmanager mit Whitelist \label{img_solution3}](images/solution3_v2.png "Externes Programm mit Whitelist") 
 
 Diagramm \ref{img_solution3} zeigt die Benutzer mit ihren Accounts auf der
-linken Seite. Benutzer A initiert in diesem Beispiel zwei gratis und eine
+linken Seite. Benutzer A initiiert in diesem Beispiel zwei gratis und eine
 gebührenpflichtige Transaktion.\
 Die erste gratis Transaktion (TX 1) wird an den Transaktionsmanager übermittelt.
 Hier wird zuerst geprüft, ob sich der verwendete Account auf der Whitelist
@@ -202,15 +202,15 @@ Bedarf, die Transaktion an den Transaktionsmanager zu senden. Sie kann direkt
 
 ##### Pro
 
-Dieser Ansatz ist in der gegeben Zeit umsetzbar.\
+Dieser Ansatz ist in der gegebenen Zeit umsetzbar.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
-Programm neu ausgerollt werden. Eine aktualisierung der Whitelist ist nicht
+Programm neu ausgerollt werden. Eine Aktualisierung der Whitelist ist nicht
 nötig.  
 
 ##### Contra
 
 Es wird das Hauptprinzip, Dezentralität, einer Blockchain verletzt. Der
-Transaktionsmanager ist eine zentrale Authorität, die von der FHNW kontrolliert
+Transaktionsmanager ist eine zentrale Autorität, die von der FHNW kontrolliert
 wird. Dieser benötigt einen Server, es kommt also eine weitere Komponente dazu.
 Diese muss ebenfalls administriert werden.\
 Dieser Ansatz bietet keine Vorteile im Vergleich zum ALA 2, ist aber mit der
@@ -225,8 +225,7 @@ Initialisierung einer gratis Transaktion durch den Benutzer.
 
  Diese wird an den Transaktionsmanager übermittelt. In erster Instanz wird
 geprüft, ob der verwendete Account für gratis Transaktionen berechtigt ist. Nur
-wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion weiter
-bearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier
+wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion weiterbearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier
 eine Gefahr detektiert, wird der Account von der Whitelist gelöscht und die
 Transaktion abgebrochen.\
 Ist der Account berechtigt und wird keine Gefahr detektiert, wird die
