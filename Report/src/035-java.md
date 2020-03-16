@@ -1,7 +1,7 @@
 
 ## Transaktionsmanager  \label{sec_prac_ext_prog}
 
-In diesem Kapitl ist die Implementierung des Transaktionsmanagers zur Überwachung
+In diesem Kapitel ist die Implementierung des Transaktionsmanagers zur Überwachung
 der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
 Funktionsweise von einzelnen Komponenten näher erklärt. 
 
@@ -14,7 +14,7 @@ vorhanden. Für dessen Generierung und Verwendung siehe
 
 ### Überwachung von Transaktionen
 
-Um die Transaktionen auf der Blockchain zu Observieren wird ein
+Um die Transaktionen auf der Blockchain zu observieren wird ein
 Filter[@web3j_filter] von Web3j verwendet. Dieser erlaubt es, eine
 ```Subscription``` zu erstellen. Diese läuft asynchron .\
 Jede getätigte Transaktion wird von der ```Subscription``` erfasst. In einem
@@ -53,7 +53,7 @@ werden in der Liste ```Accounts``` aktualisiert. Der Account wird anschliessend
 an den DoS Algorithmus übergeben.\
 Im DoS Algorithmus wird die Anzahl getätigter gratis Transaktionen und das
 verbrauchte Gas ausgewertet. Es wird geprüft, ob mit der neu erfassten
-Transaktion ein Grenzwert im aktuellen Reset-Intevall überschritten worden ist.
+Transaktion ein Grenzwert im aktuellen Reset-Intervall überschritten worden ist.
 Wenn das nicht der Fall ist, sind keine weiteren Aktionen nötig. Ist ein
 Grenzwert überschritten worden, wird dies für den entsprechenden Account in
 ```Accounts``` festgehalten. Zusätzlich wird eine Transaktion erstellt, die den
