@@ -23,6 +23,6 @@ Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
 | 14.   | Certifier nur von Owner deployen | Der Certifier kann nur vom Owner registriert werden  |
 | 15.   | Certifier nur einmal deploybar  | Der Certifier kann nur einmal deployt/registriert werden |
 | 16.   | Transaktions Manager Account kann nicht gesperrt werden | Transaktions Manager Account kann nicht gesperrt werden |
-
+\newpage
 
 

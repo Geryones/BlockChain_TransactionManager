@@ -45,6 +45,6 @@
 | Wei                | Untereinheit von Ether. 10^18 Wei = 1 Ether|
 | Whitelist          | Liste mit berechtigten Accounts|
 
-
+\newpage
 
 

@@ -585,5 +585,5 @@ Manuell
 **Tatsächliches Resultat:**  
 
 - Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
-
+\newpage
 

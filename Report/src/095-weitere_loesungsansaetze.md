@@ -20,4 +20,4 @@ Falls eine Änderung am Code gemacht nötig ist, muss nur eine Smart Wallet neu 
 Bei diesem Ansatz ist die Machbarkeit unklar. 
 Parity muss umgeschrieben werden, da nicht die Senderidentität der Smart Wallet genutzt werden muss, sondern die des Benutzeraccounts. 
 Ebenfalls muss die Whitelist-Funktionalität von Parity angepasst werden, analog zu LA 1. 
-
+\newpage

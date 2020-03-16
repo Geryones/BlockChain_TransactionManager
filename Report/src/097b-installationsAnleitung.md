@@ -1,11 +1,11 @@
 
-# Betriebsanleitung
+## Betriebsanleitung
 
 In diesem Kapitel wird dem Benutzer erklärt wie er den Blockchain
 Transaktionsmanager in Betrieb nimmt. Für die Inbetriebnahme muss Docker auf dem
 Rechner installiert sein.
 
-## Hochfahren der Parity Instanz
+### Hochfahren der Parity Instanz
 
 1. Die Konfiguration der Blockchain wird über die Datei  ```config.toml```
   gemacht, siehe \ref{sec_prac_config_toml}. Hier muss die Abhängigkeit der
@@ -25,7 +25,7 @@ Rechner installiert sein.
    ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
 
-## Deployment 
+### Deployment 
 
 Der Transaktionsmanager kann zu einer ```.jar``` Datei gepackt werden. Um diese
 neu zu erstellen muss die Methode ```package``` von Maven verwendet werden.
@@ -53,7 +53,7 @@ Die Datei 1. enthält keine Dependencies und ist somit viel schlanker. Im zweite
 bedeutend grösser. 
 
 
-## Konfigurieren des Transaktionsmanagers
+### Konfigurieren des Transaktionsmanagers
 
 Die Konfiguration des Transaktionsmanager geschieht über follgende Dateien:
 
@@ -67,7 +67,7 @@ Diese Dateien müssen im selben Verzeichnis wie die ```.jar``` Datei des
 Transaktionsmanagers befinden. 
 
 
-## Starten der Blockchain Überwachung mit dem Blockchain Transaktionsmanager
+### Starten der Blockchain Überwachung mit dem Blockchain Transaktionsmanager
 
 Der generierte ```.jar``` Datei wird über die Kommandozeile angesteuert. Die
 hier gezeigten Befehle setzen voraus, dass man sich im selben Verzeichnis
@@ -83,3 +83,4 @@ Sobald die Initialisierung abgeschlossen ist, kann folgender Befehl genutzt werd
 ```java -cp BTMChainObserver-1-jar-with-dependencies.jar ch.brugg.fhnw.btm.Run```
 
 Dieser startet die Überwachung der Blockchain. 
+\newpage
