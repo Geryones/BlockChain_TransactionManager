@@ -101,7 +101,7 @@ Manuell
 4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist  
 
 **Ablauf:**  
-:Für jeden Account wird der gleiche Ablauf durchgeführt
+Für jeden Account wird der gleiche Ablauf durchgeführt
 
 1. MetaMask starten
 2. Zertifizierten Account wählen
@@ -131,13 +131,12 @@ Manuell
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 
-1. Metamask installiert 
+1. Metamask installiert
 2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1.
    Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
    FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig)
-   
-3. Blockchain ist aufgesetzt und läuft 
-4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist  
+3. Blockchain ist aufgesetzt und läuft
+4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
 
 **Ablauf:**
 
@@ -479,7 +478,7 @@ Manuell
 2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default
    Transaktionslimite ist auf 3 gesetzt
 3. Account in MetaMask eingerichtet (1. Account Add:
-   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 4. Blockchain ist aufgesetzt und läuft 
 5. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist 
 
@@ -522,7 +521,7 @@ Manuell
 2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist
    auf 63000 gesetzt
 3. Account in MetaMask eingerichtet (1. Account Add:
-   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)  
+   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 4. Blockchain ist aufgesetzt und läuft 
 5. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist 
 
@@ -542,14 +541,14 @@ Manuell
 
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei kein übriges Gas   
-- Limite wird nicht in Datei geschrieben 
+- Der Account hat in der JSON Datei kein übriges Gas
+- Limite wird nicht in Datei geschrieben
 
 **Tatsächliches Resultat:** 
 
 - Die letzte Transaktion wird abgebrochen
 - Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei kein übriges Gas   
+- Der Account hat in der JSON Datei kein übriges Gas
 - Limite wird nicht in Datei geschrieben
 
 ### Abnahme Test 14
