@@ -9,7 +9,7 @@ für eine Denial of Service Attacke verwendet werden.\
 Um diese Gefahr einzudämmen ist ein Blockchain Transaktionsmanager entwickelt
 worden. Dieser ermöglicht eine Überwachung von getätigten gratis Transaktionen.
 Wenn nötig können diese auch eingeschränkt werden.\
-Für jeden Account der priviligierten Benutzergruppe, können individuelle
+Für jeden Account der privilegierten Benutzergruppe, können individuelle
 Parameter für die Nutzung der gratis Transaktionen gesetzt werden. So kann pro
 Account festgelegt werden, wie viele gratis Transaktionen oder gratis Gas pro
 Reset-Intervall verfügbar sind. Sobald eine dieser Limiten überschritten wird,
@@ -34,7 +34,7 @@ Zustand wiederhergestellt werden. Sollte die Suspendierung von einem Account
 während der Ausfallszeit abgelaufen sein, kann das beim Neustart einfach
 ermittelt werden.\
 Mit dem entwickelten Transaktionsmanager sind gratis Transaktionen
-möglich, ohne dass die Sicherheit der Blockchain komprimitiert wird. Das
+möglich, ohne dass die Sicherheit der Blockchain kompromittiert wird. Das
 ermöglicht der FHNW, ihren Studierenden und Mitarbeitenden, eine sichere und
 kostenneutrale Lernumgebung anzubieten. Damit konnten alle Ziele der
 Projektvereinbarung erreicht werden.
@@ -47,10 +47,10 @@ dezentral zu realisieren, müsste die Whitelist von Parity so angepasst werden,
 dass nicht nur Accounts, sondern Verbindungen geprüft werden. Nur so kann
 sichergestellt werden, dass gratis Transaktionen über den Transaktionsmanager
 abgewickelt werden.\
-Der Umfang und Komplexität dieser Anpasungen sind im gegebenen Zeitrahmen, als
+Der Umfang und Komplexität dieser Anpassungen sind im gegebenen Zeitrahmen, als
 nicht realisierbar eingeschätzt worden. Daher haben wir beschlossen, den
 Transaktionsmanager als Java-Applikation zu realisieren. Diese Version des
-Transaktionsmanagers ist eine zentrale Authorität. Das entspricht nicht dem
+Transaktionsmanagers ist eine zentrale Autorität. Das entspricht nicht dem
 dezentralitäts Prinzip einer Blockchain.
 
 Das Aufsetzen einer Blockchain mit Parity ist unterschätzt worden. Bei der
@@ -64,7 +64,7 @@ werden.
 Der Transaktionsmanager hat ein grosses Potential für Erweiterungen. Wenn die
 Blockchain frisch aufgesetzt wird, könnte das Deployment und die Registrierung
 des Certifiers automatisiert werden. Analog zur Name Registry kann der Certifier
-direkt in der Blockchainspezifikation deployed werden. Zusätlich ist es möglich,
+direkt in der Blockchainspezifikation deployed werden. Zusätzlich ist es möglich,
 den Constructor vom Certifier so anzupassen, dass er sich automatisch bei der
 Name Registry registriert. Dafür muss der ```SimpleCertifier``` und die
 Blockchainspezifikation angepasst werden.\
