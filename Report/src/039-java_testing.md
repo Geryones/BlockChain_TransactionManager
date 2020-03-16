@@ -16,7 +16,6 @@ wie gewünscht funktioniert.
 #### Unit Tests
 
 Die Funktionalität von zentralen Methoden sind mit Unittests geprüft worden.
-Im Anhang sind alle durchgeführten Tests unter \ref{app_tests} verlinkt. 
 
 Alle Unit Tests sind erfolgreich. 
 
@@ -79,6 +78,7 @@ Node akzeptiert keine weiteren gratis Transaktionen von diesem Account.
 
 #### Abnahme Test
 
+Hier wurde das Funktionieren alles Abnahmekriterien geprüft.
 Hier wird das Zusammenspiel aller Komponenten geprüft.\
 Um die funktionalen Aspekte zu prüfen führt ein Account auf der Whitelist gratis
 Transaktionen aus. Anschliessend werden die Zähler des Accounts überprüft. Am
@@ -90,6 +90,8 @@ Version ersetzt werden kann. Damit könnte ein Benutzer den Transaktionsmanager
 umgehen. Der Schutz vor einer DoS Attacke wäre nicht mehr gewährleistet.
 
 Beide Tests sind erfolgreich, der Transaktionsmanager verhält sich wie gewünscht.   
+
+Weiter wurden manuell alle Abnahmekriterien \ref{sec_prac_abnahmekriterien} geprüft und in ein Abnahmetestprotokoll \ref{sec_prac_abnahmeprotokoll} aufgeführt.
 
 #### Schlussfolgerung
 
