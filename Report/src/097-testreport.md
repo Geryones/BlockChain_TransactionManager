@@ -48,7 +48,7 @@ Manuell
 **Vorbedingung:**  
 
 1. MetaMask installiert 
-2. zweiAccounts in MetaMask eingerichtet (1. Account Add:
+2. zwei Accounts in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
    FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. ein
    Account welcher nicht in der Whitelist ist) 
@@ -95,7 +95,7 @@ Manuell
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**   
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Alle Accounts aus der Account Liste sind in MetaMask eingerichtet 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist  
@@ -131,8 +131,8 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 
-1. Metamask installiert
-2. 1 Account aus der Liste der gelöscht wird in Metamask eingerichtet (1.
+1. MetaMask installiert
+2. 1 Account aus der Liste der gelöscht wird in MetaMask eingerichtet (1.
    Account Add: 0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
    FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. beliebig)
 3. Blockchain ist aufgesetzt und läuft
@@ -183,14 +183,14 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**    
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34 PK:
    FD825395E5B421CE6DDCEDBE4205FAB1F916E73E56721D5FD4D49C540BA2DB94 2. Account
    beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
 4. DoS Algorithmus läuft und der Account ist zertifiziert / in der Whitelist
-5. Account hat in dr JSON Datei die Transaktionslimite auf 5 gesetzt und Gas
+5. Account hat in der JSON Datei die Transaktionslimite auf 5 gesetzt und Gas
    Limite auf 126000
 
 **Ablauf:** 
@@ -230,7 +230,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH   
 **Vorbedingung:**  
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig ) 
 3. Blockchain ist aufgesetzt und läuft 
@@ -272,7 +272,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
@@ -289,18 +289,18 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies so oft durchführen, bis der Account geperrt ist.
-9. Dannach 2' warten
+8. Dies so oft durchführen, bis der Account gesperrt ist.
+9. Danach 2' warten
 10. Erneut eine gratis Transaktion durchführen
 
 **Erwünschtes Resultat:**    
 
-- Dass eine gratis Transaktion wieder durchführbar ist, nahdem der Account
+- Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account
   gesperrt wurde und 2' gewartet wurde 
 
 **Tatsächliches Resultat:**  
 
-- Eine gratis Transaktion war wieder durchführbar , nahdem der Account gesperrt
+- Eine gratis Transaktion war wieder durchführbar , nachdem der Account gesperrt
   wurde und 2' gewartet wurde 
 
 ### Abnahme Test 8
@@ -312,7 +312,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)) 
 3. Blockchain ist aufgesetzt und läuft 
@@ -329,7 +329,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies so oft durchführen, bis der Account geperrt ist.
+8. Dies so oft durchführen, bis der Account gesperrt ist.
 9. DoS Algorithmus stoppen
 10. 4' warten
 11. DoS Algorithmus wieder starten
@@ -338,7 +338,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Erwünschtes Resultat:**   
 
 - Dass eine gratis Transaktion wieder durchführbar ist, nachdem der Account
-  gesperrt , das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
+  gesperrt, das Programm kurzzeitig gestoppt und wieder gestartet wurde.   
 
 **Tatsächliches Resultat:** 
 
@@ -355,7 +355,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**  
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig) 
 3. Blockchain ist aufgesetzt und läuft 
@@ -400,7 +400,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Ablauf:** 
 
 1. MetaMask starten
-2. Warten bis der erste Intervall gestartet hat
+2. Warten bis das erste Intervall gestartet hat
 3. Kontrollieren ob ein neuer Timestamp in die DefaultSettings JSON Datei
    geschrieben wurde und sich diesen merken 
 4. Beliebigen Account wählen
@@ -412,7 +412,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 9. Warten bis die Transaktion durchlaufen ist
 10. Schauen ob der Transaktionscounter in der JSON Datei um 1 runter ist
 11. DoS Algorithmus für 2' pausieren und wieder starten
-12. Warten ob der Intervall bei der vorgemerkten Zeit neu startet
+12. Warten ob das Intervall bei der vorgemerkten Zeit neu startet
 
 **Erwünschtes Resultat:**  
 
@@ -434,7 +434,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Status:**  ERFOLGREICH  
 **Vorbedingung:**
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 3. Blockchain ist aufgesetzt und läuft 
@@ -453,7 +453,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies so oft durchführen, bis der Account geperrt ist.
+8. Dies so oft durchführen, bis der Account gesperrt ist.
 9. Dannach 2' warten
 10. Erneut eine gratis Transaktion durchführen       
 
@@ -474,7 +474,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020 **Status:**  ERFOLGREICH **Vorbedingung:** 
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default
    Transaktionslimite ist auf 3 gesetzt
 3. Account in MetaMask eingerichtet (1. Account Add:
@@ -517,7 +517,7 @@ Für jeden Account wird der gleiche Ablauf durchgeführt
 **Datum:**   15.3.2020 **Status:**  ERFOLGREICH  
 **Vorbedingung:** 
 
-1. Metamask installiert 
+1. MetaMask installiert 
 2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist
    auf 63000 gesetzt
 3. Account in MetaMask eingerichtet (1. Account Add:
