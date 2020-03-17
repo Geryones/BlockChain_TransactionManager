@@ -15,8 +15,7 @@ Parameter für die Beurteilung von Accounts aufgeführt.
 
 ##### Sender 
 
-Dieser Parameter ist zwingend nötig um eine gratis Transaktionen mit einem
-Account zu verknüpfen. 
+Erlaubt die Verknüpfung von Transaktionen mit einem Account. 
 
 ##### Empfänger
 
@@ -51,10 +50,10 @@ getätigte gratis Transaktion bis 09:59 relevant.
 
 ![Individuelles Reset-Intervall \label{img_individual_resetIntervall}](images/individual_reset_intervall.png "Individuelles Reset-Intervall") 
 
-Auf dem Diagramm \ref{img_individual_resetIntervall} ist es graphisch
+Auf dem Diagramm \ref{img_individual_resetIntervall} ist ein individuelles Intervall graphisch
 dargestellt. Die grünen Haken, markieren getätigte gratis Transaktionen. Das
 Reset-Intervall wird erst ab einer getätigten gratis Transaktion gestartet und
-ist unabhängig vom Programm Start.
+ist unabhängig vom Zeitpunkt des Programmstarts.
 
 ##### Anzahl getätigte Transaktionen
 
@@ -79,6 +78,7 @@ wieder zur Whitelist hinzuzufügen.
 
 ##### Fixer Zeitpunkt für alle
 
+Analog zum allgemeinen Intervall.\
 Es wird ein fixes Intervall, relativ zum Programmstart, definiert. An dessen
 Ende werden alle Accounts zurückgesetzt. Das heisst das Kontingent wird bei
 allen Accounts wieder auf den konfigurierten Wert gesetzt. Von der Whitelist
@@ -86,10 +86,11 @@ gelöschte Accounts werden dieser wieder hinzugefügt.\
 Ein Beispiel:\
 Als Intervall ist eine Woche definiert. Das Programm startet am
 Montag um 8:00 UTC.\
-Nun werden alle gesperrten Accounts, jeweils am nächsten Montag um 8:00 UTC wieder auf die Whitelist genommen.
+Nun werden alle gesperrten Accounts, jeweils am nächsten Montag um 8:00 UTC wieder auf die Whitelist genommen. 
  
 ##### Nach Zeitintervall
 
+Analog zum individuellen Intervall.\
 Ein Account wird für eine definierte Dauer von der Whitelist gelöscht. Die Zeit
 wird ab der Löschung von der Whitelist gemessen. Dadurch werden bei einem
 Vergehen alle Accounts gleich lange von gratis Transaktionen ausgeschlossen.  
@@ -102,8 +103,9 @@ Suspendierung definiert. Dieses Intervall dient als Basis. Alle folgenden
 Verstösse und deren Suspendierung werden aus dem Basisintervall und den begannen
 Verstössen berechnet. 
 
-Beispiel mit einer quadratischen Abhängigkeit zwischen Verstössen Sperrung und
-einem Basisintervall von 5 Minuten:
+Die Tabelle \ref{tab_bsp_inkrement} zeigt eine quadratischen Abhängigkeit
+zwischen Verstössen und Dauer einer Sperrung. Basisintervall ist mit 5 Minuten
+definiert:
 
 | # Verstösse | Dauer Sperrung  |
 |:-----------:|-------------------:|
@@ -129,7 +131,7 @@ Differenzierung von Accounts ist somit nicht möglich.
 
 ##### Parameter über Gruppen konfigurierbar
 
-Die Parameter sind über Gruppen konfiguriert. Jedem Account wird eine Gruppe
+Die Parameter sind über Gruppen konfiguriert. Jedem Account wird mindestens eine Gruppe
 zugewiesen, dieser erbt die Parameter der Gruppe. So lassen sich Strukturen der
 Schule, wie Studenten, Dozenten und Klassen einfach abbilden. 
 

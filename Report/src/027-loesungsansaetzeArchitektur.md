@@ -231,7 +231,7 @@ geprüft, ob der verwendete Account für gratis Transaktionen berechtigt ist. Nu
 wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion weiterbearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier
 eine Gefahr detektiert, wird der Account von der Whitelist gelöscht und die
 Transaktion abgebrochen.\
-Ist der Account berechtigt und wird keine Gefahr detektiert, wird die
+Ist der Account berechtigt und es wird keine Gefahr detektiert, wird die
 Transaktion im Data Feld einer neuen gratis Transaktion an die Blockchain
 übermittelt.\
 Beim Node muss wiederum verifiziert werden, dass sich der Sender auf der

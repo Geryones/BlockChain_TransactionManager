@@ -1,6 +1,6 @@
 ### Evaluation der Architektur
 
-Die erarbeiteten Lösungsansätze werden gegeneinander verglichen. Um zu bestimmen, welcher Ansatz weiterverfolgt wird, wurden folgende Kriterien definiert:
+Die erarbeiteten Lösungsansätze werden gegeneinander verglichen. Um zu bestimmen, welcher Ansatz weiterverfolgt wird, sind folgende Kriterien definiert worden:
 
 Machbarkeit (MK)
 :     Bewertet die Machbarkeit des Ansatzes. Das berücksichtigt den gegeben Zeitrahmen und die Komplexität des Ansatzes. 
@@ -8,17 +8,17 @@ Machbarkeit (MK)
 :     Gewichtung 3
 
 Blockchainprinzipien (BCP)
-:     Gibt an ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, Trust und Security  
+:     Gibt an ob die Prinzipien einer Blockchain berücksichtigt werden. Wie Dezentralität, Trust und Security.  
 :     Die Einhaltung der Prinzipien ist wichtig, aber für die FHNW nicht zwingend. Daher eine mittlere Gewichtung.     
 :     Gewichtung 2
 
 Betrieb (BT)
-:     Bewertet den administrativen Aufwand im Betrieb und die Möglichkeit zur Automatisierung. Das umfasst Deployment Smart Contracts, Anpassungen der Whitelist und Betreibung von zusätzlichen Servern. 
+:     Bewertet den administrativen Aufwand im Betrieb und die Möglichkeit zur Automatisierung. Das umfasst Deployment von Smart Contracts, Anpassungen der Whitelist und Betreibung von zusätzlichen Servern. 
 :     Wird mit einer mittleren Gewichtung versehen. Ein zu hoher administrativer Aufwand ist nicht praktikabel.
 :     Gewichtung 2
 
 Jeder ALA wird auf diese drei Kriterien untersucht. Pro Kriterium können
-zwischen 3 und 1 Punkt erreicht werden, wobei 3 das Maximum ist. Die erreichten
+zwischen 1 und 3 Punkten erreicht werden, wobei 3 das Maximum ist. Die erreichten
 Punkte werden mit der entsprechenden Gewichtung multipliziert. Für die
 Evaluation, werden alle Punkte zusammengezählt. Der Ansatz mit den meisten
 Punkten wird weiterverfolgt.  
@@ -43,23 +43,20 @@ Wallet entwickelt werden.
 Dieser Ansatz ist komplett dezentral und in die Blockchain integriert. Daher
 maximale Punktzahl bei Blockchain Prinzipien. 
 
-Falls eine Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet neu
-deployed werden. Das bedingt, dass die Whitelist ebenfalls aktualisiert wird.
-Die Adressen aller bestehenden Smart Wallets müssen ersetzt werden. Alle
-Studierenden müssen informiert werden, dass sie für ihre Smart Wallet eine neue
-Adresse verwenden müssen. Die Automatisierung dieser Prozesse wird als komplex
+Falls eine Anpassung am DoS Algorithmus nötig ist, muss jede Smart Wallet aktualisiert werden.\ 
+Die Automatisierung dieses Prozesses wird als komplex
 aber machbar eingeschätzt. Daher sind bei Betrieb 2 Punkte gesetzt. 
 
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist
 
 Die Entwicklung eines externen Programmes, welches getätigte Transaktionen der
-Blockchain prüft, ist in der gegebenen Zeit sicher realisierbar. Daher erhält
+Blockchain prüft, ist in der gegebenen Zeit realisierbar. Daher erhält
 der ALA für Machbarkeit die volle Punktzahl. 
 
 Mit der Verwendung eines externen Programms, wird eine zentrale Autorität
 verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Da das
-Programm die Transaktionshistorie der Blockchain überwacht und nur bei einer DoS
-Attacke aktiv ist, wird 2 Punkte für Blockchainprinzipien gegeben. 
+Programm die Transaktionshistorie der Blockchain überwacht und nur gratis
+Transaktionen einschränkt, werden 2 Punkte für Blockchainprinzipien vergegeben. 
 
 Falls eine Anpassung am DoS Algorithmus nötig ist, muss das externe Programm neu
 deployed werden. Es benötigt keine Anpassungen an der Blockchain selbst. Für die
@@ -76,14 +73,14 @@ worden.
 
 Bei diesem ALA muss eine Smart Wallet und ein externes Programm entwickelt
 werden. Transaktionen werden im externen Programm verpackt und müssen von der
-Smart Wallet wieder entpackt werden. Somit ist liegt die Machbarkeit zwischen
-dem von ALA 1 und ALA 2. Daher werden 2 Punkte für Machbarkeit vergeben. 
+Smart Wallet wieder entpackt werden. Dieser Vorgang wird als komplex eingestuft.
+Daher werden 2 Punkte für Machbarkeit vergeben. 
 
 Mit der Verwendung eines externen Programms, wird eine zentrale Autorität
-verwendet. Diese ist nicht dezentral und wird von der FHNW administriert. Im
+verwendet. Diese wird von der FHNW administriert. Im
 Gegensatz zu ALA 2, hat dieses Programm eine sehr viel zentralere Rolle. Das
 Programm interagiert nicht nur bei einer DoS Attacke mit der Blockchain, sondern
-ständig. Jede Transaktion wird an das Programm übermittelt und dort verarbeitet.
+ständig. Jede gratis Transaktion wird an das Programm übermittelt und dort verarbeitet.
 Da die zentrale Autorität im Vergleich zu ALA 2 viel aktiver ist, ist für
 Blockchainprinzipien 1 Punkt vergeben worden.
 
@@ -92,10 +89,9 @@ Für die Betreibung des externen Programms ist ein zusätzlicher Server nötig.\
 In der Whitelist der Blockchain ist nur der Account des externen Programmes
 hinterlegt. Das Programm führt eine eigenen List von Accounts, die für gratis
 Transaktionen berechtigt sind.\
-Das externe Programm hat eine sehr zentrale Rolle, da es die Whitelist und den
-DoS Schutzalgorithmus enthält. Die Automatisierung wird daher als einfach
-eingestuft, da das externe Programm mit Java geschrieben wird und somit sehr
-viel zugänglicher ist. Daher sind bei Betrieb 3 Punkte vergeben worden. 
+Die Whitelist und der DoS Algorithmus befinden sich am selben Ort. Die
+Verwaltung und Automatisierung wird somit als unproblematisch bewertet. Daher
+sind bei Betrieb 3 Punkte vergeben worden. 
 
 
 #### Resultat Evaluation
