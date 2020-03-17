@@ -160,7 +160,7 @@ Methode ```reserve``` sein. Mit dem Parameter ```_key``` wird der Zugriff auf
 die innere Map ```data``` verwaltet. Mit ```_value``` wird die zu registrierende
 Adresse übergeben.\
 Auch diese Methode muss von aussen aufgerufen werden können, daher
-```external``` auf zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und
+```external``` auf Zeile 2. Wenn die Bedingungen von ```whenEntryRaw``` und
 ```onlyOwnerOf``` auf Zeile 3 und 4 erfüllt sind, wird die eigentliche
 Registrierung vorgenommen.\
 In der Map ```data``` wird die Adresse (```_value```) an der Position ```_key```
@@ -171,16 +171,16 @@ Die Änderung der Daten wird auf Zeile 9 ins Log geschrieben.
 
 Als Standard werden alle Transaktionen mit einem Gas Price von 0 verworfen. Das
 heisst, diese Transaktionen werden bereits beim Node zurückgewiesen und
-erreichen nie die Blockchain. Dieses Verhalten kann geändert werden. Mit der
-Registrierung des Certifiers bei der Name Registry. Beim Start von Parity wird
-geprüft ob der Eintrag in ```entries``` vorhanden ist. Sofern vorhanden, werden
+erreichen nie die Blockchain. Dieses Verhalten kann mit der Registrierung des
+Certifiers bei der Name Registry, geändert werden. Beim Start von Parity wird
+geprüft, ob der Eintrag in ```entries``` vorhanden ist. Sofern vorhanden, werden
 Transaktionen mit einem Gas Price von 0 nicht mehr direkt abgewiesen, sondern es
-wird geprüft ob der Absender zertifiziert ist. Transaktionen von zertifizierten
+wird geprüft ob der Sender zertifiziert ist. Transaktionen von zertifizierten
 Accounts werden selbst mit einem Gas Price von 0 in die Blockchain aufgenommen.
-Gratis Transaktionen von unzertifizierten Benutzern werden weiterhin
-abgewiesen. 
+Gratis Transaktionen von unzertifizierten Accounts werden weiterhin abgewiesen.
 
-In diesem Abschnitt sind besonders wichtige Abschnitte des SimpleCertifiers
+
+In diesem Abschnitt sind besonders wichtige Abschnitte des Certifiers
 aufgeführt und erklärt. Der gesamte Code ist im Anhang unter
 \ref{app_parity_code} verlinkt. 
 
@@ -207,7 +207,7 @@ modifier onlyDelegate {
 Auf Zeile 1 des Listings \ref{li_onlyDelegate}, wird der Besitzer
 (```msg.sender```) des Smart Contracts gespeichert und der Variabel
 ```delegate``` zugewiesen. Mit dem Modifier wird geprüft ob es sich beim
-Absender der aktuellen Anfrage um den Besitzer des Smart Contracts handelt. 
+Sender der aktuellen Anfrage um den Besitzer des Smart Contracts handelt. 
 
 ```{caption="Methode certify" label=li_certify .sol .numberLines}
 function certify(address _who)
@@ -219,7 +219,7 @@ function certify(address _who)
 }
 ```
 Mit der unter \ref{li_certify} aufgeführten Methode, wird ein Account
-registriert. Als Paramater wird die zu registrierende Adresse (```_who```)
+registriert und dadurch zertifiziert. Als Paramater wird die zu registrierende Adresse (```_who```)
 angegeben. Mit ```external``` auf Zeile 2 ist die Methode von aussen aufrufbar.\
 Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account
 registrieren kann. Ist diese Prüfung erfolgreich, wird der Account ```_who```
@@ -239,7 +239,7 @@ function certified(address _who)
 Mit der Methode ```certified```, unter \ref{li_certified}, kann jederzeit überprüft werden, ob ein Account
 (```_who```) zertifiziert ist. Mit ```view``` auf Zeile 3 ist deklariert, dass
 es sich um eine Abfrage ohne weitere Rechenkosten handelt. Solche Abfragen
-sind daher mit keinen Transaktionskosten verbunden. 
+sind mit keinen Transaktionskosten verbunden. 
 
 
 ```{caption="Methode revoke" label=li_revoke .sol .numberLines}
@@ -261,7 +261,7 @@ Event wird auf Zeile 7 in den Log geschrieben.
 
 ### Geprüfte Alternativen
 
-Bei der Auswahl des Ethereumclienten sind die populärsten[@stack_clientList] berücksichtigt worden. Nebst Parity sind daher noch Geth, Aleth und Trinity evaluiert worden. Bei diesen
+Bei der Auswahl des Ethereumclienten sind die populärsten[@stack_clientList] Clients berücksichtigt worden. Nebst Parity sind daher noch Geth, Aleth und Trinity evaluiert worden. Bei diesen
 Clients ist keine Möglichkeit vorhanden, bestimmte Accounts für gratis
 Transaktionen zu privilegieren. Daher sind sie zu diesem Zeitpunkt nicht für die
 FHNW geeignet.

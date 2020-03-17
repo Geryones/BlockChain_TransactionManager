@@ -52,8 +52,9 @@ können, die nicht an die Smart Wallet gerichtet sind. Somit kann der Benutzer
 den DoS Schutzmechanismus umgehen. Deswegen muss ein Weg gefunden werden, der
 den Benutzer zwingt, Transaktionen über die Smart Wallet abzuwickeln.\
 Eine Möglichkeit ist Parity selbst zu erweitern. Anstelle einer Liste mit
-Accounts, muss in der Whitelist eine Liste von Verbindungen geführt werden. So kann definiert
-werden, dass nur eine Transaktion auf die Smart Wallet gratis ist. 
+Accounts, muss in der Whitelist eine Liste von Verbindungen geführt werden. So
+kann definiert werden, dass nur eine Transaktion an die Smart Wallet gratis ist.
+
 
 ##### Pro
 
@@ -64,14 +65,14 @@ Blockchain bewahrt.
 ##### Contra
 
 Die Machbarkeit des Ansatzes ist unklar. Um diesen Ansatz umzusetzen, muss der
-Blockchain Client, Parity, erweitert werden. Es ist unklar, wie weitreichend die
-Anpassungen an Parity sind. Zusätzlich wird eine zusätzliche Programmiersprache,
+Blockchainclient, Parity, erweitert werden. Es ist unklar, wie weitreichend die
+Anpassungen an Parity sind. Zudem wird eine zusätzliche Programmiersprache,
 Rust[@rust], für die Umsetzung benötigt.\
 Bei einer Anpassung am DoS Algorithmus, müssen alle Smart Wallets aktualisiert werden. 
 
 ##### Prozessworkflow
 
-Der Prozessablauf für eine gratis Transaktion mit ALA 1 könnte folgendermassen aussehen.
+Der Prozessablauf für eine gratis Transaktion mit ALA 1 könnte folgendermassen aussehen:
 
 ![Flowchart für Smart Wallet \label{img_flow_solution1}](images/flow_solution1_v2.png "Flowchart für Smart Wallet"){ width=50% height=50% }
 
@@ -83,8 +84,8 @@ erstellt und ausgeführt.\
 Anschliessend bewertet der DoS Algorithmus das Verhalten des verwendeten
 Accounts. Wird eine Gefahr für die Blockchain festgestellt, wird der Account von
 der Whitelist entfernt. Gratis Transaktionen sind dann für diesen Account nicht
-mehr verfügbar. Wenn keine Gefahr festgestellt werden kann, kann der Account
-auch weiter für gratis Transaktionen genutzt werden.
+mehr verfügbar. Wenn keine Gefahr festgestellt wird, kann der Account weiter für
+gratis Transaktionen genutzt werden.
 
 #### ALA 2: Externes Programm für die Verwaltung der Whitelist \label{sec_ala_2}
 
@@ -98,7 +99,7 @@ die Whitelist von Parity, siehe \ref{sec_whitelist}.
 Auf dem Diagramm \ref{img_solution2} ist dargestellt, wie der Benutzer A zwei
 gratis und eine reguläre Transaktion tätigen will. Bei der ersten gratis
 Transaktion (gratis TX 1) wird der Account XX1 verwendet. Die Prüfung, ob sich
-der Account auf der Whitelist befindet ist erfolgreich. Die Transaktion kann
+der Account auf der Whitelist befindet, ist erfolgreich. Die Transaktion kann
 daher erfolgreich verarbeitet werden und erreicht ihr Ziel.\
 Für die zweite gratis Transaktion (gratis TX 2) wird der Account XX2 verwendet.
 Dieser befindet sich nicht auf der Whitelist. Die Prüfung schlägt deshalb fehl.
@@ -119,9 +120,9 @@ der Whitelist gelöscht werden.
 
 ##### Pro
 
-Dieser Ansatz ist sicher umsetzbar in der zur Verfügung stehenden Zeit.\
+Dieser Ansatz ist in der zur Verfügung stehenden Zeit sicher umsetzbar.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
-Programm neu ausgerollt werden. Eine Aktualisierung der Whitelist ist nicht nötig.
+Programm neu ausgerollt werden. Änderungen an der Blockchain sind nicht nötig.
 
 
 ##### Contra
@@ -140,7 +141,7 @@ aussieht.
 ![Flowchart Transaktionsmanager für Verwaltung der Whitelist \label{img_flow_solution2}](images/flow_solution2_v2.png "Flowchart externes Programm für die Verwaltung der Whitelist"){ width=50% height=50% } 
 
 Der Benutzer initialisiert eine gratis Transaktion. Beim Parity Node
-wird überprüft, ob der verwendete Account sich auf der Whitelist befindet. Ist
+wird überprüft, ob sich der verwendete Account auf der Whitelist befindet. Ist
 er das nicht, wird die Transkation abgebrochen und der Benutzer erhält einen
 Error. Ist ein Account verwendet worden, der sich auf der Whitelist befindet,
 wird die Transaktion in die Blockchain aufgenommen.\
@@ -156,7 +157,10 @@ Whitelist zu entfernen, generiert der Transaktionsmanager eine Transaktion.
 Wie in Abbildung \ref{img_solution3} illustriert, ist der Blockchain ein
 externes Programm, der Transaktionsmanager, vorgelagert. Dieser führt eine
 Whitelist für Accounts die gratis Transaktionen ausführen dürfen. Der DoS
-Algorithmus befindet sich ebenfalls im Transaktionsmanager.\
+Algorithmus befindet sich ebenfalls im Transaktionsmanager. Transaktionen die
+den Transaktionsmanager erreichen, werden in einer weiteren Transaktion verpackt
+und an das Blockchainnetzwerk gesendet. Dies ist nötig, um den ursprünglichen
+Sender zu bewahren.\
 Weiter wird eine Smart Wallet entwickelt. Diese ist nötig, um die
 verschachtelten Transaktionen des Programms zu verarbeiten. Aus dem Data-Feld
 wird die eigentliche Transaktion extrahiert und abgesetzt.\
@@ -204,8 +208,7 @@ Bedarf, die Transaktion an den Transaktionsmanager zu senden. Sie kann direkt
 
 Dieser Ansatz ist in der gegebenen Zeit umsetzbar.\
 Falls eine Anpassung des DoS Schutzalgorithmus nötig ist, muss nur das externe
-Programm neu ausgerollt werden. Eine Aktualisierung der Whitelist ist nicht
-nötig.  
+Programm neu ausgerollt werden. Eine Aktualisierung der Blockchain ist nicht nötig.  
 
 ##### Contra
 
