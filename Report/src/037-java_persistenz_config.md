@@ -170,7 +170,7 @@ nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet wurde
 
 ### Konfiguration \label{sec_prac_conf}
 
-Der Transaktionsmanagers kann mit der Datei ```DefaultSettings.json```
+Der Transaktionsmanager kann mit der Datei ```DefaultSettings.json```
 konfiguriert werden.  Diese muss im selben
 Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.
 
@@ -181,7 +181,7 @@ connectionAddress
 :      URL um sich mit der Blockchain zu verbinden. 
 
 resetInterval 
-:      Definiert in welchem Intervall, die Zähler von allen
+:      Definiert in welchem Intervall die Zähler von allen
 Accounts zurückgesetzt werden. Wird in Minuten angegeben.
 
 defaultTXLimit
