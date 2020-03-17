@@ -19,7 +19,7 @@ und Einstellungen, um eine Blockchain zu starten.
 Blockchains sind auf einem peer-to-peer (P2P) Netzwerk[@wiki_p2p] aufgebaut. Ein
 Computer der Teil von diesem Netzwerk ist, wird Node genannt. Jeder Node hat
 eine identische Kopie der Historie aller Transaktionen.\
-Es gibt keinen zentralen Server, der angegriffen werden kann. Das erhöht die
+Es gibt keinen zentralen Server der angegriffen werden kann. Das erhöht die
 Sicherheit der Blockchain.\
 Es muss davon ausgegangen werden, dass es Nodes gibt, die versuchen die Daten
 der Blockchain zu verfälschen. Dem wird mit der Verwendung von diversen Consenus
@@ -64,13 +64,13 @@ peer-to-peer Netzwerk läuft, zum Beispiel die Ethereum Blockchain. Der frontend
 Code kann in einer beliebigen Sprache geschrieben werden, sofern Aufrufe an das
 Backend möglich sind.\
 DApp's für die Ethereum Blockchain werden mit Smart Contracts realisiert. Ein
-Beispiel ist der Ethereum Name Server (ENS)[@ens]. Analog zu DNS, können
+Beispiel ist der Ethereum Name Server (ENS)[@ens]. Analog zu DNS[@wiki_dns], können
 Adressen leserliche Namen zugeordnet werden.
 
 ### Transaktionen \label{sec_transaktionen}
 
 Um mit der Blockchain zu interagieren, werden Transaktionen verwendet. Sie
-erlauben es Daten in der Blockchain zu erstellen oder anzupassen. Eine
+erlauben es, Daten in der Blockchain zu erstellen oder anzupassen. Eine
 Transaktion verfügt über folgende Felder:
 
 From
@@ -134,7 +134,7 @@ Elektrizität, sind hingegen stabiler Natur. Daher sind Gas und Ether separiert.
 Ein weiterer Parameter ist Gas Limit. Mit diesem Parameter wird bestimmt, was
 die maximale Gas Cost ist, die man für eine Transaktion bereitstellen möchte. Es
 wird aber nur so viel verrechnet, wie auch wirklich benötigt wird, der Rest wird
-einem wieder gutgeschrieben. Falls die Transaktionskosten höher als das gesetzte
+dem Sender wieder gutgeschrieben. Falls die Transaktionskosten höher als das gesetzte
 Gas Limit ausfallen, wird die Ausführung der Transaktion abgebrochen. Alle
 gemachten Änderungen auf der Chain werden rückgängig gemacht. Die Transaktion
 wird als "fehlgeschlagene Transaktion" in die Blockchain aufgenommen. Das Gas
@@ -176,7 +176,7 @@ bilden die letzten 20 Bytes, also 40 Zeichen, die Adresse eines Account. Die
 Adresse wird bei Transaktionen oder Interaktionen mit einem Smart Contract
 verwendet. 
 
-##### Contract Accounts
+#### Contract Accounts
 
 Contract Accounts sind durch ihren Code definiert. Sie können keine
 Transaktionen initiieren, sondern reagieren nur auf zuvor eingegangene. Das wird
@@ -241,7 +241,7 @@ Ein anderer Angriffsvektor, sind Transaktionen mit einem sehr hohen Bedarf an
 Rechenleistung. Hier wird Code auf der Blockchain aufgerufen, dessen
 Verarbeitung sehr lange dauert.\
 Beide Angriffe haben zur Folge, dass Benutzer
-sehr lange auf auf die Ausführung ihrer Transaktionen warten müssen.\
+sehr lange auf die Ausführung ihrer Transaktionen warten müssen.\
 Blockchains schützen sich vor diesem Angriff mit einer Transaktionsgebühr. Diese
 werden durch Angebot und Nachfrage bestimmt. Das heisst, wenn es viele
 Transaktionen gibt, steigt der Bedarf an deren Verarbeitung und es kann davon

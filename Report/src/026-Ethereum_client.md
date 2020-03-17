@@ -3,12 +3,12 @@
 Für die Betreibung von einem Ethereum Node ist ein Client nötig. Dieser muss das
 Ethereum Protokoll[@github_ethereum_protcol] implementieren. Das Protokoll
 definiert die minimalen Anforderungen an den Client. Das erlaubt, dass der
-Client in verschiedenen Sprachen, von verschiedenen Teams, realisiert werden
+Client in verschiedenen Sprachen und von verschiedenen Teams realisiert werden
 kann. Nebst der verwendeten Programmiersprache unterscheiden sich die Clients
 bei implementierten Zusatzfunktionen, die im Protokoll nicht spezifiziert sind.
 Die populärsten Clients sind Go Ethereum (GETH)[@geth], Parity[@parity],
 Aleth[@aleth] und Trinity[@trinity]. Die Clients wurden auf die
-Zusatzfunktionalität untersucht, für eine definierte Gruppe von Accounts gratis
+Zusatzfunktionalität untersucht, für eine definierte Gruppe von Accounts, gratis
 Transaktionen zu ermöglichen. 
 
 ### Parity \label{sec_whitelist}
@@ -40,8 +40,7 @@ registriert. Das erlaubt das Referenzieren von Smart Contracts, ohne dass hart
 kodierte Adressen verwendet werden müssen. Dieses System ist analog zu einem DNS
 Lookup[@wiki_dns].
 
-Die Name Registry ist in Parity standardmässig immer unter derselben Adresse
-zu finden. Um eine Whitelist verwenden zu können, muss der zuständige Smart
+Um eine Whitelist verwenden zu können, muss der zuständige Smart
 Contract, siehe \ref{sec_simpleCertifier}, bei der Name Registry registriert
 werden.\
 Nachfolgenden sind die involvierten Methoden und Modifier[@wiki_modifier] der
@@ -100,7 +99,7 @@ modifier whenEntryRaw(bytes32 _name) {
 ```
 Der unter \ref{li_whenEntryRaw} aufgeführte Modifier prüft, ob der Eintrag für
 den Namen ```_name``` nicht gelöscht ist und über einen gültigen Besitzer
-verfügt. Mit ```!= address(0)``` wird der geprüft ob sich um mehr als einen
+verfügt. Mit ```!= address(0)``` wird der geprüft ob es sich um mehr als einen
 uninitialisierten Account handelt. 
 
 
@@ -140,7 +139,7 @@ wird geprüft ob der Transaktion genügend Ether mitgegeben wird, um die Gebühr
 begleichen.\
 Wenn alle Prüfungen erfolgreich sind, wird in ```entries``` ein neuer Eintrag
 erstellt. Als Besitzer des Eintrags wird der Sender der Transaktion gesetzt. Auf
-Zeile 9 wird die erfolgreiche Reservierung ans Netzwerk gesendet.
+Zeile 9 wird die erfolgreiche Reservierung in den Log geschrieben.
 
 ```{caption="Methode setAddress" label=li_setAddress .sol .numberLines}
 function setAddress(bytes32 _name, string _key, address _value)
@@ -166,7 +165,7 @@ Auch diese Methode muss von aussen aufgerufen werden können, daher
 Registrierung vorgenommen.\
 In der Map ```data``` wird die Adresse (```_value```) an der Position ```_key```
 gespeichert.\
-Die Änderung der Daten wird auf Zeile 9 ans Netzwerk gesendet.  
+Die Änderung der Daten wird auf Zeile 9 ins Log geschrieben.  
 
 #### Certifier \label{sec_simpleCertifier}
 
@@ -226,7 +225,7 @@ Zeile 3 stellt sicher, dass nur der Besitzer des Certifiers einen Account
 registrieren kann. Ist diese Prüfung erfolgreich, wird der Account ```_who```
 der Liste ```certs``` hinzugefügt. Der Account ist nun für gratis Transaktionen
 berechtigt.\
-Der Event wird auf Zeile 6 an das Netzwerk gesendet.
+Der Event wird auf Zeile 6 in den Log geschrieben.
 
 ```{caption="Methode certified" label=li_certified .sol .numberLines}
 function certified(address _who)
@@ -258,7 +257,7 @@ der Whitelist. Auf Zeile 3 wird wiederum sichergestellt, dass nur der Besitzer
 des Certifiers Änderungen vornehmen kann. Weiter wird auf Zeile 4 verifiziert,
 dass der Account ```_who``` in der Whitelist ```certs``` registriert ist.\
 Sind alle Bedingungen erfüllt, wird der Account von der Whitelist entfernt. Der
-Event wird auf Zeile 7 an die Blockchain gesendet. 
+Event wird auf Zeile 7 in den Log geschrieben. 
 
 ### Geprüfte Alternativen
 
