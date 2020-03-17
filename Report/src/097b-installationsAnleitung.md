@@ -22,7 +22,7 @@ Rechner installiert sein.
    ``` docker pull parity/parity:stable```
 
 4. Mit follgendem Befehl wird ein neuer Party-Container erstellt:\
-   ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:stable --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
+   ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:2.5.13 --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
 
 
 ### Deployment 

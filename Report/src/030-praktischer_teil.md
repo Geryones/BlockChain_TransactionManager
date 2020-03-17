@@ -11,4 +11,4 @@ Im folgenden Abschnitt wird die Blockchain behandelt, diese ist auf dem Diagramm
 ## Parity \label{sec_prac_parity}
 
 In diesem Abschnitt ist beschrieben, wie die Blockchain konfiguriert ist. Als
-Client wird die stable Version[@parity_releases] von Parity verwendet. 
+Client wird die Version[@parity_releases] 2.5.13 von Parity verwendet. 

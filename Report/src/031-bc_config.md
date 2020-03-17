@@ -2,7 +2,7 @@
 ### Konfiguration der Blockchain \label{sec_prac_bc_config}
 
 Parity wird mit der Konsole gestartet. Der Benutzer hat hier die Möglichkeit,
-gewisse Parameter an Parity zu übergeben. Eine einfache Konfiguration ist somit
+gewisse Parameter an Parity zu übergeben. Somit ist eine einfache Konfiguration
 möglich. Für kompliziertere Konfigurationen wird die Verwendung von einer
 Konfigurationsdatei empfohlen, diese ist im nächsten Abschnitt
 \ref{sec_prac_config_toml} beschrieben.
@@ -65,8 +65,6 @@ min_gas_price = 1000000000
 refuse_service_transactions = false
 tx_queue_no_unfamiliar_locals = true
 reseal_on_txs = "all"
-reseal_min_period = 0
-reseal_max_period = 6000
 ```
 
 ##### Mining \label{sec_mining}
@@ -92,19 +90,10 @@ von null verfügen dürfen. So wird sichergestellt, dass nur die definierte
 Benutzergruppe gratis Transaktionen tätigen darf. 
 
 Zeile 5
-:    Durch die Einstellung "tx_queue_no_unfamiliar_locals = true" werden alle 
-eingehenden Transaktionen behandelt, als ob fremd, also nicht lokal, behandelt. 
-Standardmässig, werden aber nur lokale Transaktionen verarbeitet. Daher muss 
+:    Durch die Einstellung auf Zeile 4 werden alle 
+eingehenden Transaktionen behandelt, als ob sie von ausserhalb kommen. 
+Standardmässig, werden nur lokale Transaktionen verarbeitet. Daher muss 
 hier explizit definiert werden, dass alle Transaktionen verarbeitet werden.
-
-Zeile 6
-:    Gibt an, wie viele Millisekunden im Minimum zwischen der Kreation von 
-Blöcken liegen müssen.
-
-Zeile 7
-:    Definiert die maximale Zeitspanne in Millisekunden zwischen der Kreation 
-von Blöcken. Nach Ablauf dieser Zeit wird automatisch ein Block generiert. Dieser 
-kann leer sein.
 
 ```{caption="Konfigurationsdatei für Parity" label=li_toml4 .numberLines}
 [misc]
@@ -122,8 +111,8 @@ Zeile 18
 
 Mit dieser Datei wird die Blockchain definiert. Sie enthält nebst der
 Spezifikation den Genesis Block. Weiter können Benutzeraccounts und Smart
-Contracts definiert werden. Diese können verwendet werden, sobald die Blockchain
-gestartet ist.\
+Contracts definiert werden. Sobald die Blockchain
+gestartet ist, können diese verwendet werden.\
 Die hier aufgeführten Code-Ausschnitte bilden zusammen Blockchainspezifikation. Um die Leserlichkeit zu
 erhöhen, werden sie jedoch separiert aufgeführt.
 
@@ -180,7 +169,7 @@ Da bereits beim ersten Start von Parity die Adresse der Name Registry hinterlegt
 findet das Deployment direkt in der Blockchainspezifikation statt. 
 
 Zeile 4
-:     Die maximale Grösse eines Smart Contracts welcher in mit einer Transaktion deployed wird. 
+:     Die maximale Grösse eines Smart Contracts. 
 
 Zeile 5
 :     Spezifiziert die maximale Anzahl Bytes, welche im Feld ```extra_data``` des 
@@ -211,7 +200,7 @@ der Blockchain definiert.
 
 Zeile 2 - 4
 :      Hier kann weiter definiert werden, wie Blöcke verarbeitet werden sollen. Da für 
-dieses Projekt valide Blöcke sofort in die Blockchain eingefügt werden, sind keine weiteren 
+dieses Projekt, valide Blöcke sofort in die Blockchain eingefügt werden, sind keine weiteren 
 Einstellungen nötig. 
 
 Zeile 5
@@ -226,7 +215,7 @@ berechnet wird, hat dieser Wert einen Einfluss auf zukünftige Gaslimiten.
 ```{.json caption="Blockchainspezifikation mit Genesisblock" label=li_blockchainSpec4  .numberLines}
 	"accounts": {
 		"0000000000000000000000000000000000001337": { "balance": "1", "constructor": "Platzhalter für Bytecode von SimpleRegistry" },
-		"00a329c0648769a73afac7f9381e08fb43dbea72": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }
+		"00a329c0648769a73afac7f9381e08fb43dbea72": { "balance": "8044258990275541962092341162602522202993782792835301376" }
 	}
 }
 

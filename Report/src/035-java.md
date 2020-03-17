@@ -2,7 +2,7 @@
 ## Transaktionsmanager  \label{sec_prac_ext_prog}
 
 In diesem Kapitel ist die Implementierung des Transaktionsmanagers zur Überwachung
-der Whitelist in Parity beschrieben. Anhand von Codeausschnitten ist die
+der Whitelist in Parity beschrieben. Anhand von Codeausschnitten wird die
 Funktionsweise von einzelnen Komponenten näher erklärt. 
 
 ### Wrapperklassen
@@ -29,9 +29,9 @@ Auf der Abbildung \ref{img_prac_interactions} sind die Interaktionen zwischen
 dem Transaktionsmanager, der Blockchain und den Benutzern gezeigt. Transaktionen
 sind mit "TX" abgekürzt.\
 Links auf dem Diagramm sind die Benutzer "A" und "C" mit ihrem jeweiligen
-Account abgebildet. In der Liste ```Accounts``` im Java-Programm sind alle
+Account abgebildet. In der Liste ```Accounts``` im Transaktionsmanager sind alle
 Accounts erfasst, die für gratis Transaktionen berechtigt sind. Hier ist für
-jeden Account vermerkt, wie viele gratis Transaktionen und wie viel gratis Gas
+jeden Account vermerkt, wie viele gratis Transaktionen und gratis Gas
 im aktuellen Reset-Intervall bereits verbraucht wurde.\
 Die beiden Benutzer erstellen je eine Transaktion mit einem Gas Preis von
 null. Diese werden an den Parity Node übermittelt.\
@@ -43,7 +43,7 @@ verwendet hat.\
 Die Transaktion von Benutzer A wird vom Node akzeptiert, da sein Account in der
 Whitelist erfasst ist. Die Transaktion wird anschliessend verarbeitet und in den
 nächsten Block aufgenommen.\
-Die Subscription im Java-Programm registriert, dass eine neue Transaktion in die
+Die Subscription im Transaktionsmanager registriert, dass eine neue Transaktion in die
 Blockchain aufgenommen worden ist. Die Daten der Transaktion werden heruntergeladen.
 Der verwendete Gas Preis wird überprüft. Bei einem Gas Preis ungleich null, wird
 die Transaktion nicht weiter betrachtet.\
@@ -61,7 +61,7 @@ Account von der Whitelist in Parity entfernt.
 
 ### Command Pattern und Priority Queue
 
-Für die Handhabung des Reset-Intervalls und Suspendierungen von der Whitelist,
+Für die Handhabung des Reset- und Revoke-Intervalls,
 wird ein Command-Pattern[@wiki_command_pattern] verwendet. Die Commands werden mit einem Zeitstempel
 versehen. Dieser gibt an, wann die Methode ```execute()``` ausgeführt werden
 soll.\

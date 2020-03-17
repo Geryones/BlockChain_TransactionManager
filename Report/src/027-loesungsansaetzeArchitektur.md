@@ -228,8 +228,9 @@ Initialisierung einer gratis Transaktion durch den Benutzer.
 
  Diese wird an den Transaktionsmanager übermittelt. In erster Instanz wird
 geprüft, ob der verwendete Account für gratis Transaktionen berechtigt ist. Nur
-wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion weiterbearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird hier
-eine Gefahr detektiert, wird der Account von der Whitelist gelöscht und die
+wenn diese Prüfung erfolgreich ist, wird die gratis Transaktion
+weiterbearbeitet. Anschliessend wird das Verhalten des Accounts evaluiert. Wird
+hier eine Gefahr detektiert, wird der Account von der Whitelist gelöscht und die
 Transaktion abgebrochen.\
 Ist der Account berechtigt und es wird keine Gefahr detektiert, wird die
 Transaktion im Data Feld einer neuen gratis Transaktion an die Blockchain

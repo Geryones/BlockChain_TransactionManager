@@ -4,18 +4,48 @@
 ### Name Registry
 
 Die Name Registry wird standardmässig in Parity verwendet. Die zur Verfügung
-gestellte Implementation der Name Registry ist SimpleRegistry genannt. Der
+gestellte Implementation der Name Registry ist ```SimpleRegistry``` genannt. Der
 vollständige Code ist im Anhang unter \ref{app_parity_code} verlinkt. 
 
 
 ### Certifier
 
 Parity stellt eine Implementation des Certifiers zu Verfügung, den
-SimpleCertifier. Der vollständige Code ist im Anhang unter \ref{app_parity_code}
+```SimpleCertifier```. Der vollständige Code ist im Anhang unter \ref{app_parity_code}
 verlinkt. 
 
 Sobald der Certifier bei der Name Registry registriert ist, können Accounts
 definiert werden, die gratis Transaktionen tätigen können. 
+
+### Interaktionsübersicht auf einem Parity Node \label{prac_nameRegistry_Certifier}
+
+In diesem Abschnitt sind die Interaktionen zwischen Name Registry und Certifier
+aufgeführt. 
+
+![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier")
+
+Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer XY in blau
+dargestellt. Der Parity Node ist in grün dargestellt. Der Benutzer sendet eine
+Transaktion mit einem Gas Preis von null an den Parity Node.\
+Als erstes wird in Parity geprüft, ob eine Name Registry vorhanden ist. Deren
+Deployment ist unter \ref{sec_prac_spec} beschrieben. Der Eintrag
+```registrar``` hat als Wert die Adresse der Name Registry hinterlegt.\
+In der Name Registry wird das Mapping ```entries``` untersucht. Der Certifier
+muss unter dem richtigen Namen hinterlegt sein. Der Name ist ein SHA3-Hash des
+Strings "service_transaction_checker". Der Hash ist der Zugriffsschlüssel im
+Mapping ```entries```. Der korrespondierende Wert ist ein ```Entry``` für den
+Certifier. Im Struct ```Entry``` ist ein weiteres Mapping, ```data```,
+vorhanden. In ```data``` muss unter dem Zugriffsschlüssel "A" die Adresse des
+Certifiers abgelegt sein. Das ist keine Konfiguration, sondern hart kodiert in
+Parity. Dieser Vorgang ist unter \ref{sec_prac_deployment} ausführlich
+beschrieben.\
+Mit der so ermittelten Adresse des Certifiers, kann dieser aufgerufen werden.
+Im Certifier wird geprüft, ob der Sender der gratis Transaktion, also Account
+"XX", zertifiert ist.\
+Wenn einer dieser Schritte fehlschlägt, erhält der Benutzer
+einen Error, da er einen ungültigen Gas Preis verwendet.\
+Können alle Schritte erfolgreich durchgeführt werden und der Account ist
+zertifiziert, wird die Transaktion in die Blockchain aufgenommen.  
 
 #### Deployment und Registrierung \label{sec_prac_deployment}
 
@@ -47,6 +77,7 @@ try {
 
 String simpleCertifierAddress = simpleCertifier.getContractAddress();
 ```
+Der Codeausschnitt \ref{li_certifier_deployment} zeigt das Deployment des ```SimpleCertifiers```.
 Die Verbindung zu einem Node wird mit einer Instanz von ```Web3j``` auf Zeile 1
 definiert. Auf der zweiten Zeile wird ein ```TransactionManager``` instanziert.
 Dieser definiert, wie und mit welchem Account auf die Ethereumblockchain
@@ -74,17 +105,17 @@ try {
     e.printStackTrace(); 
 }
 ```
+Der Codeausschnitt \ref{li_registration_cert} zeigt wie eine Instanz der ```SimpleRegistry``` erstellt wird.
 Um eine Instanz von einem bereits platzierten Smart Contract zu erhalten, wird
 die Methode ```load``` verwendet. Als erstes Argument wird die Adresse der Name
-Registry mitgegeben. Analog zum vorherigen Beispiel wird die Verbindung zur
-Blockchain mit ```Web3j```, einem ```Transactionmanager``` und einem
-```DefaultGasProvider``` definiert. Der Rückgabewert ist eine Instanz der
-```SimpleRegistry```. 
+Registry mitgegeben. Analog zum vorherigen Beispiel, \ref{li_certifier_deployment}, wird die Verbindung zur
+Blockchain mit ```Web3j```, einem ```Transactionmanager``` und einem ```DefaultGasProvider``` definiert. Der Rückgabewert ist eine Instanz der ```SimpleRegistry```.
 
 Mit den zur Verfügung stehenden Instanzen, kann die Registrierung des Certifiers
-bei der Name Registry gemacht werden. 
+bei der Name Registry gemacht werden.
 
-```{caption="Reservierung und anschliessende Registrierung bei der Name Registry" label=li_reservation_and_registration .java .numberLines}
+
+```{.java caption="Reservierung und anschliessende Registrierung bei der Name Registry" label=li_reservation_and_registration  .numberLines}
 private static BigInteger REGISTRATION_FEE = BigInteger.valueOf(1000000000000000000L);
 
 String str_hash = "6d3815e6a4f3c7fcec92b83d73dda2754a69c601f07723ec5a2274bd6e81e155";
@@ -97,6 +128,7 @@ try {
     e.printStackTrace(); 
 }
 ``` 
+Im Codeausschnitt \ref{li_reservation_and_registration} ist die Reservation und Registrierung des Certifiers bei der Name Registry aufgeführt.
 Für die Registrierung wird eine Gebühr von einem Ether erhoben. Dafür wird auf
 Zeile 1 eine Variabel vom Typ ```BigInteger``` instanziiert.\
 Der Auf Zeile 3 definierte String ```str_hash``` ist der sha3-Hash für den
@@ -116,32 +148,4 @@ dritte Argument ist die Adresse des Certifiers. Diese wird von dessen Instanz
 abgerufen. 
 
 
-### Interaktionsübersicht auf einem Parity Node \label{prac_nameRegistry_Certifier}
 
-In diesem Abschnitt sind die Interaktionen zwischen Name Registry und Certifier
-aufgeführt. 
-
-![Interaktion zwischen Name Registry und Certifier  \label{img_interactions_reg_cert}](images/parity_node.png "Interaktionen zwischen Name Registry und Certifier")
-
-Auf dem Diagramm \ref{img_interactions_reg_cert} ist links der Benutzer XY in blau
-dargestellt. Der Parity Node ist in grün dargestellt. Der Benutzer sendet eine
-Transaktion mit einem Gas Preis von null an den Parity Node.\
-Als erstes wird in Parity geprüft, ob eine Name Registry vorhanden ist. Deren
-Deployment ist unter \ref{sec_prac_spec} beschrieben. Der Eintrag
-```registrar``` hat als Wert die Adresse der Name Registry hinterlegt.\
-In der Name Registry wird das Mapping ```entries``` untersucht. Der Certifier
-muss unter dem richtigen Namen hinterlegt sein. Der Name ist ein SHA3-Hash des
-Strings "service_transaction_checker". Der Hash ist der Zugriffsschlüssel im
-Mapping ```entries```. Der korrespondierende Wert ist ein ```Entry``` für den
-Certifiers. Im Struct ```Entry``` ist ```data```, ein weiteres Mapping,
-vorhanden. In ```data``` muss unter dem Zugriffsschlüssel "A" die Adresse des
-Certifiers abgelegt sein. Das ist keine Konfiguration, sondern hart kodiert in
-Parity. Dieser Vorgang ist unter \ref{sec_prac_deployment} ausführlich
-beschrieben.\
-Mit der so ermittelten Adresse des Certifiers, kann dieser aufgerufen werden.
-Im Certifier wird geprüft, ob der Sender der gratis Transaktion, also Account
-"XX" zertifiert ist.\
-Wenn einer dieser Schritte fehlschlägt, erhält der Benutzer
-einen Error, da er einen ungültigen Gas Preis verwendet.\
-Konnten alle Schritte erfolgreich durchgeführt werden und der Account ist
-zertifiziert, wird die Transaktion in die Blockchain aufgenommen.  

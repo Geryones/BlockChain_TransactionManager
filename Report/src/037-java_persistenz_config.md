@@ -8,11 +8,11 @@ Dafür wird die Datei ```AccountList.json``` verwendet. Diese muss im selben
 Verzeichnis wie die ```.jar``` Datei des Transaktionsmanagers liegen.
 
 
-In dieser Datei sind alle Accounts, die auf der Whitelist sind erfasst. Bei
+In dieser Datei werden alle Accounts, die auf der Whitelist sind, erfasst. Bei
 jedem Account können die individuell konfigurierbaren Parameter gesetzt werden.\
 Nach einem Programmstop wird die Datei ausgelesen. Alle Accounts werden
 geladen. Wo nötig, die individuellen Parameter gesetzt. Für alle Parameter die
-nicht gesetzt sind, werden die konfigurierten Standardwerte verwendet, siehe \ref{sec_prac_conf} Parameter,
+nicht gesetzt sind, werden die konfigurierten Standardwerte verwendet, siehe \ref{sec_prac_conf}. Parameter,
 für die der Standardwert verwendet werden soll, können entweder mit Wert
 ```null``` erfasst oder ganz weggelassen werden. 
 
@@ -23,7 +23,7 @@ address
 :     Die Adresse des Accounts. Das ist der einzige Parameter, der
 zwingend definiert sein muss. 
 
-txLimit
+transactionLimit
 :     Definiert die maximale Anzahl gratis Transaktionen, die ein Account in 
 einem Reset-Intervall tätigen darf. 
 
@@ -103,15 +103,15 @@ Erfasst werden 3 Accounts. Vor Programmstart könnte die Datei so aussehen:
 ]
 ```
 
-Unter \ref{li_accountList_before} ist die Erfassung von 4 Accounts gezeigt. Der
+Das Listing \ref{li_accountList_before} zeigt die Erfassung von 4 Accounts. Der
 erste verwendet überall individuelle Parameter.\
 Der zweite Account hat keine Parameter und verwendet daher überall die Standardwerte.\
 Beim dritten und vierten Account ist gezeigt, dass auch ganz selektiv, einzelne
 Parameter gesetzt werden können.
 
-Sobald die unter \ref{li_accountList_before} Liste von Accounts eingelesen und
+Sobald die Liste von Accounts unter Listing \ref{li_accountList_before}, eingelesen und
 verarbeitet wurde, wird sie vom Transaktionsmanager neu geschrieben. Das
-Resultat ist abhängig von den konfigurierten Standardwerten, dazu mehr im
+Resultat ist von den konfigurierten Standardwerten abhängig, dazu mehr im
 folgenden Kapitel \ref{sec_prac_conf}. Unter der Annahme, dass der Standardwert
 für Transaktionen auf 5 und für Gas auf 50000000 konfiguriert ist, sieht die
 Datei folgendermassen aus:
@@ -163,8 +163,8 @@ Datei folgendermassen aus:
 ```
 
 Das Listing \ref{li_accountList_after} zeigt die Datei ```AccountList.json```
-nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet hat.
-Überall wo ein Standardwert verwendet ist der Paramater mit einem Wert von
+nachdem der Transaktionmanger gestartet und die initiale Datei verarbeitet wurde.
+Überall wo ein Standardwert verwendet wird, ist ein Wert von
 ```null``` gesetzt worden. 
 
 
