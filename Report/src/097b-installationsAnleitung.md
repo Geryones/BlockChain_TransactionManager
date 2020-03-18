@@ -18,7 +18,10 @@ Rechner installiert sein.
   ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
   Datei ```instant_seal.json```.
 
-3. Für die "Stable"-Version von Parity kann folgender Befehl verwendet werden:\
+3. Für dieses Projekt ist mti der Version 2.5.13 gearbeitet worden:\
+    ``` docker pull parity/parity:2.5.13```
+
+    Für die "Stable"-Version von Parity kann folgender Befehl verwendet werden:\
    ``` docker pull parity/parity:stable```
 
 4. Mit follgendem Befehl wird ein neuer Party-Container erstellt:\
@@ -40,6 +43,8 @@ automatisch ausgeführt. Das kann in der ```pom.xml``` eingestellt werden:
     <skipTests>true</skipTests>
 </properties>
 ```
+Um die Tests auszuführen müssen die Dateien ```AccountList.json``` und ```DefaultSettings.json``` durch die Dateien im Ordner ```TestRessources``` ersetzt werden. 
+
 Wenn die Zeile 2 im Listing \ref{pom}gelöscht wird, werden vor dem
 Erstellen einer neuen ```.jar``` Datei, alle Tests automatisch ausgeführt.
 
