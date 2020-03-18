@@ -11,9 +11,9 @@ Rechner installiert sein.
   gemacht, siehe \ref{sec_prac_config_toml}. Hier muss die Abhängigkeit der
   Pfade zum Docker-Home beachtet werden.\
   Parity stellt für die Konfiguration des Dockers diese Anleitung zur Verfügung:\
-  https://github.com/parity-contracts/name-registry/tree/master/contracts
+  https://wiki.parity.io/Docker
 
-2. Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```
+1. Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```
   definiert. Der Speicherort muss mit dem Wert des Parameters ```chain``` der
   ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
   Datei ```instant_seal.json```.
