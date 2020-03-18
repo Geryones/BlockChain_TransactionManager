@@ -232,7 +232,7 @@ Parity.
 
 #### Beispiel
 
-Anbei ein Beispiel für ```DefaultSettings.json``` für eine frisch aufgesetzte Blockchain.
+Anbei ein Beispiel von ```DefaultSettings.json``` für eine frisch aufgesetzte Blockchain.
 
 ```{.json .numberLines caption="DefaultSettings.json" label=li_defaultSettings_before }
 {
@@ -247,7 +247,7 @@ Anbei ein Beispiel für ```DefaultSettings.json``` für eine frisch aufgesetzte 
   
 }
 ```
-Unter \ref{li_defaultSettings_before} ist die Datei ```DefaultSettings.json```
+Unter Listing \ref{li_defaultSettings_before} ist die Datei ```DefaultSettings.json```
 abgebildet. So sieht die Datei aus, bevor der Transaktionsmanager den Certifier
 deployed hat. 
 
@@ -266,6 +266,6 @@ deployed hat.
 ```
 
 Listing \ref{li_defaultSettings_after} zeigt die Datei
-```DefaultSettings.json``` nach dem der Certifier deployed wurde. Dessen Adresse
+```DefaultSettings.json``` nachdem der Certifier deployed wurde. Dessen Adresse
 ist nun eingetragen. Weiter ist ein Zeitstempel gesetzt. 
 

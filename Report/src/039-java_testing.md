@@ -5,7 +5,7 @@ Um die Lauffähigkeit des Transaktionsmanagers zu verifizieren, sind diverse
 Tests ausgeführt worden.\
 Mit Unit Tests ist die Funktionalität von einzelnen
 Aspekten geprüft worden. Dazu gehören unter anderem, isolierte Transaktionen
-ausführen, lesen und schreiben von Dateien.\
+ausführen, Lesen und Schreiben von Dateien.\
 Mit einem Leistungstest ist untersucht worden, wie sich der Transaktionsmanager
 unter Belastung verhält.\
 Mit den Abnahmetests ist sichergestellt, dass die Applikation als Ganzes,
@@ -15,13 +15,13 @@ wie gewünscht funktioniert.
 
 Die Funktionalität von zentralen Methoden sind mit Unittests geprüft worden.
 
-Alle Unit Tests sind erfolgreich. 
+Alle Unit Tests sind erfolgreich. Sie sind im Anhang unter \ref{app_tests} verlinkt.
 
 #### Leistungstest
 
 Um die Leistung des Transaktionsmanagers zu testen, werden verschieden hohe
 Transaktionslimiten auf einem Account geprüft.\
-Im Test werden mit einer Schleife, in sehr rascher Folge, gratis Transaktionen
+Im Test wird mit einer Schleife, in sehr rascher Folge, gratis Transaktionen
 getätigt. Am Ende wird geprüft, ob der Account von der Whitelist entfernt worden
 ist. Folgende Kombination von gratis Transaktionen und Transaktionslimite ist
 getestet worden:
@@ -32,7 +32,7 @@ getestet worden:
 |5|5|5|Nein|
 |6|5|6|Ja|
 |10|5|10|Ja|
-|100|5|ca 30|Ja|
+|100|5|100|Ja|
 |500|450|500|Ja|
 |1000|450|ca 980|Ja|
 |2000|450|ca 980|Ja|
@@ -48,8 +48,10 @@ Account am Ende des Tests von der Whitelist entfernt wurde.\
 Die ersten drei Test prüfen um den Grenzwert. Diese verhalten sich wie erwartet.
 Fünf gratis Transaktionen dürfen ohne Konsequenzen durchgeführt werden. Nach der
 sechsten wird der Account von der Whitelist entfernt.\
-Die folgenden Tests sind erfolgreich. Allerdings ist festgestellt worden, dass
-der Transaktionsmanager nicht sofort reagiert.\
+Die folgenden Tests sind erfolgreich, da der Account am Ende von der Whitelist
+entfernt ist. Allerdings ist festgestellt worden, dass der Transaktionsmanager
+nicht sofort reagiert. Bis der Transaktionsmanager reagiert, können ungehindert
+gratis Transaktionen gemacht werden.\
 Die Verzögerung ist weiter untersucht worden. Dabei wurde festgestellt, dass vom
 Zeitpunkt der ersten Transaktion, es immer zwischen 14 und 15 Sekunden dauert,
 bis diese in der Subscription registriert wird. In dieser Zeit konnten mir einer
@@ -68,16 +70,16 @@ die Limit erreicht worden ist. Er sendet ebenfalls eine Transaktion an den
 Node.\
 Der Node hat bereits sehr viele gratis Transaktionen, deren Verarbeitung noch
 ausstehend sind. Die Transaktion vom Transaktionsmanger wird prioritär
-behandelt, da es keine gratis Transaktion ist. Nach 14 bis 15 weiteren Sekunden,
-erreicht der zweite Block die Blockchain. Jetzt wird das Revoke verarbeitet. Der
-Node akzeptiert keine weiteren gratis Transaktionen von diesem Account.
+behandelt, da es keine gratis Transaktion ist. Nach weiteren 14 bis 15 weiteren
+Sekunden, erreicht der zweite Block die Blockchain. Erst jetzt, kann das Revoke
+verarbeitet werden. Ab diesem Zeitpunkt, akzeptiert der Node keine weiteren
+gratis Transaktionen von diesem Account.
 
 
 
 #### Abnahme Test
 
-Hier wurde das Funktionieren alles Abnahmekriterien geprüft.
-Hier wird das Zusammenspiel aller Komponenten geprüft.\
+Hier wird die Applikation als Ganzes geprüft.\
 Um die funktionalen Aspekte zu prüfen führt ein Account auf der Whitelist gratis
 Transaktionen aus. Anschliessend werden die Zähler des Accounts überprüft. Am
 Ende des Reset-Intervalls wird geprüft, ob die Zähler zurückgesetzt werden. So
@@ -89,7 +91,9 @@ umgehen. Der Schutz vor einer DoS Attacke wäre nicht mehr gewährleistet.
 
 Beide Tests sind erfolgreich, der Transaktionsmanager verhält sich wie gewünscht.   
 
-Weiter wurden manuell alle Abnahmekriterien \ref{sec_prac_abnahmekriterien} geprüft und in ein Abnahmetestprotokoll \ref{sec_prac_abnahmeprotokoll} aufgeführt.
+Weiter wurden manuell alle Abnahmekriterien, siehe
+\ref{sec_prac_abnahmekriterien}, geprüft. Das Abnahmetestprotokoll ist unter
+Kapitel \ref{sec_prac_abnahmeprotokoll} aufgeführt.
 
 #### Schlussfolgerung
 
@@ -101,4 +105,9 @@ Angriff nach ungefähr 30 Sekunden unterbunden.\
 Tiefere Limiten ändern an diesem Verhalten nichts. Der Angreifer hat dennoch die
 Möglichkeit einen Block komplett zu füllen. Eine mögliche Strategie wäre, die
 Limite an der Kapazität von einem Block anzugleichen. Diese ist abhängig vom
-maximalen Gas pro Block und wie oft, dass Blöcke erstellt werden.
+maximalen Gas pro Block und der Frequenz, in der Blöcke erstellt werden.\
+Ein Node priorisiert Transaktionen anhand des verwendeten Gas Preises. Um
+sicherzustellen, dass die Transaktionen des Transaktionsmanagers beim Node
+prioritär behandelt werden, muss ein gültiger Gas Preis verwendet werden. Es ist
+daher nötig, den Account des Transaktionsmanagers mit einem hohen Guthaben zu
+initialisieren. 

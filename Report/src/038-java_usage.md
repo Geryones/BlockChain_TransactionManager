@@ -25,10 +25,10 @@ Deployment und Registrierung von Accounts.
 
 Die Adresse der Name Registry wird aus der Konfigurationsdatei gelesen, siehe
 \ref{sec_prac_conf}. Hier muss beachtet werden, dass diese mit der Adresse in
-der Blockchainspezifkation, siehe \ref{sec_prac_spec}, übereinstimmen muss.\
+der Blockchainspezifkation, siehe \ref{sec_prac_spec}, übereinstimmt.\
 Sobald der Certifier deployed ist, wird dessen Adresse in die
-Konfigurationsdatei geschrieben. Sobald die Überwachung der Blockchain gestartet
-wird, wird die Adresse ausgelesen und der Certifier instanziiert.\
+Konfigurationsdatei geschrieben. Beim Start der Überwachung von der Blockchain,
+wird die Adresse ausgelesen und der Certifier instanziiert.\
 Der Account für den Transaktionsmanger wird in der Blockchainspezifikation
 definiert, siehe \ref{sec_prac_spec}. Dieser Account wird verwendet um
 Änderungen an der Whitelist vorzunehmen. Aus Sicherheitsgründen wird der private
@@ -63,5 +63,5 @@ Beim Aufruf der Klasse ```Run``` werden folgende Schritte ausgeführt:
    gestartet. Das Command ```ResetAccountsCommand``` fügt sich rekursiv in die
    Priority Queue ein. 
 
-Sobald der Transaktionsmanager mit einer Kommandozeile gestartet wurde, wird der
+Sobald der Transaktionsmanager über eine Kommandozeile gestartet wurde, wird der
 Benutzer über aktuellen Vorgänge mit Lognachrichten informiert. 

@@ -3,7 +3,7 @@
 
 ### Super Smart Wallet
 
-Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu LA 1, \ref{sec_ala_1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
+Es wird eine zentrale Smart Wallet entwickelt. Im Gegensatz zu LA 1, siehe Kapitel \ref{sec_ala_1}, wird nicht für jeden Benutzer eine Smart Wallet deployed, sondern nur eine einzige. Diese kann von allen Benutzern der Blockchain genutzt werden.
 Bei diesem Ansatz wird mit der in Absatz \ref{sec_whitelist} beschriebenen Whitelist gearbeitet.
 
 ![Super Smart Wallet \label{img_solution4}](images/solution4.png "Super Smart Wallet") 
