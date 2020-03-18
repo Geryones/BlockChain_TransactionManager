@@ -107,7 +107,7 @@ Der Report zu den durchgeführten Abnahmetests. Jeder Test deckt mindestens ein 
 Für jeden Account wird folgender Ablauf durchgeführt
 
 1. MetaMask starten
-2. Account wählen
+2. Account 1. wählen
 3. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
 5. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
@@ -157,7 +157,7 @@ Für jeden Account wird folgender Ablauf durchgeführt
 9. In ```AccountList.json``` den Parameter ```deleteMe``` auf ```true``` setzen.
 10. Transaktionsmanager starten
 11. MetaMask starten
-12. Account wählen
+12. Account 1. wählen
 13. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 14. Beliebigen Account wählen
 15. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
@@ -485,19 +485,20 @@ Für jeden Account wird folgender Ablauf durchgeführt
 
 **Erwünschtes Resultat:**  
 
--  ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist bei 4
+-  Parameter ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist bei 4
 -  Parameter ```timestampLastReset``` in ```DefaultSettings.json``` ist identisch
-- ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist nach Programmstopp bei 4
+-  Parameter ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist nach Programmstopp bei 4
 
 **Tatsächliches Resultat:** 
 
-- Alle Counter sind wieder auf die max. Limite zurückgesetzt 
-- Intervall wird trotz der Pause zum richtigen Zeitpunkt neu gestartet
+-  Parameter ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist bei 4
+-  Parameter ```timestampLastReset``` in ```DefaultSettings.json``` ist identisch
+-  Parameter ```remainingTransactions``` in ```AccountList.json``` für Account 1. ist nach Programmstopp bei 4
 
 ### Abnahmetest 12
 
 **AK Nr.:**   #10     
-**Titel:** Sperrzeit  
+**Titel:** Revoke-Intervall  
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
 **Datum:**   15.3.2020  
@@ -508,22 +509,23 @@ Für jeden Account wird folgender Ablauf durchgeführt
 2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
 3. Blockchain ist aufgesetzt und läuft 
-4. Transaktionsmanager läuft und Account 1. ist zertifiziert
-5. Account hat keine Revoke zeit eingestellt
-6. In den Default Settings ist die Default Revoke Time auf 2 min und der
-   resetIntervall auf 5 min gesetzt
+4. Parameter ```revokeTime```  in ```AccountList.json``` ist für Account 1. nicht erfasst
+5. Parameter ```transactionLimit``` von Account 1. in  ```AccountList.json``` auf 1 gesetzt 
+6. Parameter ```defaultRevokeTime```  in ```DefaultSettings.json``` ist auf 2 gesetzt
+7. Parameter ```resetInterval```  in ```DefaultSettings.json``` ist auf 5 gesetzt
+8. Transaktionsmanager läuft und Account 1. ist zertifiziert
 
 **Ablauf:** 
 
 1. MetaMask starten
-2. Account wählen
+2. Account 1. wählen
 3. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
 5. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies so oft durchführen, bis der Account gesperrt ist.
+8. Schritte 2 bis 7 wiederholen
 9. Dannach 2' warten
 10. Erneut eine gratis Transaktion durchführen       
 
@@ -539,121 +541,125 @@ Für jeden Account wird folgender Ablauf durchgeführt
 ### Abnahmetest 13
 
 **AK Nr.:**   #13   
-**Titel:**  Default Werte für Limiten A   
+**Titel:**  Standardwerte für Limiten    
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 **Status:**  ERFOLGREICH **Vorbedingung:** 
+**Datum:**   15.3.2020\
+**Status:**  ERFOLGREICH\
+**Vorbedingung:** 
 
 1. MetaMask installiert 
-2. Account ist ohne Transaktionslimite in JSON Datei eingetragen & Default
-   Transaktionslimite ist auf 3 gesetzt
-3. Account in MetaMask eingerichtet (1. Account Add:
+2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
-4. Blockchain ist aufgesetzt und läuft 
-5. Transaktionsmanager läuft und Account 1. ist zertifiziert 
+3. Parameter ```transactionLimit```  in ```AccountList.json``` ist für Account 1. nicht erfasst
+4. Parameter ```defaultTxLimit```  in ```DefaultSettings.json``` ist auf 3 gesetzt
+5. Blockchain ist aufgesetzt und läuft 
+6. Transaktionsmanager läuft und Account 1. ist zertifiziert 
 
 **Ablauf:** 
 
 1. MetaMask starten
-2. Account wählen
+2. Account 1. wählen
 3. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
 5. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 4 Mal durchführen 
+8. Schritte 2 bis 7 viermal wiederholen
 
 **Erwünschtes Resultat:**   
 
 - Die letzte Transaktion wird abgebrochen
-- Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei keine übrigen Transaktionen 
-- Limite wird nicht in Datei geschrieben
+- Parameter ```remainingTransactions``` in ```AccountList.json``` ist für Account 1. auf 0 
+- Parameter ```timeStamp``` in ```AccountList.json``` ist für Account 1. gesetzt
+- Parameter ```transactionLimit``` in ```AccountList.json``` ist für Account 1. mit ```null``` erfasst
 
 **Tatsächliches Resultat:** 
 
 - Die letzte Transaktion wird abgebrochen
-- Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei keine übrigen Transaktionen 
+- Parameter ```remainingTransactions``` in ```AccountList.json``` ist für Account 1. auf 0 
+- Parameter ```timeStamp``` in ```AccountList.json``` ist für Account 1. gesetzt
+- Parameter ```transactionLimit``` in ```AccountList.json``` ist für Account 1. mit ```null``` erfasst
 
 
 ### Abnahmetest 14
 
 **AK Nr.:**   #13     
-**Titel:**  Default Werte für Limiten  
+**Titel:**  Standardwerte für Limiten  
 **Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 **Status:**  ERFOLGREICH  
+**Datum:**   15.3.2020\
+**Status:**  ERFOLGREICH  
 **Vorbedingung:** 
 
 1. MetaMask installiert 
-2. Account ist ohne Gaslimite in JSON Datei eingetragen & Default Gaslimite ist
-   auf 63000 gesetzt
-3. Account in MetaMask eingerichtet (1. Account Add:
+2. Account in MetaMask eingerichtet (1. Account Add:
    0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
+3. Parameter ```gasLimit```  in ```AccountList.json``` ist für Account 1. nicht erfasst
+3. Parameter ```defaultGasLimit```  in ```DefaultSettings.json``` ist auf 63000 gesetzt
 4. Blockchain ist aufgesetzt und läuft 
 5. Transaktionsmanager läuft und Account 1. ist zertifiziert 
 
 **Ablauf:** 
 
 1. MetaMask starten
-2. Account wählen
+2. Account 1. wählen
 3. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
 4. Beliebigen Account wählen
 5. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
    eingeben 
 6. WEITER und BESTÄTIGEN wählen 
 7. Warten bis die Transaktion durchlaufen ist
-8. Dies 4 Mal durchführen       
+8. Schrittte 2 bis 7 viermal wiederholen
 
 **Erwünschtes Resultat:**   
 
 - Die letzte Transaktion wird abgebrochen
-- Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei kein übriges Gas
-- Limite wird nicht in Datei geschrieben
+- Parameter ```remainingGas``` in ```AccountList.json``` ist für Account 1. auf 0 
+- Parameter ```timeStamp``` in ```AccountList.json``` ist für Account 1. gesetzt
+- Parameter ```gasLimit``` in ```AccountList.json``` ist für Account 1. mit ```null``` erfasst
 
 **Tatsächliches Resultat:** 
 
 - Die letzte Transaktion wird abgebrochen
-- Der Account hat in der JSON Datei einen Timestamp eingetragen
-- Der Account hat in der JSON Datei kein übriges Gas
-- Limite wird nicht in Datei geschrieben
+- Parameter ```remainingGas``` in ```AccountList.json``` ist für Account 1. auf 0 
+- Parameter ```timeStamp``` in ```AccountList.json``` ist für Account 1. gesetzt
+- Parameter ```gasLimit``` in ```AccountList.json``` ist für Account 1. mit ```null``` erfasst
 
 ### Abnahmetest 15
 
-**AK Nr.:**   #15    
-**Titel:**  Transaktions Manager Account kann nicht gesperrt werden **Testart:**
-Manuell   
+**AK Nr.:**   #14     
+**Titel:**  Certifier erneut registrieren   
+**Testart:**   Manuell   
 **Tester:**   Faustina Bruno   
-**Datum:**   15.3.2020 **Status:**  ERFOLGREICH **Vorbedingung:** 
+**Datum:**   15.3.2020\
+**Status:**  ERFOLGREICH  
+**Vorbedingung:** 
 
-1. Metamask installiert 
-2. Account hat die Transaktionslimite 3
-3. Account in MetaMask eingerichtet (1. Account Add:
-   0x3e7Beee9585bA4526e8a7E41715D93B2bE014B34, 2. Account beliebig)
-4. Blockchain ist aufgesetzt und läuft 
-5. Transaktionsmanager läuft und Account 1. ist zertifiziert 
+1. https://remix.ethereum.org/ im Browser geöffnet
+2. Code von ```SimpleCertifier.sol``` kompiliert in Remix
+3. Code von ```SimpleRegistry.sol``` kompiliert in Remix
+4. Blockchain läuft
+5. Name Registry ist vorhanden
+6. Certifier ist deployed
+7. Certifier ist bei Name Registry registriert
+
 
 **Ablauf:** 
 
-1. MetaMask starten
-2. Account wählen
-3. Auf SENDEN und anschliessend auf ZWISCHEN MEINEN KONTAKTEN TRANSFERIEN drücken
-4. Beliebigen Account wählen
-5. In das Feld "Betrag" 100 ETH eingeben und in das Feld "Transaktionsgebühr" 0
-   eingeben 
-6. WEITER und BESTÄTIGEN wählen 
-7. Warten bis die Transaktion durchlaufen ist
-8. Dies 5 Mal durchführen 
+1. ```SimpleCertifier``` deployen mit Remix
+2. Mit Remix die ```SimpleRegistry``` anhand der Adresse laden 
+3. Methode ```reserve``` der ```SimpleRegistry``` mit "6d3815e6a4f3c7fcec92b83d73dda2754a69c601f07723ec5a2274bd6e81e155" als Parameter ausführen.
+
 
 **Erwünschtes Resultat:**   
 
-- Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
+- Die Transaktion gibt ```false``` zurück
 
-**Tatsächliches Resultat:**  
+**Tatsächliches Resultat:** 
 
-- Account wird nicht gesperrt und kann weiterhin Transaktionen durchführen 
+- Die Transaktion gibt ```false``` zurück
+
 \newpage
 

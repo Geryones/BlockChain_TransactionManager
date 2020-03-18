@@ -83,7 +83,7 @@ Erfasst werden 3 Accounts. Vor Programmstart könnte die Datei so aussehen:
 [
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
-    "txLimit": 8,
+    "transactionLimit": 8,
     "revokeTime": 15,
     "gasLimit": 60000000
   },
@@ -121,7 +121,7 @@ Datei folgendermassen aus:
   {
     "address": "0xaf02DcCdEf3418F8a12f41CB4ed49FaAa8FD366b",
     "remainingTransactions": 8,
-    "txLimit": 8,
+    "transactionLimit": 8,
     "revokeTime": 15,
     "gasLimit": 60000000,
     "remainingGas": 60000000,
@@ -131,7 +131,7 @@ Datei folgendermassen aus:
   {
     "address": "0xf13264C4bD595AEbb966E089E99435641082ff24",
     "remainingTransactions": 5,
-    "txLimit": null,
+    "transactionLimit": null,
     "revokeTime": null,
     "gasLimit": null,
     "remainingGas": 50000000,
@@ -141,7 +141,7 @@ Datei folgendermassen aus:
   {
     "address": "0x00a329c0648769A73afAc7F9381E08FB43dBEA72",
     "remainingTransactions": 5,
-    "txLimit": null,
+    "transactionLimit": null,
     "revokeTime": 25,
     "gasLimit": 999999999999999,
     "remainingGas": 999999999999999,
@@ -151,7 +151,7 @@ Datei folgendermassen aus:
     {
     "address": "0xf1326lasdfaösLDFJDLSNd23nlDD35641082ff24",
     "transactionCounter": 5,
-    "txLimit": null,
+    "transactionLimit": null,
     "revokeTime": 2,
     "gasLimit": null,
     "remainingGas": 50000000,
