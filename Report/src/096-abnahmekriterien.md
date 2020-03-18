@@ -1,28 +1,28 @@
 ## Abnahmekriterien  \label{sec_prac_abnahmekriterien}
 
-In diesem Kapitel werden alle Abnahmekriterien des Blockchain Transaktions Managers aufgelistet und Kategorisiert.
-Es wird zwischen funktionalen und nicht-funktionales Kriterien unterschieden.
-//TODO Text
-
+In der Tabelle \ref{tab_abnahmekriterien} sind die Abnahmekriterien aufgeführt.
  
 | Nr.   | Titel                             | Beschreibung                                   |
 | -----:|:----------------------------------|:-----------------------------------------------|
-| 1.    | Bezahlte Transaktionen für alle Accounts | Jeder gültige Account kann Transaktionen mit Gas Price durchführen|
-| 2.    | Gratis Transaktionen nur für Accounts in Whitelist | Ein Account der für die Whitelist zertifiziert ist, kann Transaktionen mit Gas Price "0" durchführen. Alle anderen Accounts können dies nicht. |
-| 3.    | Account aus Liste für Whitelist zertifizieren  | Account die für die Whitelist zertifiziert werden sollen, stehen in der JSON Datei |
-| 4.    | Account aus Liste und Whitelist entfernen  |  Account die für die gelöscht werden sollen, stehen in der JSON Datei mit einer Kennzeichnung, dass sie gelöscht werden. Sobald ein Account gelöscht wird, wird er von der Whitelist wie auch von der JSON  Datei entfernt |
-| 5.    | Account nach Transaktionen sperren  | Ein Account der zu viele Transaktionen betätigt hat, wird für eine Zeitspanne gesperrt. |
-| 6.    | Account nach GasUsed sperren | Ein Account der zu viel Gas für seine Transaktionen benutzt hat wird gesperrt  |
-| 7.    | Gesperrte Account entsperren |  Ein gesperrter Account wird nach einer gesetzten Zeitspanne wieder entsperrt. Diese wird in der Account Datei definiert. Sobald ein Account gesperrt wird, wird ein Zeitstempel mit dem Zeitpunkt wann wieder der Account zertifiziert wird, gesetzt. Somit ist die genaue Sperrzeit garantiert, auch wenn das Programm für eine Zeit ausfällt. |
-| 8.    | Reset Zeitintervall setzten | Es wird ein allgemeines Zeitintervall gesetzt, welches definiert wann alle Counters der Accounts auf ihre Default Werte zurückgesetzt werden.  |
-| 9.    | Speicherung des Zeitintervalls | Nach jedem Reset wird der Zeitstempel gespeichert. Somit wird das genaue Intervall gesichert auch wenn das Programm kurz ausfällt. |
-| 10.   | Sperrzeit | Die Zeitspanne wie lang ein Account gesperrt wird, kann global in der DefaultSettings Datei gesetzt werden. Für Ausnahmen kann in der Account Datei für ein Account ein eigener Wert gesetzt werden.  |
-| 11.   | Transaktionslimite pro User | Die Anzahl Transaktionen bis ein Account gesperrt wird, kann für jeden Account individuell eingestellt werden |
-| 12.   | GasUsed Limite pro User | Die Anzahl Gas Used bis ein Account gesperrt wird, kann für jeden Account individuell eingestellt werden |
-| 13.   | Default Werte für Limiten | Es können default Werte für max. Transaktionen und max Gas Used gesetzt werden  |
-| 14.   | Certifier nur von Owner deployen | Der Certifier kann nur vom Owner registriert werden  |
-| 15.   | Certifier nur einmal deploybar  | Der Certifier kann nur einmal deployt/registriert werden |
-| 16.   | Transaktions Manager Account kann nicht gesperrt werden | Transaktions Manager Account kann nicht gesperrt werden |
+| 1.    | Bezahlte Transaktionen für alle Accounts | Jeder Account kann Transaktionen durchführen mit einem gültigen Gas Preis durchführen|
+| 2.    | Gratis Transaktionen nur für Accounts in Whitelist | Nur Accounts die in der Whitelist erfasst sind, können gratis Transaktionen durchführen. |
+| 3.    | Liste von Accounts der Whitelist hinzufügen  | Accounts die für die Whitelist zertifiziert werden sollen, stehen in der JSON Datei. Diese Accounts werden geladen und der Whitelist hinzugefügt.|
+| 4.    | Accounts permanent von Whitelist entfernen  | In der Datei ```AccountList.json``` wird ein Account für die Löschung markiert. Dafür wird der Parameter ```deleteMe``` verwendet. Der Account wird von der Whitelist und ```AccountList.json``` entfernt.|
+| 5.    | Sperrung eines Accounts nach zu vielen Transaktionen | Ein Account der die Transaktionslimite überschreitet, wird temporär von der Whitelist gelöscht. |
+| 6.    | Sperrung eines Accounts bei zu hohem gratis Gas Verbrauch | Ein Account der die Limite von gratis Gas überschreitet, wird temporär von der Whitelist gelöscht |
+| 7.    | Revoke-Intervall | Beim Entfernen eines Accounts von der Whitelist, wird der Zeitstempel für das Revoke-Intervall korrekt gesetzt. Sobald der im Stempel definierte Zeitpunkt erreicht wird, wird der Account wieder auf die Whitelist gesetzt. |
+| 8.    | Reset-Intervall | Die Zähler der Accounts werden nach Ablauf des Reset-Intervalls zurückgesetzt. Ein neues Command für das Reset-Intervall wird durch Rekursion in die Priority-Queue eingefügt.  |
+| 9.    | Zeitstempel für Reset-Intervall | Der Zeitstempel des Rest-Intervalls wird in der Datei ```DefaultSettings.json``` korrekt gesetzt.|
+| 10.   | Standardwert für Revoke-Intervall | Der Standardwert des Revoke-Intervalls wird auf Accounts ohne individuelles Revoke-Intervall angewendet.  |
+| 11.   | Transaktionslimite pro Account | Die Transaktionslimite kann für jeden Account inidviduell gesetzt werden.|
+| 12.   | Gaslimite pro User | Die Menge an verbrauchten gratis Gas kann für jeden Account individuell eingestellt werden |
+| 13.   | Standardwerte für Limiten | Es können Standardwerte für Transaktionslimite und Gaslimite gesetzt werden. |
+| 14.   | Registrierung Certifier | Die Registrierung des Certifiers kann nicht überschrieben werden |
+
+Table: Abnahmekriterien \label{tab_abnahmekriterien}
+
+
+
 \newpage
 
 

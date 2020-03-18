@@ -77,7 +77,7 @@ gratis Transaktionen von diesem Account.
 
 
 
-#### Abnahme Test
+#### Abnahmetest
 
 Hier wird die Applikation als Ganzes geprüft.\
 Um die funktionalen Aspekte zu prüfen führt ein Account auf der Whitelist gratis
