@@ -17,7 +17,7 @@ Die Funktionalität von zentralen Methoden sind mit Unittests geprüft worden.
 
 Alle Unit Tests sind erfolgreich. Sie sind im Anhang unter \ref{app_tests}
 verlinkt. Die Dateien ```AccountList.json``` und ```DefaultSettings.json```
-welche für die Tests verwendet werden, sind im Ordner ```TestRessources```
+welche für die Tests verwendet werden, sind im Ordner ```src/test/java/resources/testFilesForWhitelist```
 abgelegt. 
 
 #### Leistungstest

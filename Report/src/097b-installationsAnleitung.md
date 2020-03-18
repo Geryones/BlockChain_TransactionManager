@@ -16,7 +16,8 @@ Rechner installiert sein.
 1. Die  Blockchainspezifikation ist in der Datei ```instant_seal.json```
   definiert. Der Speicherort muss mit dem Wert des Parameters ```chain``` der
   ```config.toml``` Datei übereinstimmen. Siehe \ref{sec_prac_spec} für den Aufbau der
-  Datei ```instant_seal.json```.
+  Datei ```instant_seal.json```.\
+  Die Dateien sind im Anhang unter \ref{app_parity_links} verlinkt.
 
 3. Für dieses Projekt ist mti der Version 2.5.13 gearbeitet worden:\
     ``` docker pull parity/parity:2.5.13```
@@ -25,7 +26,7 @@ Rechner installiert sein.
    ``` docker pull parity/parity:stable```
 
 4. Mit follgendem Befehl wird ein neuer Party-Container erstellt:\
-   ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:2.5.13 --config /home/parity/.local/share/io.parity.ethereum/docker.toml --jsonrpc-interface all ```
+   ```docker run -ti -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp -v ~/.local/share/io.parity.ethereum/docker/:/home/parity/.local/share/io.parity.ethereum/ parity/parity:2.5.13 --config /home/parity/.local/share/io.parity.ethereum/config.toml --jsonrpc-interface all ```
 
 
 ### Deployment 
@@ -43,7 +44,7 @@ automatisch ausgeführt. Das kann in der ```pom.xml``` eingestellt werden:
     <skipTests>true</skipTests>
 </properties>
 ```
-Um die Tests auszuführen müssen die Dateien ```AccountList.json``` und ```DefaultSettings.json``` durch die Dateien im Ordner ```TestRessources``` ersetzt werden. 
+Um die Tests auszuführen müssen die Dateien ```AccountList.json``` und ```DefaultSettings.json``` durch die Dateien im Ordner ````src/test/java/resources/testFilesForWhitelist``` ersetzt werden. 
 
 Wenn die Zeile 2 im Listing \ref{pom}gelöscht wird, werden vor dem
 Erstellen einer neuen ```.jar``` Datei, alle Tests automatisch ausgeführt.
