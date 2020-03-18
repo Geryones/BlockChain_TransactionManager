@@ -44,7 +44,7 @@ automatisch ausgeführt. Das kann in der ```pom.xml``` eingestellt werden:
     <skipTests>true</skipTests>
 </properties>
 ```
-Um die Tests auszuführen müssen die Dateien ```AccountList.json``` und ```DefaultSettings.json``` durch die Dateien im Ordner ````src/test/java/resources/testFilesForWhitelist``` ersetzt werden. 
+Um die Tests auszuführen müssen die Dateien ```AccountList.json``` und ```DefaultSettings.json``` durch die Dateien im Ordner ````BTMChainObserver/src/test/java/resources/testFilesForWhitelist``` ersetzt werden. 
 
 Wenn die Zeile 2 im Listing \ref{pom}gelöscht wird, werden vor dem
 Erstellen einer neuen ```.jar``` Datei, alle Tests automatisch ausgeführt.
